@@ -28,7 +28,7 @@ setup(
     packages=["multitiers"],
     keywords=["tiers", "multitiers", "phonology", "historical linguistics"],
     include_package_data=True,
-    #    install_requires=["networkx"],
+    install_requires=["pyclts"],
     entry_points={"console_scripts": ["multitiers=multitiers.__main__:main"]},
     test_suite="tests",
     tests_require=[],
