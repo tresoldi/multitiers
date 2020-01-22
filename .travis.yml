@@ -1,0 +1,17 @@
+language: python
+
+python:
+  - "3.5"
+
+before_install:
+  - sudo apt-get update
+
+install:
+  - "python setup.py install"
+  - "pip install codecov"
+
+script:
+  - "coverage run tests/test_multitiers.py"
+
+after_success:
+  - "codecov"
