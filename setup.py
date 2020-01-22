@@ -25,7 +25,7 @@ setup(
         "Operating System :: OS Independent",
         "Topic :: Software Development :: Libraries",
     ],
-    packages=["multitiers"],
+    packages=["multitiers", "clts-master"],
     keywords=["tiers", "multitiers", "phonology", "historical linguistics"],
     include_package_data=True,
     install_requires=["pyclts"],
