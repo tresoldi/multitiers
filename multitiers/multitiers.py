@@ -178,6 +178,8 @@ class MultiTiers:
                 # TODO: add soundclass shifter
                 sc_vector = sc_mapper(alignment, sca)
                 self.tiers["%s_SCA" % doculect] += sc_vector
+                self._extend_shifted_vector(sc_vector, "%s_SCA" % doculect,
+                        left, right)
 
     #        count += 1
     #        if count == 2:
@@ -216,6 +218,6 @@ class MultiTiers:
             len(self.tiers),
             vector_length,
         )
-        str_tiers += tabulate(data, headers=tiers, tablefmt="simple")
+        str_tiers += tabulate(data[:10], headers=tiers, tablefmt="simple")
 
         return str_tiers
