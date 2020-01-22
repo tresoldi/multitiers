@@ -17,4 +17,10 @@ import multitiers
 class TestMultiTiers(unittest.TestCase):
     def test_multitiers(self):
         mt = multitiers.MultiTiers()
-        assert mt.test() == 13
+        mt.add_tier("test", [0,1,2,3])
+
+        with self.assertRaises(ValueError):
+            mt.add_tier("test", [0,1,2,3])
+
+        with self.assertRaises(ValueError):
+            mt.add_tier("test_a", [0,1,2])

@@ -1,0 +1,1929 @@
+ID	DOCULECT	PARAMETER	VALUE	IPA	TOKENS	ALIGNMENT	COGID	NOTE
+1	Proto-Germanic	*wīban	*wīban	wiːban	w iː b a n	w iː b ( a n )	538	
+2	German	*wīban	Weib	vaip	v ai p	v ai b ( - - )	538	
+3	English	*wīban	wife	ʋaɪf	ʋ aɪ f	ʋ aɪ f ( - - )	538	
+4	Dutch	*wīban	wijf	ʋɛɪf	ʋ ɛɪ f	ʋ ɛɪ f ( - - )	538	
+5	Proto-Germanic	*kurnan	*kurnan	kurnan	k u r n a n	k u r n ( a n )	533	
+6	German	*kurnan	Korn	kɔrn	k ɔ r n	k ɔ r n ( - - )	533	
+7	English	*kurnan	corn	kɔːn	k ɔː n	k ɔː - n ( - - )	533	
+8	Dutch	*kurnan	koren	koːrə	k oː r ə	k oː r - ( ə - )	533	
+9	Proto-Germanic	*xaimaz	*xaimaz	xaimaz	x ai m a z	x ai m ( a z )	532	
+10	German	*xaimaz	Heim	haim	h ai m	h ai m ( - - )	532	
+11	English	*xaimaz	home	həʊm	h əʊ m	h əʊ m ( - - )	532	
+12	Dutch	*xaimaz	heem	heːm	h eː m	h eː m ( - - )	532	
+13	Proto-Germanic	*nikwiz	*nikwiz	nikwiz	n i k w i z	n i kʷ ( i z )	4	
+14	German	*nikwiz	Nix	nɪks	n ɪ k s	n ɪ k ( - s )	4	
+15	Dutch	*nikwiz	nikker	nɪkər	n ɪ k ə r	n ɪ k ( ə r )	4	
+16	Proto-Germanic	*gaistaz	*gaistaz	gaistaz	g ai s t a z	g ai s t ( a z )	5	
+17	German	*gaistaz	Geist	ɡaist	g ai s t	g ai s t ( - - )	5	
+18	English	*gaistaz	ghost	ɡəʊst	g əʊ s t	g əʊ s t ( - - )	5	
+19	Proto-Germanic	*drenkanan	*drenkanan	drenkanan	d r e n k a n a n	d r e n k a n ( a n )	6	
+20	German	*drenkanan	trinken	trɪŋkən	t r ɪ ŋ k ə n	t r ɪ ŋ k ə n ( - - )	6	
+21	English	*drenkanan	drink	drɪŋk	d r ɪ ŋ k	d r ɪ ŋ k - - ( - - )	6	
+22	Dutch	*drenkanan	drinken	drɪŋkə	d r ɪ ŋ k ə	d r ɪ ŋ k ə - ( - - )	6	
+23	Proto-Germanic	*bōsmaz	*bōsmaz	boːsmaz	b oː s m a z	b oː s - m ( a z )	7	
+24	German	*bōsmaz	Busen	buːzən	b uː z ə n	b uː z ə n ( - - )	7	
+25	English	*bōsmaz	bosom	bʊzəm	b ʊ z ə m	b ʊ z ə m ( - - )	7	
+26	Dutch	*bōsmaz	boezem	buːzəm	b uː z ə m	b uː z ə m ( - - )	7	
+27	Proto-Germanic	*stertaz	*stertaz	stertaz	s t e r t a z	s t e r t ( a z )	8	
+28	German	*stertaz	Sterz	ʃtɛrt͡s	ʃ t ɛ r ts	ʃ t ɛ r ts ( - - )	8	
+29	English	*stertaz	start	stɑːt	s t ɑː t	s t ɑː - t ( - - )	8	
+30	Dutch	*stertaz	staart	staːrt	s t aː r t	s t aː r t ( - - )	8	
+31	Proto-Germanic	*bukkaz	*bukkaz	bukkaz	b u kk a z	b u kk ( a z )	9	
+32	German	*bukkaz	Bock	bɔk	b ɔ k	b ɔ k ( - - )	9	
+33	English	*bukkaz	buck	bʌk	b ʌ k	b ʌ k ( - - )	9	
+34	Dutch	*bukkaz	bok	bɔk	b ɔ k	b ɔ k ( - - )	9	
+35	Proto-Germanic	*maisōn	*maisōn	maisoːn	m ai s oː n	m ai s oː ( n )	10	
+36	German	*maisōn	Meise	maizə	m ai z ə	m ai z ə ( - )	10	
+37	Dutch	*maisōn	mees	meːs	m eː s	m eː s - ( - )	10	
+38	Proto-Germanic	*xurstiz	*xurstiz	xurstiz	x u r s t i z	x u r s t ( i z )	11	
+39	German	*xurstiz	Horst	hɔrst	h ɔ r s t	h ɔ r s t ( - - )	11	
+40	Dutch	*xurstiz	horst	hɔrst	h ɔ r s t	h ɔ r s t ( - - )	11	
+41	Proto-Germanic	*markō	*markō	markoː	m a r k oː	m a r k oː	12	
+42	German	*markō	Mark	mark	m a r k	m a r k -	12	EXC
+43	English	*markō	march	mɑːʧ	m ɑː tʃ	m ɑː - tʃ -	12	
+44	Dutch	*markō	mark	mɑrk	m ɑ r k	m ɑ r k -	12	
+45	Proto-Germanic	*leθran	*leθran	leθran	l e θ r a n	l e θ - r ( a n )	13	
+46	German	*leθran	Leder	leːdər	l eː d ə r	l eː d ə r ( - - )	13	
+47	English	*leθran	leather	lɛðər	l ɛ ð ə r	l ɛ ð ə r ( - - )	13	
+48	Proto-Germanic	*flaskō	*flaskō	flaskoː	f l a s k oː	f l a s k oː	14	
+49	German	*flaskō	Flasche	flaʃə	f l a ʃ ə	f l a ʃ - ə	14	
+50	English	*flaskō	flask	flɑːsk	f l ɑː s k	f l ɑː s k -	14	
+51	Proto-Germanic	*xalmaz	*xalmaz	xalmaz	x a l m a z	x a l m ( a z )	15	
+52	German	*xalmaz	Halm	halm	h a l m	h a l m ( - - )	15	
+53	Dutch	*xalmaz	halm	hɑlm	h ɑ l m	h ɑ l m ( - - )	15	
+54	Proto-Germanic	*dūbōn	*dūbōn	duːboːn	d uː b oː n	d uː b oː ( n )	16	
+55	German	*dūbōn	Taube	taubə	t au b ə	t au b ə ( - )	16	
+56	English	*dūbōn	dove	dʌv	d ʌ v	d ʌ v - ( - )	16	
+57	Dutch	*dūbōn	dove	doːvə	d oː v ə	d oː v ə ( - )	16	
+58	Proto-Germanic	*skuldiz	*skuldiz	skuldiz	s k u l d i z	s k u l d ( i z )	17	
+59	German	*skuldiz	Schuld	ʃʊlt	ʃ ʊ l t	ʃ - ʊ l d ( - - )	17	BOR
+60	Dutch	*skuldiz	schuld	sxʉlt	s x ʉ l t	s x ʉ l t ( - - )	17	
+61	Proto-Germanic	*xaftjan	*xaftjan	xaftjan	x a f t j a n	x a f t ( j a n )	18	
+62	German	*xaftjan	Heft	hɛft	h ɛ f t	h ɛ f t ( - - - )	18	
+63	Dutch	*xaftjan	hecht	hɛxt	h ɛ x t	h ɛ x t ( - - - )	18	
+64	Proto-Germanic	*θurstuz	*θurstuz	θurstuz	θ u r s t u z	θ u r s t ( u z )	19	
+65	German	*θurstuz	Durst	dʊrst	d ʊ r s t	d ʊ r s t ( - - )	19	
+66	English	*θurstuz	thirst	θɜːst	θ ɜː s t	θ ɜː - s t ( - - )	19	
+67	Dutch	*θurstuz	dorst	dɔrst	d ɔ r s t	d ɔ r s t ( - - )	19	
+68	Proto-Germanic	*spuran	*spuran	spuran	s p u r a n	s p u r ( a n )	20	
+69	German	*spuran	Sporn	ʃpɔrn	ʃ p ɔ r n	ʃ p ɔ r ( - n )	20	
+70	English	*spuran	spur	spɜːr	s p ɜː r	s p ɜː r ( - - )	20	
+71	Dutch	*spuran	spoor	spoːr	s p oː r	s p oː r ( - - )	20	
+72	Proto-Germanic	*mainjanan	*mainjanan	mainjanan	m ai n j a n a n	m ai n j a n ( a n )	21	
+73	German	*mainjanan	meinen	mainən	m ai n ə n	m ai n - ə n ( - - )	21	
+74	English	*mainjanan	mean	miːn	m iː n	m iː n - - - ( - - )	21	
+75	Dutch	*mainjanan	menen	meːnə	m eː n ə	m eː n - ə - ( - - )	21	
+76	Proto-Germanic	*xlībanan	*xlībanan	xliːbanan	x l iː b a n a n	x l iː b a n a n	22	
+77	German	*xlībanan	bleiben	blaibən	b l ai b ə n	b l ai b ə - - n	22	
+78	Dutch	*xlībanan	blijven	blɛɪvə	b l ɛɪ v ə	b l ɛɪ v ə - - -	22	
+79	Proto-Germanic	*namōn	*namōn	namoːn	n a m oː n	n a m oː ( n )	23	
+80	German	*namōn	Name	naːmə	n aː m ə	n aː m ə ( - )	23	
+81	English	*namōn	name	neɪm	n eɪ m	n eɪ m - ( - )	23	
+82	Dutch	*namōn	naam	naːm	n aː m	n aː m - ( - )	23	
+83	Proto-Germanic	*xrīsan	*xrīsan	xriːsan	x r iː s a n	x r iː s ( a n )	24	
+84	German	*xrīsan	Reis	rais	r ai s	- r ai s ( - - )	24	
+85	Dutch	*xrīsan	rijs	rɛɪs	r ɛɪ s	- r ɛɪ s ( - - )	24	
+86	Proto-Germanic	*erθo	*erθo	erθo	e r θ o	e r θ o	25	
+87	German	*erθo	Erde	eːrdə	eː r d ə	eː r d ə	25	
+88	English	*erθo	earth	ɜːθ	ɜː θ	ɜː - θ -	25	
+89	Dutch	*erθo	aarde	aːrdə	aː r d ə	aː r d ə	25	
+90	Proto-Germanic	*xawwanan	*xawwanan	xawwanan	x a w a n a n	x - a w a n ( a n )	26	
+91	German	*xawwanan	hauen	hauən	h au ə n	h - au - ə n ( - - )	26	
+92	English	*xawwanan	hew	hjuː	h j uː	h j uː - - - ( - - )	26	
+93	Dutch	*xawwanan	houwen	hɑuʋə	h ɑu ʋ ə	h - ɑu ʋ ə - ( - - )	26	
+94	Proto-Germanic	*skēlō	*skēlō	skeːloː	s k eː l oː	s k eː l oː	27	
+95	German	*skēlō	Schale	ʃaːlə	ʃ aː l ə	ʃ - aː l ə	27	
+96	Dutch	*skēlō	schaal	sxaːl	s x aː l	s x aː l -	27	
+97	Proto-Germanic	*grunduz	*grunduz	grunduz	g r u n d u z	g r u n d ( u z )	28	
+98	German	*grunduz	Grund	ɡrʊnt	g r ʊ n t	g r ʊ n d ( - - )	28	
+99	English	*grunduz	ground	ɡraʊnd	g r aʊ n d	g r aʊ n d ( - - )	28	
+100	Dutch	*grunduz	grond	xrɔnt	x r ɔ n t	x r ɔ n t ( - - )	28	
+101	Proto-Germanic	*duran	*duran	duran	d u r a n	d u r ( a n )	29	
+102	German	*duran	Tor	toːr	t oː r	t oː r ( - - )	29	
+103	English	*duran	door	dɔːr	d ɔː r	d ɔː r ( - - )	29	
+104	Proto-Germanic	*sōkjanan	*sōkjanan	soːkjanan	s oː k j a n a n	s oː k j a n ( a n )	30	
+105	German	*sōkjanan	suchen	zuːxən	z uː x ə n	z uː x - ə n ( - - )	30	
+106	English	*sōkjanan	seek	siːk	s iː k	s iː k - - - ( - - )	30	
+107	Dutch	*sōkjanan	zoeken	zuːkə	z uː k ə	z uː k - ə - ( - - )	30	
+108	Proto-Germanic	*bladan	*bladan	bladan	b l a d a n	b l a d ( a n )	31	
+109	German	*bladan	Blatt	blat	b l a t	b l a t ( - - )	31	
+110	Dutch	*bladan	blad	blɑt	b l ɑ t	b l ɑ t ( - - )	31	
+111	Proto-Germanic	*xertōn	*xertōn	xertoːn	x e r t oː n	x e r t ( oː n )	32	
+112	German	*xertōn	Herz	hɛrt͡s	h ɛ r ts	h ɛ r ts ( - - )	32	
+113	English	*xertōn	heart	hɑːt	h ɑː t	h ɑː - t ( - - )	32	
+114	Dutch	*xertōn	hart	hɑrt	h ɑ r t	h ɑ r t ( - - )	32	
+115	Proto-Germanic	*fexu	*fexu	fexu	f e x u	f e ( x u )	33	
+116	German	*fexu	Vieh	viː	v iː	v iː ( - - )	33	
+117	English	*fexu	fee	fiː	f iː	f iː ( - - )	33	
+118	Dutch	*fexu	vee	veː	v eː	v eː ( - - )	33	
+119	Proto-Germanic	*līman	*līman	liːman	l iː m a n	l iː m ( a n )	34	
+120	German	*līman	Leim	laim	l ai m	l ai m ( - - )	34	
+121	English	*līman	lime	laɪm	l aɪ m	l aɪ m ( - - )	34	
+122	Dutch	*līman	lijm	lɛɪm	l ɛɪ m	l ɛɪ m ( - - )	34	
+123	Proto-Germanic	*nēθlō	*nēθlō	neːθloː	n eː θ l oː	n eː θ - l ( oː )	35	
+124	German	*nēθlō	Nadel	naːdəl	n aː d ə l	n aː d ə l ( - )	35	
+125	English	*nēθlō	needle	niːdḷ	n iː d ə l	n iː d ə l ( - )	35	
+126	Dutch	*nēθlō	naald	naːlt	n aː l t	n aː - - l ( t )	35	
+127	Proto-Germanic	*marōn	*marōn	maroːn	m a r oː n	( - - - - ) m a r ( oː n )	36	
+128	German	*marōn	Mahr	maːr	m aː r	( - - - - ) m aː r ( - - )	36	
+129	English	*marōn	nightmare	naɪtmɛər	n aɪ t m ɛə r	( n aɪ - t ) m ɛə r ( - - )	36	
+130	Dutch	*marōn	nachtmerrie	nɑxtmɛriː	n ɑ x t m ɛ r iː	( n ɑ x t ) m ɛ r ( iː - )	36	
+131	Proto-Germanic	*grabanan	*grabanan	grabanan	g r a b a n a n	g r a b a n ( a n )	37	
+132	German	*grabanan	graben	ɡraːbən	g r aː b ə n	g r aː b ə n ( - - )	37	
+133	English	*grabanan	grave	ɡrɑːv	g r ɑː v	g r ɑː v - - ( - - )	37	
+134	Dutch	*grabanan	graven	xraːvə	x r aː v ə	x r aː v ə - ( - - )	37	
+135	Proto-Germanic	*sakō	*sakō	sakoː	s a k oː	s a k oː	38	
+136	German	*sakō	Sache	zaxə	z a x ə	z a x ə	38	
+137	English	*sakō	sake	sɑːkɪ	s ɑː k ɪ	s eɪ k -	38	
+138	Dutch	*sakō	zaak	zaːk	z aː k	z aː k -	38	
+139	Proto-Germanic	*wiraz	*wiraz	wiraz	w i r a z	w i r ( a z )	39	
+140	German	*wiraz	Wehr	veːr	v eː r	v eː r ( - - )	39	
+141	Dutch	*wiraz	weer	ʋeːr	ʋ eː r	ʋ eː r ( - - )	39	
+142	Proto-Germanic	*θarmaz	*θarmaz	θarmaz	θ a r m a z	θ a r m ( a z )	40	
+143	German	*θarmaz	Darm	darm	d a r m	d a r m ( - - )	40	
+144	Dutch	*θarmaz	darm	dɑrm	d ɑ r m	d ɑ r m ( - - )	40	
+145	Proto-Germanic	*grōbō	*grōbō	groːboː	g r oː b oː	g r oː b oː	41	
+146	German	*grōbō	Grube	ɡruːbə	g r uː b ə	g r uː b ə	41	
+147	Dutch	*grōbō	groeve	xruːvə	x r uː v ə	x r uː v ə	41	
+148	Proto-Germanic	*knabilaz	*knabilaz	knabilaz	k n a b i l a z	k n a b i l ( a z )	42	
+149	German	*knabilaz	Knebel	kneːbəl	k n eː b ə l	k n eː b ə l ( - - )	42	
+150	Dutch	*knabilaz	knevel	kneːvəl	k n eː v ə l	k n eː v ə l ( - - )	42	
+151	Proto-Germanic	*xattuz	*xattuz	xattuz	x oː d a z	x oː d ( a z )	43	
+152	German	*xattuz	Hut	huːt	h uː t	h uː t ( - - )	43	
+153	English	*xattuz	hood	hʊd	h ʊ d	h ʊ d ( - - )	43	
+154	Proto-Germanic	*brunnōn	*brunnōn	brunnoːn	b r u nn oː n	b r u nn oː n	44	
+155	German	*brunnōn	Brunnen	brʊnən	b r ʊ n ə n	b r ʊ n ə n	44	
+156	Dutch	*brunnōn	bron	brɔn	b r ɔ n	b r ɔ n - -	44	
+157	Proto-Germanic	*fextanan	*fextanan	fextanan	f e x t a n a n	f e x t a n ( a n )	45	
+158	German	*fextanan	fechten	fɛxtən	f ɛ x t ə n	f ɛ x t ə n ( - - )	45	
+159	English	*fextanan	fight	faɪt	f aɪ t	f aɪ - t - - ( - - )	45	
+160	Dutch	*fextanan	vechten	vɛxtə	v ɛ x t ə	v ɛ x t ə - ( - - )	45	
+161	Proto-Germanic	*wakjanan	*wakjanan	wakjanan	w a k j a n a n	w a k j a n ( a n )	46	
+162	German	*wakjanan	wecken	vɛkən	v ɛ k ə n	v ɛ k - ə n ( - - )	46	
+163	Dutch	*wakjanan	wekken	ʋɛkə	ʋ ɛ k ə	ʋ ɛ k - ə - ( - - )	46	
+164	Proto-Germanic	*rīdanan	*rīdanan	riːdanan	r iː d a n a n	r iː d a n ( a n )	47	
+165	German	*rīdanan	reiten	raitən	r ai t ə n	r ai t ə n ( - - )	47	
+166	English	*rīdanan	ride	raɪd	r aɪ d	r aɪ d - - ( - - )	47	
+167	Dutch	*rīdanan	rijden	rɛɪdə	r ɛɪ d ə	r ɛɪ d ə - ( - - )	47	
+168	Proto-Germanic	*xitō	*xitō	xitoː	x i t oː	x i t j oː	48	
+169	German	*xitō	Hitze	hɪt͡sə	h ɪ ts ə	h ɪ ts - ə	48	
+170	Dutch	*xitō	hitte	hɪtə	h ɪ t ə	h ɪ t - ə	48	
+171	Proto-Germanic	*mōsan	*mōsan	moːsan	m oː s a n	m oː s ( a n )	49	
+172	German	*mōsan	Mus	muːs	m uː s	m uː s ( - - )	49	
+173	Dutch	*mōsan	moes	muːs	m uː s	m uː s ( - - )	49	
+174	Proto-Germanic	*sebun	*sebun	sebun	s e b u n	s e b u n	50	
+175	German	*sebun	sieben	ziːbən	z iː b ə n	z iː b ə n	50	
+176	English	*sebun	seven	sɛvṇ	s ɛ v ə n	s ɛ v ə n	50	
+177	Dutch	*sebun	zeven	zeːvə	z eː v ə	z eː v ə -	50	
+178	Proto-Germanic	*spennilō	*spennilō	spenniloː	s p e nn i l oː	s p e nn - i l ( oː )	51	
+179	German	*spennilō	Spindel	ʃpɪndəl	ʃ p ɪ n d ə l	ʃ p ɪ n d ə l ( - )	51	
+180	English	*spennilō	spindle	spɪndḷ	s p ɪ n d ə l	s p ɪ n d ə l ( - )	51	
+181	Dutch	*spennilō	spil	spɪl	s p ɪ l	s p ɪ - - - l ( - )	51	
+182	Proto-Germanic	*xrabnaz	*xrabnaz	xrabnaz	x r a b n a z	x r a b - n ( a z )	52	
+183	German	*xrabnaz	Rabe	raːbə	r aː b ə	- r aː b ə - ( - - )	52	
+184	English	*xrabnaz	raven	rævṇ	r æ v ə n	- r æ v ə n ( - - )	52	
+185	Dutch	*xrabnaz	raaf	raːf	r aː f	- r aː f - - ( - - )	52	
+186	Proto-Germanic	*xailjanan	*xailjanan	xailjanan	x ai l j a n a n	x ai l j a n ( a n )	53	
+187	German	*xailjanan	heilen	hailən	h ai l ə n	h ai l - ə n ( - - )	53	
+188	English	*xailjanan	heal	hiːl	h iː l	h iː l - - - ( - - )	53	
+189	Dutch	*xailjanan	helen	heːlə	h eː l ə	h eː l - ə - ( - - )	53	
+190	Proto-Germanic	*kalbaz	*kalbaz	kalbaz	k a l b a z	k a l b ( a z )	54	
+191	German	*kalbaz	Kalb	kalp	k a l p	k a l b ( - - )	54	
+192	English	*kalbaz	calf	kɑːf	k ɑː f	k ɑː - f ( - - )	54	
+193	Dutch	*kalbaz	kalf	kɑlf	k ɑ l f	k ɑ l f ( - - )	54	
+194	Proto-Germanic	*widuwōn	*widuwōn	widuwoːn	w i d u w oː n	w i d u w oː ( n )	55	
+195	German	*widuwōn	Witwe	vɪtvə	v ɪ t v ə	v ɪ t - v ə ( - )	55	
+196	English	*widuwōn	widow	ʋɪdəʊ	ʋ ɪ d əʊ	ʋ ɪ d əʊ - - ( - )	55	
+197	Dutch	*widuwōn	weduwe	ʋeːdyːʋə	ʋ eː d yː ʋ ə	ʋ eː d yː ʋ ə ( - )	55	
+198	Proto-Germanic	*gangaz	*gangaz	gangaz	g a n g a z	g a n g ( a z )	56	
+199	German	*gangaz	Gang	ɡaŋ	g a ŋ	g a ŋ - ( - - )	56	
+200	English	*gangaz	gang	ɡæŋ	g æ ŋ	g æ ŋ - ( - - )	56	
+201	Dutch	*gangaz	gang	xɑŋ	x ɑ ŋ	x ɑ ŋ - ( - - )	56	
+202	Proto-Germanic	*faranan	*faranan	faranan	f a r a n a n	f a r a n ( a n )	57	
+203	German	*faranan	fahren	faːrən	f aː r ə n	f aː r ə n ( - - )	57	
+204	English	*faranan	fare	fɛər	f ɛə r	f ɛə r - - ( - - )	57	
+205	Dutch	*faranan	varen	vaːrə	v aː r ə	v aː r ə - ( - - )	57	
+206	Proto-Germanic	*swerdan	*swerdan	swerdan	s w e r d a n	s w e r d ( a n )	58	
+207	German	*swerdan	Schwert	ʃveːrt	ʃ v eː r t	ʃ v eː r t ( - - )	58	
+208	English	*swerdan	sword	sɔːd	s ɔː d	s - ɔː - d ( - - )	58	
+209	Dutch	*swerdan	zwaard	zʋaːrt	z ʋ aː r t	z ʋ aː r t ( - - )	58	
+210	Proto-Germanic	*librō	*librō	libroː	l i b r oː	l i b - r ( oː )	59	
+211	German	*librō	Leber	leːbər	l eː b ə r	l eː b ə r ( - )	59	
+212	English	*librō	liver	lɪvər	l ɪ v ə r	l ɪ v ə r ( - )	59	
+213	Dutch	*librō	lever	leːvər	l eː v ə r	l eː v ə r ( - )	59	
+214	Proto-Germanic	*weljōn	*weljōn	weljoːn	w e l j oː n	w e l j oː ( n )	60	
+215	German	*weljōn	Wille	vɪlə	v ɪ l ə	v ɪ l - ə ( - )	60	
+216	English	*weljōn	will	ʋɪl	ʋ ɪ l	ʋ ɪ l - - ( - )	60	
+217	Dutch	*weljōn	wil	ʋɪl	ʋ ɪ l	ʋ ɪ l - - ( - )	60	
+218	Proto-Germanic	*bergan	*bergan	bergan	b e r g a n	b e r g ( a n )	61	
+219	German	*bergan	Berg	bɛrk	b ɛ r k	b ɛ r g ( - - )	61	
+220	English	*bergan	barrow	bærəʊ	b æ r əʊ	b æ r əʊ ( - - )	61	
+221	Dutch	*bergan	berg	bɛrx	b ɛ r x	b ɛ r x ( - - )	61	
+222	Proto-Germanic	*bōguz	*bōguz	boːguz	b oː g u z	b oː g ( u z )	62	
+223	German	*bōguz	Bug	buːk	b uː k	b uː g ( - - )	62	
+224	English	*bōguz	bough	baʊ	b aʊ	b aʊ - ( - - )	62	
+225	Proto-Germanic	*θrejez	*θrejez	θrejez	θ r e j e z	θ r e j e z	63	
+226	German	*θrejez	drei	drai	d r ai	d r ai - - -	63	
+227	English	*θrejez	three	θriː	θ r iː	θ r iː - - -	63	
+228	Dutch	*θrejez	drie	driː	d r iː	d r iː - - -	63	
+229	Proto-Germanic	*sīdōn	*sīdōn	siːdoːn	s iː d oː n	s iː d oː ( n )	64	
+230	German	*sīdōn	Seite	zaitə	z ai t ə	z ai t ə ( - )	64	
+231	English	*sīdōn	side	saɪd	s aɪ d	s aɪ d - ( - )	64	
+232	Proto-Germanic	*wurdan	*wurdan	wurdan	w u r d a n	w u r d ( a n )	65	
+233	German	*wurdan	Wort	vɔrt	v ɔ r t	v ɔ r t ( - - )	65	
+234	English	*wurdan	word	ʋɜːd	ʋ ɜː d	ʋ ɜː - d ( - - )	65	
+235	Dutch	*wurdan	woord	ʋoːrt	ʋ oː r t	ʋ oː r t ( - - )	65	
+236	Proto-Germanic	*mēlan	*mēlan	meːlan	m eː l a n	m eː l ( a n )	66	
+237	German	*mēlan	Mal	maːl	m aː l	m aː l ( - - )	66	
+238	English	*mēlan	meal	miːl	m iː l	m iː l ( - - )	66	
+239	Dutch	*mēlan	maal	maːl	m aː l	m aː l ( - - )	66	
+240	Proto-Germanic	*grīpanan	*grīpanan	griːpanan	g r iː p a n a n	g r iː p a n ( a n )	67	
+241	German	*grīpanan	greifen	ɡraifən	g r ai f ə n	g r ai f ə n ( - - )	67	
+242	English	*grīpanan	gripe	ɡraɪp	g r aɪ p	g r aɪ p - - ( - - )	67	
+243	Dutch	*grīpanan	grijpen	xrɛɪpə	x r ɛɪ p ə	x r ɛɪ p ə - ( - - )	67	
+244	Proto-Germanic	*xwerbilaz	*xwerbilaz	xwerbilaz	x w e r b i l a z	x w e r b i l ( a z )	68	
+245	German	*xwerbilaz	Wirbel	vɪrbəl	v ɪ r b ə l	- v ɪ r b ə l ( - - )	68	
+246	Dutch	*xwerbilaz	wervel	ʋɛrvəl	ʋ ɛ r v ə l	- ʋ ɛ r v ə l ( - - )	68	
+247	Proto-Germanic	*fallanan	*fallanan	fallanan	f a ll a n a n	f a ll a n ( a n )	69	
+248	German	*fallanan	fallen	falən	f a l ə n	f a l ə n ( - - )	69	
+249	English	*fallanan	fall	fɔːl	f ɔː l	f ɔː l - - ( - - )	69	
+250	Dutch	*fallanan	vallen	vɑlə	v ɑ l ə	v ɑ l ə - ( - - )	69	
+251	Proto-Germanic	*xaubudan	*xaubudan	xaubudan	x au b u d a n	x au b ( u ) d ( a n )	70	
+252	German	*xaubudan	Haupt	haupt	h au p t	h au p ( - ) t ( - - )	70	
+253	English	*xaubudan	head	hɛd	h ɛ d	h ɛ - ( - ) d ( - - )	70	
+254	Dutch	*xaubudan	hoofd	hoːft	h oː f t	h oː f ( - ) t ( - - )	70	
+255	Proto-Germanic	*laiθaz	*laiθaz	laiθaz	l ai θ a z	l ai θ ( a z )	71	
+256	German	*laiθaz	Leid	lait	l ai t	l ai d ( - - )	71	
+257	English	*laiθaz	loath	ləʊθ	l əʊ θ	l əʊ θ ( - - )	71	
+258	Dutch	*laiθaz	leed	leːt	l eː t	l eː t ( - - )	71	
+259	Proto-Germanic	*bazjan	*bazjan	bazjan	b a z j a n	b a z j ( a n )	72	
+260	German	*bazjan	Beere	beːrə	b eː r ə	b eː r - ( ə - )	72	
+261	English	*bazjan	berry	bɛrɪ	b ɛ r ɪ	b ɛ r - ( ɪ - )	72	
+262	Dutch	*bazjan	bes	bɛs	b ɛ s	b ɛ s - ( - - )	72	
+263	Proto-Germanic	*laubjanan	*laubjanan	laubjanan	l au b j a n a n	( - - ) l au b j a n ( a n )	73	
+264	German	*laubjanan	glauben	ɡlaubən	g l au b ə n	( g - ) l au b - ə n ( - - )	73	
+265	English	*laubjanan	believe	bɪliːv	b ɪ l iː v	( b ɪ ) l iː v - - - ( - - )	73	
+266	Dutch	*laubjanan	geloven	xəloːvə	x ə l oː v ə	( x ə ) l oː v - ə - ( - - )	73	
+267	Proto-Germanic	*leuθan	*leuθan	leuθan	l eu θ a n	l eu θ ( a n )	74	
+268	German	*leuθan	Lied	liːt	l iː t	l iː d ( - - )	74	
+269	Dutch	*leuθan	lied	liːt	l iː t	l iː t ( - - )	74	
+270	Proto-Germanic	*steuran	*steuran	steuran	s t eu r a n	s t eu - r ( a n )	75	
+271	German	*steuran	Steuer	ʃtɔyər	ʃ t ɔy ə r	ʃ t ɔy ə r ( - - )	75	
+272	Dutch	*steuran	stuur	styːr	s t yː r	s t yː - r ( - - )	75	
+273	Proto-Germanic	*wentruz	*wentruz	wentruz	w e n t r u z	w e n t - r ( u z )	76	
+274	German	*wentruz	Winter	vɪntər	v ɪ n t ə r	v ɪ n t ə r ( - - )	76	
+275	English	*wentruz	winter	ʋɪntər	ʋ ɪ n t ə r	ʋ ɪ n t ə r ( - - )	76	
+276	Dutch	*wentruz	winter	ʋɪntər	ʋ ɪ n t ə r	ʋ ɪ n t ə r ( - - )	76	
+277	Proto-Germanic	*skalkaz	*skalkaz	skalkaz	s k a l k a z	s k a l k ( a z )	77	
+278	German	*skalkaz	Schalk	ʃalk	ʃ a l k	ʃ - a l k ( - - )	77	
+279	Dutch	*skalkaz	schalk	sxɑlk	s x ɑ l k	s x ɑ l k ( - - )	77	
+280	Proto-Germanic	*malanan	*malanan	malanan	m a l a n a n	m a l a n ( a n )	78	
+281	German	*malanan	mahlen	maːlən	m aː l ə n	m aː l ə n ( - - )	78	
+282	Dutch	*malanan	malen	maːlə	m aː l ə	m aː l ə - ( - - )	78	
+283	Proto-Germanic	*raisō	*raisō	raisoː	r ai s oː	r ai s oː	79	
+284	German	*raisō	Reise	raizə	r ai z ə	r ai z ə	79	
+285	Dutch	*raisō	reis	rɛɪs	r ɛɪ s	r ɛɪ s -	79	
+286	Proto-Germanic	*rausan	*rausan	rausan	r au s a n	r au s ( a n )	80	
+287	German	*rausan	Rohr	roːr	r oː r	r oː r ( - - )	80	
+288	Dutch	*rausan	roer	ruːr	r uː r	r uː r ( - - )	80	
+289	Proto-Germanic	*xanxistaz	*xanxistaz	xanxistaz	x a n x i s t a z	x a n x ( i ) s t ( a z )	81	
+290	German	*xanxistaz	Hengst	hɛŋst	h ɛ ŋ s t	h ɛ ŋ - ( - ) s t ( - - )	81	
+291	Dutch	*xanxistaz	hengst	hɛŋst	h ɛ ŋ s t	h ɛ ŋ - ( - ) s t ( - - )	81	
+292	Proto-Germanic	*brūdiz	*brūdiz	bruːdiz	b r uː d i z	b r uː d ( i z )	82	
+293	German	*brūdiz	Braut	braut	b r au t	b r au t ( - - )	82	
+294	English	*brūdiz	bride	braɪd	b r aɪ d	b r aɪ d ( - - )	82	
+295	Dutch	*brūdiz	bruid	brœyt	b r œy t	b r œy t ( - - )	82	
+296	Proto-Germanic	*neurōn	*neurōn	neuroːn	n eu r oː n	n eu r oː ( n )	83	
+297	German	*neurōn	Niere	niːrə	n iː r ə	n iː r ə ( - )	83	
+298	Dutch	*neurōn	nier	niːr	n iː r	n iː r - ( - )	83	
+299	Proto-Germanic	*spennanan	*spennanan	spennanan	s p e nn a n a n	s p e nn a n ( a n )	84	
+300	German	*spennanan	spinnen	ʃpɪnən	ʃ p ɪ n ə n	ʃ p ɪ n ə n ( - - )	84	
+301	English	*spennanan	spin	spɪn	s p ɪ n	s p ɪ n - - ( - - )	84	
+302	Dutch	*spennanan	spinnen	spɪnə	s p ɪ n ə	s p ɪ n ə - ( - - )	84	
+303	Proto-Germanic	*xalsaz	*xalsaz	xalsaz	x a l s a z	x a l s ( a z )	85	
+304	German	*xalsaz	Hals	hals	h a l s	h a l s ( - - )	85	
+305	Dutch	*xalsaz	hals	hɑls	h ɑ l s	h ɑ l s ( - - )	85	
+306	Proto-Germanic	*skelduz	*skelduz	skelduz	s k e l d u z	s k e l d ( u z )	86	
+307	German	*skelduz	Schild	ʃɪlt	ʃ ɪ l t	ʃ - ɪ l d ( - - )	86	BOR
+308	English	*skelduz	shield	ʃiːld	ʃ iː l d	ʃ - iː l d ( - - )	86	
+309	Dutch	*skelduz	schild	sxɪlt	s x ɪ l t	s x ɪ l t ( - - )	86	
+310	Proto-Germanic	*balluz	*balluz	balluz	b a ll u z	b a ll ( u z )	87	
+311	German	*balluz	Ball	bal	b a l	b a l ( - - )	87	
+312	English	*balluz	ball	bɔːl	b ɔː l	b ɔː l ( - - )	87	
+313	Dutch	*balluz	bal	bɑl	b ɑ l	b ɑ l ( - - )	87	
+314	Proto-Germanic	*nistan	*nistan	nistan	n i s t a n	n i s t ( a n )	88	
+315	German	*nistan	Nest	nɛst	n ɛ s t	n ɛ s t ( - - )	88	
+316	English	*nistan	nest	nɛst	n ɛ s t	n ɛ s t ( - - )	88	
+317	Dutch	*nistan	nest	nɛst	n ɛ s t	n ɛ s t ( - - )	88	
+318	Proto-Germanic	*sterbanan	*sterbanan	sterbanan	s t e r b a n a n	s t e r b a n ( a n )	89	
+319	German	*sterbanan	sterben	ʃtɛrbən	ʃ t ɛ r b ə n	ʃ t ɛ r b ə n ( - - )	89	
+320	English	*sterbanan	starve	stɑːv	s t ɑː v	s t ɑː v - - - ( - - )	89	
+321	Dutch	*sterbanan	sterven	stɛrvə	s t ɛ r v ə	s t ɛ r v ə - ( - - )	89	
+322	Proto-Germanic	*newun	*newun	newun	n e w u n	n e w u n	90	
+323	German	*newun	neun	nɔyn	n ɔy n	n ɔy - - n	90	
+324	English	*newun	nine	naɪn	n aɪ n	n aɪ - - n	90	
+325	Dutch	*newun	negen	neːɣə	n eː ɣ ə	n eː ɣ ə -	90	
+326	Proto-Germanic	*tappōn	*tappōn	tappoːn	t a pp oː n	t a pp oː ( n )	91	
+327	German	*tappōn	Zapfen	t͡sap͡fən	ts a pf ə n	ts a pf ə ( n )	91	
+328	English	*tappōn	tap	tæp	t æ p	t æ p - ( - )	91	
+329	Dutch	*tappōn	tap	tɑp	t ɑ p	t ɑ p - ( - )	91	
+330	Proto-Germanic	*salbō	*salbō	salboː	s a l b oː	s a l b oː	92	
+331	German	*salbō	Salbe	zalbə	z a l b ə	z a l b ə	92	
+332	English	*salbō	salve	sælv	s æ l v	s æ l v -	92	
+333	Dutch	*salbō	zalf	zɑlf	z ɑ l f	z ɑ l f -	92	
+334	Proto-Germanic	*xundaz	*xundaz	xundaz	x u n d a z	x u n d ( a z )	93	
+335	German	*xundaz	Hund	hʊnt	h ʊ n t	h ʊ n d ( - - )	93	
+336	English	*xundaz	hound	haʊnd	h aʊ n d	h aʊ n d ( - - )	93	
+337	Dutch	*xundaz	hond	hɔnt	h ɔ n t	h ɔ n t ( - - )	93	
+338	Proto-Germanic	*fuxsaz	*fuxsaz	fuxsaz	f u x s a z	f u x s ( a z )	94	
+339	German	*fuxsaz	Fuchs	fʊks	f ʊ k s	f ʊ k s ( - - )	94	
+340	English	*fuxsaz	fox	fɔks	f ɔ k s	f ɔ k s ( - - )	94	
+341	Dutch	*fuxsaz	vos	vɔs	v ɔ s	v ɔ - s ( - - )	94	
+342	Proto-Germanic	*xerdō	*xerdō	xerdoː	x e r d oː	x e r d oː	95	
+343	German	*xerdō	Herde	heːrdə	h eː r d ə	h eː r d ə	95	BOR
+344	English	*xerdō	herd	hɜːd	h ɜː d	h ɜː - d -	95	
+345	Proto-Germanic	*xnīgwanan	*xnīgwanan	xniːgwanan	x n iː g w a n a n	x n iː g w a n ( a n )	96	
+346	German	*xnīgwanan	neigen	naiɡən	n ai g ə n	- n ai g - ə n ( - - )	96	
+347	Dutch	*xnīgwanan	neigen	nɛɪɣə	n ɛɪ ɣ ə	- n ɛɪ ɣ - ə - ( - - )	96	
+348	Proto-Germanic	*xwōstōn	*xwōstōn	xwoːstoːn	x w oː s t oː n	x w oː s t oː ( n )	97	
+349	German	*xwōstōn	Husten	hʊstən	h ʊ s t ə n	h - ʊ s t ə ( n )	97	
+350	Dutch	*xwōstōn	hoest	huːst	h uː s t	h - uː s t - ( - )	97	
+351	Proto-Germanic	*θankaz	*θankaz	θankaz	θ a n k a z	θ a n k ( a z )	98	
+352	German	*θankaz	denken	dɛŋkən	d ɛ ŋ k ə n	d ɛ ŋ k ( ə n )	98	
+353	English	*θankaz	think	θɪŋk	θ ɪ ŋ k	θ ɪ ŋ k ( - - )	98	!
+354	Dutch	*θankaz	denken	dɛŋkə	d ɛ ŋ k ə	d ɛ ŋ k ( ə - )	98	!
+355	Proto-Germanic	*θankaz	*θankaz	θankaz	θ a n k a z	θ a n k ( a z )	328	
+356	German	*θankaz	Dank	daŋk	d a ŋ k	d a ŋ k ( - - )	328	
+357	English	*θankaz	thanks	θæŋks	θ æ ŋ k s	θ æ ŋ k ( - s )	328	!
+358	Dutch	*θankaz	dank	dɑŋk	d ɑ ŋ k	d ɑ ŋ k ( - - )	328	!
+359	Proto-Germanic	*strawjanan	*strawjanan	strawjanan	s t r a w j a n a n	s t r a w j a n ( a n )	99	
+360	German	*strawjanan	streuen	ʃtrɔyən	ʃ t r ɔy ə n	ʃ t r ɔy - - ə n ( - - )	99	
+361	English	*strawjanan	strew	struː	s t r uː	s t r uː - - - - ( - - )	99	
+362	Dutch	*strawjanan	strooien	stroːjə	s t r oː j ə	s t r oː - j ə - ( - - )	99	
+363	Proto-Germanic	*fedwōrez	*fedwōrez	fedwoːrez	f e d w oː r e z	f e ( d w oː ) r ( e z )	100	
+364	German	*fedwōrez	vier	fiːr	f iː r	f iː ( - - - ) r ( - - )	100	
+365	English	*fedwōrez	four	fɔːr	f ɔː r	f ɔː ( - - - ) r ( - - )	100	
+366	Dutch	*fedwōrez	vier	viːr	v iː r	v iː ( - - - ) r ( - - )	100	
+367	Proto-Germanic	*speru	*speru	speru	s p e r u	s p e r ( u )	101	
+368	German	*speru	Speer	ʃpeːr	ʃ p eː r	ʃ p eː r ( - )	101	
+369	English	*speru	spear	spɪər	s p ɪə r	s p ɪə r ( - )	101	
+370	Dutch	*speru	speer	speːr	s p eː r	s p eː r ( - )	101	
+371	Proto-Germanic	*laugō	*laugō	laugoː	l au g oː	l au g oː	102	
+372	German	*laugō	Lauge	lauɡə	l au g ə	l au g ə	102	
+373	English	*laugō	lye	laɪ	l aɪ	l aɪ - -	102	
+374	Dutch	*laugō	loog	loːx	l oː x	l oː x -	102	
+375	Proto-Germanic	*xunagan	*xunagan	xunagan	x u n a g a n	x u n a g ( a n )	103	
+376	German	*xunagan	Honig	hoːnɪx	h oː n ɪ x	h oː n ɪ x ( - - )	103	
+377	English	*xunagan	honey	hʌnɪ	h ʌ n ɪ	h ʌ n ɪ - ( - - )	103	
+378	Dutch	*xunagan	honing	hoːnɪŋ	h oː n ɪ ŋ	h oː n ɪ - ( - ŋ )	103	
+379	Proto-Germanic	*medjaz	*medjaz	medjaz	m e d j a z	m e d j a z	104	
+380	German	*medjaz	Mitte	mɪtə	m ɪ t ə	m ɪ t - ə -	104	
+381	Dutch	*medjaz	midden	mɪdə	m ɪ d ə	m ɪ d - ə -	104	
+382	Proto-Germanic	*burōjanan	*burōjanan	buroːjanan	b u r oː j a n a n	b u r ( oː j ) a n ( a n )	105	
+383	German	*burōjanan	bohren	boːrən	b oː r ə n	b oː r ( - - ) ə n ( - - )	105	
+384	English	*burōjanan	bore	bɔːr	b ɔː r	b ɔː r ( - - ) - - ( - - )	105	
+385	Dutch	*burōjanan	boren	boːrə	b oː r ə	b oː r ( - - ) ə - ( - - )	105	
+386	Proto-Germanic	*xagjaz	*xagjaz	xagjaz	x a g j a z	x a g j a z	106	
+387	German	*xagjaz	Hecke	hɛkə	h ɛ k ə	h ɛ k - ə -	106	
+388	English	*xagjaz	hedge	hɛʤ	h ɛ dʒ	h ɛ dʒ - - -	106	
+389	Dutch	*xagjaz	heg	hɛx	h ɛ x	h ɛ x - - -	106	
+390	Proto-Germanic	*burdiz	*burdiz	burdiz	b u r d i z	( - - ) b u r d ( i z )	107	
+391	German	*burdiz	Geburt	ɡəbuːrt	g ə b uː r t	( g ə ) b uː r t ( - - )	107	
+392	English	*burdiz	birth	bɜːθ	b ɜː θ	( - - ) b ɜː - θ ( - - )	107	
+393	Dutch	*burdiz	geboorte	xəboːrtə	x ə b oː r t ə	( x ə ) b oː r t ( ə - )	107	
+394	Proto-Germanic	*xanduz	*xanduz	xanduz	x a n d u z	x a n d u z	108	
+395	German	*xanduz	Hand	hant	h a n t	h a n d - -	108	
+396	English	*xanduz	hand	hænd	h æ n d	h æ n d - -	108	
+397	Dutch	*xanduz	hand	hɑnt	h ɑ n t	h ɑ n t - -	108	
+398	Proto-Germanic	*draumaz	*draumaz	draumaz	d r au m a z	d r au m ( a z )	109	
+399	German	*draumaz	Traum	traum	t r au m	t r au m ( - - )	109	
+400	English	*draumaz	dream	driːm	d r iː m	d r iː m ( - - )	109	
+401	Dutch	*draumaz	droom	droːm	d r oː m	d r oː m ( - - )	109	
+402	Proto-Germanic	*wēgiz	*wēgiz	weːgiz	w eː g i z	w eː g i ( z )	110	
+403	German	*wēgiz	Waage	vaːɡə	v aː g ə	v aː g ə ( - )	110	
+404	Dutch	*wēgiz	waag	ʋaːx	ʋ aː x	ʋ aː x - ( - )	110	
+405	Proto-Germanic	*laθōjanan	*laθōjanan	laθoːjanan	l a θ oː j a n a n	l a θ oː j a n ( a n )	111	
+406	German	*laθōjanan	laden	laːdən	l aː d ə n	l aː d ə - - n ( - - )	111	
+407	English	*laθōjanan	lade	leɪd	l eɪ d	l eɪ d - - - - ( - - )	111	
+408	Dutch	*laθōjanan	laden	laːdə	l aː d ə	l aː d ə - - - ( - - )	111	
+409	Proto-Germanic	*deuzan	*deuzan	deuzan	d eu z a n	d eu z ( a n )	112	
+410	German	*deuzan	Tier	tiːr	t iː r	t iː r ( - - )	112	
+411	English	*deuzan	deer	dɪər	d ɪə r	d ɪə r ( - - )	112	
+412	Dutch	*deuzan	dier	diːr	d iː r	d iː r ( - - )	112	
+413	Proto-Germanic	*walaz	*walaz	walaz	w a l a z	w a l ( a z )	113	
+414	German	*walaz	Wal	vaːl	v aː l	v aː l ( - - )	113	
+415	English	*walaz	whale	ʋeɪl	ʋ eɪ l	ʋ eɪ l ( - - )	113	
+416	Dutch	*walaz	wal	ʋɑl	ʋ ɑ l	ʋ ɑ l ( - - )	113	
+417	Proto-Germanic	*spēnuz	*spēnuz	speːnuz	s p eː n u z	s p eː n ( u z )	114	
+418	German	*spēnuz	Span	ʃpaːn	ʃ p aː n	ʃ p aː n ( - - )	114	
+419	English	*spēnuz	spoon	spuːn	s p uː n	s p uː n ( - - )	114	
+420	Dutch	*spēnuz	spaan	spaːn	s p aː n	s p aː n ( - - )	114	
+421	Proto-Germanic	*ēdro	*ēdro	eːdro	eː d r o	eː d - r ( o )	115	
+422	German	*ēdro	Ader	aːdər	aː d ə r	aː d ə r ( - )	115	IRR
+423	Dutch	*ēdro	ader	aːdər	aː d ə r	aː d ə r ( - )	115	
+424	Proto-Germanic	*kernōn	*kernōn	kernoːn	k e r n oː n	k e r n oː n	116	
+425	German	*kernōn	Kern	kɛrn	k ɛ r n	k ɛ r - - n	116	
+426	Dutch	*kernōn	kern	kɛrn	k ɛ r n	k ɛ r - - n	116	
+427	Proto-Germanic	*θūs-undī	*θūs-undī	θuːs+undiː	θ uː s + u n d iː	θ uː s u n d ( iː )	117	
+428	German	*θūs-undī	tausend	tauzənt	t au z ə n t	t au z ə n t ( - )	117	
+429	English	*θūs-undī	thousand	θaʊzṇd	θ aʊ z ə n d	θ aʊ z ə n d ( - )	117	
+430	Dutch	*θūs-undī	duizend	dœyzənt	d œy z ə n t	d œy z ə n t ( - )	117	
+431	Proto-Germanic	*nablōn	*nablōn	nabloːn	n a b l oː n	n a b - l ( oː n )	118	
+432	German	*nablōn	Nabel	naːbəl	n aː b ə l	n aː b ə l ( - - )	118	
+433	English	*nablōn	navel	neɪvḷ	n eɪ v ə l	n eɪ v ə l ( - - )	118	
+434	Dutch	*nablōn	navel	naːvəl	n aː v ə l	n aː v ə l ( - - )	118	
+435	Proto-Germanic	*xultan	*xultan	xultan	x u l t a n	x u l t ( a n )	119	
+436	German	*xultan	Holz	hɔlt͡s	h ɔ l ts	h ɔ l ts ( - - )	119	
+437	Dutch	*xultan	hout	hɑut	h ɑu t	h ɑu - t ( - - )	119	
+438	Proto-Germanic	*xamaraz	*xamaraz	xamaraz	x a m a r a z	x a m a r ( a z )	120	
+439	German	*xamaraz	Hammer	hamər	h a m ə r	h a m ə r ( - - )	120	
+440	English	*xamaraz	hammer	hæmər	h æ m ə r	h æ m ə r ( - - )	120	
+441	Dutch	*xamaraz	hamer	haːmər	h aː m ə r	h aː m ə r ( - - )	120	
+442	Proto-Germanic	*stīganan	*stīganan	stiːganan	s t iː g a n a n	s t iː g a n ( a n )	121	
+443	German	*stīganan	steigen	ʃtaiɡən	ʃ t ai g ə n	ʃ t ai g ə n ( - - )	121	
+444	Dutch	*stīganan	stijgen	stɛɪɣə	s t ɛɪ ɣ ə	s t ɛɪ ɣ ə - ( - - )	121	
+445	Proto-Germanic	*falθanan	*falθanan	falθanan	f a l θ a n a n	f a l θ a n ( a n )	122	
+446	German	*falθanan	falten	faltən	f a l t ə n	f a l t ə n ( - - )	122	
+447	English	*falθanan	fold	fəʊld	f əʊ l d	f əʊ l d - - ( - - )	122	
+448	Dutch	*falθanan	vouw	vɑuʋ	v ɑu ʋ	v ɑu ʋ - ə - ( - - )	122	NC
+449	Proto-Germanic	*steltjōn	*steltjōn	steltjoːn	s t e l t j oː n	s t e l t j oː ( n )	123	
+450	German	*steltjōn	Stelze	ʃtɛlt͡sə	ʃ t ɛ l ts ə	ʃ t ɛ l ts - ə ( - )	123	
+451	English	*steltjōn	stilt	stɪlt	s t ɪ l t	s t ɪ l t - - ( - )	123	
+452	Dutch	*steltjōn	stelt	stɛlt	s t ɛ l t	s t ɛ l t - - ( - )	123	
+453	Proto-Germanic	*xarmaz	*xarmaz	xarmaz	x a r m a z	x a r m ( a z )	124	
+454	German	*xarmaz	Harm	harm	h a r m	h a r m ( - - )	124	
+455	English	*xarmaz	harm	hɑːm	h ɑː m	h ɑː - m ( - - )	124	
+456	Proto-Germanic	*frustan	*frustan	frustan	f r u s t a n	f r u - s t ( a n )	125	
+457	German	*frustan	Frost	frɔst	f r ɔ s t	f r ɔ - s t ( - - )	125	
+458	English	*frustan	frost	frɔst	f r ɔ s t	f r ɔ - s t ( - - )	125	
+459	Dutch	*frustan	vorst	vɔrst	v ɔ r s t	v - ɔ r s t ( - - )	125	
+460	Proto-Germanic	*stelanan	*stelanan	stelanan	s t e l a n a n	s t e l a n ( a n )	126	
+461	German	*stelanan	stehlen	ʃteːlən	ʃ t eː l ə n	ʃ t eː l ə n ( - - )	126	
+462	English	*stelanan	steal	stiːl	s t iː l	s t iː l - - ( - - )	126	
+463	Dutch	*stelanan	stelen	steːlə	s t eː l ə	s t eː l ə - ( - - )	126	
+464	Proto-Germanic	*farnan	*farnan	farnan	f a r n a n	f a r n ( a n )	127	
+465	German	*farnan	Farn	farn	f a r n	f a r n ( - - )	127	
+466	English	*farnan	fern	fɜːn	f ɜː n	f ɜː - n ( - - )	127	
+467	Dutch	*farnan	varen	vaːrə	v aː r ə	v aː r - ( ə - )	127	
+468	Proto-Germanic	*natjan	*natjan	natjan	n a t j a n	n a t j ( a n )	128	
+469	German	*natjan	Netz	nɛt͡s	n ɛ ts	n ɛ ts - ( - - )	128	
+470	English	*natjan	net	nɛt	n ɛ t	n ɛ t - ( - - )	128	
+471	Dutch	*natjan	net	nɛt	n ɛ t	n ɛ t - ( - - )	128	
+472	Proto-Germanic	*barwōn	*barwōn	barwoːn	b a r w oː n	b a r ( w oː n )	129	
+473	German	*barwōn	Bahre	baːrə	b aː r ə	b aː r ( - ə - )	129	
+474	English	*barwōn	bier	bɪər	b ɪə r	b ɪə r ( - - - )	129	
+475	Dutch	*barwōn	baar	baːr	b aː r	b aː r ( - - - )	129	
+476	Proto-Germanic	*dampaz	*dampaz	dampaz	d a m p a z	d a m p ( a z )	130	
+477	German	*dampaz	Dampf	damp͡f	d a m pf	d a m pf ( - - )	130	BOR
+478	Dutch	*dampaz	damp	dɑmp	d ɑ m p	d ɑ m p ( - - )	130	
+479	Proto-Germanic	*xelpō	*xelpō	xelpoː	x e l p oː	x e l p oː	131	
+480	German	*xelpō	Hilfe	hɪlfə	h ɪ l f ə	h ɪ l f ə	131	
+481	English	*xelpō	help	hɛlp	h ɛ l p	h ɛ l p -	131	
+482	Dutch	*xelpō	hulp	hʉlp	h ʉ l p	h ʉ l p -	131	
+483	Proto-Germanic	*naudiz	*naudiz	naudiz	n au d i z	n au d ( i z )	132	
+484	German	*naudiz	Not	noːt	n oː t	n oː t ( - - )	132	
+485	English	*naudiz	need	niːd	n iː d	n iː d ( - - )	132	
+486	Dutch	*naudiz	nood	noːt	n oː t	n oː t ( - - )	132	
+487	Proto-Germanic	*xendjō	*xendjō	xendjoː	x e n d j oː	x e n d j oː	133	
+488	German	*xendjō	Hinde	hɪndə	h ɪ n d ə	h ɪ n d - ə	133	
+489	English	*xendjō	hind	haɪnd	h aɪ n d	h aɪ n d - -	133	
+490	Dutch	*xendjō	hinde	hɪndə	h ɪ n d ə	h ɪ n d - ə	133	
+491	Proto-Germanic	*xaslaz	*xaslaz	xaslaz	x a s l a z	x a s - l ( a z )	134	
+492	German	*xaslaz	Hasel	haːzəl	h aː z ə l	h aː z ə l ( - - )	134	
+493	English	*xaslaz	hazel	heɪzḷ	h eɪ z ə l	h eɪ z ə l ( - - )	134	
+494	Dutch	*xaslaz	hazelaar	haːzəlaːr	h aː z ə l aː r	h aː z ə l ( aː r )	134	
+495	Proto-Germanic	*strangiz	*strangiz	strangiz	s t r a n g i z	s t r a n g ( i z )	135	
+496	German	*strangiz	Strang	ʃtraŋ	ʃ t r a ŋ	ʃ t r a ŋ - ( - - )	135	
+497	English	*strangiz	string	strɪŋ	s t r ɪ ŋ	s t r ɪ ŋ - ( - - )	135	
+498	Dutch	*strangiz	streng	strɛŋ	s t r ɛ ŋ	s t r ɛ ŋ - ( - - )	135	
+499	Proto-Germanic	*rūman	*rūman	ruːman	r uː m a n	r uː m ( a n )	136	
+500	German	*rūman	Raum	raum	r au m	r au m ( - - )	136	
+501	English	*rūman	room	ruːm	r uː m	r uː m ( - - )	136	
+502	Dutch	*rūman	ruim	rœym	r œy m	r œy m ( - - )	136	
+503	Proto-Germanic	*brekanan	*brekanan	brekanan	b r e k a n a n	b r e k a n ( a n )	137	
+504	German	*brekanan	brechen	brɛxən	b r ɛ x ə n	b r ɛ x ə n ( - - )	137	
+505	English	*brekanan	break	breɪk	b r eɪ k	b r eɪ k - - ( - - )	137	
+506	Dutch	*brekanan	breken	breːkə	b r eː k ə	b r eː k ə - ( - - )	137	
+507	Proto-Germanic	*brekanan	*brekanan	brekanan	b r o k a n	b r o k ( a n )	415	
+508	German	*brekanan	Bruch	brʊx	b r ʊ x	b r ʊ x ( - - )	415	
+509	English	*brekanan	breeches	brʊk	b r ʊ k	b r ʊ k ( - - )	415	
+510	Dutch	*brekanan	broek	bruːk	b r uː k	b r uː k ( - - )	415	
+511	Proto-Germanic	*wokraz	*wokraz	wokraz	w o k r a z	w o k - r ( a z )	138	
+512	German	*wokraz	Wucher	vuːxər	v uː x ə r	v uː x ə r ( - - )	138	
+513	Dutch	*wokraz	woeker	ʋuːkər	ʋ uː k ə r	ʋ uː k ə r ( - - )	138	
+514	Proto-Germanic	*utraz	*utraz	utraz	u t r a z	u t - r ( a z )	139	
+515	German	*utraz	Otter	ɔtər	ɔ t ə r	ɔ t ə r ( - - )	139	
+516	English	*utraz	adder	ædər	æ d ə r	æ d ə r ( - - )	139	
+517	Dutch	*utraz	adder	ɑdər	ɑ d ə r	ɑ d ə r ( - - )	139	
+518	Proto-Germanic	*saumaz	*saumaz	saumaz	s au m a z	s au m ( a z )	140	
+519	German	*saumaz	Saum	zaum	z au m	z au m ( - - )	140	
+520	English	*saumaz	seam	siːm	s iː m	s iː m ( - - )	140	
+521	Dutch	*saumaz	zoom	zoːm	z oː m	z oː m ( - - )	140	
+522	Proto-Germanic	*līkan	*līkan	liːkan	l iː k a n	l iː k a ( n )	141	
+523	German	*līkan	Leiche	laixə	l ai x ə	l ai x ə ( - )	141	
+524	Dutch	*līkan	lijk	lɛɪk	l ɛɪ k	l ɛɪ k - ( - )	141	
+525	Proto-Germanic	*bannan	*bannan	bannan	b a nn a n	b a nn ( a n )	142	
+526	German	*bannan	Bann	ban	b a n	b a n ( - - )	142	
+527	English	*bannan	ban	bæn	b æ n	b æ n ( - - )	142	
+528	Dutch	*bannan	ban	bɑn	b ɑ n	b ɑ n ( - - )	142	
+529	Proto-Germanic	*spangō	*spangō	spangoː	s p a n g oː	s p a n g oː	143	
+530	German	*spangō	Spange	ʃpaŋə	ʃ p a ŋ ə	ʃ p a ŋ - ə	143	
+531	Dutch	*spangō	spang	spɑŋ	s p ɑ ŋ	s p ɑ ŋ - -	143	
+532	Proto-Germanic	*leuxtjanan	*leuxtjanan	leuxtjanan	l eu x t j a n a n	l eu x t j a n ( a n )	144	
+533	German	*leuxtjanan	leuchten	lɔyxtən	l ɔy x t ə n	l ɔy x t - ə n ( - - )	144	
+534	English	*leuxtjanan	light	laɪt	l aɪ t	l aɪ - t - - - ( - - )	144	
+535	Dutch	*leuxtjanan	lichten	lɪxtə	l ɪ x t ə	l ɪ x t - ə - ( - - )	144	
+536	Proto-Germanic	*xandlōjanan	*xandlōjanan	xandloːjanan	x a n d l oː j a n a n	x a n d - l ( oː j a n a n )	145	
+537	German	*xandlōjanan	handeln	handəln	h a n d ə l n	h a n d ə l ( - n - - - - )	145	
+538	English	*xandlōjanan	handle	hændḷ	h æ n d ə l	h æ n d ə l ( - - - - - - )	145	
+539	Dutch	*xandlōjanan	handelen	hɑndələ	h ɑ n d ə l ə	h ɑ n d ə l ( ə - - - - - )	145	
+540	Proto-Germanic	*laistjanan	*laistjanan	laistjanan	l ai s t j a n a n	l ai s t j a n ( a n )	146	
+541	German	*laistjanan	leisten	laistən	l ai s t ə n	l ai s t - ə n ( - - )	146	
+542	English	*laistjanan	last	lɑːst	l ɑː s t	l ɑː s t - - - ( - - )	146	
+543	Proto-Germanic	*knuppaz	*knuppaz	knuppaz	k n u pp a z	k n u pp ( a z )	147	
+544	German	*knuppaz	Knopf	knɔp͡f	k n ɔ pf	k n ɔ pf ( - - )	147	
+545	English	*knuppaz	knob	nɔb	n ɔ b	- n ɔ b ( - - )	147	
+546	Dutch	*knuppaz	knoop	knoːp	k n oː p	k n oː p ( - - )	147	
+547	Proto-Germanic	*stēnan	*stēnan	steːnan	s t eː n a n	s t eː - n ( a n )	148	
+548	German	*stēnan	stehen	ʃteːən	ʃ t eː ə n	ʃ t eː ə n ( - - )	148	
+549	Dutch	*stēnan	staan	staːn	s t aː n	s t aː - n ( - - )	148	
+550	Proto-Germanic	*beudanan	*beudanan	beudanan	b eu d a n a n	b eu d a n ( a n )	149	
+551	German	*beudanan	bieten	biːtən	b iː t ə n	b iː t ə n ( - - )	149	
+552	English	*beudanan	bid	bɪd	b ɪ d	b ɪ d - - ( - - )	149	
+553	Dutch	*beudanan	bieden	biːdə	b iː d ə	b iː d ə - ( - - )	149	
+554	Proto-Germanic	*θunraz	*θunraz	θunraz	θ u n r a z	θ u n - - r ( a z )	150	
+555	German	*θunraz	Donner	dɔnər	d ɔ n ə r	d ɔ n - ə r ( - - )	150	
+556	English	*θunraz	thunder	θʌndər	θ ʌ n d ə r	θ ʌ n d ə r ( - - )	150	
+557	Dutch	*θunraz	donder	dɔndər	d ɔ n d ə r	d ɔ n d ə r ( - - )	150	
+558	Proto-Germanic	*skuman	*skuman	skuman	s k u m a n	s k u m ( a n )	151	
+559	German	*skuman	Schaum	ʃaum	ʃ au m	ʃ - au m ( - - )	151	
+560	Dutch	*skuman	schuim	sxœym	s x œy m	s x œy m ( - - )	151	
+561	Proto-Germanic	*klembanan	*klembanan	klembanan	k l e m b a n a n	k l e m b a n a n	152	
+562	German	*klembanan	klimmen	klɪmən	k l ɪ m ə n	k l ɪ m - - - ə n	152	
+563	English	*klembanan	climb	klaɪm	k l aɪ m	k l aɪ m - - - - -	152	
+564	Dutch	*klembanan	klimmen	klɪmə	k l ɪ m ə	k l ɪ m - - - ə -	152	
+565	Proto-Germanic	*rastō	*rastō	rastoː	r a s t oː	r a s t ( oː )	153	
+566	German	*rastō	Rast	rast	r a s t	r a s t ( - )	153	
+567	English	*rastō	rest	rɛst	r ɛ s t	r ɛ s t ( - )	153	
+568	Proto-Germanic	*garnan	*garnan	garnan	g a r n a n	g a r n ( a n )	154	
+569	German	*garnan	Garn	ɡarn	g a r n	g a r n ( - - )	154	
+570	English	*garnan	yarn	jɑːn	j ɑː n	j ɑː - n ( - - )	154	
+571	Dutch	*garnan	garen	xaːrə	x aː r ə	x aː r - ( ə - )	154	
+572	Proto-Germanic	*xaiθiz	*xaiθiz	xaiθiz	x ai θ i z	x ai θ i ( z )	155	
+573	German	*xaiθiz	Heide	haidə	h ai d ə	h ai d ə ( - )	155	
+574	English	*xaiθiz	heath	hiːθ	h iː θ	h iː θ - ( - )	155	
+575	Proto-Germanic	*spannō	*spannō	spannoː	s p a nn oː	s p a nn oː	156	
+576	German	*spannō	Spanne	ʃpanə	ʃ p a n ə	ʃ p a n ə	156	
+577	English	*spannō	span	spæn	s p æ n	s p æ n -	156	
+578	Proto-Germanic	*natilōn	*natilōn	natiloːn	n a t i l oː n	n a t i l ( oː n )	157	
+579	German	*natilōn	Nessel	nɛsəl	n ɛ s ə l	n ɛ s ə l ( - - )	157	
+580	English	*natilōn	nettle	nɛtḷ	n ɛ t ə l	n ɛ t ə l ( - - )	157	
+581	Proto-Germanic	*xenkōjanan	*xenkōjanan	xenkoːjanan	x e n k oː j a n a n	x e n k oː j a n ( a n )	158	
+582	German	*xenkōjanan	hinken	hɪŋkən	h ɪ ŋ k ə n	h ɪ ŋ k - - ə n ( - - )	158	
+583	Dutch	*xenkōjanan	hinken	hɪŋkə	h ɪ ŋ k ə	h ɪ ŋ k - - ə - ( - - )	158	
+584	Proto-Germanic	*dēdiz	*dēdiz	deːdiz	d eː d i z	d eː d ( i z )	159	
+585	German	*dēdiz	Tat	taːt	t aː t	t aː t ( - - )	159	
+586	English	*dēdiz	deed	diːd	d iː d	d iː d ( - - )	159	
+587	Dutch	*dēdiz	daad	daːt	d aː t	d aː t ( - - )	159	
+588	Proto-Germanic	*bendanan	*bendanan	bendanan	b e n d a n a n	b e n d a n ( a n )	160	
+589	German	*bendanan	binden	bɪndən	b ɪ n d ə n	b ɪ n d ə n ( - - )	160	
+590	English	*bendanan	bind	baɪnd	b aɪ n d	b aɪ n d - - ( - - )	160	
+591	Dutch	*bendanan	binden	bɪndə	b ɪ n d ə	b ɪ n d ə - ( - - )	160	
+592	Proto-Germanic	*θenxslō	*θenxslō	θenxsloː	θ e n x s l oː	θ e ( n ) x s - l ( oː )	161	
+593	German	*θenxslō	Deichsel	daiksəl	d ai k s ə l	d ai ( - ) k s ə l ( - )	161	
+594	Dutch	*θenxslō	dissel	dɪsəl	d ɪ s ə l	d ɪ ( - ) - s ə l ( - )	161	BOR
+595	Proto-Germanic	*skuldrō	*skuldrō	skuldroː	s k u l d r oː	s k u l d - r ( oː )	162	
+596	German	*skuldrō	Schulter	ʃʊltər	ʃ ʊ l t ə r	ʃ - ʊ l t ə r ( - )	162	
+597	English	*skuldrō	shoulder	ʃəʊldər	ʃ əʊ l d ə r	ʃ - əʊ l d ə r ( - )	162	
+598	Dutch	*skuldrō	schouder	sxɑudər	s x ɑu d ə r	s x ɑu - d ə r ( - )	162	
+599	Proto-Germanic	*sturkaz	*sturkaz	sturkaz	s t u r k a z	s t u r k ( a z )	163	
+600	German	*sturkaz	Storch	ʃtɔrx	ʃ t ɔ r x	ʃ t ɔ r x ( - - )	163	
+601	English	*sturkaz	stork	stɔːk	s t ɔː k	s t ɔː - k ( - - )	163	
+602	Proto-Germanic	*xuzdan	*xuzdan	xuzdan	x u z d a n	x u z d ( a n )	164	
+603	German	*xuzdan	Hort	hɔrt	h ɔ r t	h ɔ r t ( - - )	164	
+604	English	*xuzdan	hoard	hɔːd	h ɔː d	h ɔː - d ( - - )	164	
+605	Proto-Germanic	*kwalō	*kwalō	kwaloː	k w a l oː	k w a l ( oː )	165	
+606	German	*kwalō	Qual	kvaːl	k v aː l	k v aː l ( - )	165	
+607	Dutch	*kwalō	kwaal	kʋaːl	k ʋ aː l	k ʋ aː l ( - )	165	
+608	Proto-Germanic	*end	*end	end	e n d	- e n ( d )	166	
+609	German	*end	ein	ain	ai n	- ai n ( - )	166	
+610	English	*end	one	ʋʌn	ʋ ʌ n	ʋ ʌ n ( - )	166	
+611	Dutch	*end	een	eːn	eː n	- eː n ( - )	166	
+612	Proto-Germanic	*stōdan	*stōdan	stoːdan	s t oː d a n	s t oː d a ( n )	167	
+613	German	*stōdan	Stute	ʃtuːtə	ʃ t uː t ə	ʃ t uː t ə ( - )	167	
+614	English	*stōdan	stud	stʌd	s t ʌ d	s t ʌ d - ( - )	167	
+615	Proto-Germanic	*raθan	*raθan	raθan	r a θ a n	r a θ ( a n )	168	
+616	German	*raθan	Rad	raːt	r aː t	r aː d ( - - )	168	
+617	Dutch	*raθan	rad	rɑt	r ɑ t	r ɑ t ( - - )	168	
+618	Proto-Germanic	*θurpan	*θurpan	θurpan	θ u r p a n	θ u r p ( a n )	169	
+619	German	*θurpan	Dorf	dɔrf	d ɔ r f	d ɔ r f ( - - )	169	
+620	Dutch	*θurpan	dorp	dɔrp	d ɔ r p	d ɔ r p ( - - )	169	
+621	Proto-Germanic	*libēnan	*libēnan	libeːnan	l i b eː n a n	l i b eː n ( a n )	170	
+622	German	*libēnan	leben	leːbən	l eː b ə n	l eː b ə n ( - - )	170	
+623	English	*libēnan	live	laɪv	l aɪ v	l aɪ v - - ( - - )	170	
+624	Dutch	*libēnan	leven	leːvə	l eː v ə	l eː v ə - ( - - )	170	
+625	Proto-Germanic	*geftiz	*geftiz	geftiz	g e f t i z	g e f t ( i z )	171	
+626	German	*geftiz	Gift	ɡɪft	g ɪ f t	g ɪ f t ( - - )	171	
+627	English	*geftiz	gift	ɡɪft	g ɪ f t	g ɪ f t ( - - )	171	
+628	Dutch	*geftiz	gift	xɪft	x ɪ f t	x ɪ f t ( - - )	171	
+629	Proto-Germanic	*xurnan	*xurnan	xurnan	x u r n a n	x u r n ( a n )	172	
+630	German	*xurnan	Horn	hɔrn	h ɔ r n	h ɔ r n ( - - )	172	
+631	English	*xurnan	horn	hɔːn	h ɔː n	h ɔː - n ( - - )	172	
+632	Dutch	*xurnan	hoorn	hoːrn	h oː r n	h oː r n ( - - )	172	
+633	Proto-Germanic	*nabō	*nabō	naboː	n a b oː	n a b oː	173	
+634	German	*nabō	Nabe	naːbə	n aː b ə	n aː b ə	173	
+635	English	*nabō	nave	neɪv	n eɪ v	n eɪ v -	173	
+636	Dutch	*nabō	naaf	naːf	n aː f	n aː f -	173	
+637	Proto-Germanic	*xelmaz	*xelmaz	xelmaz	x e l m a z	x e l m ( a z )	174	
+638	German	*xelmaz	Helm	hɛlm	h ɛ l m	h ɛ l m ( - - )	174	
+639	English	*xelmaz	helm	hɛlm	h ɛ l m	h ɛ l m ( - - )	174	
+640	Dutch	*xelmaz	helm	hɛlm	h ɛ l m	h ɛ l m ( - - )	174	
+641	Proto-Germanic	*wagnaz	*wagnaz	wagnaz	w a g n a z	w a g - n ( a z )	175	
+642	German	*wagnaz	Wagen	vaːɡən	v aː g ə n	v aː g ə n ( - - )	175	
+643	English	*wagnaz	wain	ʋeɪn	ʋ eɪ n	ʋ eɪ - - n ( - - )	175	
+644	Dutch	*wagnaz	wagen	ʋaːɣə	ʋ aː ɣ ə	ʋ aː ɣ ə - ( - - )	175	
+645	Proto-Germanic	*bō	*bō	boː	b oː	b oː ( - - )	176	
+646	German	*bō	beide	baidə	b ai d ə	b ai ( d ə )	176	
+647	English	*bō	both	bəʊθ	b əʊ θ	b əʊ ( θ - )	176	
+648	Dutch	*bō	beide	bɛɪdə	b ɛɪ d ə	b ɛɪ ( d ə )	176	
+649	Proto-Germanic	*meldōn	*meldōn	meldoːn	m e l d oː n	m e l d oː ( n )	177	
+650	German	*meldōn	Melde	mɛldə	m ɛ l d ə	m ɛ l d ə ( - )	177	BOR
+651	Dutch	*meldōn	melde	mɛldə	m ɛ l d ə	m ɛ l d ə ( - )	177	
+652	Proto-Germanic	*mizdō	*mizdō	mizdoː	m i z d oː	m i z d oː	178	
+653	German	*mizdō	Miete	miːtə	m iː t ə	m iː - t ə	178	
+654	English	*mizdō	meed	miːd	m iː d	m iː - d -	178	
+655	Proto-Germanic	*θeubaz	*θeubaz	θeubaz	θ eu b a z	θ eu b ( a z )	179	
+656	German	*θeubaz	Dieb	diːp	d iː p	d iː b ( - - )	179	
+657	English	*θeubaz	thief	θiːf	θ iː f	θ iː f ( - - )	179	
+658	Dutch	*θeubaz	dief	diːf	d iː f	d iː f ( - - )	179	
+659	Proto-Germanic	*wadanan	*wadanan	wadanan	w a d a n a n	w a d a n ( a n )	180	
+660	German	*wadanan	waten	vaːtən	v aː t ə n	v aː t ə n ( - - )	180	
+661	English	*wadanan	wade	ʋeɪd	ʋ eɪ d	ʋ eɪ d - - ( - - )	180	
+662	Dutch	*wadanan	waden	ʋaːdə	ʋ aː d ə	ʋ aː d ə - ( - - )	180	
+663	Proto-Germanic	*wedran	*wedran	wedran	w e d r a n	w e d - r ( a n )	181	
+664	German	*wedran	Wetter	vɛtər	v ɛ t ə r	v ɛ t ə r ( - - )	181	
+665	English	*wedran	weather	ʋɛðər	ʋ ɛ ð ə r	ʋ ɛ ð ə r ( - - )	181	
+666	Dutch	*wedran	weder	ʋeːdər	ʋ eː d ə r	ʋ eː d ə r ( - - )	181	
+667	Proto-Germanic	*lauban	*lauban	lauban	l au b a n	l au b ( a n )	182	
+668	German	*lauban	Laub	laup	l au p	l au b ( - - )	182	
+669	English	*lauban	leaf	liːf	l iː f	l iː f ( - - )	182	
+670	Dutch	*lauban	loof	loːf	l oː f	l oː f ( - - )	182	
+671	Proto-Germanic	*melukz	*melukz	melukz	m e l u k z	m e l u k ( z )	183	
+672	German	*melukz	Milch	mɪlx	m ɪ l x	m ɪ l - x ( - )	183	
+673	English	*melukz	milk	mɪlk	m ɪ l k	m ɪ l - k ( - )	183	
+674	Dutch	*melukz	melk	mɛlk	m ɛ l k	m ɛ l - k ( - )	183	
+675	Proto-Germanic	*sturmaz	*sturmaz	sturmaz	s t u r m a z	s t u r m ( a z )	184	
+676	German	*sturmaz	Sturm	ʃtʊrm	ʃ t ʊ r m	ʃ t ʊ r m ( - - )	184	
+677	English	*sturmaz	storm	stɔːm	s t ɔː m	s t ɔː - m ( - - )	184	
+678	Dutch	*sturmaz	storm	stɔrm	s t ɔ r m	s t ɔ r m ( - - )	184	
+679	Proto-Germanic	*wēpnan	*wēpnan	weːpnan	w eː p n a n	w eː p n a n	185	
+680	German	*wēpnan	Waffe	vafə	v a f ə	v a f - ə -	185	
+681	English	*wēpnan	weapon	ʋɛpən	ʋ ɛ p ə n	ʋ ɛ p - ə n	185	
+682	Dutch	*wēpnan	wapen	ʋaːpə	ʋ aː p ə	ʋ aː p - ə -	185	
+683	Proto-Germanic	*swellanan	*swellanan	swellanan	s w e ll a n a n	s w e ll a n ( a n )	186	
+684	German	*swellanan	schwellen	ʃvɛlən	ʃ v ɛ l ə n	ʃ v ɛ l ə n ( - - )	186	
+685	English	*swellanan	swell	sʋɛl	s ʋ ɛ l	s ʋ ɛ l - - ( - - )	186	
+686	Proto-Germanic	*luban	*luban	luban	l u b a n	l u b ( a n )	187	
+687	German	*luban	Lob	loːp	l oː p	l oː b ( - - )	187	
+688	Dutch	*luban	lof	lɔf	l ɔ f	l ɔ f ( - - )	187	
+689	Proto-Germanic	*uxsōn	*uxsōn	uxsoːn	u x s oː n	u x s oː ( n )	188	
+690	German	*uxsōn	Ochse	ɔksə	ɔ k s ə	ɔ k s ə ( - )	188	
+691	English	*uxsōn	ox	ɔks	ɔ k s	ɔ k s - ( - )	188	
+692	Dutch	*uxsōn	os	ɔs	ɔ s	ɔ - s - ( - )	188	
+693	Proto-Germanic	*wainōjanan	*wainōjanan	wainoːjanan	w ai n oː j a n a n	w ai n oː j a n a n	189	
+694	German	*wainōjanan	weinen	vainən	v ai n ə n	v ai n - - ə n - -	189	
+695	English	*wainōjanan	whine	ʋaɪn	ʋ aɪ n	ʋ aɪ n - - - - - -	189	
+696	Proto-Germanic	*sunuz	*sunuz	sunuz	s u n u z	s u n ( u z )	190	
+697	German	*sunuz	Sohn	zoːn	z oː n	z oː n ( - - )	190	
+698	Dutch	*sunuz	zoon	zoːn	z oː n	z oː n ( - - )	190	
+699	Proto-Germanic	*waxsanan	*waxsanan	waxsanan	w a x s a n a n	w a x s a n ( a n )	191	
+700	German	*waxsanan	wachsen	vaksən	v a k s ə n	v a k s ə n ( - - )	191	
+701	English	*waxsanan	wax	ʋæks	ʋ æ k s	ʋ æ k s - - ( - - )	191	
+702	Dutch	*waxsanan	wassen	ʋɑsə	ʋ ɑ s ə	ʋ ɑ - s ə - ( - - )	191	
+703	Proto-Germanic	*felθuz	*felθuz	felθuz	f e l θ u z	f e l θ ( u z )	192	
+704	German	*felθuz	Feld	fɛlt	f ɛ l t	f ɛ l d ( - - )	192	
+705	English	*felθuz	field	fiːld	f iː l d	f iː l d ( - - )	192	
+706	Dutch	*felθuz	veld	vɛlt	v ɛ l t	v ɛ l t ( - - )	192	
+707	Proto-Germanic	*walθuz	*walθuz	walθuz	w a l θ u z	w a l θ ( u z )	193	
+708	German	*walθuz	Wald	valt	v a l t	v a l d ( - - )	193	
+709	English	*walθuz	wold	ʋəʊld	ʋ əʊ l d	ʋ əʊ l d ( - - )	193	
+710	Dutch	*walθuz	woud	ʋɑut	ʋ ɑu t	ʋ ɑu - t ( - - )	193	
+711	Proto-Germanic	*raukiz	*raukiz	raukiz	r au k i z	r au k ( i z )	194	
+712	German	*raukiz	Rauch	raux	r au x	r au x ( - - )	194	
+713	English	*raukiz	reek	riːk	r iː k	r iː k ( - - )	194	
+714	Dutch	*raukiz	rook	roːk	r oː k	r oː k ( - - )	194	
+715	Proto-Germanic	*ūruz	*ūruz	uːruz	uː r u z	uː - r ( u - z - )	195	
+716	German	*ūruz	Auerochse	auərɔksə	au ə r ɔ k s ə	au ə r ( ɔ k s ə )	195	
+717	Dutch	*ūruz	oeros	uːrɔs	uː r ɔ s	uː - r ( ɔ - s - )	195	
+718	Proto-Germanic	*θengaz	*θengaz	θengaz	θ e n g a z	θ e n g ( a z )	196	
+719	German	*θengaz	Ding	dɪŋ	d ɪ ŋ	d ɪ ŋ - ( - - )	196	
+720	English	*θengaz	thing	θɪŋ	θ ɪ ŋ	θ ɪ ŋ - ( - - )	196	
+721	Dutch	*θengaz	ding	dɪŋ	d ɪ ŋ	d ɪ ŋ - ( - - )	196	
+722	Proto-Germanic	*mōdaz	*mōdaz	moːdaz	m oː d a z	m oː d ( a z )	197	
+723	German	*mōdaz	Mut	muːt	m uː t	m uː t ( - - )	197	
+724	English	*mōdaz	mood	muːd	m uː d	m uː d ( - - )	197	
+725	Dutch	*mōdaz	moed	muːt	m uː t	m uː t ( - - )	197	
+726	Proto-Germanic	*skūflō	*skūflō	skuːfloː	s k uː f l oː	s k uː f - l ( oː )	198	
+727	German	*skūflō	Schaufel	ʃaufəl	ʃ au f ə l	ʃ - au f ə l ( - )	198	
+728	English	*skūflō	shovel	ʃʌvḷ	ʃ ʌ v ə l	ʃ - ʌ v ə l ( - )	198	
+729	Dutch	*skūflō	schoffel	sxɔfəl	s x ɔ f ə l	s x ɔ f ə l ( - )	198	
+730	Proto-Germanic	*segez	*segez	segez	s e g e z	s e g e ( z )	199	
+731	German	*segez	Sieg	ziːk	z iː k	z iː g ( - - )	369	
+732	Dutch	*segez	zege	zeːɣə	z eː ɣ ə	z eː ɣ ə ( - )	199	
+733	Proto-Germanic	*segez	*segez	segez	s e g e z	s e g ( e z )	369	
+734	Proto-Germanic	*randiz	*randiz	randiz	r a n d i z	r a n d ( i z )	200	
+735	German	*randiz	Rand	rant	r a n t	r a n d ( - - )	200	
+736	Dutch	*randiz	rand	rɑnt	r ɑ n t	r ɑ n t ( - - )	200	
+737	Proto-Germanic	*strakkjanan	*strakkjanan	strakkjanan	s t r a kk j a n a n	s t r a kk j a n ( a n )	201	
+738	German	*strakkjanan	strecken	ʃtrɛkən	ʃ t r ɛ k ə n	ʃ t r ɛ k - ə n ( - - )	201	
+739	English	*strakkjanan	stretch	strɛʧ	s t r ɛ tʃ	s t r ɛ tʃ - - - ( - - )	201	
+740	Dutch	*strakkjanan	strekken	strɛkə	s t r ɛ k ə	s t r ɛ k - ə - ( - - )	201	
+741	Proto-Germanic	*rustō	*rustō	rustoː	r u s t oː	r u s t ( oː )	202	
+742	German	*rustō	Rost	rɔst	r ɔ s t	r ɔ s t ( - )	202	
+743	English	*rustō	rust	rʌst	r ʌ s t	r ʌ s t ( - )	202	
+744	Dutch	*rustō	roest	ruːst	r uː s t	r uː s t ( - )	202	
+745	Proto-Germanic	*stangō	*stangō	stangoː	s t a n g oː	s t a n g oː	203	
+746	German	*stangō	Stange	ʃtaŋə	ʃ t a ŋ ə	ʃ t a ŋ - ə	203	
+747	Dutch	*stangō	stang	stɑŋ	s t ɑ ŋ	s t ɑ ŋ - -	203	
+748	Proto-Germanic	*drankan	*drankan	drankan	d r a n k a n	d r a n k ( a n )	204	
+749	German	*drankan	Trank	traŋk	t r a ŋ k	t r a ŋ k ( - - )	204	
+750	English	*drankan	drench	drɛnʧ	d r ɛ n tʃ	d r ɛ n tʃ ( - - )	204	
+751	Dutch	*drankan	drank	drɑŋk	d r ɑ ŋ k	d r ɑ ŋ k ( - - )	204	
+752	Proto-Germanic	*gallan	*gallan	gallan	g a ll a n	g a ll a ( n )	205	
+753	German	*gallan	Galle	ɡalə	g a l ə	g a l ə ( - )	205	
+754	English	*gallan	gall	ɡɔːl	g ɔː l	g ɔː l - ( - )	205	
+755	Dutch	*gallan	gal	xɑl	x ɑ l	x ɑ l - ( - )	205	
+756	Proto-Germanic	*gebanan	*gebanan	gebanan	g e b a n a n	g e b a n ( a n )	206	
+757	German	*gebanan	geben	ɡeːbən	g eː b ə n	g eː b ə n ( - - )	206	
+758	English	*gebanan	give	ɡɪv	g ɪ v	g ɪ v - - ( - - )	206	
+759	Dutch	*gebanan	geven	xeːvə	x eː v ə	x eː v ə - ( - - )	206	
+760	Proto-Germanic	*xagōn	*xagōn	xagoːn	x a g oː n	x a g ( oː n )	207	
+761	German	*xagōn	Hag	haːk	h aː k	h aː k ( - - )	207	
+762	English	*xagōn	haw	hɔː	h ɔː	h ɔː - ( - - )	207	
+763	Dutch	*xagōn	haag	haːx	h aː x	h aː x ( - - )	207	
+764	Proto-Germanic	*mēnōθz	*mēnōθz	meːnoːθz	m eː n oː θ z	m eː n oː θ ( z )	208	
+765	German	*mēnōθz	Monat	moːnaːt	m oː n aː t	m oː n a t ( - )	208	IRR
+766	English	*mēnōθz	month	mʌnθ	m ʌ n θ	m ʌ n - θ ( - )	208	
+767	Dutch	*mēnōθz	maand	maːnt	m aː n t	m aː n - t ( - )	208	
+768	Proto-Germanic	*daigaz	*daigaz	daigaz	d ai g a z	d ai g ( a z )	209	
+769	German	*daigaz	Teig	taik	t ai k	t ai g ( - - )	209	
+770	English	*daigaz	dough	dəʊ	d əʊ	d əʊ - ( - - )	209	
+771	Dutch	*daigaz	deeg	deːx	d eː x	d eː x ( - - )	209	
+772	Proto-Germanic	*werθanan	*werθanan	werθanan	w e r θ a n a n	w e r θ a n ( a n )	210	
+773	German	*werθanan	werden	veːrdən	v eː r d ə n	v eː r d ə n ( - - )	210	
+774	Dutch	*werθanan	worden	ʋɔrdə	ʋ ɔ r d ə	ʋ ɔ r d ə - ( - - )	210	
+775	Proto-Germanic	*knakkaz	*knakkaz	knakkaz	k n a kk a z	k n a kk a z	211	
+776	German	*knakkaz	Knecht	knɛxt	k n ɛ x t	k n ɛ x - t	211	
+777	English	*knakkaz	knight	naɪt	n aɪ t	- n aɪ - - t	211	
+778	Dutch	*knakkaz	knecht	knɛxt	k n ɛ x t	k n ɛ x - t	211	
+779	Proto-Germanic	*ēlaz	*ēlaz	eːlaz	eː l a z	eː l ( a z )	212	
+780	German	*ēlaz	Aal	aːl	aː l	aː l ( - - )	212	
+781	English	*ēlaz	eel	iːl	iː l	iː l ( - - )	212	
+782	Dutch	*ēlaz	aal	aːl	aː l	aː l ( - - )	212	
+783	Proto-Germanic	*fulkan	*fulkan	fulkan	f u l k a n	f u l k ( a n )	213	
+784	German	*fulkan	Volk	fɔlk	f ɔ l k	f ɔ l k ( - - )	213	
+785	English	*fulkan	folk	fəʊk	f əʊ k	f əʊ - k ( - - )	213	
+786	Dutch	*fulkan	volk	vɔlk	v ɔ l k	v ɔ l k ( - - )	213	
+787	Proto-Germanic	*dagaz	*dagaz	dagaz	d a g a z	d a g ( a z )	214	
+788	German	*dagaz	Tag	taːk	t aː k	t aː g ( - - )	214	
+789	English	*dagaz	day	deɪ	d eɪ	d eɪ - ( - - )	214	
+790	Dutch	*dagaz	dag	dɑx	d ɑ x	d ɑ x ( - - )	214	
+791	Proto-Germanic	*laukaz	*laukaz	laukaz	l au k a z	l au k ( a z )	215	
+792	German	*laukaz	Lauch	laux	l au x	l au x ( - - )	215	
+793	English	*laukaz	leek	liːk	l iː k	l iː k ( - - )	215	
+794	Dutch	*laukaz	look	luːk	l uː k	l uː k ( - - )	215	
+795	Proto-Germanic	*grasan	*grasan	grasan	g r a s a n	g r a s ( a n )	216	
+796	German	*grasan	Gras	ɡraːs	g r aː s	g r aː s ( - - )	216	
+797	English	*grasan	grass	ɡrɑːs	g r ɑː s	g r ɑː s ( - - )	216	
+798	Dutch	*grasan	gras	xrɑs	x r ɑ s	x r ɑ s ( - - )	216	
+799	Proto-Germanic	*werduz	*werduz	werduz	w e r d u z	w e r d ( u z )	217	
+800	German	*werduz	Wirt	vɪrt	v ɪ r t	v ɪ r t ( - - )	217	
+801	Dutch	*werduz	waard	ʋaːrt	ʋ aː r t	ʋ aː r t ( - - )	217	
+802	Proto-Germanic	*brandaz	*brandaz	brandaz	b r a n d a z	b r a n d ( a z )	218	
+803	German	*brandaz	Brand	brant	b r a n t	b r a n d ( - - )	218	
+804	English	*brandaz	brand	brænd	b r æ n d	b r æ n d ( - - )	218	
+805	Dutch	*brandaz	brand	brɑnt	b r ɑ n t	b r ɑ n t ( - - )	218	
+806	Proto-Germanic	*sīnaz poss.	*sīnaz poss.	siːnaz_poss.	s iː n a z	s iː n ( a z )	219	
+807	German	*sīnaz poss.	sein	zain	z ai n	z ai n ( - - )	219	
+808	Dutch	*sīnaz poss.	zijn	zɛɪn	z ɛɪ n	z ɛɪ n ( - - )	219	
+809	Proto-Germanic	*bakiz	*bakiz	bakiz	b a k i z	b a k ( i z )	220	
+810	German	*bakiz	Bach	bax	b a x	b a x ( - - )	220	
+811	Dutch	*bakiz	beek	beːk	b eː k	b eː k ( - - )	220	
+812	Proto-Germanic	*wīsjanan	*wīsjanan	wiːsjanan	w iː s j a n a n	w iː s j a n ( a n )	221	
+813	German	*wīsjanan	weisen	vaizən	v ai z ə n	v ai z - ə n ( - - )	221	
+814	Dutch	*wīsjanan	wijzen	ʋɛɪzə	ʋ ɛɪ z ə	ʋ ɛɪ z - ə - ( - - )	221	
+815	Proto-Germanic	*xawwjan	*xawwjan	xawwjan	x a w j a n	x a w ( j a n )	222	
+816	German	*xawwjan	Heu	hɔy	h ɔy	h ɔy - ( - - - )	222	
+817	English	*xawwjan	hay	heɪ	h eɪ	h eɪ - ( - - - )	222	
+818	Dutch	*xawwjan	hooi	hoːj	h oː j	h oː - ( j - - )	222	
+819	Proto-Germanic	*temran	*temran	temran	t e m r a n	t e m - - r ( a n )	223	
+820	German	*temran	Zimmer	t͡sɪmər	ts ɪ m ə r	ts ɪ m - ə r ( - - )	223	
+821	English	*temran	timber	tɪmbər	t ɪ m b ə r	t ɪ m b ə r ( - - )	223	
+822	Proto-Germanic	*budmaz	*budmaz	budmaz	b u d m a z	b u d - m ( a z )	224	
+823	German	*budmaz	Boden	boːdən	b oː d ə n	b oː d ə n ( - - )	224	BOR
+824	English	*budmaz	bottom	bɔtəm	b ɔ t ə m	b ɔ t ə m ( - - )	224	
+825	Dutch	*budmaz	bodem	boːdəm	b oː d ə m	b oː d ə m ( - - )	224	
+826	Proto-Germanic	*uzdaz	*uzdaz	uzdaz	u z d a z	u z d ( a z )	225	
+827	German	*uzdaz	Ort	ɔrt	ɔ r t	ɔ r t ( - - )	225	
+828	Dutch	*uzdaz	oord	oːrt	oː r t	oː r t ( - - )	225	
+829	Proto-Germanic	*xrōpanan	*xrōpanan	xroːpanan	x r oː p a n a n	x r oː p a n ( a n )	226	
+830	German	*xrōpanan	rufen	ruːfən	r uː f ə n	- r uː f ə n ( - - )	226	
+831	Dutch	*xrōpanan	roepen	ruːpə	r uː p ə	- r uː p ə - ( - - )	226	
+832	Proto-Germanic	*stebnō	*stebnō	stebnoː	s t e b n oː	s t e b n oː	227	
+833	German	*stebnō	Stimme	ʃtɪmə	ʃ t ɪ m ə	ʃ t ɪ - m ə	227	
+834	Dutch	*stebnō	stem	stɛm	s t ɛ m	s t ɛ - m -	227	
+835	Proto-Germanic	*jukan	*jukan	jukan	j u k a n	j u k ( a n )	228	
+836	German	*jukan	Joch	jɔx	j ɔ x	j ɔ x ( - - )	228	
+837	English	*jukan	yoke	jəʊk	j əʊ k	j əʊ k ( - - )	228	
+838	Dutch	*jukan	juk	jʉk	j ʉ k	j ʉ k ( - - )	228	
+839	Proto-Germanic	*sparēnan	*sparēnan	spareːnan	s p a r eː n a n	s p a r eː n ( a n )	229	
+840	German	*sparēnan	sparen	ʃpaːrən	ʃ p aː r ə n	ʃ p aː r ə n ( - - )	229	
+841	English	*sparēnan	spare	spɛər	s p ɛə r	s p ɛə r - - ( - - )	229	
+842	Dutch	*sparēnan	sparen	spaːrə	s p aː r ə	s p aː r ə - ( - - )	229	
+843	Proto-Germanic	*līban	*līban	liːban	l iː b a n	l iː b ( a n )	230	
+844	German	*līban	Leib	laip	l ai p	l ai b ( - - )	230	
+845	English	*līban	life	laɪf	l aɪ f	l aɪ f ( - - )	230	
+846	Dutch	*līban	lijf	lɛɪf	l ɛɪ f	l ɛɪ f ( - - )	230	
+847	Proto-Germanic	*xraigrōn	*xraigrōn	xraigroːn	x r ai g r oː n	x r ai g - r ( oː n )	231	
+848	German	*xraigrōn	Reiher	raiər	r ai ə r	- r ai - ə r ( - - )	231	
+849	Dutch	*xraigrōn	reiger	rɛɪɣər	r ɛɪ ɣ ə r	- r ɛɪ ɣ ə r ( - - )	231	
+850	Proto-Germanic	*stallaz	*stallaz	stallaz	s t a ll a z	s t a ll ( a z )	232	
+851	German	*stallaz	Stall	ʃtal	ʃ t a l	ʃ t a l ( - - )	232	
+852	Dutch	*stallaz	stal	stɑl	s t ɑ l	s t ɑ l ( - - )	232	
+853	Proto-Germanic	*waxsan	*waxsan	waxsan	w a x s a n	w a x s ( a n )	233	
+854	German	*waxsan	Wachs	vaks	v a k s	v a k s ( - - )	233	
+855	English	*waxsan	wax	ʋæks	ʋ æ k s	ʋ æ k s ( - - )	233	
+856	Dutch	*waxsan	was	ʋɑs	ʋ ɑ s	ʋ ɑ - s ( - - )	233	
+857	Proto-Germanic	*xariz	*xariz	xariz	x a r i z	x a r ( i z )	234	
+858	German	*xariz	Heer	heːr	h eː r	h eː r ( - - )	234	
+859	Dutch	*xariz	heer	heːr	h eː r	h eː r ( - - )	234	
+860	Proto-Germanic	*blōdan	*blōdan	bloːdan	b l oː d a n	b l oː d ( a n )	235	
+861	German	*blōdan	Blut	bluːt	b l uː t	b l uː t ( - - )	235	
+862	English	*blōdan	blood	blʌd	b l ʌ d	b l ʌ d ( - - )	235	
+863	Dutch	*blōdan	bloed	bluːt	b l uː t	b l uː t ( - - )	235	
+864	Proto-Germanic	*lukan	*lukan	lukan	l u k a n	l u k ( a n )	236	
+865	German	*lukan	Loch	lɔx	l ɔ x	l ɔ x ( - - )	236	
+866	English	*lukan	lock	lɔk	l ɔ k	l ɔ k ( - - )	236	
+867	Proto-Germanic	*texun	*texun	texun	t e x u n	t e x u n	237	
+868	German	*texun	zehn	t͡seːn	ts eː n	ts eː - - n	237	
+869	English	*texun	ten	tɛn	t ɛ n	t ɛ - - n	237	
+870	Dutch	*texun	tien	tiːn	t iː n	t iː - - n	237	
+871	Proto-Germanic	*xwerbanan	*xwerbanan	xwerbanan	x w e r b a n a n	x w e r b a n ( a n )	238	
+872	German	*xwerbanan	werben	vɛrbən	v ɛ r b ə n	- v ɛ r b ə n ( - - )	238	
+873	Dutch	*xwerbanan	werven	ʋɛrvə	ʋ ɛ r v ə	- ʋ ɛ r v ə - ( - - )	238	
+874	Proto-Germanic	*jugunθiz	*jugunθiz	jugunθiz	j u g u n θ i z	j u g u n θ ( i z )	239	
+875	German	*jugunθiz	Jugend	juːɡənt	j uː g ə n t	j uː g ə n d ( - - )	239	
+876	English	*jugunθiz	youth	juːθ	j uː θ	j uː - - - θ ( - - )	239	
+877	Dutch	*jugunθiz	jeugd	jøːxt	j øː x t	j øː x - - t ( - - )	239	
+878	Proto-Germanic	*θwenganan	*θwenganan	θwenganan	θ w e n g a n a n	θ w e n g a n ( a n )	240	
+879	German	*θwenganan	zwingen	t͡svɪŋən	ts v ɪ ŋ ə n	ts v ɪ ŋ - ə n ( - - )	240	
+880	Dutch	*θwenganan	dwingen	dʋɪŋə	d ʋ ɪ ŋ ə	d ʋ ɪ ŋ - ə - ( - - )	240	
+881	Proto-Germanic	*regna-bugōn	*regna-bugōn	regna+bugoːn	r e g n a + b u g oː n	r e g - ( n a b u g oː n )	241	
+882	German	*regna-bugōn	Regenbogen	reːɡənboːɡən	r eː g ə n b oː g ə n	r eː g ə ( n - b oː g ə n )	241	DUP
+883	English	*regna-bugōn	rainbow	reɪnbəʊ	r eɪ n b əʊ	r eɪ - - ( n - b əʊ - - - )	241	
+884	Dutch	*regna-bugōn	regenboog	reːɣəmboːx	r eː ɣ ə m b oː x	r eː ɣ ə ( m - b oː x - - )	241	
+885	Proto-Germanic	*kruppaz	*kruppaz	kruppaz	k r u pp a z	k r u pp ( a z )	242	
+886	German	*kruppaz	Kropf	krɔp͡f	k r ɔ pf	k r ɔ pf ( - - )	242	
+887	English	*kruppaz	crop	krɔp	k r ɔ p	k r ɔ p ( - - )	242	
+888	Dutch	*kruppaz	krop	krɔp	k r ɔ p	k r ɔ p ( - - )	242	
+889	Proto-Germanic	*dreupanan	*dreupanan	dreupanan	d r eu p a n a n	d r eu p a n ( a n )	243	
+890	German	*dreupanan	triefen	triːfən	t r iː f ə n	t r iː f ə n ( - - )	243	
+891	Dutch	*dreupanan	druipen	drœypə	d r œy p ə	d r œy p ə - ( - - )	243	
+892	Proto-Germanic	*fōdran	*fōdran	foːdran	f oː d r a n	f oː d - r ( a n )	244	
+893	German	*fōdran	Futter	fʊtər	f ʊ t ə r	f ʊ t ə r ( - - )	244	
+894	English	*fōdran	fodder	fɔdər	f ɔ d ə r	f ɔ d ə r ( - - )	244	
+895	Dutch	*fōdran	voer	vuːr	v uː r	v uː - - r ( - - )	244	
+896	Proto-Germanic	*lungwan	*lungwan	lungwan	l u n g w a n	l u n g w a ( n )	245	
+897	German	*lungwan	Lunge	lʊŋə	l ʊ ŋ ə	l ʊ ŋ - - ə ( - )	245	
+898	English	*lungwan	lung	lʌŋ	l ʌ ŋ	l ʌ ŋ - - - ( - )	245	
+899	Dutch	*lungwan	long	lɔŋ	l ɔ ŋ	l ɔ ŋ - - - ( - )	245	
+900	Proto-Germanic	*deljaz	*deljaz	deljaz	d e l j a z	d e l ( j a z )	246	
+901	German	*deljaz	Dill	dɪl	d ɪ l	d ɪ l ( - - - )	246	BOR
+902	English	*deljaz	dill	dɪl	d ɪ l	d ɪ l ( - - - )	246	
+903	Dutch	*deljaz	dille	dɪlə	d ɪ l ə	d ɪ l ( - ə - )	246	
+904	Proto-Germanic	*wendanan	*wendanan	wendanan	w e n d a n a n	w e n d a n ( a n )	247	
+905	German	*wendanan	winden	vɪndən	v ɪ n d ə n	v ɪ n d ə n ( - - )	247	
+906	English	*wendanan	wind	ʋɪnd	ʋ ɪ n d	ʋ ɪ n d - - ( - - )	247	
+907	Dutch	*wendanan	winden	ʋɪndə	ʋ ɪ n d ə	ʋ ɪ n d ə - ( - - )	247	
+908	Proto-Germanic	*laimōn	*laimōn	laimoːn	l ai m oː n	l ai m ( oː n )	248	
+909	German	*laimōn	Lehm	leːm	l eː m	l eː m ( - - )	248	
+910	English	*laimōn	loam	ləʊm	l əʊ m	l əʊ m ( - - )	248	
+911	Dutch	*laimōn	leem	leːm	l eː m	l eː m ( - - )	248	
+912	Proto-Germanic	*knewan	*knewan	knewan	k n e w a n	k n e ( w a n )	249	
+913	German	*knewan	Knie	kniː	k n iː	k n iː ( - - - )	249	
+914	English	*knewan	knee	niː	n iː	- n iː ( - - - )	249	
+915	Dutch	*knewan	knie	kniː	k n iː	k n iː ( - - - )	249	
+916	Proto-Germanic	*fadēr	*fadēr	fadeːr	f a d eː r	f a d eː r	250	
+917	German	*fadēr	Vater	faːtər	f aː t ə r	f aː t ə r	250	
+918	English	*fadēr	father	fɑːðər	f ɑː ð ə r	f ɑː ð ə r	250	
+919	Dutch	*fadēr	vader	vaːdər	v aː d ə r	v aː d ə r	250	
+920	Proto-Germanic	*magaθiz	*magaθiz	magaθiz	m a g a θ i z	m a g a θ ( i z )	251	
+921	German	*magaθiz	Magd	maːkt	m aː k t	m aː k - t ( - - )	251	
+922	Dutch	*magaθiz	maagd	maːxt	m aː x t	m aː x - t ( - - )	251	
+923	Proto-Germanic	*rēmaz	*rēmaz	reːmaz	r eː m a z	r eː m ( a z )	252	
+924	German	*rēmaz	Rahm	raːm	r aː m	r aː m ( - - )	252	
+925	Dutch	*rēmaz	room	roːm	r oː m	r oː m ( - - )	252	
+926	Proto-Germanic	*lētanan	*lētanan	leːtanan	l eː t a n a n	l eː t a n ( a n )	253	
+927	German	*lētanan	lassen	lasən	l a s ə n	l a s ə n ( - - )	253	
+928	English	*lētanan	let	lɛt	l ɛ t	l ɛ t - - ( - - )	253	
+929	Dutch	*lētanan	laten	laːtə	l aː t ə	l aː t ə - ( - - )	253	
+930	Proto-Germanic	*freusanan	*freusanan	freusanan	f r eu s a n a n	f r eu s a n ( a n )	254	
+931	German	*freusanan	frieren	friːrən	f r iː r ə n	f r iː r ə n ( - - )	254	
+932	English	*freusanan	freeze	friːz	f r iː z	f r iː z - - ( - - )	254	
+933	Dutch	*freusanan	vriezen	vriːzə	v r iː z ə	v r iː z ə - ( - - )	254	
+934	Proto-Germanic	*beuganan	*beuganan	beuganan	b eu g a n a n	b eu g a n ( a n )	255	
+935	German	*beuganan	biegen	biːɡən	b iː g ə n	b iː g ə n ( - - )	255	
+936	English	*beuganan	bow	bəʊ	b əʊ	b əʊ - - - ( - - )	255	
+937	Dutch	*beuganan	buigen	bœyɣə	b œy ɣ ə	b œy ɣ ə - ( - - )	255	
+938	Proto-Germanic	*blikan	*blikan	blikan	b l i k a n	b l i k ( a n )	256	
+939	German	*blikan	Blech	blɛx	b l ɛ x	b l ɛ x ( - - )	256	
+940	Dutch	*blikan	blik	blɪk	b l ɪ k	b l ɪ k ( - - )	256	
+941	Proto-Germanic	*bōkz	*bōkz	boːkz	b oː k z	b oː k ( z )	257	
+942	German	*bōkz	Buch	buːx	b uː x	b uː x ( - )	257	
+943	English	*bōkz	book	bʊk	b ʊ k	b ʊ k ( - )	257	
+944	Dutch	*bōkz	boek	buːk	b uː k	b uː k ( - )	257	
+945	Proto-Germanic	*seglan	*seglan	seglan	s e g l a n	s e g - l ( a n )	258	
+946	German	*seglan	Segel	zeːɡəl	z eː g ə l	z eː g ə l ( - - )	258	
+947	English	*seglan	sail	seɪl	s eɪ l	s eɪ - - l ( - - )	258	
+948	Dutch	*seglan	zeil	zɛɪl	z ɛɪ l	z ɛɪ - - l ( - - )	258	
+949	Proto-Germanic	*līnan	*līnan	liːnan	l iː n a n	l iː n a ( n )	259	
+950	German	*līnan	Leine	lainə	l ai n ə	l ai n ə ( - )	259	
+951	English	*līnan	line	laɪn	l aɪ n	l aɪ n - ( - )	259	
+952	Dutch	*līnan	lijn	lɛɪn	l ɛɪ n	l ɛɪ n - ( - )	259	
+953	Proto-Germanic	*skattaz	*skattaz	skattaz	s k a t a z	s k a t ( a z )	260	
+954	German	*skattaz	Schatz	ʃat͡s	ʃ a ts	ʃ - a ts ( - - )	260	
+955	Dutch	*skattaz	schat	sxɑt	s x ɑ t	s x ɑ t ( - - )	260	
+956	Proto-Germanic	*θakan	*θakan	θakan	θ a k a n	θ a k ( a n )	261	
+957	German	*θakan	Dach	dax	d a x	d a x ( - - )	261	
+958	English	*θakan	thatch	θæʧ	θ æ tʃ	θ æ tʃ ( - - )	261	
+959	Dutch	*θakan	dak	dɑk	d ɑ k	d ɑ k ( - - )	261	
+960	Proto-Germanic	*furxō	*furxō	furxoː	f u r x oː	f u r x oː	262	
+961	German	*furxō	Furche	fʊrxə	f ʊ r x ə	f ʊ r x ə	262	
+962	English	*furxō	furrow	fʌrəʊ	f ʌ r əʊ	f ʌ r əʊ -	262	
+963	Dutch	*furxō	voor	voːr	v oː r	v oː r - -	262	
+964	Proto-Germanic	*tīdiz	*tīdiz	tiːdiz	t iː d i z	t iː d ( i z )	263	
+965	German	*tīdiz	Zeit	t͡sait	ts ai t	ts ai t ( - - )	263	
+966	English	*tīdiz	tide	taɪd	t aɪ d	t aɪ d ( - - )	263	
+967	Dutch	*tīdiz	tijd	tɛɪt	t ɛɪ t	t ɛɪ t ( - - )	263	
+968	Proto-Germanic	*skellin)az	*skellin)az	skellinaz	s k e ll i n a z	s k e ll i n g ( a z )	264	
+969	German	*skellin)az	Schilling	ʃɪlɪŋ	ʃ ɪ l ɪ ŋ	ʃ - ɪ l ɪ ŋ - ( - - )	264	
+970	English	*skellin)az	shilling	ʃɪlɪŋ	ʃ ɪ l ɪ ŋ	ʃ - ɪ l ɪ ŋ - ( - - )	264	
+971	Proto-Germanic	*rennanan	*rennanan	rennanan	r e nn a n a n	r e nn a n ( a n )	265	
+972	German	*rennanan	rinnen	rɪnən	r ɪ n ə n	r ɪ n ə n ( - - )	265	
+973	English	*rennanan	run	rʌn	r ʌ n	r ʌ n - - ( - - )	265	
+974	Proto-Germanic	*xabrōn	*xabrōn	xabroːn	x a b r oː n	x a b r oː n	266	
+975	German	*xabrōn	Hafer	haːfər	h aː f ə r	h aː f - ə r	266	
+976	Dutch	*xabrōn	haver	haːvər	h aː v ə r	h aː v - ə r	266	
+977	Proto-Germanic	*flauxz	*flauxz	flauxz	f l au x z	f l au x ( z )	267	
+978	German	*flauxz	Floh	floː	f l oː	f l oː - ( - )	267	
+979	English	*flauxz	flea	fliː	f l iː	f l iː - ( - )	267	
+980	Dutch	*flauxz	vlo	vloː	v l oː	v l oː - ( - )	267	
+981	Proto-Germanic	*sapōn	*sapōn	sapoːn	s a p oː n	s a p ( oː n - )	268	
+982	German	*sapōn	Saft	zaft	z a f t	z a f ( - - t )	268	
+983	English	*sapōn	sap	sæp	s æ p	s æ p ( - - - )	268	
+984	Dutch	*sapōn	sap	sɑp	s ɑ p	s ɑ p ( - - - )	268	
+985	Proto-Germanic	*tikkōn	*tikkōn	tikkoːn	t i kk oː n	t i kk ( oː n )	269	
+986	German	*tikkōn	Zecke	t͡sɛkə	ts ɛ k ə	ts ɛ k ( ə - )	269	
+987	English	*tikkōn	tick	tɪk	t ɪ k	t ɪ k ( - - )	269	
+988	Dutch	*tikkōn	teek	teːk	t eː k	t eː k ( - - )	269	
+989	Proto-Germanic	*swemmanan	*swemmanan	swemmanan	s w e m a n a n	s w e mm a n ( a n )	270	
+990	German	*swemmanan	schwimmen	ʃvɪmən	ʃ v ɪ m ə n	ʃ v ɪ m ə n ( - - )	270	
+991	English	*swemmanan	swim	sʋɪm	s ʋ ɪ m	s ʋ ɪ m - - ( - - )	270	
+992	Dutch	*swemmanan	zwemmen	zʋɛmə	z ʋ ɛ m ə	z ʋ ɛ m ə - ( - - )	270	
+993	Proto-Germanic	*maltaz	*maltaz	maltaz	m a l t a z	m a l t ( a z )	271	
+994	German	*maltaz	Malz	malt͡s	m a l ts	m a l ts ( - - )	271	
+995	English	*maltaz	malt	mɔːlt	m ɔː l t	m ɔː l t ( - - )	271	
+996	Dutch	*maltaz	mout	mɑut	m ɑu t	m ɑu - t ( - - )	271	
+997	Proto-Germanic	*kewwanan	*kewwanan	kewwanan	k e w a n a n	k e w a n ( a n )	272	
+998	German	*kewwanan	kauen	kauən	k au ə n	k au - ə n ( - - )	272	
+999	English	*kewwanan	chew	ʧuː	tʃ uː	tʃ uː - - - ( - - )	272	
+1000	Dutch	*kewwanan	kauwen	kɑuʋə	k ɑu ʋ ə	k ɑu ʋ ə - ( - - )	272	
+1001	Proto-Germanic	*wrenganan	*wrenganan	wrenganan	w r e n g a n a n	w r e n g a n ( a n )	273	
+1002	German	*wrenganan	ringen	rɪŋən	r ɪ ŋ ə n	- r ɪ ŋ - ə n ( - - )	273	
+1003	English	*wrenganan	wring	rɪŋ	r ɪ ŋ	- r ɪ ŋ - - - ( - - )	273	
+1004	Dutch	*wrenganan	wringen	ʋrɪŋə	ʋ r ɪ ŋ ə	ʋ r ɪ ŋ - ə - ( - - )	273	
+1005	Proto-Germanic	*waskanan	*waskanan	waskanan	w a s k a n a n	w a s k a n ( a n )	274	
+1006	German	*waskanan	waschen	vaʃən	v a ʃ ə n	v a ʃ - ə n ( - - )	274	
+1007	English	*waskanan	wash	ʋɔʃ	ʋ ɔ ʃ	ʋ ɔ ʃ - - - ( - - )	274	
+1008	Dutch	*waskanan	wassen	ʋɑsə	ʋ ɑ s ə	ʋ ɑ s - ə - ( - - )	274	
+1009	Proto-Germanic	*xaglan	*xaglan	xaglan	x a g l a n	x a g - l ( a n )	275	
+1010	German	*xaglan	Hagel	haːɡəl	h aː g ə l	h aː g ə l ( - - )	275	
+1011	English	*xaglan	hail	heɪl	h eɪ l	h eɪ - - l ( - - )	275	
+1012	Dutch	*xaglan	hagel	haːɣəl	h aː ɣ ə l	h aː ɣ ə l ( - - )	275	
+1013	Proto-Germanic	*θrengwanan	*θrengwanan	θrengwanan	θ r e n g w a n a n	θ r e n g w a n ( a n )	276	
+1014	German	*θrengwanan	dringen	drɪŋən	d r ɪ ŋ ə n	d r ɪ ŋ - - ə n ( - - )	276	
+1015	Dutch	*θrengwanan	dringen	drɪŋə	d r ɪ ŋ ə	d r ɪ ŋ - - ə - ( - - )	276	
+1016	Proto-Germanic	*ufnaz	*ufnaz	ufnaz	u f n a z	u f - n ( a z )	277	
+1017	German	*ufnaz	Ofen	oːfən	oː f ə n	oː f ə n ( - - )	277	
+1018	English	*ufnaz	oven	ʌvṇ	ʌ v ə n	ʌ v ə n ( - - )	277	
+1019	Dutch	*ufnaz	oven	oːvə	oː v ə	oː v ə - ( - - )	277	
+1020	Proto-Germanic	*wadan	*wadan	wadan	w a d a n	w a d ( a n )	278	
+1021	German	*wadan	Watt	vat	v a t	v a t ( - - )	278	
+1022	Dutch	*wadan	wad	ʋɑt	ʋ ɑ t	ʋ ɑ t ( - - )	278	
+1023	Proto-Germanic	*nefōd	*nefōd	nefoːd	n e f oː d	n e f oː ( d )	279	
+1024	German	*nefōd	Neffe	nɛfə	n ɛ f ə	n ɛ f ə ( - )	279	
+1025	Dutch	*nefōd	neef	neːf	n eː f	n eː f - ( - )	279	
+1026	Proto-Germanic	*jēran	*jēran	jeːran	j eː r a n	j eː r ( a n )	280	
+1027	German	*jēran	Jahr	jaːr	j aː r	j aː r ( - - )	280	
+1028	English	*jēran	year	jɪər	j ɪə r	j ɪə r ( - - )	280	
+1029	Dutch	*jēran	jaar	jaːr	j aː r	j aː r ( - - )	280	
+1030	Proto-Germanic	*spikan	*spikan	spikan	s p i k a n	s p i kk ( a n )	281	
+1031	German	*spikan	Speck	ʃpɛk	ʃ p ɛ k	ʃ p ɛ k ( - - )	281	BOR
+1032	Dutch	*spikan	spek	spɛk	s p ɛ k	s p ɛ k ( - - )	281	
+1033	Proto-Germanic	*flaiskaz	*flaiskaz	flaiskaz	f l ai s k a z	f l ai s k a z	282	
+1034	German	*flaiskaz	Fleisch	flaiʃ	f l ai ʃ	f l ai ʃ - - -	282	
+1035	English	*flaiskaz	flesh	flɛʃ	f l ɛ ʃ	f l ɛ ʃ - - -	282	
+1036	Dutch	*flaiskaz	vlees	vleːs	v l eː s	v l eː s - - -	282	
+1037	Proto-Germanic	*būran	*būran	buːran	b uː r a n	b uː - r ( a n )	283	
+1038	German	*būran	Bauer	bauər	b au ə r	b au ə r ( - - )	283	
+1039	English	*būran	bower	baʊər	b aʊ ə r	b aʊ ə r ( - - )	283	
+1040	Dutch	*būran	boer	buːr	b uː r	b uː - r ( - - )	283	
+1041	Proto-Germanic	*bainan	*bainan	bainan	b ai n a n	b ai n ( a n )	284	
+1042	German	*bainan	Bein	bain	b ai n	b ai n ( - - )	284	
+1043	English	*bainan	bone	bəʊn	b əʊ n	b əʊ n ( - - )	284	
+1044	Dutch	*bainan	been	beːn	b eː n	b eː n ( - - )	284	
+1045	Proto-Germanic	*wakēnan	*wakēnan	wakeːnan	w a k eː n a n	w a k eː n ( a n )	285	
+1046	German	*wakēnan	wachen	vaxən	v a x ə n	v a x ə n ( - - )	285	
+1047	English	*wakēnan	wake	ʋeɪk	ʋ eɪ k	ʋ eɪ k - - ( - - )	285	
+1048	Dutch	*wakēnan	waken	ʋaːkə	ʋ aː k ə	ʋ aː k ə - ( - - )	285	
+1049	Proto-Germanic	*wējanan	*wējanan	weːjanan	w eː j a n a n	w eː j a n ( a n )	286	
+1050	German	*wējanan	wehen	veːən	v eː ə n	v eː - ə n ( - - )	286	
+1051	Dutch	*wējanan	waaien	ʋaːjə	ʋ aː j ə	ʋ aː j ə - ( - - )	286	
+1052	Proto-Germanic	*laxstran	*laxstran	laxstran	l a x s t r a n	l a x s t - r ( a n )	287	MT
+1053	German	*laxstran	Laster	lastər	l a s t ə r	l a - s t ə r ( - - )	287	MT
+1054	Dutch	*laxstran	laster	lɑstər	l ɑ s t ə r	l ɑ - s t ə r ( - - )	287	MT
+1055	Proto-Germanic	*wundran	*wundran	wundran	w u n d r a n	w u n d - r ( a n )	288	MT
+1056	German	*wundran	Wunder	vʊndər	v ʊ n d ə r	v ʊ n d ə r ( - - )	288	MT
+1057	English	*wundran	wonder	ʋʌndər	ʋ ʌ n d ə r	ʋ ʌ n d ə r ( - - )	288	MT
+1058	Dutch	*wundran	wonder	ʋɔndər	ʋ ɔ n d ə r	ʋ ɔ n d ə r ( - - )	288	MT
+1059	Proto-Germanic	*swestēr	*swestēr	swesteːr	s w e s t eː r	s w e s t eː r	289	
+1060	German	*swestēr	Schwester	ʃvɛstər	ʃ v ɛ s t ə r	ʃ v ɛ s t ə r	289	
+1061	English	*swestēr	sister	sɪstər	s ɪ s t ə r	s - ɪ s t ə r	289	
+1062	Dutch	*swestēr	zuster	zʉstər	z ʉ s t ə r	z - ʉ s t ə r	289	
+1063	Proto-Germanic	*snaigwaz	*snaigwaz	snaigwaz	s n ai g w a z	s n ai g w ( a z )	290	
+1064	German	*snaigwaz	Schnee	ʃneː	ʃ n eː	ʃ n eː - - ( - - )	290	
+1065	English	*snaigwaz	snow	snəʊ	s n əʊ	s n əʊ - - ( - - )	290	
+1066	Dutch	*snaigwaz	sneeuw	sneːʋ	s n eː ʋ	s n eː - ʋ ( - - )	290	
+1067	Proto-Germanic	*lakanan	*lakanan	lakanan	l a k a n a n	l a k a n ( a n )	291	
+1068	German	*lakanan	lachen	laxən	l a x ə n	l a x ə n ( - - )	291	
+1069	English	*lakanan	laugh	lɑːf	l ɑː f	l ɑː f - - ( - - )	291	
+1070	Dutch	*lakanan	lachen	lɑxə	l ɑ x ə	l ɑ x ə - ( - - )	291	
+1071	Proto-Germanic	*mūlōn	*mūlōn	muːloːn	m uː l oː n	m uː l ( oː n )	292	
+1072	German	*mūlōn	Maul	maul	m au l	m au l ( - - )	292	
+1073	Dutch	*mūlōn	muil	mœyl	m œy l	m œy l ( - - )	292	
+1074	Proto-Germanic	*regnan	*regnan	regnan	r e g n a n	r e g - n ( a n )	293	MT
+1075	German	*regnan	Regen	reːɡən	r eː g ə n	r eː g ə n ( - - )	293	
+1076	English	*regnan	rain	reɪn	r eɪ n	r eɪ - - n ( - - )	293	MT
+1077	Dutch	*regnan	regen	reːɣə	r eː ɣ ə	r eː ɣ ə - ( - - )	293	MT
+1078	Proto-Germanic	*xemenaz	*xemenaz	xemenaz	x e m e n a z	x e m e ( n a z )	294	
+1079	German	*xemenaz	Himmel	hɪməl	h ɪ m ə l	h ɪ m ə ( l - - )	294	
+1080	English	*xemenaz	heaven	hɛvṇ	h ɛ v ə n	h ɛ v ə ( n - - )	294	
+1081	Dutch	*xemenaz	hemel	heːməl	h eː m ə l	h eː m ə ( l - - )	294	
+1082	Proto-Germanic	*swīnan	*swīnan	swiːnan	s w iː n a n	s w iː n ( a n )	295	
+1083	German	*swīnan	Schwein	ʃvain	ʃ v ai n	ʃ v ai n ( - - )	295	
+1084	English	*swīnan	swine	sʋaɪn	s ʋ aɪ n	s ʋ aɪ n ( - - )	295	
+1085	Dutch	*swīnan	zwijn	zʋɛɪn	z ʋ ɛɪ n	z ʋ ɛɪ n ( - - )	295	
+1086	Proto-Germanic	*skamō	*skamō	skamoː	s k a m oː	s k a m ( oː )	296	
+1087	German	*skamō	Scham	ʃaːm	ʃ aː m	ʃ - aː m ( - )	296	
+1088	English	*skamō	shame	ʃeɪm	ʃ eɪ m	ʃ - eɪ m ( - )	296	
+1089	Proto-Germanic	*dailiz	*dailiz	dailiz	d ai l i z	d ai l ( i z )	297	
+1090	German	*dailiz	Teil	tail	t ai l	t ai l ( - - )	297	
+1091	English	*dailiz	deal	diːl	d iː l	d iː l ( - - )	297	
+1092	Dutch	*dailiz	deel	deːl	d eː l	d eː l ( - - )	297	
+1093	Proto-Germanic	*gulθan	*gulθan	gulθan	g u l θ a n	g u l θ ( a n )	298	
+1094	German	*gulθan	Gold	ɡɔlt	g ɔ l t	g ɔ l d ( - - )	298	
+1095	English	*gulθan	gold	ɡəʊld	g əʊ l d	g əʊ l d ( - - )	298	
+1096	Dutch	*gulθan	goud	xɑut	x ɑu t	x ɑu - t ( - - )	298	
+1097	Proto-Germanic	*kōwz	*kōwz	koːwz	k oː w z	k oː ( w z )	299	
+1098	German	*kōwz	Kuh	kuː	k uː	k uː ( - - )	299	
+1099	English	*kōwz	cow	kaʊ	k aʊ	k aʊ ( - - )	299	
+1100	Dutch	*kōwz	koe	kuː	k uː	k uː ( - - )	299	
+1101	Proto-Germanic	*rōdō	*rōdō	roːdoː	r oː d oː	r oː d oː	300	
+1102	German	*rōdō	Rute	ruːtə	r uː t ə	r uː t ə	300	
+1103	English	*rōdō	rood	ruːd	r uː d	r uː d -	300	
+1104	Proto-Germanic	*surgō	*surgō	surgoː	s u r g oː	s u r g oː	301	
+1105	German	*surgō	Sorge	zɔrɡə	z ɔ r g ə	z ɔ r g ə	301	
+1106	English	*surgō	sorrow	sɔrəʊ	s ɔ r əʊ	s ɔ r əʊ -	301	
+1107	Dutch	*surgō	zorg	zɔrx	z ɔ r x	z ɔ r x -	301	
+1108	Proto-Germanic	*θrēanan	*θrēanan	θreːanan	θ r eː a n a n	θ r eː - a n ( a n )	302	
+1109	German	*θrēanan	drehen	dreːən	d r eː ə n	d r eː - ə n ( - - )	302	
+1110	Dutch	*θrēanan	draaien	draːjə	d r aː j ə	d r aː j ə - ( - - )	302	
+1111	Proto-Germanic	*wextiz	*wextiz	wextiz	w e x t i z	w e x t ( i z )	303	
+1112	German	*wextiz	Wicht	vɪxt	v ɪ x t	v ɪ x t ( - - )	303	
+1113	English	*wextiz	wight	ʋaɪt	ʋ aɪ t	ʋ aɪ - t ( - - )	303	
+1114	Proto-Germanic	*fleuganan	*fleuganan	fleuganan	f l eu g a n a n	f l eu g a n ( a n )	304	
+1115	German	*fleuganan	fliegen	fliːɡən	f l iː g ə n	f l iː g ə n ( - - )	304	
+1116	English	*fleuganan	fly	flaɪ	f l aɪ	f l aɪ - - - ( - - )	304	
+1117	Dutch	*fleuganan	vliegen	vliːɣə	v l iː ɣ ə	v l iː ɣ ə - ( - - )	304	
+1118	Proto-Germanic	*seduz	*seduz	seduz	s e d u z	s e d u ( z )	305	
+1119	German	*seduz	Sitte	zɪtə	z ɪ t ə	z ɪ t ə ( - )	305	
+1120	Dutch	*seduz	zede	zeːdə	z eː d ə	z eː d ə ( - )	305	
+1121	Proto-Germanic	*skaiθiz	*skaiθiz	skaiθiz	s k ai θ i z	s k ai θ i ( z )	306	
+1122	German	*skaiθiz	Scheide	ʃaidə	ʃ ai d ə	ʃ - ai d ə ( - )	306	
+1123	English	*skaiθiz	sheath	ʃiːθ	ʃ iː θ	ʃ - iː θ - ( - )	306	
+1124	Dutch	*skaiθiz	schede	sxeːdə	s x eː d ə	s x eː d ə ( - )	306	
+1125	Proto-Germanic	*wiθra	*wiθra	wiθra	w i θ r a	w i θ - r ( a )	307	
+1126	German	*wiθra	Widder	vɪdər	v ɪ d ə r	v ɪ d ə r ( - )	307	
+1127	English	*wiθra	wether	ʋɛðər	ʋ ɛ ð ə r	ʋ ɛ ð ə r ( - )	307	
+1128	Dutch	*wiθra	weder	ʋeːdər	ʋ eː d ə r	ʋ eː d ə r ( - )	307	
+1129	Proto-Germanic	*nebulō	*nebulō	nebuloː	n e b u l oː	n e b u l ( oː )	308	
+1130	German	*nebulō	Nebel	neːbəl	n eː b ə l	n eː b ə l ( - )	308	
+1131	Dutch	*nebulō	nevel	neːvəl	n eː v ə l	n eː v ə l ( - )	308	
+1132	Proto-Germanic	*wurmaz/wurmiz	*wurmaz/wurmiz	wurmaz/wurmiz	w u r m a z	w u r m ( a z )	309	
+1133	German	*wurmaz/wurmiz	Wurm	vʊrm	v ʊ r m	v ʊ r m ( - - )	309	
+1134	English	*wurmaz/wurmiz	worm	ʋɜːm	ʋ ɜː m	ʋ ɜː - m ( - - )	309	
+1135	Dutch	*wurmaz/wurmiz	worm	ʋɔrm	ʋ ɔ r m	ʋ ɔ r m ( - - )	309	
+1136	Proto-Germanic	*watnan	*watnan	watoːr	w a t n a n	w a t oː r	310	
+1137	German	*watnan	Wasser	vasər	v a s ə r	v a s ə r	310	
+1138	English	*watnan	water	ʋɔːtər	ʋ ɔː t ə r	ʋ ɔː t ə r	310	
+1139	Dutch	*watnan	water	ʋaːtər	ʋ aː t ə r	ʋ aː t ə r	310	
+1140	Proto-Germanic	*brūkanan	*brūkanan	bruːkanan	b r uː k a n a n	( - - ) b r uː k a n ( a n )	311	
+1141	German	*brūkanan	brauchen	brauxən	b r au x ə n	( - - ) b r au x ə n ( - - )	311	
+1142	English	*brūkanan	brook	brʊk	b r ʊ k	( - - ) b r ʊ k - - ( - - )	311	
+1143	Dutch	*brūkanan	gebruiken	xəbrœykə	x ə b r œy k ə	( x ə ) b r œy k ə - ( - - )	311	
+1144	Proto-Germanic	*geldanan	*geldanan	geldanan	g e l d a n a n	g e l d a n ( a n )	312	
+1145	German	*geldanan	gelten	ɡɛltən	g ɛ l t ə n	g ɛ l t ə n ( - - )	312	
+1146	Dutch	*geldanan	gelden	xɛldə	x ɛ l d ə	x ɛ l d ə - ( - - )	312	
+1147	Proto-Germanic	*xulōjanan	*xulōjanan	xuloːjanan	x u l oː j a n a n	x u l oː j a n ( a n )	313	
+1148	German	*xulōjanan	holen	hoːlən	h oː l ə n	h oː l - - ə n ( - - )	313	
+1149	Dutch	*xulōjanan	halen	haːlə	h aː l ə	h aː l - - ə - ( - - )	313	
+1150	Proto-Germanic	*slaxanan	*slaxanan	slaxanan	s l a x a n a n	s l a x a n ( a n )	314	
+1151	German	*slaxanan	schlagen	ʃlaːɡən	ʃ l aː g ə n	ʃ l aː g ə n ( - - )	314	
+1152	English	*slaxanan	slay	sleɪ	s l eɪ	s l eɪ - - - ( - - )	314	
+1153	Dutch	*slaxanan	slaan	slaːn	s l aː n	s l aː - - n ( - - )	314	
+1154	Proto-Germanic	*lukkaz	*lukkaz	lukkaz	l u kk a z	l u kk a ( z )	315	
+1155	German	*lukkaz	Locke	lɔkə	l ɔ k ə	l ɔ k ə ( - )	315	
+1156	English	*lukkaz	lock	lɔk	l ɔ k	l ɔ k - ( - )	315	
+1157	Dutch	*lukkaz	lok	lɔk	l ɔ k	l ɔ k - ( - )	315	
+1158	Proto-Germanic	*gennanan	*gennanan	gennanan	g e nn a n a n	( - - ) g e nn a n ( a n )	316	
+1159	German	*gennanan	beginnen	bəɡɪnən	b ə g ɪ n ə n	( b ə ) g ɪ n ə n ( - - )	316	
+1160	English	*gennanan	begin	bɪɡɪn	b ɪ g ɪ n	( b ɪ ) g ɪ n - - ( - - )	316	
+1161	Dutch	*gennanan	beginnen	bəɣɪnə	b ə ɣ ɪ n ə	( b ə ) ɣ ɪ n ə - ( - - )	316	
+1162	Proto-Germanic	*braudan	*braudan	braudan	b r au d a n	b r au d ( a n )	317	
+1163	German	*braudan	Brot	broːt	b r oː t	b r oː t ( - - )	317	
+1164	English	*braudan	bread	brɛd	b r ɛ d	b r ɛ d ( - - )	317	
+1165	Dutch	*braudan	brood	broːt	b r oː t	b r oː t ( - - )	317	
+1166	Proto-Germanic	*sexs	*sexs	sexs	s e x s	s e x s	318	
+1167	German	*sexs	sechs	zɛks	z ɛ k s	z ɛ k s	318	
+1168	English	*sexs	six	sɪks	s ɪ k s	s ɪ k s	318	
+1169	Dutch	*sexs	zes	zɛs	z ɛ s	z ɛ - s	318	
+1170	Proto-Germanic	*xnakkaz	*xnakkaz	xnakkaz	x n a kk a z	x n a kk ( a z )	319	
+1171	German	*xnakkaz	Nacken	nakən	n a k ə n	- n a k ( ə n )	319	
+1172	English	*xnakkaz	neck	nɛk	n ɛ k	- n ɛ k ( - - )	319	
+1173	Dutch	*xnakkaz	nek	nɛk	n ɛ k	- n ɛ k ( - - )	319	
+1174	Proto-Germanic	*stekanan	*stekanan	stekanan	s t e k a n a n	s t e k a n ( a n )	320	
+1175	German	*stekanan	stechen	ʃtɛxən	ʃ t ɛ x ə n	ʃ t ɛ x ə n ( - - )	320	
+1176	Dutch	*stekanan	steken	steːkə	s t eː k ə	s t eː k ə - ( - - )	320	
+1177	Proto-Germanic	*warto	*warto	warto	w a r t o	w a r - t o	321	
+1178	German	*warto	Warze	vart͡sə	v a r ts ə	v a r - ts ə	321	
+1179	English	*warto	wart	ʋɔːt	ʋ ɔː t	ʋ ɔː - - t -	321	
+1180	Dutch	*warto	wrat	ʋrɑt	ʋ r ɑ t	ʋ - r ɑ t -	321	
+1181	Proto-Germanic	*bardaz	*bardaz	bardaz	b a r d a z	b a r d ( a z )	322	
+1182	German	*bardaz	Bart	baːrt	b aː r t	b aː r t ( - - )	322	
+1183	English	*bardaz	beard	bɪəd	b ɪə d	b ɪə - d ( - - )	322	
+1184	Dutch	*bardaz	baard	baːrt	b aː r t	b aː r t ( - - )	322	
+1185	Proto-Germanic	*barzan	*barzan	barzan	b a r z a n	b a r z a n	323	
+1186	German	*barzan	Barsch	baːrʃ	b aː r ʃ	b aː r ʃ - -	323	
+1187	Dutch	*barzan	baars	baːrs	b aː r s	b aː r s - -	323	
+1188	Proto-Germanic	*dalaz	*dalaz	dalaz	d a l a z	d a l ( a z )	324	
+1189	German	*dalaz	Tal	taːl	t aː l	t aː l ( - - )	324	
+1190	English	*dalaz	dale	deɪl	d eɪ l	d eɪ l ( - - )	324	
+1191	Dutch	*dalaz	dal	dɑl	d ɑ l	d ɑ l ( - - )	324	
+1192	Proto-Germanic	*talaz	*talaz	talaz	t a l a z	t a l ( a z )	325	
+1193	German	*talaz	Zahl	t͡saːl	ts aː l	ts aː l ( - - )	325	
+1194	Dutch	*talaz	taal	taːl	t aː l	t aː l ( - - )	325	
+1195	Proto-Germanic	*setjanan	*setjanan	setjanan	s e t j a n a n	s e t j a n ( a n )	326	
+1196	German	*setjanan	sitzen	zɪt͡sən	z ɪ ts ə n	z ɪ ts - ə n ( - - )	326	
+1197	English	*setjanan	sit	sɪt	s ɪ t	s ɪ t - - - ( - - )	326	
+1198	Dutch	*setjanan	zitten	zɪtə	z ɪ t ə	z ɪ t - ə - ( - - )	326	
+1199	Proto-Germanic	*skūrō	*skūrō	skuːroː	s k uː r oː	s k uː - r ( oː )	327	
+1200	German	*skūrō	Schauer	ʃauər	ʃ au ə r	ʃ - au ə r ( - )	327	
+1201	English	*skūrō	shower	ʃaʊər	ʃ aʊ ə r	ʃ - aʊ ə r ( - )	327	
+1202	Proto-Germanic	*igilaz/igulaz	*igilaz/igulaz	igilaz/igulaz	i g i l a z	i g i l ( a z )	329	
+1203	German	*igilaz/igulaz	Igel	iːɡəl	iː g ə l	iː g ə l ( - - )	329	
+1204	Dutch	*igilaz/igulaz	egel	eːɣəl	eː ɣ ə l	eː ɣ ə l ( - - )	329	
+1205	Proto-Germanic	*tangō	*tangō	tangoː	t a n g oː	t a n g oː ( - )	330	
+1206	German	*tangō	Zange	t͡saŋə	ts a ŋ ə	ts a ŋ - ə ( - )	330	
+1207	English	*tangō	tongs	tɔŋz	t ɔ ŋ z	t ɔ ŋ - - ( z )	330	
+1208	Dutch	*tangō	tang	tɑŋ	t ɑ ŋ	t ɑ ŋ - - ( - )	330	
+1209	Proto-Germanic	*snīθanan	*snīθanan	sniːθanan	s n iː θ a n a n	s n iː θ a n ( a n )	331	
+1210	German	*snīθanan	schneiden	ʃnaidən	ʃ n ai d ə n	ʃ n ai d ə n ( - - )	331	
+1211	Dutch	*snīθanan	snijden	snɛɪdə	s n ɛɪ d ə	s n ɛɪ d ə - ( - - )	331	
+1212	Proto-Germanic	*felxanan	*felxanan	felxanan	f e l x a n a n	f e l x a ( n a n )	332	
+1213	German	*felxanan	Felge	fɛlɡə	f ɛ l g ə	f ɛ l g ə ( - - - )	332	
+1214	Dutch	*felxanan	velg	vɛlx	v ɛ l x	v ɛ l x - ( - - - )	332	
+1215	Proto-Germanic	*saltan	*saltan	saltan	s a l t a n	s a l t ( a n )	333	
+1216	German	*saltan	Salz	zalt͡s	z a l ts	z a l ts ( - - )	333	
+1217	English	*saltan	salt	sɔːlt	s ɔː l t	s ɔː l t ( - - )	333	
+1218	Dutch	*saltan	zout	zɑut	z ɑu t	z ɑu - t ( - - )	333	
+1219	Proto-Germanic	*trugan	*trugan	trugan	t r u g a n	t r u g ( a n )	334	
+1220	German	*trugan	Trog	troːk	t r oː k	t r oː k ( - - )	334	
+1221	English	*trugan	trough	trɔf	t r ɔ f	t r ɔ f ( - - )	334	
+1222	Proto-Germanic	*skībōn	*skībōn	skiːboːn	s k iː b oː n	s k iː b oː ( n )	335	
+1223	German	*skībōn	Scheibe	ʃaibə	ʃ ai b ə	ʃ - ai b ə ( - )	335	
+1224	Dutch	*skībōn	schijf	sxɛɪf	s x ɛɪ f	s x ɛɪ f - ( - )	335	
+1225	Proto-Germanic	*metanan	*metanan	metanan	m e t a n a n	m e t a n ( a n )	336	
+1226	German	*metanan	messen	mɛsən	m ɛ s ə n	m ɛ s ə n ( - - )	336	
+1227	Dutch	*metanan	meten	meːtə	m eː t ə	m eː t ə - ( - - )	336	
+1228	Proto-Germanic	*fleuxanan	*fleuxanan	fleuxanan	f l eu x a n a n	f l eu x a n ( a n )	337	
+1229	German	*fleuxanan	fliehen	fliːən	f l iː ə n	f l iː - ə n ( - - )	337	
+1230	English	*fleuxanan	flee	fliː	f l iː	f l iː - - - ( - - )	337	
+1231	Dutch	*fleuxanan	vlieden	vliːdə	v l iː d ə	v l iː d ə - ( - - )	337	IR
+1232	Proto-Germanic	*sparrōn	*sparrōn	sparroːn	s p a r oː n	s p a r oː n	338	
+1233	German	*sparrōn	Sparren	ʃparən	ʃ p a r ə n	ʃ p a r ə n	338	
+1234	English	*sparrōn	spar	spɑːr	s p ɑː r	s p ɑː r - -	338	
+1235	Dutch	*sparrōn	spar	spɑr	s p ɑ r	s p ɑ r - -	338	
+1236	Proto-Germanic	*xōrōn	*xōrōn	xoːroːn	x oː r oː n	x oː r oː ( n )	339	
+1237	German	*xōrōn	Hure	huːrə	h uː r ə	h uː r ə ( - )	339	
+1238	English	*xōrōn	whore	hɔːr	h ɔː r	h ɔː r - ( - )	339	
+1239	Dutch	*xōrōn	hoer	huːr	h uː r	h uː r - ( - )	339	
+1240	Proto-Germanic	*dugunθiz	*dugunθiz	dugunθiz	d u g u n θ i z	d u g u n θ i z	340	
+1241	German	*dugunθiz	Tugend	tuːɡənt	t uː g ə n t	t uː g ə n d - -	340	
+1242	Dutch	*dugunθiz	deugd	døːxt	d øː x t	d øː x - - t - -	340	
+1243	Proto-Germanic	*drībanan	*drībanan	driːbanan	d r iː b a n a n	d r iː b a n ( a n )	341	
+1244	German	*drībanan	treiben	traibən	t r ai b ə n	t r ai b ə n ( - - )	341	
+1245	English	*drībanan	drive	draɪv	d r aɪ v	d r aɪ v - - ( - - )	341	
+1246	Dutch	*drībanan	drijven	drɛɪvə	d r ɛɪ v ə	d r ɛɪ v ə - ( - - )	341	
+1247	Proto-Germanic	*kwiθuz	*kwiθuz	kwiθuz	k w i θ u z	k w i θ ( u z )	342	
+1248	German	*kwiθuz	Kitt	kɪt	k ɪ t	k - ɪ t ( - - )	342	
+1249	English	*kwiθuz	cud	kʌd	k ʌ d	k - ʌ d ( - - )	342	
+1250	Dutch	*kwiθuz	kit	kɪt	k ɪ t	k - ɪ t ( - - )	342	
+1251	Proto-Germanic	*xaldanan	*xaldanan	xaldanan	x a l d a n a n	x a l d a n ( a n )	343	
+1252	German	*xaldanan	halten	haltən	h a l t ə n	h a l t ə n ( - - )	343	
+1253	English	*xaldanan	hold	həʊld	h əʊ l d	h əʊ l d - - ( - - )	343	
+1254	Dutch	*xaldanan	houden	hɑudə	h ɑu d ə	h ɑu - d ə - ( - - )	343	
+1255	Proto-Germanic	*strawan	*strawan	strawan	s t r a w a n	s t r a ( w a n )	344	
+1256	German	*strawan	Stroh	ʃtroː	ʃ t r oː	ʃ t r oː ( - - - )	344	
+1257	English	*strawan	straw	strɔː	s t r ɔː	s t r ɔː ( - - - )	344	
+1258	Dutch	*strawan	stro	stroː	s t r oː	s t r oː ( - - - )	344	
+1259	Proto-Germanic	*tuxtiz	*tuxtiz	tuxtiz	t u x t i z	t u x t ( i z )	345	
+1260	German	*tuxtiz	Zucht	t͡sʊxt	ts ʊ x t	ts ʊ x t ( - - )	345	
+1261	Dutch	*tuxtiz	tucht	tʉxt	t ʉ x t	t ʉ x t ( - - )	345	
+1262	Proto-Germanic	*fiskaz	*fiskaz	fiskaz	f i s k a z	f i s k ( a z )	346	
+1263	German	*fiskaz	Fisch	fɪʃ	f ɪ ʃ	f ɪ ʃ - ( - - )	346	
+1264	English	*fiskaz	fish	fɪʃ	f ɪ ʃ	f ɪ ʃ - ( - - )	346	
+1265	Dutch	*fiskaz	vis	vɪs	v ɪ s	v ɪ s - ( - - )	346	
+1266	Proto-Germanic	*waldanan	*waldanan	waldanan	w a l d a n a n	w a l d a n ( a n )	347	
+1267	German	*waldanan	walten	valtən	v a l t ə n	v a l t ə n ( - - )	347	
+1268	English	*waldanan	wield	ʋiːld	ʋ iː l d	ʋ iː l d - - ( - - )	347	
+1269	Proto-Germanic	*wasjanan	*wasjanan	wasjanan	w a s j a n a n	w a s j a n ( a n )	348	
+1270	German	*wasjanan	wehren	veːrən	v eː r ə n	v eː r - ə n ( - - )	348	
+1271	Dutch	*wasjanan	weren	ʋeːrə	ʋ eː r ə	ʋ eː r - ə - ( - - )	348	
+1272	Proto-Germanic	*waiθiz	*waiθiz	waiθiz	w ai θ i z	w ai θ i z	349	
+1273	German	*waiθiz	Weide	vaidə	v ai d ə	v ai d ə -	349	
+1274	English	*waiθiz	withy	ʋɪðɪ	ʋ ɪ ð ɪ	ʋ ɪ ð ɪ -	349	
+1275	Dutch	*waiθiz	weide	ʋɛɪdə	ʋ ɛɪ d ə	ʋ ɛɪ d ə -	349	
+1276	Proto-Germanic	*θelan	*θelan	θelan	θ e l a n	θ e l a ( n )	350	
+1277	German	*θelan	Diele	diːlə	d iː l ə	d iː l ə ( - )	350	
+1278	Dutch	*θelan	deel	deːl	d eː l	d eː l - ( - )	350	
+1279	Proto-Germanic	*wabsaz	*wabsaz	wabsaz	w a b s a z	w a - b s ( a z )	351	
+1280	German	*wabsaz	Wespe	vɛspə	v ɛ s p ə	v ɛ s p - ( ə - )	351	
+1281	English	*wabsaz	wasp	ʋɔsp	ʋ ɔ s p	ʋ ɔ s p - ( - - )	351	
+1282	Dutch	*wabsaz	wesp	ʋɛsp	ʋ ɛ s p	ʋ ɛ s p - ( - - )	351	
+1283	Proto-Germanic	*swalgwōn	*swalgwōn	swalgwoːn	s w a l g w oː n	s w a l - w oː ( n )	352	
+1284	German	*swalgwōn	Schwalbe	ʃvalbə	ʃ v a l b ə	ʃ v a l - b ə ( - )	352	
+1285	English	*swalgwōn	swallow	sʋɔləʊ	s ʋ ɔ l əʊ	s ʋ ɔ l - əʊ - ( - )	352	
+1286	Dutch	*swalgwōn	zwaluw	zʋaːlyːʋ	z ʋ aː l yː ʋ	z ʋ aː l yː ʋ - ( - )	352	
+1287	Proto-Germanic	*skawōjanan	*skawōjanan	skawoːjanan	s k a w oː j a n a n	s k a w oː j a n ( a n )	353	
+1288	German	*skawōjanan	schauen	ʃauən	ʃ au ə n	ʃ - au - - - ə n ( - - )	353	
+1289	English	*skawōjanan	show	ʃəʊ	ʃ əʊ	ʃ - əʊ - - - - - ( - - )	353	
+1290	Dutch	*skawōjanan	schouwen	sxɑuʋə	s x ɑu ʋ ə	s x ɑu ʋ - - ə - ( - - )	353	
+1291	Proto-Germanic	*wīgjanan	*wīgjanan	wiːgjanan	w iː g j a n a n	w iː g j a n ( a n )	354	
+1292	German	*wīgjanan	weihen	vaiən	v ai ə n	v ai - - ə n ( - - )	354	
+1293	Dutch	*wīgjanan	wijden	ʋɛɪdə	ʋ ɛɪ d ə	ʋ ɛɪ d - ə - ( - - )	354	
+1294	Proto-Germanic	*gansz	*gansz	gansz	g a n s z	g a n s ( z )	355	
+1295	German	*gansz	Gans	ɡans	g a n s	g a n s ( - )	355	
+1296	English	*gansz	goose	ɡuːs	g uː s	g uː - s ( - )	355	
+1297	Dutch	*gansz	gans	xɑns	x ɑ n s	x ɑ n s ( - )	355	
+1298	Proto-Germanic	*baugjanan	*baugjanan	baugjanan	b au g j a n a n	b au g j a n ( a n )	356	
+1299	German	*baugjanan	beugen	bɔyɡən	b ɔy g ə n	b ɔy g - ə n ( - - )	356	
+1300	English	*baugjanan	bow	bəʊ	b əʊ	b əʊ - - - - ( - - )	356	
+1301	Dutch	*baugjanan	buigen	bœyɣə	b œy ɣ ə	b œy ɣ - ə - ( - - )	356	
+1302	Proto-Germanic	*burdan	*burdan	burdan	b u r d a n	b u r d ( a n )	357	
+1303	German	*burdan	Bord	bɔrt	b ɔ r t	b ɔ r d ( - - )	357	BOR
+1304	English	*burdan	board	bɔːd	b ɔː d	b ɔː - d ( - - )	357	
+1305	Dutch	*burdan	bord	bɔrt	b ɔ r t	b ɔ r t ( - - )	357	
+1306	Proto-Germanic	*raipan	*raipan	raipan	r ai p a n	r ai p ( a n )	358	
+1307	German	*raipan	Reif	raif	r ai f	r ai f ( - - )	358	
+1308	English	*raipan	rope	rəʊp	r əʊ p	r əʊ p ( - - )	358	
+1309	Dutch	*raipan	rijp	rɛɪp	r ɛɪ p	r ɛɪ p ( - - )	358	
+1310	Proto-Germanic	*daupjanan	*daupjanan	daupjanan	d au p j a n a n	d au p j a n ( a n )	359	
+1311	German	*daupjanan	taufen	taufən	t au f ə n	t au f - ə n ( - - )	359	
+1312	Dutch	*daupjanan	dopen	doːpə	d oː p ə	d oː p - ə - ( - - )	359	
+1313	Proto-Germanic	*baθan	*baθan	baθan	b a θ a n	b a θ ( a n )	360	
+1314	German	*baθan	Bad	baːt	b aː t	b aː t ( - - )	360	
+1315	English	*baθan	bath	bɑːθ	b ɑː θ	b ɑː θ ( - - )	360	
+1316	Dutch	*baθan	bad	bɑt	b ɑ t	b ɑ t ( - - )	360	
+1317	Proto-Germanic	*fastēnan	*fastēnan	fasteːnan	f a s t eː n a n	f a s t eː n a n	361	
+1318	German	*fastēnan	fasten	fastən	f a s t ə n	f a s t ə - - n	361	
+1319	English	*fastēnan	fast	fɑːst	f ɑː s t	f ɑː s t - - - -	361	
+1320	Dutch	*fastēnan	vasten	vɑstə	v ɑ s t ə	v ɑ s t ə - - -	361	
+1321	Proto-Germanic	*westanē	*westanē	westaneː	w e s t a n eː	w e s t a n ( eː )	362	
+1322	German	*westanē	Westen	vɛstən	v ɛ s t ə n	v ɛ s t ə n ( - )	362	
+1323	English	*westanē	west	ʋɛst	ʋ ɛ s t	ʋ ɛ s t - - ( - )	362	
+1324	Dutch	*westanē	westen	ʋɛstə	ʋ ɛ s t ə	ʋ ɛ s t ə - ( - )	362	
+1325	Proto-Germanic	*saiwalō	*saiwalō	saiwaloː	s ai w a l oː	s ai w a l oː	363	
+1326	German	*saiwalō	Seele	zeːlə	z eː l ə	z eː - - l ə	363	
+1327	English	*saiwalō	soul	səʊl	s əʊ l	s əʊ - - l -	363	
+1328	Dutch	*saiwalō	ziel	ziːl	z iː l	z iː - - l -	363	
+1329	Proto-Germanic	*lustuz	*lustuz	lustuz	l u s t u z	l u s t ( u z )	364	
+1330	German	*lustuz	Lust	lʊst	l ʊ s t	l ʊ s t ( - - )	364	
+1331	English	*lustuz	lust	lʌst	l ʌ s t	l ʌ s t ( - - )	364	
+1332	Dutch	*lustuz	lust	lʉst	l ʉ s t	l ʉ s t ( - - )	364	
+1333	Proto-Germanic	*etanan	*etanan	etanan	e t a n a n	e t a n ( a n )	365	
+1334	German	*etanan	essen	ɛsən	ɛ s ə n	ɛ s ə n ( - - )	365	
+1335	English	*etanan	eat	iːt	iː t	iː t - - ( - - )	365	
+1336	Dutch	*etanan	eten	eːtə	eː t ə	eː t ə - ( - - )	365	
+1337	Proto-Germanic	*xabēnan	*xabēnan	xabeːnan	x a b eː n a n	x a b eː n ( a n )	366	
+1338	German	*xabēnan	haben	haːbən	h aː b ə n	h aː b ə n ( - - )	366	
+1339	English	*xabēnan	have	hæv	h æ v	h æ v - - ( - - )	366	
+1340	Dutch	*xabēnan	hebben	hɛbə	h ɛ b ə	h ɛ b ə - ( - - )	366	
+1341	Proto-Germanic	*bandan	*bandan	bandan	b a n d a n	b a n d ( a n )	367	
+1342	German	*bandan	Band	bant	b a n t	b a n t ( - - )	367	
+1343	Dutch	*bandan	band	bɛnt	b ɛ n t	b ɛ n t ( - - )	367	
+1344	Proto-Germanic	*xazwaz	*xazwaz	xazwaz	x a z w a z	x a z ( w a z )	368	
+1345	German	*xazwaz	Haar	haːr	h aː r	h aː r ( - - - )	368	
+1346	English	*xazwaz	hair	hɛər	h ɛə r	h ɛə r ( - - - )	368	
+1347	Dutch	*xazwaz	haar	haːr	h aː r	h aː r ( - - - )	368	
+1348	Proto-Germanic	*θreskanan	*θreskanan	θreskanan	θ r e s k a n a n	θ - r e s k a n ( a n )	370	
+1349	German	*θreskanan	dreschen	drɛʃən	d r ɛ ʃ ə n	d - r ɛ ʃ - ə n ( - - )	370	
+1350	English	*θreskanan	thrash	θræʃ	θ r æ ʃ	θ - r æ ʃ - - - ( - - )	370	
+1351	Dutch	*θreskanan	dorsen	dɔrsə	d ɔ r s ə	d ɔ r - s - ə - ( - - )	370	
+1352	Proto-Germanic	*landan	*landan	landan	l a n d a n	l a n d ( a n )	371	
+1353	German	*landan	Land	lant	l a n t	l a n d ( - - )	371	
+1354	English	*landan	land	lænd	l æ n d	l æ n d ( - - )	371	
+1355	Dutch	*landan	land	lɑnt	l ɑ n t	l ɑ n t ( - - )	371	
+1356	Proto-Germanic	*spannanan	*spannanan	spannanan	s p a nn a n a n	s p a nn a n ( a n )	372	
+1357	German	*spannanan	spannen	ʃpanən	ʃ p a n ə n	ʃ p a n ə n ( - - )	372	
+1358	English	*spannanan	span	spæn	s p æ n	s p æ n - - ( - - )	372	
+1359	Dutch	*spannanan	spannen	spɑnə	s p ɑ n ə	s p ɑ n ə - ( - - )	372	
+1360	Proto-Germanic	*straumaz	*straumaz	straumaz	s t r au m a z	s t r au m ( a z )	373	
+1361	German	*straumaz	Strom	ʃtroːm	ʃ t r oː m	ʃ t r oː m ( - - )	373	
+1362	English	*straumaz	stream	striːm	s t r iː m	s t r iː m ( - - )	373	
+1363	Dutch	*straumaz	stroom	stroːm	s t r oː m	s t r oː m ( - - )	373	
+1364	Proto-Germanic	*sūpanan	*sūpanan	suːpanan	s uː p a n a n	s uː p a n ( a n )	374	
+1365	German	*sūpanan	saufen	zaufən	z au f ə n	z au f ə n ( - - )	374	
+1366	English	*sūpanan	sup	sʌp	s ʌ p	s ʌ p - - ( - - )	374	
+1367	Dutch	*sūpanan	zuipen	zœypə	z œy p ə	z œy p ə - ( - - )	374	
+1368	Proto-Germanic	*skēpan	*skēpan	skeːpan	s k eː p a n	s k eː p ( a n )	375	
+1369	German	*skēpan	Schaf	ʃaːf	ʃ aː f	ʃ - aː f ( - - )	375	
+1370	English	*skēpan	sheep	ʃiːp	ʃ iː p	ʃ - iː p ( - - )	375	
+1371	Dutch	*skēpan	schaap	sxaːp	s x aː p	s x aː p ( - - )	375	
+1372	Proto-Germanic	*rextjanan	*rextjanan	rextjanan	r e x t j a n a n	r e x t j a n ( a n )	376	
+1373	German	*rextjanan	richten	rɪxtən	r ɪ x t ə n	r ɪ x t - ə n ( - - )	376	
+1374	Dutch	*rextjanan	richten	rɪxtə	r ɪ x t ə	r ɪ x t - ə - ( - - )	376	
+1375	Proto-Germanic	*wixslan	*wixslan	wixslan	w i x s l a n	w i x s - l ( a n )	377	
+1376	German	*wixslan	Wechsel	vɛksəl	v ɛ k s ə l	v ɛ k s ə l ( - - )	377	
+1377	Dutch	*wixslan	wissel	ʋɪsəl	ʋ ɪ s ə l	ʋ ɪ - s ə l ( - - )	377	
+1378	Proto-Germanic	*sandjanan	*sandjanan	sandjanan	s a n d j a n a n	s a n d j a n ( a n )	378	
+1379	German	*sandjanan	senden	zɛndən	z ɛ n d ə n	z ɛ n d - ə n ( - - )	378	
+1380	English	*sandjanan	send	sɛnd	s ɛ n d	s ɛ n d - - - ( - - )	378	
+1381	Dutch	*sandjanan	zenden	zɛndə	z ɛ n d ə	z ɛ n d - ə - ( - - )	378	
+1382	Proto-Germanic	*rukkiz	*rukkiz	rukkiz	r u kk i z	r u kk ( i z )	379	
+1383	German	*rukkiz	Ruck	rʊk	r ʊ k	r ʊ k ( - - )	379	
+1384	English	*rukkiz	rock	rɔk	r ɔ k	r ɔ k ( - - )	379	
+1385	Dutch	*rukkiz	ruk	rʉk	r ʉ k	r ʉ k ( - - )	379	
+1386	Proto-Germanic	*tauxmaz	*tauxmaz	tauxmaz	t au x m a z	t au x m ( a z )	380	
+1387	German	*tauxmaz	Zaum	t͡saum	ts au m	ts au - m ( - - )	380	
+1388	English	*tauxmaz	team	tiːm	t iː m	t iː - m ( - - )	380	
+1389	Dutch	*tauxmaz	toom	toːm	t oː m	t oː - m ( - - )	380	
+1390	Proto-Germanic	*leusanan	*leusanan	leusanan	l eu s a n a n	( - - - ) l eu s a n ( a n )	381	
+1391	German	*leusanan	verlieren	fɛrliːrən	f ɛ r l iː r ə n	( f ɛ r ) l iː r ə n ( - - )	381	
+1392	English	*leusanan	forlorn	fəlɔːn	f ə l ɔː n	( f ə - ) l ɔː - - - ( n - )	381	
+1393	Dutch	*leusanan	verliezen	vərliːzə	v ə r l iː z ə	( v ə r ) l iː z ə - ( - - )	381	
+1394	Proto-Germanic	*stelljanan	*stelljanan	stelljanan	s t e ll j a n a n	s t e ll j a n ( a n )	382	
+1395	German	*stelljanan	stillen	ʃtɪlən	ʃ t ɪ l ə n	ʃ t ɪ l - ə n ( - - )	382	
+1396	English	*stelljanan	still	stɪl	s t ɪ l	s t ɪ l - - - ( - - )	382	
+1397	Dutch	*stelljanan	stillen	stɪlə	s t ɪ l ə	s t ɪ l - ə - ( - - )	382	
+1398	Proto-Germanic	*skīnanan	*skīnanan	skiːnanan	s k iː n a n a n	s k iː n a n ( a n )	383	
+1399	German	*skīnanan	scheinen	ʃainən	ʃ ai n ə n	ʃ - ai n ə n ( - - )	383	
+1400	English	*skīnanan	shine	ʃaɪn	ʃ aɪ n	ʃ - aɪ n - - ( - - )	383	
+1401	Dutch	*skīnanan	schijnen	sxɛɪnə	s x ɛɪ n ə	s x ɛɪ n ə - ( - - )	383	
+1402	Proto-Germanic	*stabiz	*stabiz	stabiz	s t a b i z	s t a b ( i z )	384	
+1403	German	*stabiz	Stab	ʃtaːp	ʃ t aː p	ʃ t aː b ( - - )	384	
+1404	English	*stabiz	staff	stɑːf	s t ɑː f	s t ɑː f ( - - )	384	
+1405	Dutch	*stabiz	staf	stɑf	s t ɑ f	s t ɑ f ( - - )	384	
+1406	Proto-Germanic	*θegwernō	*θegwernō	θegwernoː	θ e g w e r n oː	θ e g w e r n oː	385	
+1407	German	*θegwernō	Dirne	dɪrnə	d ɪ r n ə	d ɪ - - - r n ə	385	
+1408	Dutch	*θegwernō	deern	deːrn	d eː r n	d eː - - - r n -	385	
+1409	Proto-Germanic	*flōduz	*flōduz	floːduz	f l oː d u z	f l oː d ( u z )	386	
+1410	German	*flōduz	Flut	fluːt	f l uː t	f l uː t ( - - )	386	
+1411	English	*flōduz	flood	flʌd	f l ʌ d	f l ʌ d ( - - )	386	
+1412	Dutch	*flōduz	vloed	vluːt	v l uː t	v l uː t ( - - )	386	
+1413	Proto-Germanic	*stainaz	*stainaz	stainaz	s t ai n a z	s t ai n ( a z )	387	
+1414	German	*stainaz	Stein	ʃtain	ʃ t ai n	ʃ t ai n ( - - )	387	
+1415	English	*stainaz	stone	stəʊn	s t əʊ n	s t əʊ n ( - - )	387	
+1416	Dutch	*stainaz	steen	steːn	s t eː n	s t eː n ( - - )	387	
+1417	Proto-Germanic	*bugōn	*bugōn	bugoːn	b u g oː n	b u g oː n	388	
+1418	German	*bugōn	Bogen	boːɡən	b oː g ə n	b oː g ə n	388	
+1419	English	*bugōn	bow	bəʊ	b əʊ	b əʊ - - -	388	
+1420	Dutch	*bugōn	boog	boːx	b oː x	b oː x - -	388	
+1421	Proto-Germanic	*listiz	*listiz	listiz	l i s t i z	l i s t ( i z )	389	
+1422	German	*listiz	List	lɪst	l ɪ s t	l ɪ s t ( - - )	389	
+1423	Dutch	*listiz	list	lɪst	l ɪ s t	l ɪ s t ( - - )	389	
+1424	Proto-Germanic	*skeranan	*skeranan	skeranan	s k e r a n a n	s k e r a n ( a n )	390	
+1425	German	*skeranan	scheren	ʃeːrən	ʃ eː r ə n	ʃ - eː r ə n ( - - )	390	
+1426	English	*skeranan	shear	ʃɪər	ʃ ɪə r	ʃ - ɪə r - - ( - - )	390	
+1427	Dutch	*skeranan	scheren	sxeːrə	s x eː r ə	s x eː r ə - ( - - )	390	
+1428	Proto-Germanic	*bakanan	*bakanan	bakanan	b a k a n a n	b a kk a n ( a n )	391	
+1429	German	*bakanan	backen	bakən	b a k ə n	b a k ə n ( - - )	391	BOR
+1430	English	*bakanan	bake	beɪk	b eɪ k	b eɪ k - - ( - - )	391	
+1431	Dutch	*bakanan	bakken	bɑkə	b ɑ k ə	b ɑ k ə - ( - - )	391	
+1432	Proto-Germanic	*wangon	*wangon	wangon	w a n g o n	w a n g o ( n )	392	
+1433	German	*wangon	Wange	vaŋə	v a ŋ ə	v a ŋ - ə ( - )	392	
+1434	Dutch	*wangon	wang	ʋɑŋ	ʋ ɑ ŋ	ʋ ɑ ŋ - - ( - )	392	
+1435	Proto-Germanic	*līstōn	*līstōn	liːstoːn	l iː s t oː n	l iː s t oː ( n )	393	
+1436	German	*līstōn	Leiste	laistə	l ai s t ə	l ai s t ə ( - )	393	
+1437	English	*līstōn	list	lɪst	l ɪ s t	l ɪ s t - ( - )	393	
+1438	Dutch	*līstōn	lijst	lɛɪst	l ɛɪ s t	l ɛɪ s t - ( - )	393	
+1439	Proto-Germanic	*skeubanan	*skeubanan	skeubanan	s k eu b a n a n	s k eu b a n ( a n )	394	
+1440	German	*skeubanan	schieben	ʃiːbən	ʃ iː b ə n	ʃ - iː b ə n ( - - )	394	
+1441	English	*skeubanan	shove	ʃʌv	ʃ ʌ v	ʃ - ʌ v - - ( - - )	394	
+1442	Dutch	*skeubanan	schuiven	sxœyvə	s x œy v ə	s x œy v ə - ( - - )	394	
+1443	Proto-Germanic	*xelpanan	*xelpanan	xelpanan	x e l p a n a n	x e l p a n ( a n )	395	
+1444	German	*xelpanan	helfen	hɛlfən	h ɛ l f ə n	h ɛ l f ə n ( - - )	395	
+1445	English	*xelpanan	help	hɛlp	h ɛ l p	h ɛ l p - - ( - - )	395	
+1446	Dutch	*xelpanan	helpen	hɛlpə	h ɛ l p ə	h ɛ l p ə - ( - - )	395	
+1447	Proto-Germanic	*fulōn	*fulōn	fuloːn	f u l oː n	f u l oː n	396	
+1448	German	*fulōn	Fohlen	foːlən	f oː l ə n	f oː l ə n	396	
+1449	English	*fulōn	foal	fəʊl	f əʊ l	f əʊ l - -	396	
+1450	Proto-Germanic	*bidjanan	*bidjanan	bidjanan	b i d j a n a n	b i d j a n ( a n )	397	
+1451	German	*bidjanan	bitten	bɪtən	b ɪ t ə n	b ɪ t - ə n ( - - )	397	
+1452	English	*bidjanan	bid	bɪd	b ɪ d	b ɪ d - - - ( - - )	397	
+1453	Dutch	*bidjanan	bidden	bɪdə	b ɪ d ə	b ɪ d - ə - ( - - )	397	
+1454	Proto-Germanic	*makōjanan	*makōjanan	makoːjanan	m a k oː j a n a n	m a k oː j a n ( a n )	398	
+1455	German	*makōjanan	machen	maxən	m a x ə n	m a x - - ə n ( - - )	398	
+1456	English	*makōjanan	make	meɪk	m eɪ k	m eɪ k - - - - ( - - )	398	
+1457	Dutch	*makōjanan	maken	maːkə	m aː k ə	m aː k - - ə - ( - - )	398	
+1458	Proto-Germanic	*suxtiz	*suxtiz	suxtiz	s u x t i z	s u x t ( i z )	399	
+1459	German	*suxtiz	Sucht	zʊxt	z ʊ x t	z ʊ x t ( - - )	399	
+1460	Dutch	*suxtiz	zucht	zʉxt	z ʉ x t	z ʉ x t ( - - )	399	
+1461	Proto-Germanic	*rugiz	*rugiz	rugiz	r u g i z	r u g i ( z )	400	
+1462	German	*rugiz	Roggen	rɔɡən	r ɔ g ə n	r ɔ g ə ( n )	400	
+1463	English	*rugiz	rye	raɪ	r aɪ	r aɪ - - ( - )	400	
+1464	Dutch	*rugiz	rogge	rɔɣə	r ɔ ɣ ə	r ɔ ɣ ə ( - )	400	
+1465	Proto-Germanic	*xaliθz	*xaliθz	xaliθz	x a l i θ z	x a l i θ ( z )	401	
+1466	German	*xaliθz	Held	hɛlt	h ɛ l t	h ɛ l - d ( - )	401	
+1467	Dutch	*xaliθz	held	hɛlt	h ɛ l t	h ɛ l - t ( - )	401	
+1468	Proto-Germanic	*reukanan	*reukanan	reukanan	r eu k a n a n	r eu k a n ( a n )	402	
+1469	German	*reukanan	riechen	riːxən	r iː x ə n	r iː x ə n ( - - )	402	
+1470	Dutch	*reukanan	ruiken	rœykə	r œy k ə	r œy k ə - ( - - )	402	
+1471	Proto-Germanic	*landīn	*landīn	landiːn	l a n d iː n	l a n d iː ( n )	403	
+1472	German	*landīn	Lende	lɛndə	l ɛ n d ə	l ɛ n d ə ( - )	403	
+1473	Dutch	*landīn	lende	lɛndə	l ɛ n d ə	l ɛ n d ə ( - )	403	
+1474	Proto-Germanic	*sprutōn	*sprutōn	sprutoːn	s p r u t oː n	s p - r u t oː ( n )	404	
+1475	German	*sprutōn	Sprosse	ʃprɔsə	ʃ p r ɔ s ə	ʃ p - r ɔ s ə ( - )	404	
+1476	Dutch	*sprutōn	sport	spɔrt	s p ɔ r t	s p ɔ r - t - ( - )	404	
+1477	Proto-Germanic	*glōdiz	*glōdiz	gloːdiz	g l oː d i z	g l oː d ( i z )	405	
+1478	German	*glōdiz	Glut	ɡluːt	g l uː t	g l uː t ( - - )	405	
+1479	Dutch	*glōdiz	gloed	xluːt	x l uː t	x l uː t ( - - )	405	
+1480	Proto-Germanic	*furxtīn	*furxtīn	furxtiːn	f u r x t iː n	f u r - x t ( iː n )	406	
+1481	German	*furxtīn	Furcht	fʊrxt	f ʊ r x t	f ʊ r - x t ( - - )	406	
+1482	English	*furxtīn	fright	fraɪt	f r aɪ t	f - r aɪ - t ( - - )	406	
+1483	Proto-Germanic	*wullo	*wullo	wullo	w u ll o	w u ll o	407	
+1484	German	*wullo	Wolle	vɔlə	v ɔ l ə	v ɔ l ə	407	
+1485	English	*wullo	wool	ʋʊl	ʋ ʊ l	ʋ ʊ l -	407	
+1486	Dutch	*wullo	wol	ʋɔl	ʋ ɔ l	ʋ ɔ l -	407	
+1487	Proto-Germanic	*sai	*sai	sai	s ai	s ai	408	
+1488	German	*sai	See	zeː	z eː	z eː	408	
+1489	English	*sai	sea	siː	s iː	s iː	408	
+1490	Dutch	*sai	zee	zeː	z eː	z eː	408	
+1491	Proto-Germanic	*weslon	*weslon	weslon	w e s l o n	w e s - l ( o n )	409	
+1492	German	*weslon	Wiesel	viːzəl	v iː z ə l	v iː z ə l ( - - )	409	
+1493	English	*weslon	weasel	ʋiːzḷ	ʋ iː z ə l	ʋ iː z ə l ( - - )	409	
+1494	Dutch	*weslon	wezel	ʋeːzəl	ʋ eː z ə l	ʋ eː z ə l ( - - )	409	
+1495	Proto-Germanic	*reumōn	*reumōn	reumoːn	r eu m oː n	r eu m oː ( n )	410	
+1496	German	*reumōn	Riemen	riːmən	r iː m ə n	r iː m ə ( n )	410	
+1497	Dutch	*reumōn	riem	riːm	r iː m	r iː m - ( - )	410	
+1498	Proto-Germanic	*sūganan	*sūganan	suːganan	s uː g a n a n	s uː g a n ( a n )	411	
+1499	German	*sūganan	saugen	zauɡən	z au g ə n	z au g ə n ( - - )	411	
+1500	Dutch	*sūganan	zuigen	zœyɣə	z œy ɣ ə	z œy ɣ ə - ( - - )	411	
+1501	Proto-Germanic	*spraidjanan	*spraidjanan	spraidjanan	s p r ai d j a n a n	s p r ai d j a n ( a n )	412	
+1502	German	*spraidjanan	spreiten	ʃpraitən	ʃ p r ai t ə n	ʃ p r ai t - ə n ( - - )	412	
+1503	English	*spraidjanan	spread	sprɛd	s p r ɛ d	s p r ɛ d - - - ( - - )	412	
+1504	Dutch	*spraidjanan	spreiden	sprɛɪdə	s p r ɛɪ d ə	s p r ɛɪ d - ə - ( - - )	412	
+1505	Proto-Germanic	*kraftiz	*kraftiz	kraftiz	k r a f t i z	k r a f t ( i z )	413	
+1506	German	*kraftiz	Kraft	kraft	k r a f t	k r a f t ( - - )	413	
+1507	English	*kraftiz	craft	krɑːft	k r ɑː f t	k r ɑː f t ( - - )	413	
+1508	Dutch	*kraftiz	kracht	krɑxt	k r ɑ x t	k r ɑ x t ( - - )	413	
+1509	Proto-Germanic	*xerθaz	*xerθaz	xerθaz	x e r θ a z	x e r θ ( a z )	414	
+1510	German	*xerθaz	Herd	heːrt	h eː r t	h eː r d ( - - )	414	
+1511	English	*xerθaz	hearth	hɑːθ	h ɑː θ	h ɑː - θ ( - - )	414	
+1512	Dutch	*xerθaz	haard	haːrt	h aː r t	h aː r t ( - - )	414	
+1513	Proto-Germanic	*dawwō	*dawwō	dawwoː	d a w oː	d - a w ( oː )	416	
+1514	German	*dawwō	Tau	tau	t au	t - au - ( - )	416	
+1515	English	*dawwō	dew	djuː	d j uː	d j uː - ( - )	416	
+1516	Dutch	*dawwō	dauw	dɑuʋ	d ɑu ʋ	d - ɑu ʋ ( - )	416	
+1517	Proto-Germanic	*klibēnan	*klibēnan	klibeːnan	k l i b eː n a n	k l i b eː n a n	417	
+1518	German	*klibēnan	kleben	kleːbən	k l eː b ə n	k l eː b ə - - n	417	
+1519	Dutch	*klibēnan	kleven	kleːvə	k l eː v ə	k l eː v ə - - -	417	
+1520	Proto-Germanic	*wulfaz	*wulfaz	wulfaz	w u l f a z	w u l f ( a z )	418	
+1521	German	*wulfaz	Wolf	vɔlf	v ɔ l f	v ɔ l f ( - - )	418	
+1522	English	*wulfaz	wolf	ʋʊlf	ʋ ʊ l f	ʋ ʊ l f ( - - )	418	
+1523	Dutch	*wulfaz	wolf	ʋɔlf	ʋ ɔ l f	ʋ ɔ l f ( - - )	418	
+1524	Proto-Germanic	*xarbistuz	*xarbistuz	xarbistuz	x a r b i s t u z	x a r b i s t ( u z )	419	
+1525	German	*xarbistuz	Herbst	hɛrpst	h ɛ r p s t	h ɛ r p - s t ( - - )	419	
+1526	English	*xarbistuz	harvest	hɑːvɪst	h ɑː v ɪ s t	h ɑː - v ɪ s t ( - - )	419	
+1527	Dutch	*xarbistuz	herfst	hɛrfst	h ɛ r f s t	h ɛ r f - s t ( - - )	419	
+1528	Proto-Germanic	*berganan	*berganan	berganan	b e r g a n a n	b e r g a n ( a n )	420	
+1529	German	*berganan	bergen	bɛrɡən	b ɛ r g ə n	b ɛ r g ə n ( - - )	420	
+1530	Dutch	*berganan	bergen	bɛrɣə	b ɛ r ɣ ə	b ɛ r ɣ ə - ( - - )	420	
+1531	Proto-Germanic	*saliz	*saliz	saliz	s a l i z	s a l ( i z )	421	
+1532	German	*saliz	Saal	zaːl	z aː l	z aː l ( - - )	421	
+1533	Dutch	*saliz	zaal	zaːl	z aː l	z aː l ( - - )	421	
+1534	Proto-Germanic	*naxtz	*naxtz	naxtz	n a x t z	n a x t ( z )	422	
+1535	German	*naxtz	Nacht	naxt	n a x t	n a x t ( - )	422	
+1536	English	*naxtz	night	naɪt	n aɪ t	n aɪ - t ( - )	422	
+1537	Dutch	*naxtz	nacht	nɑxt	n ɑ x t	n ɑ x t ( - )	422	
+1538	Proto-Germanic	*raθjō	*raθjō	raθjoː	r a θ j oː	r a θ j oː	423	
+1539	German	*raθjō	Rede	reːdə	r eː d ə	r eː d - ə	423	
+1540	Dutch	*raθjō	rede	reːdə	r eː d ə	r eː d - ə	423	
+1541	Proto-Germanic	*ēdmaz	*ēdmaz	eːdmaz	eː d m a z	eː d - m ( a z )	424	
+1542	German	*ēdmaz	Atem	aːtəm	aː t ə m	aː t ə m ( - - )	424	
+1543	Dutch	*ēdmaz	adem	aːdəm	aː d ə m	aː d ə m ( - - )	424	
+1544	Proto-Germanic	*rendō	*rendō	rendoː	r e n d oː	r e n d oː	425	
+1545	German	*rendō	Rinde	rɪndə	r ɪ n d ə	r ɪ n d ə	425	
+1546	English	*rendō	rind	raɪnd	r aɪ n d	r aɪ n d -	425	
+1547	Proto-Germanic	*labbaz	*labbaz	labbaz	l a b a z	l a b ( a z )	426	
+1548	German	*labbaz	Lappen	lapən	l a p ə n	l a p ( ə n )	426	
+1549	English	*labbaz	lap	læp	l æ p	l æ p ( - - )	426	
+1550	Dutch	*labbaz	lap	lɑp	l ɑ p	l ɑ p ( - - )	426	
+1551	Proto-Germanic	*wira-aldiz	*wira-aldiz	wira+aldiz	w i r a + a l d i z	w i r a l d ( i z )	427	
+1552	German	*wira-aldiz	Welt	vɛlt	v ɛ l t	v ɛ - - l t ( - - )	427	
+1553	English	*wira-aldiz	world	ʋɜːld	ʋ ɜː l d	ʋ ɜː - - l d ( - - )	427	
+1554	Dutch	*wira-aldiz	wereld	ʋeːrəlt	ʋ eː r ə l t	ʋ eː r ə l t ( - - )	427	
+1555	Proto-Germanic	*werpanan	*werpanan	werpanan	w e r p a n a n	w e r p a n ( a n )	428	
+1556	German	*werpanan	werfen	vɛrfən	v ɛ r f ə n	v ɛ r f ə n ( - - )	428	
+1557	English	*werpanan	warp	ʋɔːp	ʋ ɔː p	ʋ ɔː - p - - ( - - )	428	
+1558	Dutch	*werpanan	werpen	ʋɛrpə	ʋ ɛ r p ə	ʋ ɛ r p ə - ( - - )	428	
+1559	Proto-Germanic	*luftuz	*luftuz	luftuz	l u f t u z	l u f t ( u z )	429	
+1560	German	*luftuz	Luft	lʊft	l ʊ f t	l ʊ f t ( - - )	429	
+1561	Dutch	*luftuz	lucht	lʉxt	l ʉ x t	l ʉ x t ( - - )	429	
+1562	Proto-Germanic	*sengwanan	*sengwanan	sengwanan	s e n g w a n a n	s e n g w a n ( a n )	430	
+1563	German	*sengwanan	singen	zɪŋən	z ɪ ŋ ə n	z ɪ ŋ - - ə n ( - - )	430	
+1564	English	*sengwanan	sing	sɪŋ	s ɪ ŋ	s ɪ ŋ - - - - ( - - )	430	
+1565	Dutch	*sengwanan	zingen	zɪŋə	z ɪ ŋ ə	z ɪ ŋ - - ə - ( - - )	430	
+1566	Proto-Germanic	*nemanan	*nemanan	nemanan	n e m a n a n	n e m a n ( a n )	431	
+1567	German	*nemanan	nehmen	neːmən	n eː m ə n	n eː m ə n ( - - )	431	
+1568	Dutch	*nemanan	nemen	neːmə	n eː m ə	n eː m ə - ( - - )	431	
+1569	Proto-Germanic	*maxtiz	*maxtiz	maxtiz	m a x t i z	m a x t ( i z )	432	
+1570	German	*maxtiz	Macht	maxt	m a x t	m a x t ( - - )	432	
+1571	English	*maxtiz	might	maɪt	m aɪ t	m aɪ - t ( - - )	432	
+1572	Dutch	*maxtiz	macht	mɑxt	m ɑ x t	m ɑ x t ( - - )	432	
+1573	Proto-Germanic	*naglaz	*naglaz	naglaz	n a g l a z	n a g - l ( a z )	433	
+1574	German	*naglaz	Nagel	naːɡəl	n aː g ə l	n aː g ə l ( - - )	433	
+1575	English	*naglaz	nail	neɪl	n eɪ l	n eɪ - - l ( - - )	433	
+1576	Dutch	*naglaz	nagel	naːɣəl	n aː ɣ ə l	n aː ɣ ə l ( - - )	433	
+1577	Proto-Germanic	*dōnan	*dōnan	doːnan	d oː n a n	d oː - n ( a n )	434	
+1578	German	*dōnan	tun	tuːn	t uː n	t uː ə n ( - - )	434	
+1579	English	*dōnan	do	duː	d uː	d uː - - ( - - )	434	
+1580	Dutch	*dōnan	doen	duːn	d uː n	d uː - n ( - - )	434	
+1581	Proto-Germanic	*fuwer	*fuwer	fuwer	f u w e r	f u w e r	435	
+1582	German	*fuwer	Feuer	fɔyər	f ɔy ə r	f ɔy - ə r	435	
+1583	English	*fuwer	fire	faɪər	f aɪ ə r	f aɪ - ə r	435	
+1584	Dutch	*fuwer	vuur	vyːr	v yː r	v yː - - r	435	
+1585	Proto-Germanic	*taiknan	*taiknan	taiknan	t ai k n a n	t ai k - n ( a n )	436	
+1586	German	*taiknan	Zeichen	t͡saixən	ts ai x ə n	ts ai x ə n ( - - )	436	
+1587	English	*taiknan	token	təʊkən	t əʊ k ə n	t əʊ k ə n ( - - )	436	
+1588	Dutch	*taiknan	teken	teːkə	t eː k ə	t eː k ə - ( - - )	436	
+1589	Proto-Germanic	*liznōjanan	*liznōjanan	liznoːjanan	l i z n oː j a n a n	l i z n oː j a n a n	437	
+1590	German	*liznōjanan	lernen	lɛrnən	l ɛ r n ə n	l ɛ r - - - - n ə n	437	
+1591	English	*liznōjanan	learn	lɜːn	l ɜː n	l ɜː - - - - - - - n	437	
+1592	Proto-Germanic	*likkōjanan	*likkōjanan	likkoːjanan	l i kk oː j a n a n	l i kk oː j a n ( a n )	438	
+1593	German	*likkōjanan	lecken	lɛkən	l ɛ k ə n	l ɛ k ə - - n ( - - )	438	
+1594	English	*likkōjanan	lick	lɪk	l ɪ k	l ɪ k - - - - ( - - )	438	
+1595	Dutch	*likkōjanan	likken	lɪkə	l ɪ k ə	l ɪ k ə - - - ( - - )	438	
+1596	Proto-Germanic	*slīpanan	*slīpanan	sliːpanan	s l iː p a n a n	s l iː p a n ( a n )	439	
+1597	German	*slīpanan	schleifen	ʃlaifən	ʃ l ai f ə n	ʃ l ai f ə n ( - - )	439	
+1598	Dutch	*slīpanan	slijpen	slɛɪpə	s l ɛɪ p ə	s l ɛɪ p ə - ( - - )	439	
+1599	Proto-Germanic	*skandō	*skandō	skandoː	s k a n d oː	s k a n d oː	440	
+1600	German	*skandō	Schande	ʃandə	ʃ a n d ə	ʃ - a n d ə	440	
+1601	Dutch	*skandō	schande	sxɑndə	s x ɑ n d ə	s x ɑ n d ə	440	
+1602	Proto-Germanic	*sangjanan	*sangjanan	sangjanan	s a n g j a n a n	s a n g j a n ( a n )	441	
+1603	German	*sangjanan	sengen	zɛŋən	z ɛ ŋ ə n	z ɛ ŋ - - ə n ( - - )	441	
+1604	English	*sangjanan	singe	sɪnʤ	s ɪ n dʒ	s ɪ n dʒ - - - ( - - )	441	
+1605	Dutch	*sangjanan	zengen	zɛŋə	z ɛ ŋ ə	z ɛ ŋ - - ə - ( - - )	441	
+1606	Proto-Germanic	*pleganan	*pleganan	pleganan	p l e g a n a n	p l e g a n ( a n )	442	
+1607	German	*pleganan	pflegen	p͡fleːɡən	pf l eː g ə n	pf l eː g ə n ( - - )	442	
+1608	Dutch	*pleganan	plegen	pleːɣə	p l eː ɣ ə	p l eː ɣ ə - ( - - )	442	
+1609	Proto-Germanic	*gastiz	*gastiz	gastiz	g a s t i z	g a s t ( i z )	443	
+1610	German	*gastiz	Gast	ɡast	g a s t	g a s t ( - - )	443	
+1611	English	*gastiz	guest	ɡɛst	g ɛ s t	g ɛ s t ( - - )	443	
+1612	Dutch	*gastiz	gast	xɑst	x ɑ s t	x ɑ s t ( - - )	443	
+1613	Proto-Germanic	*mōdēr	*mōdēr	moːdeːr	m oː d eː r	m oː d eː r	444	
+1614	German	*mōdēr	Mutter	mʊtər	m ʊ t ə r	m ʊ t ə r	444	
+1615	English	*mōdēr	mother	mʌðər	m ʌ ð ə r	m ʌ ð ə r	444	
+1616	Dutch	*mōdēr	moeder	muːdər	m uː d ə r	m uː d ə r	444	
+1617	Proto-Germanic	*xufan	*xufan	xufan	x u f a n	x u f ( a n )	445	
+1618	German	*xufan	Hof	hoːf	h oː f	h oː f ( - - )	445	
+1619	Dutch	*xufan	hof	hɔf	h ɔ f	h ɔ f ( - - )	445	
+1620	Proto-Germanic	*stamnaz	*stamnaz	stamnaz	s t a m n a z	s t a m ( n a z )	446	
+1621	German	*stamnaz	Stamm	ʃtam	ʃ t a m	ʃ t a m ( - - - )	446	
+1622	English	*stamnaz	stem	stɛm	s t ɛ m	s t ɛ m ( - - - )	446	
+1623	Dutch	*stamnaz	stam	stɑm	s t ɑ m	s t ɑ m ( - - - )	446	
+1624	Proto-Germanic	*swanaz	*swanaz	swanaz	s w a n a z	s w a n ( a z )	447	
+1625	German	*swanaz	Schwan	ʃvaːn	ʃ v aː n	ʃ v aː n ( - - )	447	
+1626	English	*swanaz	swan	sʋɔn	s ʋ ɔ n	s ʋ ɔ n ( - - )	447	
+1627	Proto-Germanic	*bastan	*bastan	bastan	b a s t a n	b a s t ( a n )	448	
+1628	German	*bastan	Bast	bast	b a s t	b a s t ( - - )	448	
+1629	English	*bastan	bast	bæst	b æ s t	b æ s t ( - - )	448	
+1630	Dutch	*bastan	bast	bɑst	b ɑ s t	b ɑ s t ( - - )	448	
+1631	Proto-Germanic	*luxaz	*luxaz	luxaz	l u x a z	l u x a z	449	
+1632	German	*luxaz	Luchs	lʊks	l ʊ k s	l ʊ k - s	449	
+1633	Dutch	*luxaz	los	lɔs	l ɔ s	l ɔ - - s	449	
+1634	Proto-Germanic	*liθuz	*liθuz	liθuz	l i θ u z	l i θ ( u z )	450	
+1635	German	*liθuz	Lid	liːt	l iː t	l iː d ( - - )	450	
+1636	English	*liθuz	lid	lɪd	l ɪ d	l ɪ d ( - - )	450	
+1637	Dutch	*liθuz	lid	lɪt	l ɪ t	l ɪ t ( - - )	450	
+1638	Proto-Germanic	*flextanan	*flextanan	flextanan	f l e x t a n a n	f l e x t a n ( a n )	451	
+1639	German	*flextanan	flechten	flɛxtən	f l ɛ x t ə n	f l ɛ x t ə n ( - - )	451	
+1640	Dutch	*flextanan	vlechten	vlɛxtə	v l ɛ x t ə	v l ɛ x t ə - ( - - )	451	
+1641	Proto-Germanic	*rēdanan	*rēdanan	reːdanan	r eː d a n a n	r eː d a n ( a n )	452	
+1642	German	*rēdanan	raten	raːtən	r aː t ə n	r aː t ə n ( - - )	452	
+1643	English	*rēdanan	read	riːd	r iː d	r iː d - - ( - - )	452	
+1644	Dutch	*rēdanan	raden	raːdɛn	r aː d ɛ n	r aː d ɛ n ( - - )	452	
+1645	Proto-Germanic	*brenganan	*brenganan	brenganan	b r e n g a n a n	b r e n g a n ( a n )	453	
+1646	German	*brenganan	bringen	brɪŋən	b r ɪ ŋ ə n	b r ɪ ŋ - ə n ( - - )	453	
+1647	English	*brenganan	bring	brɪŋ	b r ɪ ŋ	b r ɪ ŋ - - - ( - - )	453	
+1648	Dutch	*brenganan	brengen	brɛŋə	b r ɛ ŋ ə	b r ɛ ŋ - ə - ( - - )	453	
+1649	Proto-Germanic	*sundrōjanan	*sundrōjanan	sundroːjanan	s u n d r oː j a n a n	( - - ) s u n d - r ( oː j a n a n )	454	
+1650	German	*sundrōjanan	sondern	zɔndərn	z ɔ n d ə r n	( - - ) z ɔ n d ə r ( - n - - - - )	454	
+1651	English	*sundrōjanan	sunder	sʌndər	s ʌ n d ə r	( - - ) s ʌ n d ə r ( - - - - - - )	454	
+1652	Dutch	*sundrōjanan	afzonderen	ɑfsɔndərə	ɑ f s ɔ n d ə r ə	( ɑ f ) s ɔ n d ə r ( ə - - - - - )	454	
+1653	Proto-Germanic	*θurnuz	*θurnuz	θurnuz	θ u r n u z	θ u r n ( u z )	455	
+1654	German	*θurnuz	Dorn	dɔrn	d ɔ r n	d ɔ r n ( - - )	455	
+1655	English	*θurnuz	thorn	θɔːn	θ ɔː n	θ ɔː - n ( - - )	455	
+1656	Dutch	*θurnuz	doorn	doːrn	d oː r n	d oː r n ( - - )	455	
+1657	Proto-Germanic	*waljanan	*waljanan	waljanan	w a l j a n a n	w a l j a n ( a n )	456	
+1658	German	*waljanan	wollen	vɔlən	v ɔ l ə n	v ɔ l - ə n ( - - )	456	
+1659	English	*waljanan	will	ʋɪl	ʋ ɪ l	ʋ ɪ l - - - ( - - )	456	
+1660	Dutch	*waljanan	willen	ʋɪlə	ʋ ɪ l ə	ʋ ɪ l - ə - ( - - )	456	
+1661	Proto-Germanic	*slēpanan	*slēpanan	sleːpanan	s l eː p a n a n	s l eː p a n ( a n )	457	
+1662	German	*slēpanan	schlafen	ʃlaːfən	ʃ l aː f ə n	ʃ l aː f ə n ( - - )	457	
+1663	English	*slēpanan	sleep	sliːp	s l iː p	s l iː p - - ( - - )	457	
+1664	Dutch	*slēpanan	slapen	slaːpə	s l aː p ə	s l aː p ə - ( - - )	457	
+1665	Proto-Germanic	*rōθraz	*rōθraz	roːθraz	r oː θ r a z	r oː θ - r ( a z )	458	
+1666	German	*rōθraz	Ruder	ruːdər	r uː d ə r	r uː d ə r ( - - )	458	
+1667	English	*rōθraz	rudder	rʌdər	r ʌ d ə r	r ʌ d ə r ( - - )	458	
+1668	Dutch	*rōθraz	roer	ruːr	r uː r	r uː - - r ( - - )	458	
+1669	Proto-Germanic	*tungōn	*tungōn	tungoːn	t u n g oː n	t u n g oː ( n )	459	
+1670	German	*tungōn	Zunge	t͡sʊŋə	ts ʊ ŋ ə	ts ʊ ŋ - ə ( - )	459	
+1671	English	*tungōn	tongue	tʌŋ	t ʌ ŋ	t ʌ ŋ - - ( - )	459	
+1672	Dutch	*tungōn	tong	tɔŋ	t ɔ ŋ	t ɔ ŋ - - ( - )	459	
+1673	Proto-Germanic	*kambaz	*kambaz	kambaz	k a m b a z	k a m ( b a z )	460	
+1674	German	*kambaz	Kamm	kam	k a m	k a m ( - - - )	460	
+1675	English	*kambaz	comb	kəʊm	k əʊ m	k əʊ m ( - - - )	460	
+1676	Dutch	*kambaz	kam	kɑm	k ɑ m	k ɑ m ( - - - )	460	
+1677	Proto-Germanic	*tredanan	*tredanan	tredanan	t r e d a n a n	t r e d a n ( a n )	461	
+1678	German	*tredanan	treten	treːtən	t r eː t ə n	t r eː t ə n ( - - )	461	
+1679	English	*tredanan	tread	trɛd	t r ɛ d	t r ɛ d - - ( - - )	461	
+1680	Dutch	*tredanan	treden	treːdə	t r eː d ə	t r eː d ə - ( - - )	461	
+1681	Proto-Germanic	*balgiz	*balgiz	balgiz	b a l g i z	b a l g ( i z )	462	
+1682	German	*balgiz	Balg	balk	b a l k	b a l g ( - - )	462	
+1683	English	*balgiz	belly	bɛlɪ	b ɛ l ɪ	b ɛ l ɪ ( - - )	462	
+1684	Dutch	*balgiz	balg	bɑlx	b ɑ l x	b ɑ l x ( - - )	462	
+1685	Proto-Germanic	*frijōndz	*frijōndz	frijoːndz	f r i j oː n d z	f r i ( j oː ) n d ( z )	463	
+1686	German	*frijōndz	Freund	frɔynt	f r ɔy n t	f r ɔy ( - - ) n d ( - )	463	
+1687	English	*frijōndz	friend	frɛnd	f r ɛ n d	f r ɛ ( - - ) n d ( - )	463	
+1688	Dutch	*frijōndz	vriend	vriːnt	v r iː n t	v r iː ( - - ) n t ( - )	463	
+1689	Proto-Germanic	*wulknan	*wulknan	wulknan	w u l k n a n	w u l k ( n a n )	464	
+1690	German	*wulknan	Wolke	vɔlkə	v ɔ l k ə	v ɔ l k ( - ə - )	464	EXC
+1691	Dutch	*wulknan	wolk	ʋɔlk	ʋ ɔ l k	ʋ ɔ l k ( - - - )	464	
+1692	Proto-Germanic	*xelanan	*xelanan	xelanan	x e l a n a n	x e l a n ( a n )	465	
+1693	German	*xelanan	hehlen	heːlən	h eː l ə n	h eː l ə n ( - - )	465	
+1694	Dutch	*xelanan	helen	heːlə	h eː l ə	h eː l ə - ( - - )	465	
+1695	Proto-Germanic	*fengraz	*fengraz	fengraz	f e n g r a z	f e n g - r ( a z )	466	
+1696	German	*fengraz	Finger	fɪŋər	f ɪ ŋ ə r	f ɪ ŋ - ə r ( - - )	466	
+1697	English	*fengraz	finger	fɪŋɡər	f ɪ ŋ g ə r	f ɪ ŋ g ə r ( - - )	466	
+1698	Dutch	*fengraz	vinger	vɪŋər	v ɪ ŋ ə r	v ɪ ŋ - ə r ( - - )	466	
+1699	Proto-Germanic	*laisjanan	*laisjanan	laisjanan	l ai s j a n a n	l ai s j a n ( a n )	467	
+1700	German	*laisjanan	lehren	leːrən	l eː r ə n	l eː r - ə n ( - - )	467	
+1701	Dutch	*laisjanan	leren	leːrə	l eː r ə	l eː r - ə - ( - - )	467	
+1702	Proto-Germanic	*spixtaz	*spixtaz	spixtaz	s p i x t a z	s p i x t ( a z )	468	
+1703	German	*spixtaz	Specht	ʃpɛxt	ʃ p ɛ x t	ʃ p ɛ x t ( - - )	468	
+1704	Dutch	*spixtaz	specht	spɛxt	s p ɛ x t	s p ɛ x t ( - - )	468	
+1705	Proto-Germanic	*mastaz	*mastaz	mastaz	m a s t a z	m a s t ( a z )	469	
+1706	German	*mastaz	Mast	mast	m a s t	m a s t ( - - )	469	
+1707	English	*mastaz	mast	mɑːst	m ɑː s t	m ɑː s t ( - - )	469	
+1708	Dutch	*mastaz	mast	mɑst	m ɑ s t	m ɑ s t ( - - )	469	
+1709	Proto-Germanic	*θestilaz	*θestilaz	θestilaz	θ e s t i l a z	θ e s t i l ( a z )	470	
+1710	German	*θestilaz	Distel	dɪstəl	d ɪ s t ə l	d ɪ s t ə l ( - - )	470	
+1711	English	*θestilaz	thistle	θɪsḷ	θ ɪ s ə l	θ ɪ s - ə l ( - - )	470	
+1712	Dutch	*θestilaz	distel	dɪstəl	d ɪ s t ə l	d ɪ s t ə l ( - - )	470	
+1713	Proto-Germanic	*skankjanan	*skankjanan	skankjanan	s k a n k j a n a n	s k a n k j a n ( a n )	471	
+1714	German	*skankjanan	schenken	ʃɛŋkən	ʃ ɛ ŋ k ə n	ʃ - ɛ ŋ k - ə n ( - - )	471	
+1715	Dutch	*skankjanan	schenken	sxɛŋkə	s x ɛ ŋ k ə	s x ɛ ŋ k - ə - ( - - )	471	
+1716	Proto-Germanic	*taixwō	*taixwō	taixwoː	t ai x w oː	t ai ( x w oː )	472	
+1717	German	*taixwō	Zehe	t͡seːə	ts eː ə	ts eː ( - ə - )	472	
+1718	English	*taixwō	toe	təʊ	t əʊ	t əʊ ( - - - )	472	
+1719	Dutch	*taixwō	teen	teːn	t eː n	t eː ( - - n )	472	
+1720	Proto-Germanic	*lendō	*lendō	lendoː	l e n d oː	l e n d oː ( - )	473	
+1721	German	*lendō	Linde	lɪndə	l ɪ n d ə	l ɪ n d ə ( - )	473	
+1722	English	*lendō	linden	lɪndən	l ɪ n d ə n	l ɪ n d ə ( n )	473	
+1723	Dutch	*lendō	linde	lɪndə	l ɪ n d ə	l ɪ n d ə ( - )	473	
+1724	Proto-Germanic	*rammaz	*rammaz	rammaz	r a m a z	r a m ( a z )	474	
+1725	German	*rammaz	Rahmen	raːmən	r aː m ə n	r aː m ( ə n )	474	
+1726	Dutch	*rammaz	raam	raːm	r aː m	r aː m ( - - )	474	
+1727	Proto-Germanic	*nasō	*nasō	nasoː	n a s oː	n a s oː	475	
+1728	German	*nasō	Nase	naːzə	n aː z ə	n aː z ə	475	
+1729	English	*nasō	nose	nəʊz	n əʊ z	n əʊ z -	475	
+1730	Dutch	*nasō	neus	nøːs	n øː s	n øː s -	475	
+1731	Proto-Germanic	*raixōn	*raixōn	raixoːn	r ai x oː n	r ai ( x oː n )	476	
+1732	German	*raixōn	Reh	reː	r eː	r eː ( - - - )	476	
+1733	English	*raixōn	roe	rəʊ	r əʊ	r əʊ ( - - - )	476	
+1734	Dutch	*raixōn	ree	reː	r eː	r eː ( - - - )	476	
+1735	Proto-Germanic	*tūnan	*tūnan	tuːnan	t uː n a n	t uː n ( a n )	477	
+1736	German	*tūnan	Zaun	t͡saun	ts au n	ts au n ( - - )	477	
+1737	English	*tūnan	town	taʊn	t aʊ n	t aʊ n ( - - )	477	
+1738	Dutch	*tūnan	tuin	tœyn	t œy n	t œy n ( - - )	477	
+1739	Proto-Germanic	*laidjanan	*laidjanan	laidjanan	l ai d j a n a n	l ai d j a n ( a n )	478	
+1740	German	*laidjanan	leiten	laitən	l ai t ə n	l ai t - ə n ( - - )	478	
+1741	English	*laidjanan	lead	liːd	l iː d	l iː d - - - ( - - )	478	
+1742	Dutch	*laidjanan	leiden	lɛɪdə	l ɛɪ d ə	l ɛɪ d - ə - ( - - )	478	
+1743	Proto-Germanic	*sibaz	*sibaz	sibaz	s i b a z	s i b ( a z )	479	
+1744	German	*sibaz	Sieb	ziːp	z iː p	z iː b ( - - )	479	
+1745	English	*sibaz	sieve	sɪv	s ɪ v	s ɪ v ( - - )	479	
+1746	Dutch	*sibaz	zeef	zeːf	z eː f	z eː f ( - - )	479	
+1747	Proto-Germanic	*brestanan	*brestanan	brestanan	b r e s t a n a n	b - r e s t a n ( a n )	480	
+1748	German	*brestanan	bersten	bɛrstən	b ɛ r s t ə n	b ɛ r - s t ə n ( - - )	480	
+1749	English	*brestanan	burst	bɜːst	b ɜː s t	b ɜː - - s t - - ( - - )	480	
+1750	Dutch	*brestanan	barsten	bɑrstə	b ɑ r s t ə	b ɑ r - s t ə - ( - - )	480	
+1751	Proto-Germanic	*sunnōn	*sunnōn	sunnoːn	s u nn oː n	s u nn oː ( n )	481	
+1752	German	*sunnōn	Sonne	zɔnə	z ɔ n ə	z ɔ n ə ( - )	481	
+1753	English	*sunnōn	sun	sʌn	s ʌ n	s ʌ n - ( - )	481	
+1754	Dutch	*sunnōn	zon	zɔn	z ɔ n	z ɔ n - ( - )	481	
+1755	Proto-Germanic	*fenθanan	*fenθanan	fenθanan	f e n θ a n a n	f e n θ a n ( a n )	482	
+1756	German	*fenθanan	finden	fɪndən	f ɪ n d ə n	f ɪ n d ə n ( - - )	482	
+1757	English	*fenθanan	find	faɪnd	f aɪ n d	f aɪ n d - - ( - - )	482	
+1758	Dutch	*fenθanan	vinden	vɪndə	v ɪ n d ə	v ɪ n d ə - ( - - )	482	
+1759	Proto-Germanic	*xneusanan	*xneusanan	xneusanan	x n eu s a n a n	x n eu s a n a n	483	
+1760	German	*xneusanan	niesen	niːzən	n iː z ə n	- n iː z ə - - n	483	
+1761	Dutch	*xneusanan	niezen	niːzə	n iː z ə	- n iː z ə - - -	483	
+1762	Proto-Germanic	*warpan	*warpan	warpan	w a r p a n	w a r p ( a n )	484	
+1763	German	*warpan	Werft	vɛrft	v ɛ r f t	v ɛ r f ( t - )	484	
+1764	English	*warpan	warp	ʋɔːp	ʋ ɔː p	ʋ ɔː - p ( - - )	484	
+1765	Dutch	*warpan	werf	ʋɛrf	ʋ ɛ r f	ʋ ɛ r f ( - - )	484	
+1766	Proto-Germanic	*brustz	*brustz	brustz	b r u s t z	b - r u s t ( z )	485	
+1767	German	*brustz	Brust	brʊst	b r ʊ s t	b - r ʊ s t ( - )	485	
+1768	English	*brustz	breast	brɛst	b r ɛ s t	b - r ɛ s t ( - )	485	
+1769	Dutch	*brustz	borst	bɔrst	b ɔ r s t	b ɔ r - s t ( - )	485	
+1770	Proto-Germanic	*mixstilaz	*mixstilaz	mixstilaz	m i x s t i l a z	m i x s t i l ( a z )	486	
+1771	German	*mixstilaz	Mistel	mɪstəl	m ɪ s t ə l	m ɪ - s t ə l ( - - )	486	
+1772	Dutch	*mixstilaz	mistel	mɪstəl	m ɪ s t ə l	m ɪ - s t ə l ( - - )	486	
+1773	Proto-Germanic	*snōrō	*snōrō	snoːroː	s n oː r oː	s n oː r ( oː )	487	
+1774	German	*snōrō	Schnur	ʃnuːr	ʃ n uː r	ʃ n uː r ( - )	487	
+1775	Dutch	*snōrō	snoer	snuːr	s n uː r	s n uː r ( - )	487	
+1776	Proto-Germanic	*xallō	*xallō	xalloː	x a ll oː	x a ll oː	488	
+1777	German	*xallō	Halle	halə	h a l ə	h a l ə	488	
+1778	English	*xallō	hall	hɔːl	h ɔː l	h ɔː l -	488	
+1779	Dutch	*xallō	hal	hɑl	h ɑ l	h ɑ l -	488	
+1780	Proto-Germanic	*xwīlō	*xwīlō	xwiːloː	x w iː l oː	x w iː l oː	489	
+1781	German	*xwīlō	Weile	vailə	v ai l ə	- v ai l ə	489	
+1782	English	*xwīlō	while	ʋaɪl	ʋ aɪ l	- ʋ aɪ l -	489	
+1783	Dutch	*xwīlō	wijl	ʋɛɪl	ʋ ɛɪ l	- ʋ ɛɪ l -	489	
+1784	Proto-Germanic	*līθanan	*līθanan	liːθanan	l iː θ a n a n	l iː θ a n ( a n )	490	
+1785	German	*līθanan	leiden	laidən	l ai d ə n	l ai d ə n ( - - )	490	
+1786	Dutch	*līθanan	lijden	lɛɪdə	l ɛɪ d ə	l ɛɪ d ə - ( - - )	490	
+1787	Proto-Germanic	*raubō	*raubō	rauboː	r au b oː	r au b ( oː )	491	
+1788	German	*raubō	Raub	raup	r au p	r au b ( - )	491	
+1789	Dutch	*raubō	roof	roːf	r oː f	r oː f ( - )	491	
+1790	Proto-Germanic	*xabukaz	*xabukaz	xabukaz	x a b u k a z	x a b u k ( a z )	492	
+1791	German	*xabukaz	Habicht	haːbɪxt	h aː b ɪ x t	h aː b ɪ x ( - t )	492	
+1792	English	*xabukaz	hawk	hɔːk	h ɔː k	h ɔː - - k ( - - )	492	
+1793	Dutch	*xabukaz	havik	haːvɪk	h aː v ɪ k	h aː v ɪ k ( - - )	492	
+1794	Proto-Germanic	*fellan	*fellan	fellan	f e ll a n	f e ll ( a n )	493	
+1795	German	*fellan	Fell	fɛl	f ɛ l	f ɛ l ( - - )	493	
+1796	English	*fellan	fell	fɛl	f ɛ l	f ɛ l ( - - )	493	
+1797	Dutch	*fellan	vel	vɛl	v ɛ l	v ɛ l ( - - )	493	
+1798	Proto-Germanic	*θegnaz	*θegnaz	θegnaz	θ e g n a z	θ e g - n ( a z )	494	
+1799	German	*θegnaz	Degen	deːɡən	d eː g ə n	d eː g ə n ( - - )	494	
+1800	English	*θegnaz	thane	θeɪn	θ eɪ n	θ eɪ - - n ( - - )	494	
+1801	Proto-Germanic	*rēdan	*rēdan	reːdan	r eː d a n	r eː d ( a n )	495	
+1802	German	*rēdan	Rat	raːt	r aː t	r aː t ( - - )	495	
+1803	Dutch	*rēdan	raad	raːt	r aː t	r aː t ( - - )	495	
+1804	Proto-Germanic	*flaxsan	*flaxsan	flaxsan	f l a x s a n	f l a x s ( a n )	496	
+1805	German	*flaxsan	Flachs	flaks	f l a k s	f l a k s ( - - )	496	
+1806	English	*flaxsan	flax	flæks	f l æ k s	f l æ k s ( - - )	496	
+1807	Dutch	*flaxsan	vlas	vlɑs	v l ɑ s	v l ɑ - s ( - - )	496	
+1808	Proto-Germanic	*smerwjanan	*smerwjanan	smerwjanan	s m e r w j a n a n	s m e r w j a n ( a n )	497	
+1809	German	*smerwjanan	schmieren	ʃmiːrən	ʃ m iː r ə n	ʃ m iː r - - ə n ( - - )	497	
+1810	English	*smerwjanan	smear	smɪər	s m ɪə r	s m ɪə r - - - - ( - - )	497	
+1811	Dutch	*smerwjanan	smeren	smeːrə	s m eː r ə	s m eː r - - ə - ( - - )	497	
+1812	Proto-Germanic	*satjanan	*satjanan	satjanan	s a t j a n a n	s a t j a n ( a n )	498	
+1813	German	*satjanan	setzen	zɛt͡sən	z ɛ ts ə n	z ɛ ts - ə n ( - - )	498	
+1814	English	*satjanan	set	sɛt	s ɛ t	s ɛ t - - - ( - - )	498	
+1815	Dutch	*satjanan	zetten	zɛtə	z ɛ t ə	z ɛ t - ə - ( - - )	498	
+1816	Proto-Germanic	*launan	*launan	launan	l au n a n	l au n ( a n )	499	
+1817	German	*launan	Lohn	loːn	l oː n	l oː n ( - - )	499	
+1818	Dutch	*launan	loon	loːn	l oː n	l oː n ( - - )	499	
+1819	Proto-Germanic	*lūsz	*lūsz	luːsz	l uː s z	l uː s ( z )	500	
+1820	German	*lūsz	Laus	laus	l au s	l au s ( - )	500	
+1821	English	*lūsz	louse	laʊs	l aʊ s	l aʊ s ( - )	500	
+1822	Dutch	*lūsz	luis	lœys	l œy s	l œy s ( - )	500	
+1823	Proto-Germanic	*funxwstiz	*funxwstiz	funxwstiz	f u n x w s t i z	f u n x w s t ( i z )	501	
+1824	German	*funxwstiz	Faust	faust	f au s t	f au - - - s t ( - - )	501	
+1825	English	*funxwstiz	fist	fɪst	f ɪ s t	f ɪ - - - s t ( - - )	501	
+1826	Dutch	*funxwstiz	vuist	vœyst	v œy s t	v œy - - - s t ( - - )	501	
+1827	Proto-Germanic	*fuglaz	*fuglaz	fuglaz	f u g l a z	f u g - l ( a z )	502	
+1828	German	*fuglaz	Vogel	foːɡəl	f oː g ə l	f oː g ə l ( - - )	502	
+1829	English	*fuglaz	fowl	faʊl	f aʊ l	f aʊ - - l ( - - )	502	
+1830	Dutch	*fuglaz	vogel	voːɣəl	v oː ɣ ə l	v oː ɣ ə l ( - - )	502	
+1831	Proto-Germanic	*knedanan	*knedanan	knedanan	k n e d a n a n	k n e d a n ( a n )	503	
+1832	German	*knedanan	kneten	kneːtən	k n eː t ə n	k n eː t ə n ( - - )	503	
+1833	English	*knedanan	knead	niːd	n iː d	- n iː d - - ( - - )	503	
+1834	Dutch	*knedanan	kneden	kneːdə	k n eː d ə	k n eː d ə - ( - - )	503	
+1835	Proto-Germanic	*fanxanan	*fanxanan	fanxanan	f a n x a n a n	f a n x a n ( a n )	504	
+1836	German	*fanxanan	fangen	faŋən	f a ŋ ə n	f a ŋ - ə n ( - - )	504	
+1837	Dutch	*fanxanan	vangen	vɑŋə	v ɑ ŋ ə	v ɑ ŋ - ə - ( - - )	504	
+1838	Proto-Germanic	*lesanan	*lesanan	lesanan	l e s a n a n	l e s a n ( a n )	505	
+1839	German	*lesanan	lesen	leːzən	l eː z ə n	l eː z ə n ( - - )	505	
+1840	Dutch	*lesanan	lezen	leːzə	l eː z ə	l eː z ə - ( - - )	505	
+1841	Proto-Germanic	*jēmraz	*jēmraz	jeːmraz	j eː m r a z	j eː m - r ( a z )	506	
+1842	German	*jēmraz	Jammer	jamər	j a m ə r	j a m ə r ( - - )	506	
+1843	Dutch	*jēmraz	jammer	jɑmər	j ɑ m ə r	j ɑ m ə r ( - - )	506	
+1844	Proto-Germanic	*wurdjan	*wurdjan	wurdjan	w u r d j a n	( - - - ) w u r d ( j a n )	507	DUP
+1845	German	*wurdjan	Antwort	antvɔrt	a n t v ɔ r t	( a n t ) v ɔ r t ( - - - )	507	DUP
+1846	Dutch	*wurdjan	antwoord	ɑntʋoːrt	ɑ n t ʋ oː r t	( ɑ n t ) ʋ oː r t ( - - - )	507	DUP
+1847	Proto-Germanic	*bebruz	*bebruz	bebruz	b e b r u z	b e b - r ( u z )	508	
+1848	German	*bebruz	Biber	biːbər	b iː b ə r	b iː b ə r ( - - )	508	
+1849	English	*bebruz	beaver	biːvər	b iː v ə r	b iː v ə r ( - - )	508	
+1850	Dutch	*bebruz	bever	beːvər	b eː v ə r	b eː v ə r ( - - )	508	
+1851	Proto-Germanic	*gudaz	*gudaz	gudaz	g u d a z	( - - ) g u d ( a z )	509	
+1852	German	*gudaz	Abgott	apɡɔt	a p g ɔ t	( a p ) g ɔ t ( - - )	509	DUP
+1853	Dutch	*gudaz	afgod	ɑfxɔt	ɑ f x ɔ t	( ɑ f ) x ɔ t ( - - )	509	
+1854	Proto-Germanic	*skaftan	*skaftan	skaftan	s k a f t a n	s k a f t ( a n )	510	
+1855	German	*skaftan	Schaft	ʃaft	ʃ a f t	ʃ - a f t ( - - )	510	
+1856	English	*skaftan	shaft	ʃɑːft	ʃ ɑː f t	ʃ - ɑː f t ( - - )	510	
+1857	Dutch	*skaftan	schacht	sxɑxt	s x ɑ x t	s x ɑ x t ( - - )	510	
+1858	Proto-Germanic	*bōkō	*bōkō	boːkoː	b oː k oː	b oː k oː ( - - - )	511	
+1859	German	*bōkō	Buche	buːxə	b uː x ə	b uː x ə ( - - - )	511	
+1860	English	*bōkō	beech	biːʧ	b iː tʃ	b iː tʃ - ( - - - )	511	
+1861	Dutch	*bōkō	beukeboom	bøːkəboːm	b øː k ə b oː m	b øː k ə ( b oː m )	511	
+1862	Proto-Germanic	*xnappaz	*xnappaz	xnappaz	x n a pp a z	x n a pp ( a z )	512	
+1863	German	*xnappaz	Napf	nap͡f	n a pf	- n a pf ( - - )	512	
+1864	Dutch	*xnappaz	nap	nɑp	n ɑ p	- n ɑ p ( - - )	512	
+1865	Proto-Germanic	*sumeraz	*sumeraz	sumeraz	s u m e r a z	s u m e r ( a z )	513	
+1866	German	*sumeraz	Sommer	zɔmər	z ɔ m ə r	z ɔ m ə r ( - - )	513	
+1867	English	*sumeraz	summer	sʌmər	s ʌ m ə r	s ʌ m ə r ( - - )	513	
+1868	Dutch	*sumeraz	zomer	zoːmər	z oː m ə r	z oː m ə r ( - - )	513	
+1869	Proto-Germanic	*gud	*gud	gud	g u d	g u d	514	
+1870	German	*gud	Gott	ɡɔt	g ɔ t	g ɔ t	514	
+1871	English	*gud	god	ɡɔd	g ɔ d	g ɔ d	514	
+1872	Dutch	*gud	god	xɔt	x ɔ t	x ɔ t	514	
+1873	Proto-Germanic	*skullōn	*skullōn	skulloːn	s k u ll oː n	s k u ll oː ( n )	515	
+1874	German	*skullōn	Scholle	ʃɔlə	ʃ ɔ l ə	ʃ - ɔ l ə ( - )	515	
+1875	Dutch	*skullōn	schol	sxɔl	s x ɔ l	s x ɔ l - ( - )	515	
+1876	Proto-Germanic	*wegaz	*wegaz	wegaz	w e g a z	w e g ( a z )	516	
+1877	German	*wegaz	Weg	veːk	v eː k	v eː g ( - - )	516	
+1878	English	*wegaz	way	ʋeɪ	ʋ eɪ	ʋ eɪ - ( - - )	516	
+1879	Dutch	*wegaz	weg	ʋɛx	ʋ ɛ x	ʋ ɛ x ( - - )	516	
+1880	Proto-Germanic	*fulgēnan	*fulgēnan	fulgeːnan	f u l g eː n a n	f u l g eː n ( a n )	517	
+1881	German	*fulgēnan	folgen	fɔlɡən	f ɔ l g ə n	f ɔ l g ə n ( - - )	517	
+1882	English	*fulgēnan	follow	fɔləʊ	f ɔ l əʊ	f ɔ l əʊ - - ( - - )	517	
+1883	Dutch	*fulgēnan	volgen	vɔlɣə	v ɔ l ɣ ə	v ɔ l ɣ ə - ( - - )	517	
+1884	Proto-Germanic	*xōfaz	*xōfaz	xoːfaz	x oː f a z	x oː f ( a z )	518	
+1885	German	*xōfaz	Huf	huːf	h uː f	h uː f ( - - )	518	
+1886	English	*xōfaz	hoof	huːf	h uː f	h uː f ( - - )	518	
+1887	Dutch	*xōfaz	hoef	huːf	h uː f	h uː f ( - - )	518	
+1888	Proto-Germanic	*stōlaz	*stōlaz	stoːlaz	s t oː l a z	s t oː l ( a z )	519	
+1889	German	*stōlaz	Stuhl	ʃtuːl	ʃ t uː l	ʃ t uː l ( - - )	519	
+1890	English	*stōlaz	stool	stuːl	s t uː l	s t uː l ( - - )	519	
+1891	Dutch	*stōlaz	stoel	stuːl	s t uː l	s t uː l ( - - )	519	
+1892	Proto-Germanic	*sailō	*sailō	sailoː	s ai l oː	s ai l ( oː )	520	
+1893	German	*sailō	Seil	zail	z ai l	z ai l ( - )	520	
+1894	Dutch	*sailō	zeel	zeːl	z eː l	z eː l ( - )	520	
+1895	Proto-Germanic	*stukkaz	*stukkaz	stukkaz	s t u kk a z	s t u kk ( a z )	521	
+1896	German	*stukkaz	Stock	ʃtɔk	ʃ t ɔ k	ʃ t ɔ k ( - - )	521	
+1897	English	*stukkaz	stock	stɔk	s t ɔ k	s t ɔ k ( - - )	521	
+1898	Dutch	*stukkaz	stok	stɔk	s t ɔ k	s t ɔ k ( - - )	521	
+1899	Proto-Germanic	*swangwjanan	*swangwjanan	swangwjanan	s w a n g w j a n a n	s w a n g w j a n ( a n )	522	
+1900	German	*swangwjanan	schwenken	ʃvɛŋkən	ʃ v ɛ ŋ k ə n	ʃ v ɛ ŋ k - - ə n ( - - )	522	
+1901	Dutch	*swangwjanan	zwenken	zʋɛŋkə	z ʋ ɛ ŋ k ə	z ʋ ɛ ŋ k - - ə - ( - - )	522	
+1902	Proto-Germanic	*mixstuz	*mixstuz	mixstuz	m i x s t u z	m i x s t ( u z )	523	
+1903	German	*mixstuz	Mist	mɪst	m ɪ s t	m ɪ - s t ( - - )	523	
+1904	Dutch	*mixstuz	mest	mɛst	m ɛ s t	m ɛ - s t ( - - )	523	
+1905	Proto-Germanic	*slīman	*slīman	sliːman	s l iː m a n	s l iː m ( a n )	524	
+1906	German	*slīman	Schleim	ʃlaim	ʃ l ai m	ʃ l ai m ( - - )	524	
+1907	English	*slīman	slime	slaɪm	s l aɪ m	s l aɪ m ( - - )	524	
+1908	Dutch	*slīman	slijm	slɛɪm	s l ɛɪ m	s l ɛɪ m ( - - )	524	
+1909	Proto-Germanic	*maina-aiθaz	*maina-aiθaz	maina+aiθaz	m ai n a + ai θ a z	m ai n ( a ai θ a z )	525	
+1910	German	*maina-aiθaz	Meineid	mainait	m ai n ai t	m ai n ( - ai t - - )	525	
+1911	Dutch	*maina-aiθaz	meineed	mɛɪneːt	m ɛɪ n eː t	m ɛɪ n ( - eː t - - )	525	
+1912	Proto-Germanic	*benutaz	*benutaz	benutaz	b e n u t a z	b e n u t ( a z )	526	
+1913	German	*benutaz	Binse	bɪnzə	b ɪ n z ə	b ɪ n - z ( ə - )	526	
+1914	Dutch	*benutaz	bies	biːs	b iː s	b iː - - s ( - - )	526	
+1915	Proto-Germanic	*θegwanōjanan	*θegwanōjanan	θegwanoːjanan	θ e g w a n oː j a n a n	θ e g w a n oː j a n ( a n )	527	
+1916	German	*θegwanōjanan	dienen	diːnən	d iː n ə n	d iː - - - n - - ə n ( - - )	527	
+1917	Dutch	*θegwanōjanan	dienen	diːnə	d iː n ə	d iː - - - n - - ə - ( - - )	527	
+1918	Proto-Germanic	*spaldanan	*spaldanan	spaldanan	s p a l d a n a n	s p a l d a n ( a n )	528	
+1919	German	*spaldanan	spalten	ʃpaltən	ʃ p a l t ə n	ʃ p a l t ə n ( - - )	528	
+1920	Dutch	*spaldanan	spouwen	spɑuʋə	s p ɑu ʋ ə	s p ɑu ʋ - ə - ( - - )	528	
+1921	Proto-Germanic	*marīn	*marīn	mariːn	m a r iː n	m a ( r iː ) n	529	
+1922	German	*marīn	Mann	man	m a n	m a ( - - ) n	529	
+1923	English	*marīn	man	mæn	m æ n	m æ ( - - ) n	529	
+1924	Dutch	*marīn	man	mɑn	m ɑ n	m ɑ ( - - ) n	529	
+1925	Proto-Germanic	*webanan	*webanan	webanan	w e b a n a n	w e b a n ( a n )	530	
+1926	German	*webanan	weben	veːbən	v eː b ə n	v eː b ə n ( - - )	530	
+1927	English	*webanan	weave	ʋiːv	ʋ iː v	ʋ iː v - - ( - - )	530	
+1928	Dutch	*webanan	weven	ʋeːvə	ʋ eː v ə	ʋ eː v ə - ( - - )	530	
