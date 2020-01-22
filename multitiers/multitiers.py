@@ -3,6 +3,9 @@ import random
 
 from tabulate import tabulate
 
+# TODO: order
+from .utils import clts_object, reduce_alignment, sc_mapper
+
 # TODO: try to remove entirely
 def get_orders(left, right):
     """
@@ -92,54 +95,72 @@ class MultiTiers:
         Initialize a MultiTiers object.
         """
 
-        # TODO: if no clts, get default from utils.
+        # TODO: defaults for column names
+        doculect_col = "DOCULECT"
+        cogid_col = "COGID"
+        alm_col = "ALIGNMENT"
+        left = 2
+        right = 1
 
-        # Collect the doculects as an ordered set
-        # TODO: cannot have reserved names, as `index` and `r_index`
-        # doculects = sorted(set([row['doculect'] for row in rows]))
-        doculects = [
-            set([entry["doculect"] for entry in cogid_values])
-            for cogid_values in data.values()
-        ]
-        doculects = sorted(
-            set([doculect for cogid in doculects for doculect in cogid])
-        )
-        for tier_name in self._reserved:
-            if tier_name in doculects:
-                raise ValueError(
-                    "Reserved name `%s` used a doculect id." % tier_name
-                )
-
-        # Initialize tier collection with doculect alignments and reserved tiers
-        # TODO: move to defaultdict(list)?
-        # self.tiers = {doculect: [] for doculect in doculects + self._reserved}
-        self.tiers = defaultdict(list)
+        # If no `clts` mapper is provided, use the default one (with the
+        # distributed copy of clts-data)
+        if not clts:
+            clts = clts_object()
 
         # cache soundclass translator
         sca = clts.soundclass("sca")
 
-        # Add entries in sorted order
-        count = 0
-        for cogid in sorted(data):
-            # Get data
-            entries = data[cogid]
+        # Initialize tier collection
+        self.tiers = defaultdict(list)
 
-            # Collect a doculect/alignment length dictionary, so we can obtain
+        # TODO: move this to a different method
+
+        # Collect all doculects as an ordered set, checking that no
+        # reserved name is used
+        doculects = sorted(set([entry[doculect_col] for entry in data]))
+        if any([tier_name in doculects for tier_name in self._reserved]):
+            raise ValueError("Reserved tier name used as a doculect id.")
+
+        # Split the data into a dictionary of `cogids`. This makes the
+        # later iteration easier, and we only need to go through the
+        # entire data once, and we can convert the alignments in the same
+        # loop.
+        cogid_data = defaultdict(list)
+        for entry in data:
+            entry[alm_col] = reduce_alignment(entry[alm_col].split())
+
+            cogid = entry.pop(cogid_col)
+            cogid_data[cogid].append(entry)
+
+        # Add entries in sorted order
+        # TODO: what if we have synonyms?
+        count = 0
+        for cogid in sorted(cogid_data):
+            # Get data
+            entries = cogid_data[cogid]
+
+            # Collect a doculect/alignment dictionary, so we can also obtain
             # the alignment length (for the positional tiers), check if all
             # alignments have the same length as required, and identify
             # missing doculects.
-            # TODO: what if we have synonyms?
             alignments = {
-                entry["doculect"]: entry["alignment"] for entry in entries
+                entry[doculect_col]: entry[alm_col] for entry in entries
             }
+
+            # Get alignment length and check consistency
             alm_lens = set([len(alm) for alm in alignments.values()])
             if len(alm_lens) > 1:
                 raise ValueError(
-                    "Cogid `%s` has alignments of different sizes." % cid
+                    "Cogid `%s` has alignments of different sizes." % cogid
                 )
             alm_len = list(alm_lens)[0]
 
-            # TODO: decide on using None
+            # Extend the positional tiers
+            # TODO: deal with markers, etc.
+            self.tiers["index"] += [idx + 1 for idx in range(alm_len)]
+            self.tiers["rindex"] += [idx for idx in range(alm_len, 0, -1)]
+
+            # Extend vectors with alignment information
             for doculect in doculects:
                 # Get the alignment for the current doculect, building an
                 # empty one if missing
@@ -147,29 +168,28 @@ class MultiTiers:
                 if not alignment:
                     alignment = [None] * alm_len
 
-                # Extend the doculect tier
+                # Extend the doculect tier (and the shifted ones, if any)
                 self.tiers[doculect] += alignment
+                self._extend_shifted_vector(alignment, doculect, left, right)
 
-                # Obtain the shifted tiers
-                shifted = shift_tier(doculect, alignment, left=2, right=1)
-                for shifted_name, shifted_vector in shifted.items():
-                    self.tiers[shifted_name] += shifted_vector
-
-                # map to all requested sound classes
+                # Add sound class mappings
                 # TODO: check status of https://github.com/cldf-clts/pyclts/issues/7
                 # TODO: deal with Nones
-                sc_vector = [token if token else "-" for token in alignment]
-                sc_vector = sca(" ".join(sc_vector))
+                # TODO: add soundclass shifter
+                sc_vector = sc_mapper(alignment, sca)
                 self.tiers["%s_SCA" % doculect] += sc_vector
 
-            # Extend the positional tiers
-            # TODO: deal with markers, etc.
-            self.tiers["index"] += [idx + 1 for idx in range(alm_len)]
-            self.tiers["rindex"] += [idx for idx in range(alm_len, 0, -1)]
+    #        count += 1
+    #        if count == 2:
+    #            break
 
-            count += 1
-            if count == 2:
-                break
+    def _extend_shifted_vector(self, vector, base_name, left, right):
+        # Obtain the shifted tiers
+        # TODO: change order to vector/name
+        shifted_vectors = shift_tier(base_name, vector, left=left, right=right)
+
+        for shifted_name, shifted_vector in shifted_vectors.items():
+            self.tiers[shifted_name] += shifted_vector
 
     # TODO: add some limit, maybe having __repr__ as limitless (with a general tabulate)
     # TODO: estimate/compute number of doculects?

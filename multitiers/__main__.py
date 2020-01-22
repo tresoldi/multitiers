@@ -45,6 +45,7 @@ def main():
     mt = MultiTiers(data, clts)
 
     print(str(mt))
+    print(len(mt.tiers["index"]))
 
 
 if __name__ == "__main__":

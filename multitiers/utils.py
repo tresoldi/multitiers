@@ -4,6 +4,7 @@ Utility functions for the `multitiers` library.
 
 # Import Python standard libraries
 import csv
+import re
 from pathlib import Path
 
 # Import MPI-SHH libraries
@@ -16,6 +17,14 @@ DEFAULT_CLTS = Path(__file__).parent.parent / "clts-master"
 
 def reduce_alignment(alm):
     return [tok for tok in alm if tok not in ["(", ")"]]
+
+
+# TODO: decide how to deal with Nones
+def sc_mapper(vector, mapper):
+    sc_vector = [token if token else "-" for token in vector]
+    sc_vector = mapper(" ".join(sc_vector))
+
+    return sc_vector
 
 
 # Initialize a clts object, returinign it, from the provided path
@@ -62,6 +71,8 @@ def wordlist2mt(
     with open(filepath) as handler:
         reader = csv.DictReader(handler, delimiter=delimiter)
         rows = [row for row in reader]
+
+    return rows
 
     # Collect the cogids as an ordered set
     # TODO: needs to be sorted?
