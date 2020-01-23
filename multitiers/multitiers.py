@@ -7,10 +7,9 @@ from tabulate import tabulate
 # TODO: order
 from .utils import clts_object, reduce_alignment, sc_mapper, get_orders
 
-# TODO: presence/absence vector
-# TODO: phonological feature vectors
+# TODO: Implement vectors of presence/absence
+# TODO: Implement vectors of phonological features from CLTS
 
-# TODO: decide on tier names
 # TODO: decide on gap
 def shift_tier(tier, vector, left_orders, right_orders):
     _GAP = None
@@ -186,43 +185,39 @@ class MultiTiers:
         """
 
         tiers = list(self.tiers.keys())
+        # first reserved
         tiers.remove("index")
         tiers.remove("rindex")
+        # then doculects (alignments)
+        for doculect in self.doculects:
+            tiers.remove(doculect)
 
-        return ["index", "rindex"] + sorted(tiers)
+        return ["index", "rindex"] + self.doculects + sorted(tiers)
 
-    def __repr__(self):
-        v = [
+    def as_list(self):
+        list_repr = [
             [tier_name] + self.tiers[tier_name]
             for tier_name in self.tier_names()
         ]
 
-        return str(v)
+        return list_repr
 
-    # TODO: add some limit, maybe having __repr__ as limitless (with a general tabulate)
-    # TODO: estimate/compute number of doculects?
+
+    def __repr__(self):
+        return str(self.as_list())
+
     def __str__(self):
-        # set RNG for randomly selecting the same number of columns (if necessary)
-        #        random.seed("calc")
+        # Obtain the list representation (as in __repr__), select only the
+        # first NUM_ROWS and NUM_COLS, and build a tabulate representation
+        # (which needs to tranpose the data).
+        # TODO: set limit as flag
+        NUM_ROWS = 20
+        NUM_COLS = 10
+        data = [tier[:NUM_ROWS] for tier in self.as_list()[:NUM_COLS]]
+        data = list(zip(*data)) # transposition
 
-        tiers = self.tier_names()
-        tiers = tiers[:2] + sorted(
-            random.sample(tiers[2:], min(len(tiers[2:]), 7))
-        )
-
-        # Build the data
-        data = []
-        vector_length = len(self.tiers["index"])
-        for pos in range(vector_length):
-            row = [self.tiers[tier_name][pos] for tier_name in tiers]
-            data.append(row)
-
-        # Build the representation and return
-        str_tiers = "MultiTiers with %i tiers (length %i)\n\n" % (
-            len(self.tiers),
-            vector_length,
-        )
-        str_tiers += tabulate(data[:10], headers=tiers, tablefmt="simple")
+        # TODO: add information on total numer of rows, tiers, etc.
+        str_tiers = tabulate(data, tablefmt="simple")
 
         return str_tiers
 

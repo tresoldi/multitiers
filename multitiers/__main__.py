@@ -45,7 +45,7 @@ def main():
     mt = MultiTiers(data, left=2, right=1)
 
     print(str(mt))
-    print(repr(mt))
+#    print(repr(mt))
     print(hash(mt))
     print(len(mt.tiers["index"]))
 
