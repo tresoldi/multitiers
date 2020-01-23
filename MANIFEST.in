@@ -1,5 +1,5 @@
 include README.md
 include AUTHORS.md
 include LICENSE
-recursive-include clts-master/* 
+recursive-include clts-master * 
 include resources/*
