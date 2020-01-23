@@ -1,4 +1,5 @@
 from collections import defaultdict
+import hashlib
 import random
 
 from tabulate import tabulate
@@ -74,7 +75,7 @@ class MultiTiers:
         if "clts" not in kwargs:
             self.clts = clts_object()
         else:
-            self.clts = kwargs['clts']
+            self.clts = kwargs["clts"]
 
         # Store sound class translators
         sc_models = kwargs.get("models", ["sca"])
@@ -110,10 +111,10 @@ class MultiTiers:
         # while more expansive, guarantees we don't change `data` itself.
         cogid_data = defaultdict(list)
         for row in data:
-            cogid = row[self.col['cogid']]
+            cogid = row[self.col["cogid"]]
             entry = {
-                'doculect' : row[self.col['doculect']],
-                'alignment' : reduce_alignment(
+                "doculect": row[self.col["doculect"]],
+                "alignment": reduce_alignment(
                     row[self.col["alignment"]].split()
                 ),
             }
@@ -128,8 +129,7 @@ class MultiTiers:
             # alignments have the same length as required, and identify
             # missing doculects.
             alignments = {
-                entry["doculect"]: entry["alignment"]
-                for entry in entries
+                entry["doculect"]: entry["alignment"] for entry in entries
             }
 
             # Get alignment length and check consistency
@@ -180,17 +180,34 @@ class MultiTiers:
         for shifted_name, shifted_vector in shifted_vectors.items():
             self.tiers[shifted_name] += shifted_vector
 
+    def tier_names(self):
+        """
+        Return a properly sorted list of the tiers in the current object.
+        """
+
+        tiers = list(self.tiers.keys())
+        tiers.remove("index")
+        tiers.remove("rindex")
+
+        return ["index", "rindex"] + sorted(tiers)
+
+    def __repr__(self):
+        v = [
+            [tier_name] + self.tiers[tier_name]
+            for tier_name in self.tier_names()
+        ]
+
+        return str(v)
+
     # TODO: add some limit, maybe having __repr__ as limitless (with a general tabulate)
     # TODO: estimate/compute number of doculects?
     def __str__(self):
         # set RNG for randomly selecting the same number of columns (if necessary)
         #        random.seed("calc")
 
-        tiers = sorted(self.tiers.keys())
-        tiers.remove("index")
-        tiers.remove("rindex")
-        tiers = ["index", "rindex"] + sorted(
-            random.sample(tiers, min(len(tiers), 7))
+        tiers = self.tier_names()
+        tiers = tiers[:2] + sorted(
+            random.sample(tiers[2:], min(len(tiers[2:]), 7))
         )
 
         # Build the data
@@ -208,3 +225,11 @@ class MultiTiers:
         str_tiers += tabulate(data[:10], headers=tiers, tablefmt="simple")
 
         return str_tiers
+
+    def __hash__(self):
+        # We build a representation similar to that of __repr__, but as
+        # tuples
+        # to be used for compariosn
+        value = self.__repr__().encode("utf-8")
+
+        return int(hashlib.sha1(value).hexdigest(), 16) % 10 ** 8

@@ -13,14 +13,15 @@ import unittest
 # Import the library itself
 import multitiers
 
+TEST_DATA = [
+    {"ID": "1", "DOCULECT": "la", "COGID": "A", "ALIGNMENT": "p - a"},
+    {"ID": "2", "DOCULECT": "lb", "COGID": "A", "ALIGNMENT": "b - e"},
+    {"ID": "3", "DOCULECT": "lc", "COGID": "A", "ALIGNMENT": "p j a"},
+    {"ID": "4", "DOCULECT": "lc", "COGID": "B", "ALIGNMENT": "a r t"},
+    {"ID": "5", "DOCULECT": "lb", "COGID": "B", "ALIGNMENT": "a r t"},
+]
+
 
 class TestMultiTiers(unittest.TestCase):
     def test_multitiers(self):
-        mt = multitiers.MultiTiers()
-        mt.add_tier("test", [0,1,2,3])
-
-        with self.assertRaises(ValueError):
-            mt.add_tier("test", [0,1,2,3])
-
-        with self.assertRaises(ValueError):
-            mt.add_tier("test_a", [0,1,2])
+        mt = multitiers.MultiTiers(TEST_DATA)
