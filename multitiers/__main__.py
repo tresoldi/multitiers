@@ -41,8 +41,7 @@ def main():
 
     # Read data file and build an MT object from it
     data = wordlist2mt(args.filename, comma=args.csv)
-    clts = clts_object()
-    mt = MultiTiers(data, clts)
+    mt = MultiTiers(data, left=2, right=1)
 
     print(str(mt))
     print(len(mt.tiers["index"]))

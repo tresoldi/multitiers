@@ -20,6 +20,7 @@ def reduce_alignment(alm):
 
 
 # TODO: decide how to deal with Nones
+# TODO: check status of https://github.com/cldf-clts/pyclts/issues/7
 def sc_mapper(vector, mapper):
     sc_vector = [token if token else "-" for token in vector]
     sc_vector = mapper(" ".join(sc_vector))
@@ -36,6 +37,31 @@ def clts_object(repos=None):
     clts = CLTS(repos)
 
     return clts
+
+
+def get_orders(value):
+
+    # Dictionary used for mapping string descriptions of window size to
+    # actual Python ranges; by mapping to `range()` here in advance
+    # (and consuming such range into a list), computations is a bit
+    # faster and, in particular, it is clearer. Note that we always start
+    # from 1, so no zero-length is included in the lists (the zero distance
+    # is the actual alignment site itself).
+    _ORDER_MAP = {
+        "bigram": list(range(1, 2)),
+        "trigram": list(range(1, 3)),
+        "fourgram": list(range(1, 4)),
+    }
+
+    # get mapping
+    if isinstance(value, int):
+        orders = range(1, value + 1)
+    elif isinstance(value, str):
+        orders = _ORDER_MAP[value]
+    else:
+        orders = []
+
+    return orders
 
 
 # TODO: receive column names as a dictionary, or kwargs

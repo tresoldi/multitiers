@@ -4,53 +4,15 @@ import random
 from tabulate import tabulate
 
 # TODO: order
-from .utils import clts_object, reduce_alignment, sc_mapper
+from .utils import clts_object, reduce_alignment, sc_mapper, get_orders
 
-# TODO: try to remove entirely
-def get_orders(left, right):
-    """
-    Maps a pair of `left` and `right` arguments to the ranges they specify.
-    """
-
-    # Dictionary used for mapping string descriptions of window size to
-    # actual Python ranges; by mapping to `range()` here in advance
-    # (and consuming such range into a list), computations is a bit
-    # faster and, in particular, is clearer. Note that we always start
-    # from 1, so no zero-length is included in the lists (the zero distance
-    # is the actual alignment site itself).
-    # TODO: if kept, should be moved out of the function
-    _ORDER_MAP = {
-        "bigram": list(range(1, 2)),
-        "trigram": list(range(1, 3)),
-        "fourgram": list(range(1, 4)),
-    }
-
-    # get left mapping
-    if isinstance(left, int):
-        left = range(1, left + 1)
-    elif isinstance(left, str):
-        left = _ORDER_MAP[left]
-    else:
-        left = []
-
-    # get right mapping
-    if isinstance(right, int):
-        right = range(1, right + 1)
-    elif isinstance(right, str):
-        right = _ORDER_MAP[right]
-    else:
-        right = []
-
-    return left, right
-
+# TODO: presence/absence vector
+# TODO: phonological feature vectors
 
 # TODO: decide on tier names
-def shift_tier(tier, vector, left, right):
+# TODO: decide on gap
+def shift_tier(tier, vector, left_orders, right_orders):
     _GAP = None
-
-    left_orders, right_orders = get_orders(left, right)
-    # TODO: should pad the string with the number with zeros, for alignment;
-    # users are not supposed to change in the middle
 
     # Compute the requested left and right shifts, if any. Lengths
     # of zero are not allowed as, given Python's slicing, they
@@ -78,8 +40,9 @@ def shift_tier(tier, vector, left, right):
     return new_tiers
 
 
-# TODO: should add cogid tier? maybe with a name which by default is
+# TODO: should add cogid/id tier? maybe with a name which by default is
 # not considered in the analyses (underscore?)
+# TODO: load/save
 class MultiTiers:
     """
     Class for representing a single multitier object.
@@ -90,20 +53,31 @@ class MultiTiers:
     # Reserved tier names
     _reserved = ["index", "rindex"]
 
-    def __init__(self, data, clts=None):
+    def __init__(self, data, **kwargs):
         """
         Initialize a MultiTiers object.
         """
 
-        # If no `clts` mapper is provided, use the default one (with the
+        # Store data column names
+        self.col = {
+            "doculect": kwargs.get("doculect", "DOCULECT"),
+            "cogid": kwargs.get("cogid", "COGID"),
+            "alignment": kwargs.get("alignment", "ALIGNMENT"),
+        }
+
+        # Store default left and right orders
+        self.left = get_orders(kwargs.get("left", 0))
+        self.right = get_orders(kwargs.get("right", 0))
+
+        # If no `clts` mapper was provided, store the default one (with the
         # distributed copy of clts-data)
-        if not clts:
+        if "clts" not in kwargs:
             self.clts = clts_object()
         else:
-            self.clts = clts
+            self.clts = kwargs['clts']
 
-        # Cache sound class translators
-        sc_models = ["sca"]
+        # Store sound class translators
+        sc_models = kwargs.get("models", ["sca"])
         self.sc_translators = {
             model: self.clts.soundclass(model) for model in sc_models
         }
@@ -111,48 +85,51 @@ class MultiTiers:
         # Initialize tier collection
         self.tiers = defaultdict(list)
 
+        # Collect all doculects as an ordered set, checking that no
+        # reserved name is used
+        self.doculects = sorted(
+            set([entry[self.col["doculect"]] for entry in data])
+        )
+        if any([tier_name in self.doculects for tier_name in self._reserved]):
+            raise ValueError("Reserved tier name used as a doculect id.")
+
         # Actually add data
         self.add_data(data)
 
     # TODO: Allow extension, etc.
+    # TODO: note in documentation that it can be extended, but doculects
+    # must match, etc.
+    # TODO: check if all entries have all mandatory fields, and decide what
+    # to do if not, and unique IDs
     def add_data(self, data):
-        # TODO: defaults for column names
-        doculect_col = "DOCULECT"
-        cogid_col = "COGID"
-        alm_col = "ALIGNMENT"
-        left = 2
-        right = 1
-
-        # Collect all doculects as an ordered set, checking that no
-        # reserved name is used
-        doculects = sorted(set([entry[doculect_col] for entry in data]))
-        if any([tier_name in doculects for tier_name in self._reserved]):
-            raise ValueError("Reserved tier name used as a doculect id.")
-
         # Split the data into a dictionary of `cogids`. This makes the
         # later iteration easier, and we only need to go through the
-        # entire data once, and we can convert the alignments in the same
-        # loop.
+        # entire data once, and we can already convert the alignments
+        # in the same loop.
+        # Note that this essentially performs a copy operation which,
+        # while more expansive, guarantees we don't change `data` itself.
         cogid_data = defaultdict(list)
-        for entry in data:
-            entry[alm_col] = reduce_alignment(entry[alm_col].split())
+        for row in data:
+            cogid = row[self.col['cogid']]
+            entry = {
+                'doculect' : row[self.col['doculect']],
+                'alignment' : reduce_alignment(
+                    row[self.col["alignment"]].split()
+                ),
+            }
 
-            cogid = entry.pop(cogid_col)
             cogid_data[cogid].append(entry)
 
-        # Add entries in sorted order
+        # Add entries (in sorted order for reproducibility)
         # TODO: what if we have synonyms?
-        count = 0
-        for cogid in sorted(cogid_data):
-            # Get data
-            entries = cogid_data[cogid]
-
+        for cogid, entries in sorted(cogid_data.items()):
             # Collect a doculect/alignment dictionary, so we can also obtain
             # the alignment length (for the positional tiers), check if all
             # alignments have the same length as required, and identify
             # missing doculects.
             alignments = {
-                entry[doculect_col]: entry[alm_col] for entry in entries
+                entry["doculect"]: entry["alignment"]
+                for entry in entries
             }
 
             # Get alignment length and check consistency
@@ -169,32 +146,36 @@ class MultiTiers:
             self.tiers["rindex"] += [idx for idx in range(alm_len, 0, -1)]
 
             # Extend vectors with alignment information
-            for doculect in doculects:
-                # Get the alignment for the current doculect, building an
-                # empty one if missing
+            for doculect in self.doculects:
+                # Get the doculect alignment, defaulting to an empty one
                 alignment = alignments.get(doculect, None)
                 if not alignment:
                     alignment = [None] * alm_len
 
                 # Extend the doculect tier (and the shifted ones, if any)
-                self.tiers[doculect] += alignment
-                self._extend_shifted_vector(alignment, doculect, left, right)
+                self._extend_vector(alignment, doculect)
 
-                # Add sound class mappings
-                # TODO: check status of https://github.com/cldf-clts/pyclts/issues/7
+                # Extend sound class mappings (and shifted), if any
                 # TODO: deal with Nones
-                # TODO: add soundclass shifter
                 for model, translator in self.sc_translators.items():
                     sc_vector = sc_mapper(alignment, translator)
-                    self.tiers["%s_%s" % (doculect, model)] += sc_vector
-                    self._extend_shifted_vector(
-                        sc_vector, "%s_%s" % (doculect, model), left, right
-                    )
+                    sc_name = "%s_%s" % (doculect, model)
+                    self._extend_vector(sc_vector, sc_name)
 
-    def _extend_shifted_vector(self, vector, base_name, left, right):
+    # TODO: flag not to run shifted
+    def _extend_vector(self, vector, tier_name):
+        # Extend the provived vector
+        self.tiers[tier_name] += vector
+
+        # Extend the shifted vectors, if any
+        self._extend_shifted_vector(vector, tier_name)
+
+    def _extend_shifted_vector(self, vector, base_name):
         # Obtain the shifted tiers
         # TODO: change order to vector/name
-        shifted_vectors = shift_tier(base_name, vector, left=left, right=right)
+        shifted_vectors = shift_tier(
+            base_name, vector, left_orders=self.left, right_orders=self.right
+        )
 
         for shifted_name, shifted_vector in shifted_vectors.items():
             self.tiers[shifted_name] += shifted_vector
