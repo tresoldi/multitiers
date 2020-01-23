@@ -95,25 +95,33 @@ class MultiTiers:
         Initialize a MultiTiers object.
         """
 
+        # If no `clts` mapper is provided, use the default one (with the
+        # distributed copy of clts-data)
+        if not clts:
+            self.clts = clts_object()
+        else:
+            self.clts = clts
+
+        # Cache sound class translators
+        sc_models = ["sca"]
+        self.sc_translators = {
+            model: self.clts.soundclass(model) for model in sc_models
+        }
+
+        # Initialize tier collection
+        self.tiers = defaultdict(list)
+
+        # Actually add data
+        self.add_data(data)
+
+    # TODO: Allow extension, etc.
+    def add_data(self, data):
         # TODO: defaults for column names
         doculect_col = "DOCULECT"
         cogid_col = "COGID"
         alm_col = "ALIGNMENT"
         left = 2
         right = 1
-
-        # If no `clts` mapper is provided, use the default one (with the
-        # distributed copy of clts-data)
-        if not clts:
-            clts = clts_object()
-
-        # cache soundclass translator
-        sca = clts.soundclass("sca")
-
-        # Initialize tier collection
-        self.tiers = defaultdict(list)
-
-        # TODO: move this to a different method
 
         # Collect all doculects as an ordered set, checking that no
         # reserved name is used
@@ -176,14 +184,12 @@ class MultiTiers:
                 # TODO: check status of https://github.com/cldf-clts/pyclts/issues/7
                 # TODO: deal with Nones
                 # TODO: add soundclass shifter
-                sc_vector = sc_mapper(alignment, sca)
-                self.tiers["%s_SCA" % doculect] += sc_vector
-                self._extend_shifted_vector(sc_vector, "%s_SCA" % doculect,
-                        left, right)
-
-    #        count += 1
-    #        if count == 2:
-    #            break
+                for model, translator in self.sc_translators.items():
+                    sc_vector = sc_mapper(alignment, translator)
+                    self.tiers["%s_%s" % (doculect, model)] += sc_vector
+                    self._extend_shifted_vector(
+                        sc_vector, "%s_%s" % (doculect, model), left, right
+                    )
 
     def _extend_shifted_vector(self, vector, base_name, left, right):
         # Obtain the shifted tiers
