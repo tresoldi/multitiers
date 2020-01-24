@@ -11,19 +11,39 @@ from pathlib import Path
 # Import MPI-SHH libraries
 from pyclts import CLTS
 
-# Set the resource directory; this is safe as we already added
-# `zip_safe=False` to setup.py.
-DEFAULT_CLTS = Path(__file__).parent.parent / "clts-master"
+
+def parse_alignment(alignment, excludes=["(", ")"]):
+    """
+    Parses an alignment string.
+
+    Parameters
+    ----------
+    excludes : list
+        A list of tokens to be excluded (default: ["(", ")"]).
+    """
+
+    return [
+        token for token in alignment.strip().split() if token not in excludes
+    ]
 
 
-# TODO: clean alingment string?
-def prepare_alignment(alignment):
-    return [tok for tok in alignment.split() if tok not in ["(", ")"]]
+def shift_tier(vector, tier_name, left_orders, right_orders, oob="∅"):
+    """
+    Returns shifted versions of vectors.
 
-
-# TODO: decide on gap
-def shift_tier(vector, tier_name, left_orders, right_orders):
-    _GAP = None
+    Parameters
+    ----------
+    vector : list
+        Vector to be shifted.
+    tier_name : str
+        Base name of the tier.
+    left_orders: list of int
+        List of left contexts to include in the shifts.
+    right_orders: list of int
+        List of right contexts to include in the shifts.
+    oob : str
+        Value to use for out-of-bounds tokens (default: "∅").
+    """
 
     # Compute the requested left and right shifts, if any. Lengths
     # of zero are not allowed as, given Python's slicing, they
@@ -37,13 +57,13 @@ def shift_tier(vector, tier_name, left_orders, right_orders):
     # the eventual morpheme marks, adding the back later.
     new_tiers = {}
     for left_order in left_orders:
-        shifted_vector = [_GAP] * left_order + vector[:-left_order]
+        shifted_vector = [oob] * left_order + vector[:-left_order]
         shifted_name = "%s_L%i" % (tier_name, left_order)
 
         new_tiers[shifted_name] = shifted_vector
 
     for right_order in right_orders:
-        shifted_vector = vector[right_order:] + [_GAP] * right_order
+        shifted_vector = vector[right_order:] + [oob] * right_order
         shifted_name = "%s_R%i" % (tier_name, right_order)
 
         new_tiers[shifted_name] = shifted_vector
@@ -51,28 +71,52 @@ def shift_tier(vector, tier_name, left_orders, right_orders):
     return new_tiers
 
 
-# TODO: decide how to deal with Nones
 # TODO: check status of https://github.com/cldf-clts/pyclts/issues/7
-def sc_mapper(vector, mapper):
-    sc_vector = [token if token else "-" for token in vector]
-    sc_vector = mapper(" ".join(sc_vector))
+def sc_mapper(alignment, mapper, oob="∅", gap="-"):
+    """
+    Maps an alignment vector to sound classes.
+    """
+
+    # Prepare the vector in the format expected by CLTS mapper
+    sc_vector_str = " ".join(
+        [token if token not in [oob, gap] else "-" for token in alignment]
+    )
+    sc_vector = mapper(sc_vector_str)
 
     return sc_vector
 
 
-# Initialize a clts object, returinign it, from the provided path
-# or from default
 def clts_object(repos=None):
+    """
+    Initialize and return a CLTS object.
+
+    Parameters
+    ----------
+    repos : str
+        Path to the root of the CLTS data repository (defaults to the
+        copy distributed with the library).
+    """
+
     if not repos:
-        repos = DEFAULT_CLTS.as_posix()
+        repos = Path(__file__).parent.parent / "clts-master"
+        repos = repos.as_posix()
 
     clts = CLTS(repos)
 
     return clts
 
 
-# TODO: accept user provided list
 def get_orders(value):
+    """
+    Return a list of orders for context tiers.
+
+    Parameters
+    ----------
+    value : int or string
+        The maximum context length or a string in the set "bigram" (for
+        context 1, and 2), "trigram" (for context 1, 2, and 3), or
+        "fourgram" (for contexts 1, 2, 3, and 4).
+    """
 
     # Dictionary used for mapping string descriptions of window size to
     # actual Python ranges; by mapping to `range()` here in advance
@@ -98,14 +142,7 @@ def get_orders(value):
 
 
 # TODO: receive column names as a dictionary, or kwargs
-# TODO: rename to wordlist2data or read_wordlist_data
-def wordlist2mt(
-    filepath,
-    cogid="COGID",
-    alignment="ALIGNMENT",
-    doculect="DOCULECT",
-    comma=False,
-):
+def read_wordlist_data(filepath, comma=False):
     """
     Reads a wordlist in lingpy format and returns an equivalent MT object.
 
@@ -113,11 +150,6 @@ def wordlist2mt(
     ----------
     filepath : string
         Path to the wordlist.
-    cogid : string
-        Name of the cognate id column, used for grouping alignments
-        (default: `COGID`).
-    alignment : string
-        Name of the alignment column (default: `ALIGNMENT`).
     comma : bool
         Whether to use commas instead of tabulations as field separator
         (default: False)
@@ -133,35 +165,29 @@ def wordlist2mt(
 
     return rows
 
-    # Collect the cogids as an ordered set
-    # TODO: needs to be sorted?
-    cogids = sorted(set([row[cogid] for row in rows]))
 
-    # Collect alignments per cogid
-    # TODO: should we just distribute in slots first, so not to filter
-    # everything?
-    # TODO: function for getting alignment, allowing cleaning
-    # TODO: what if there are more two alignments of the same language? synonyms
-    data = {}
-    for cid in cogids:
-        subset = [
-            {
-                "doculect": row[doculect],
-                "alignment": reduce_alignment(row[alignment].split()),
-            }
-            for row in rows
-            if row[cogid] == cid
-        ]
+def check_data(data, fields, id_field="id"):
+    """
+    Auxiliary function for data validation.
 
-        data[cid] = subset
+    The function will first check if all mandatory `fields` are found
+    in all `data` rows, and then check if the `id_field` is unique.
+    An exception is thrown if one of the checks fails.
 
-    return data
+    Parameters
+    ----------
+    data : list of dict
+        A list of dictionaries with the data.
+    fields : dict
+        A dictionary with the mandatory fields as keys and their corresponding
+        keys in `data`. Intended to be the `.field` property of a
+        MultiTiers object.
+    id_field : str
+        The name of the id_field (default: "id").
+    """
 
-
-def check_data(data, id_field, fields):
     # First check if all the fields (including the ID one) are found in all
     # entries
-    # TODO: allow empty but existing fields?
     for row in data:
         row_cols = list(row.keys())
         missing_fields = [
@@ -181,6 +207,24 @@ def check_data(data, id_field, fields):
 
 
 def check_synonyms(data, cogid_field, doculect_field):
+    """
+    Auxiliary function for detecting synonyms.
+
+    Synonyms are internally defined as pairs of (cogid, doculect)
+    with more than one entry. The function will throw an exception if
+    at least one synonym is found (listing all the affected pairs)
+    and pass silently otherwise.
+
+    Parameters
+    ----------
+    data : list of dict
+        A list of dictionaries containing the data.
+    cogid_field : str
+        The key for cogids in `data`.
+    doculect_field : str
+        The key for doculects in `data`.
+    """
+
     cogid_doculect = Counter(
         [(row[cogid_field], row[doculect_field]) for row in data]
     )

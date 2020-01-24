@@ -9,7 +9,7 @@ import argparse
 
 # Import our library
 from multitiers import MultiTiers
-from multitiers import clts_object, wordlist2mt
+from multitiers import clts_object, read_wordlist_data
 
 
 def parse_arguments():
@@ -40,7 +40,7 @@ def main():
     args = parse_arguments()
 
     # Read data file and build an MT object from it
-    data = wordlist2mt(args.filename, comma=args.csv)
+    data = read_wordlist_data(args.filename, comma=args.csv)
     data = data[:10]
     mt = MultiTiers(data, left=2, right=1)
 

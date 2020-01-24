@@ -11,4 +11,4 @@ __email__ = "tresoldi@shh.mpg.de"
 
 # Build the namespace
 from multitiers.multitiers import MultiTiers
-from multitiers.utils import clts_object, wordlist2mt
+from multitiers.utils import clts_object, read_wordlist_data

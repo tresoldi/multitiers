@@ -15,7 +15,7 @@ from .utils import check_data
 from .utils import check_synonyms
 from .utils import clts_object
 from .utils import get_orders
-from .utils import prepare_alignment
+from .utils import parse_alignment
 from .utils import sc_mapper
 from .utils import shift_tier
 
@@ -158,7 +158,7 @@ class MultiTiers:
 
         # Check if all entries have (at least) the mandatory fields and
         # unique ids
-        check_data(data, "id", self.field)
+        check_data(data, self.field)
 
         # Check for synonyms by counting pairs of (cogid, doculects),
         # raising an error if any pair is found
@@ -188,7 +188,7 @@ class MultiTiers:
             entry = {
                 "id": row[self.field["id"]],
                 "doculect": row[self.field["doculect"]],
-                "alignment": prepare_alignment(row[self.field["alignment"]]),
+                "alignment": parse_alignment(row[self.field["alignment"]]),
             }
 
             cogid_data[row[self.field["cogid"]]].append(entry)
@@ -249,6 +249,18 @@ class MultiTiers:
                 left_orders=self.left,
                 right_orders=self.right,
             )
+
+            # If we had a `vector` of Nones (such as for missing data),
+            # the vectors in `shifter_vectors` will at this point include
+            # both out-of-bounds symbols and Nones, but it makes more
+            # sense for them to be full Nones. We could do the list
+            # comprehension manually, but given that we have the new
+            # shifted tier names in `shifted_vectors`, we can just
+            # reuse it.
+            if all(value is None for value in vector):
+                shifted_vectors = {
+                    tier_name: vector for tier_name in shifted_vectors
+                }
 
             # Extend the shifted vectors
             for shifted_name, shifted_vector in shifted_vectors.items():

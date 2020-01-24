@@ -4,6 +4,12 @@ A library for multi-tiered sequence representation of linguistic data.
 
 ## TODO
 
+- have utils.get_orders() accept a list of orders (mostly for testing
+  purposes) or override the call if the user already provides a list
+  of orders (better solution?)
+- reimplement utils.sc_mapper() to a generic mapper, in order not use
+  CLTS mapper; this implies building the manual conversion from CLTS
+  into the generic format
 - implement initialization from saved JSON
 - modify MultiTiers.as_list() in order to return a matrix suitable for
   numeric analysis (or just have a different function)
