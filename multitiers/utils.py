@@ -11,12 +11,42 @@ from pathlib import Path
 from pyclts import CLTS
 
 # Set the resource directory; this is safe as we already added
-# `zip_safe=False` to setup.py
+# `zip_safe=False` to setup.py.
 DEFAULT_CLTS = Path(__file__).parent.parent / "clts-master"
 
 
 def reduce_alignment(alm):
     return [tok for tok in alm if tok not in ["(", ")"]]
+
+
+# TODO: decide on gap
+def shift_tier(tier, vector, left_orders, right_orders):
+    _GAP = None
+
+    # Compute the requested left and right shifts, if any. Lengths
+    # of zero are not allowed as, given Python's slicing, they
+    # would return totally unexpected vectors. The [:len(x)] and
+    # [-len(x):] slices are added so that we have exactly the
+    # number of tokens in the shifted tier even in cases where
+    # the left or right order are larger than the length of the
+    # alignment (e.g., an alignment with 3 tokens and left order
+    # of 5 would yield '0 0 0 0 0' and not '0 0 0')
+    # for both left and right shifting, to make it easier we first strip
+    # the eventual morpheme marks, adding the back later.
+    new_tiers = {}
+    for left_order in left_orders:
+        shifted_vector = [_GAP] * left_order + vector[:-left_order]
+        shifted_name = "%s_L%i" % (tier, left_order)
+
+        new_tiers[shifted_name] = shifted_vector
+
+    for right_order in right_orders:
+        shifted_vector = vector[right_order:] + [_GAP] * right_order
+        shifted_name = "%s_R%i" % (tier, right_order)
+
+        new_tiers[shifted_name] = shifted_vector
+
+    return new_tiers
 
 
 # TODO: decide how to deal with Nones

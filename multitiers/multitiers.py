@@ -4,41 +4,15 @@ import random
 
 from tabulate import tabulate
 
-# TODO: order
-from .utils import clts_object, reduce_alignment, sc_mapper, get_orders
+# Import utility functions
+from .utils import clts_object
+from .utils import reduce_alignment
+from .utils import sc_mapper
+from .utils import get_orders
+from .utils import shift_tier
 
 # TODO: Implement vectors of presence/absence
 # TODO: Implement vectors of phonological features from CLTS
-
-# TODO: decide on gap
-def shift_tier(tier, vector, left_orders, right_orders):
-    _GAP = None
-
-    # Compute the requested left and right shifts, if any. Lengths
-    # of zero are not allowed as, given Python's slicing, they
-    # would return totally unexpected vectors. The [:len(x)] and
-    # [-len(x):] slices are added so that we have exactly the
-    # number of tokens in the shifted tier even in cases where
-    # the left or right order are larger than the length of the
-    # alignment (e.g., an alignment with 3 tokens and left order
-    # of 5 would yield '0 0 0 0 0' and not '0 0 0')
-    # for both left and right shifting, to make it easier we first strip
-    # the eventual morpheme marks, adding the back later.
-    new_tiers = {}
-    for left_order in left_orders:
-        shifted_vector = [_GAP] * left_order + vector[:-left_order]
-        shifted_name = "%s_L%i" % (tier, left_order)
-
-        new_tiers[shifted_name] = shifted_vector
-
-    for right_order in right_orders:
-        shifted_vector = vector[right_order:] + [_GAP] * right_order
-        shifted_name = "%s_R%i" % (tier, right_order)
-
-        new_tiers[shifted_name] = shifted_vector
-
-    return new_tiers
-
 
 # TODO: should add cogid/id tier? maybe with a name which by default is
 # not considered in the analyses (underscore?)
@@ -53,10 +27,20 @@ class MultiTiers:
     # Reserved tier names
     _reserved = ["index", "rindex"]
 
-    def __init__(self, data, **kwargs):
+    def __init__(self, data=None, filename=None, **kwargs):
         """
         Initialize a MultiTiers object.
         """
+
+        # Make sure either `data` or `filename` was provided
+        if data and filename:
+            raise ValueError(
+                "MultiTiers should be initialized with either `data` or `filename` (both were provided)."
+            )
+        if not data and not filename:
+            raise ValueError(
+                "MultiTiers should be initialized with either `data` or `filename` (neither was provided)."
+            )
 
         # Store data column names
         self.col = {
@@ -202,6 +186,17 @@ class MultiTiers:
 
         return list_repr
 
+    def save(self, filename):
+        # TODO: look for better format, saving as csv now
+        # TODO: should include left, right, columns, doculects, etc.
+        data = self.as_list()
+        data = list(zip(*data))  # transposition
+
+        with open(filename, "w") as handler:
+            for row in data:
+                buf = "\t".join([str(value) if value else "" for value in row])
+                handler.write(buf)
+                handler.write("\n")
 
     def __repr__(self):
         return str(self.as_list())
@@ -214,7 +209,7 @@ class MultiTiers:
         NUM_ROWS = 20
         NUM_COLS = 10
         data = [tier[:NUM_ROWS] for tier in self.as_list()[:NUM_COLS]]
-        data = list(zip(*data)) # transposition
+        data = list(zip(*data))  # transposition
 
         # TODO: add information on total numer of rows, tiers, etc.
         str_tiers = tabulate(data, tablefmt="simple")
