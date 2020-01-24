@@ -5,25 +5,24 @@ Utility functions for the `multitiers` library.
 # Import Python standard libraries
 from collections import Counter
 import csv
-import re
 from pathlib import Path
 
 # Import MPI-SHH libraries
 from pyclts import CLTS
 
 
-def parse_alignment(alignment, excludes=["(", ")"]):
+def parse_alignment(alignment):
     """
     Parses an alignment string.
 
     Parameters
     ----------
-    excludes : list
-        A list of tokens to be excluded (default: ["(", ")"]).
+    alignment : str
+        The alignment string to be parsed.
     """
 
     return [
-        token for token in alignment.strip().split() if token not in excludes
+        token for token in alignment.strip().split() if token not in ["(", ")"]
     ]
 
 
@@ -124,7 +123,7 @@ def get_orders(value):
     # faster and, in particular, it is clearer. Note that we always start
     # from 1, so no zero-length is included in the lists (the zero distance
     # is the actual alignment site itself).
-    _ORDER_MAP = {
+    order_map = {
         "bigram": list(range(1, 2)),
         "trigram": list(range(1, 3)),
         "fourgram": list(range(1, 4)),
@@ -134,14 +133,13 @@ def get_orders(value):
     if isinstance(value, int):
         orders = list(range(1, value + 1))
     elif isinstance(value, str):
-        orders = _ORDER_MAP[value]
+        orders = order_map[value]
     else:
         orders = []
 
     return orders
 
 
-# TODO: receive column names as a dictionary, or kwargs
 def read_wordlist_data(filepath, comma=False):
     """
     Reads a wordlist in lingpy format and returns an equivalent MT object.
@@ -201,7 +199,7 @@ def check_data(data, fields, id_field="id"):
             )
 
     # Collect all ids and make sure they are unique
-    row_ids = set([row[fields[id_field]] for row in data])
+    row_ids = {row[fields[id_field]] for row in data}
     if len(row_ids) != len(data):
         raise ValueError("Data as non-unique IDs.")
 
