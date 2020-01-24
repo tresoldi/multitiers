@@ -3,6 +3,7 @@ Utility functions for the `multitiers` library.
 """
 
 # Import Python standard libraries
+from collections import Counter
 import csv
 import re
 from pathlib import Path
@@ -15,12 +16,13 @@ from pyclts import CLTS
 DEFAULT_CLTS = Path(__file__).parent.parent / "clts-master"
 
 
-def reduce_alignment(alm):
-    return [tok for tok in alm if tok not in ["(", ")"]]
+# TODO: clean alingment string?
+def prepare_alignment(alignment):
+    return [tok for tok in alignment.split() if tok not in ["(", ")"]]
 
 
 # TODO: decide on gap
-def shift_tier(tier, vector, left_orders, right_orders):
+def shift_tier(vector, tier_name, left_orders, right_orders):
     _GAP = None
 
     # Compute the requested left and right shifts, if any. Lengths
@@ -36,13 +38,13 @@ def shift_tier(tier, vector, left_orders, right_orders):
     new_tiers = {}
     for left_order in left_orders:
         shifted_vector = [_GAP] * left_order + vector[:-left_order]
-        shifted_name = "%s_L%i" % (tier, left_order)
+        shifted_name = "%s_L%i" % (tier_name, left_order)
 
         new_tiers[shifted_name] = shifted_vector
 
     for right_order in right_orders:
         shifted_vector = vector[right_order:] + [_GAP] * right_order
-        shifted_name = "%s_R%i" % (tier, right_order)
+        shifted_name = "%s_R%i" % (tier_name, right_order)
 
         new_tiers[shifted_name] = shifted_vector
 
@@ -69,6 +71,7 @@ def clts_object(repos=None):
     return clts
 
 
+# TODO: accept user provided list
 def get_orders(value):
 
     # Dictionary used for mapping string descriptions of window size to
@@ -85,7 +88,7 @@ def get_orders(value):
 
     # get mapping
     if isinstance(value, int):
-        orders = range(1, value + 1)
+        orders = list(range(1, value + 1))
     elif isinstance(value, str):
         orders = _ORDER_MAP[value]
     else:
@@ -153,3 +156,36 @@ def wordlist2mt(
         data[cid] = subset
 
     return data
+
+
+def check_data(data, id_field, fields):
+    # First check if all the fields (including the ID one) are found in all
+    # entries
+    # TODO: allow empty but existing fields?
+    for row in data:
+        row_cols = list(row.keys())
+        missing_fields = [
+            field
+            for field, col_name in fields.items()
+            if col_name not in row_cols
+        ]
+        if missing_fields:
+            raise ValueError(
+                "One or more mandatory fields missing in `%s`" % str(row)
+            )
+
+    # Collect all ids and make sure they are unique
+    row_ids = set([row[fields[id_field]] for row in data])
+    if len(row_ids) != len(data):
+        raise ValueError("Data as non-unique IDs.")
+
+
+def check_synonyms(data, cogid_field, doculect_field):
+    cogid_doculect = Counter(
+        [(row[cogid_field], row[doculect_field]) for row in data]
+    )
+    synonyms = sorted(
+        [pair for pair, count in cogid_doculect.items() if count > 1]
+    )
+    if synonyms:
+        raise ValueError("Synonym pairs were found: %s." % str(synonyms))
