@@ -6,7 +6,6 @@ Module with the implementation of the MultiTiers object.
 from collections import defaultdict
 import hashlib
 import json
-import random
 
 # Import 3rd party libraries
 from tabulate import tabulate
@@ -22,6 +21,7 @@ from .utils import shift_tier
 
 # List of sound class models allowed
 SOUND_CLASS_MODELS = ["cv", "dolgo", "asjp", "sca"]
+
 
 class MultiTiers:
     """
@@ -151,7 +151,7 @@ class MultiTiers:
         # Collect all doculects as an ordered set, checking that no
         # reserved name is used
         self.doculects = sorted(
-            set([entry[self.field["doculect"]] for entry in data])
+            {entry[self.field["doculect"]] for entry in data}
         )
         if any([tier_name in self.doculects for tier_name in self._reserved]):
             raise ValueError("Reserved tier name used as a doculect id.")
@@ -202,7 +202,7 @@ class MultiTiers:
             rows = {entry["doculect"]: entry for entry in entries}
 
             # Get alignment lengths and check consistency
-            alm_lens = set([len(row["alignment"]) for row in rows.values()])
+            alm_lens = {len(row["alignment"]) for row in rows.values()}
             if len(alm_lens) > 1:
                 raise ValueError(
                     "Cogid `%s` has alignments of different sizes." % cogid
@@ -211,7 +211,7 @@ class MultiTiers:
 
             # Extend the positional tiers
             self.tiers["index"] += [idx + 1 for idx in range(alm_len)]
-            self.tiers["rindex"] += [idx for idx in range(alm_len, 0, -1)]
+            self.tiers["rindex"] += list(range(alm_len, 0, -1))
 
             # Extend doculect vectors with alignment and id information
             for doculect in self.doculects:
@@ -229,7 +229,7 @@ class MultiTiers:
 
                 # Extend sound class mappings (and shifted), if any
                 for model, translator in self.sc_translators.items():
-                    sc_vector = sc_mapper(alignment, translator)
+                    sc_vector = sc_mapper(alm_vector, translator)
                     self._extend_vector(sc_vector, "%s_%s" % (doculect, model))
 
     def _extend_vector(self, vector, tier_name, shift=True):
