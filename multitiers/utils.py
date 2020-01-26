@@ -71,14 +71,20 @@ def shift_tier(vector, tier_name, left_orders, right_orders, oob="∅"):
 
 
 # TODO: check status of https://github.com/cldf-clts/pyclts/issues/7
+# TODO: decide on gap token (should we keep `-`?)
 def sc_mapper(alignment, mapper, oob="∅", gap="-"):
     """
     Maps an alignment vector to sound classes.
     """
 
     # Prepare the vector in the format expected by CLTS mapper
+    # NOTE: tokens are mapped to "-" if they are None (`if token`)
+    #       or if they are out-of-bonds/gaps (`in [oob, gap]`)
     sc_vector_str = " ".join(
-        [token if token not in [oob, gap] else "-" for token in alignment]
+        [
+            token if token and token not in [oob, gap] else "-"
+            for token in alignment
+        ]
     )
     sc_vector = mapper(sc_vector_str)
 

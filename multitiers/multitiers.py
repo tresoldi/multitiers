@@ -266,6 +266,37 @@ class MultiTiers:
             for shifted_name, shifted_vector in shifted_vectors.items():
                 self.tiers[shifted_name] += shifted_vector
 
+    # TODO: expansive way of computing filtered matrix; move to
+    # numpy in the future or something else, perhaps also integrating
+    # an sql-like language
+    def filter(self, study):
+        # TODO: write a better implementaiton, which might involve
+        # changing the base data-structure
+        rows = [
+            {tier: self.tiers[tier][idx] for tier in self.tier_names()}
+            for idx in range(len(self.tiers["index"]))
+        ]
+
+        # Run all filters
+        for select in study:
+            # filter inclusion
+            if select["includes"]:
+                rows = [
+                    row
+                    for row in rows
+                    if row[select["tier_name"]] in select["includes"]
+                ]
+
+            # filter exclusion
+            if select["excludes"]:
+                rows = [
+                    row
+                    for row in rows
+                    if row[select["tier_name"]] not in select["excludes"]
+                ]
+
+        return rows
+
     def tier_names(self):
         """
         Return a properly sorted list of the tiers in the current object.

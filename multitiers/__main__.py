@@ -41,15 +41,51 @@ def main():
 
     # Read data file and build an MT object from it
     data = read_wordlist_data(args.filename, comma=args.csv)
-    data = data[:10]
-    mt = MultiTiers(data, left=2, right=1)
+    #    data = data[:10]
+    mt = MultiTiers(data, left=2, right=1, models=["cv"])
 
     print(str(mt))
-    print(repr(mt))
-    print(hash(mt))
-    print(len(mt.tiers["index"]))
 
-    mt.save("temp.csv")
+    study = [
+        # initial position
+        {
+            "tier_name": "index",
+            "includes": [1],
+            "excludes": None,
+            "unknown": False,
+        },
+        # All Proto-Germanic /s/
+        {
+            "tier_name": "Proto-Germanic",
+            "includes": ["s"],
+            "excludes": None,
+            "unknown": False,
+        },
+        # No German r /s/
+        {
+            "tier_name": "German",
+            "includes": None,
+            "excludes": ["r"],
+            "unknown": False,
+        },
+        # Proto-Germanic CV to the left
+        {
+            "tier_name": "Proto-Germanic_cv_L1",
+            "includes": None,
+            "excludes": None,
+            "unknown": True,
+        },
+        # Proto-Germanic CV to the right
+        {
+            "tier_name": "Proto-Germanic_cv_R1",
+            "includes": None,
+            "excludes": None,
+            "unknown": True,
+        },
+    ]
+
+    f = mt.filter(study)
+    print(f, len(f))
 
 
 if __name__ == "__main__":
