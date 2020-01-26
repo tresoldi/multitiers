@@ -84,8 +84,8 @@ def main():
         },
     ]
 
-    f = mt.filter(study)
-    print(f, len(f))
+    data = mt.filter(study)
+    print(mt.study(study))
 
 
 if __name__ == "__main__":

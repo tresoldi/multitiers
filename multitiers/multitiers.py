@@ -3,7 +3,7 @@ Module with the implementation of the MultiTiers object.
 """
 
 # Import Python standard libraries
-from collections import defaultdict
+from collections import defaultdict, Counter
 import hashlib
 import json
 
@@ -270,10 +270,13 @@ class MultiTiers:
     # numpy in the future or something else, perhaps also integrating
     # an sql-like language
     def filter(self, study):
+        # collect name of tiers that are part of the study
+        study_tiers = [select["tier_name"] for select in study]
+
         # TODO: write a better implementaiton, which might involve
         # changing the base data-structure
         rows = [
-            {tier: self.tiers[tier][idx] for tier in self.tier_names()}
+            {tier: self.tiers[tier][idx] for tier in study_tiers}
             for idx in range(len(self.tiers["index"]))
         ]
 
@@ -296,6 +299,26 @@ class MultiTiers:
                 ]
 
         return rows
+
+    def study(self, selects):
+        data = self.filter(selects)
+
+        # collect tuples of known/unknown
+        # TODO: any exclude nones?
+        known_tiers = [
+            select["tier_name"] for select in selects if not select["unknown"]
+        ]
+        unknown_tiers = [
+            select["tier_name"] for select in selects if select["unknown"]
+        ]
+        entries = []
+        for entry in data:
+            known = tuple([entry[tier] for tier in known_tiers])
+            unknown = tuple([entry[tier] for tier in unknown_tiers])
+            entries.append((known, unknown))
+        c = Counter(entries)
+
+        return c
 
     def tier_names(self):
         """
