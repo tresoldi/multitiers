@@ -85,7 +85,12 @@ def main():
     ]
 
     data = mt.filter(study)
-    print(mt.study(study))
+
+    study_result = mt.study(study)
+
+    from pprint import pprint
+
+    pprint(study_result)
 
 
 if __name__ == "__main__":

@@ -318,7 +318,14 @@ class MultiTiers:
             entries.append((known, unknown))
         c = Counter(entries)
 
-        return c
+        # tabulate in a proper way, as a dictionary of known/unknown
+        results = defaultdict(dict)
+        for (known, unknown), count in c.items():
+            results[known][unknown] = count
+
+        print(known_freq)
+
+        return results
 
     def tier_names(self):
         """
