@@ -287,11 +287,9 @@ class MultiTiers:
         # if we have more than one y_tier, join as a single, tuple one
         # TODO: how to do it better in pandas?
         # TODO: do our own mapping for > 1 tiers
-#        if len(y_tiers) > 1:
-#            y["_".join(y_tiers)] = list(zip(*[y[column] for column in y_tiers]))
-#            y = y.drop(columns=y_tiers)
-#        y['German_English'] = pd.Series(y['German_English'], dtype=tuple)
-#        print(">>>>>>", y['German_English'].dtype)
+        if len(y_tiers) > 1:
+            y["/".join(y_tiers)] = ["/".join(row) for row in zip(*[list(y[column]) for column in y_tiers])]
+            y = y.drop(columns=y_tiers)
 
         # TODO: check `drop_first` for colinearity
         # TODO: deal with numeric/boolean columns, can be complex
