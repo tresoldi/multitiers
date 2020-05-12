@@ -31,6 +31,7 @@ SOUND_CLASS_MODELS = ["cv", "dolgo", "asjp", "sca"]
 #       necessary call? same thing for `models`
 # TODO: explain, perhaps in docs, that tiers with doculect names
 #       are supposed to carry segments
+# TODO: make sure known/unknown and similar don't share tiers
 class MultiTiers:
     """
     Class for representing a single multitier object.
@@ -189,7 +190,7 @@ class MultiTiers:
             alm_lens = {len(row["alignment"]) for row in rows.values()}
             if len(alm_lens) > 1:
                 raise ValueError(
-                    f"Cogid `{cogid}` has alignments of different sizes."
+                    f"Cogid '{cogid}' has alignments of different sizes."
                 )
             alm_len = list(alm_lens)[0]
 
@@ -288,7 +289,10 @@ class MultiTiers:
         # TODO: how to do it better in pandas?
         # TODO: do our own mapping for > 1 tiers
         if len(y_tiers) > 1:
-            y["/".join(y_tiers)] = ["/".join(row) for row in zip(*[list(y[column]) for column in y_tiers])]
+            y["/".join(y_tiers)] = [
+                "/".join(row)
+                for row in zip(*[list(y[column]) for column in y_tiers])
+            ]
             y = y.drop(columns=y_tiers)
 
         # TODO: check `drop_first` for colinearity
