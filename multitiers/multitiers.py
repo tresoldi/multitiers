@@ -8,6 +8,8 @@ import hashlib
 import json
 
 # Import 3rd party libraries
+import pandas as pd
+import numpy as np
 from tabulate import tabulate
 
 # Import utility functions
@@ -271,6 +273,9 @@ class MultiTiers:
     # TODO: expansive way of computing filtered matrix; move to
     # numpy in the future or something else, perhaps also integrating
     # an sql-like language
+    # TODO: rename to make clear it is for counting tuples
+    # TODO: can we use a common filtering with X/y?
+    # TODO: add tiers which are needed and missing
     def filter(self, study):
         # collect name of tiers that are part of the study
         study_tiers = [select["tier_name"] for select in study]
@@ -301,6 +306,49 @@ class MultiTiers:
                 ]
 
         return rows
+
+    # TODO: decide what to do with None, currently just skipping
+    #       (could use OneHotEncoder handle_unknown
+    # TODO: y_tier, singular?
+    # TODO: add tiers which are needed and missing
+    def filter_Xy(self, X_tiers, y_tiers, use_dummies=True):
+        X = []
+        y = []
+
+        all_tiers = X_tiers.copy()
+        all_tiers.update(y_tiers)
+        for idx in range(len(self.tiers["index"])):
+            filtered = True
+
+            for tier, tier_info in all_tiers.items():
+                if self.tiers[tier][idx] is None:
+                    filtered = False
+                    break
+
+                if "includes" in tier_info:
+                    if self.tiers[tier][idx] not in tier_info['includes']:
+                        filtered = False
+                        break
+                if "excludes" in tier_info:
+                    if self.tiers[tier][idx] in tier_info['excludes']:
+                        filtered = False
+                        break
+
+            if filtered:
+                X.append([self.tiers[tier][idx] for tier in X_tiers.keys()])
+                y.append([self.tiers[tier][idx] for tier in y_tiers.keys()])
+
+        X = pd.DataFrame(X, columns=X_tiers)
+        y = pd.DataFrame(y, columns=y_tiers)
+
+        # TODO: check `drop_first` for colinearity
+        # TODO: deal with numeric/boolean columns, can be complex
+        if use_dummies:
+            X = pd.get_dummies(X, prefix_sep="_", drop_first=True)
+
+        y = np.array(y).reshape(-1)
+
+        return X, y
 
     def study(self, selects):
         data = self.filter(selects)

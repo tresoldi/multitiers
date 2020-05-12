@@ -40,6 +40,7 @@ def main():
     args = parse_arguments()
 
     # Read data file and build an MT object from it
+    # TODO: rename `comma` to `sep`
     data = read_wordlist_data(args.filename, comma=args.csv)
     #    data = data[:10]
     mt = MultiTiers(data, left=2, right=1, models=["cv"])
@@ -86,13 +87,26 @@ def main():
     ]
 
     data = mt.filter(study)
-    print(data)
 
     study_result = mt.study(study)
 
     from pprint import pprint
     pprint(study_result)
 
+    # extract X/y
+    X_tiers = {
+        "index":{"includes" : [1]},
+        "Proto-Germanic":{"includes":["s"]},
+        "Proto-Germanic_cv_L1":{},
+        "Proto-Germanic_cv_R1":{},
+    }
+    y_tiers = {
+        "German":{"excludes":["r"]},
+    }
+
+    X, y = mt.filter_Xy(X_tiers, y_tiers)
+    print(X)
+    print(y)
 
 if __name__ == "__main__":
     main()
