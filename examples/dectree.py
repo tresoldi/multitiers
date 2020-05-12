@@ -13,17 +13,20 @@ import multitiers
 
 source = Path(__file__).parent.parent / "resources" / "germanic.tsv"
 data = multitiers.read_wordlist_data(source.as_posix(), comma=0)
-mt = multitiers.MultiTiers(data, left=2, right=1, models=["cv"])
+mt = multitiers.MultiTiers(data, left=2, right=1, models=["sca"])
 
 # obtain X/y
 X_tiers = {
 #        "index":{"includes" : [1]},
-        "Proto-Germanic":{"includes":["s"]},
-        "Proto-Germanic_cv_L1":{},
-        "Proto-Germanic_cv_R1":{},
+        "Proto-Germanic":{"includes":["s", "p"]},
+        "Proto-Germanic_sca_L1":{},
+        "Proto-Germanic_sca_R1":{},
+#        "English":{},
+#        "Dutch":{},
     }
 y_tiers = {
         "German":{},#{"excludes":["r"]},
+    #    "English":{},
     }
 
 # Obtain X/y
@@ -45,8 +48,6 @@ clf = clf.fit(X, y_le)
 
 # show prediction probabilities
 y_pred = clf.predict_proba(X)
-print(y_pred)
-print(y_encoder.classes_)
 
 # visualize
 proportion = False

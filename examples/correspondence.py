@@ -1,52 +1,26 @@
 from pathlib import Path
+from pprint import pprint
 import multitiers
 
+# load data
 source = Path(__file__).parent.parent / "resources" / "germanic.tsv"
 data = multitiers.read_wordlist_data(source.as_posix(), comma=0)
 mt = multitiers.MultiTiers(data, left=2, right=1, models=["cv"])
 
-# TODO: have a small language for includes/excludes
-study = [
-        # initial position
-        {
-            "tier_name": "index",
-            "includes": [1],
-            "excludes": None,
-            "unknown": False,
-        },
-        # All Proto-Germanic /s/
-        {
-            "tier_name": "Proto-Germanic",
-            "includes": ["s"],
-            "excludes": None,
-            "unknown": False,
-        },
-        # No German r /s/
-        {
-            "tier_name": "German",
-            "includes": None,
-            "excludes": ["r"],
-            "unknown": False,
-        },
-        # Proto-Germanic CV to the left
-        {
-            "tier_name": "Proto-Germanic_cv_L1",
-            "includes": None,
-            "excludes": None,
-            "unknown": True,
-        },
-        # Proto-Germanic CV to the right
-        {
-            "tier_name": "Proto-Germanic_cv_R1",
-            "includes": None,
-            "excludes": None,
-            "unknown": True,
-        },
-    ]
+# run a correspondence study
+known = {
+    "index":          {"include":[1]},   # first position in word...
+    "Proto-Germanic": {"include":["s"]}, # when PG has /s/
+    "German":         {"exclude":["r"]}  # and G doesn't have /r/
+}
 
-data = mt.filter(study)
+unknown = {
+    "Proto-Germanic_cv_L1":{},
+    "Proto-Germanic_cv_R1":{}
+}
 
-study_result = mt.study(study)
+study_result = mt.correspondence_study(known, unknown)
 
-from pprint import pprint
+# print results
+print(mt)
 pprint(study_result)

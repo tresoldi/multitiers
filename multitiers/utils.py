@@ -64,7 +64,7 @@ def shift_tier(vector, tier_name, left_orders, right_orders, oob="∅"):
     # alignment (e.g., an alignment with 3 tokens and left order
     # of 5 would yield '0 0 0 0 0' and not '0 0 0').
     # For both left and right shifting, to make it easier we first strip
-    # the eventual morpheme marks, adding the back later.
+    # the eventual morpheme marks, adding them back later.
     new_tiers = {}
     for left_order in left_orders:
         shifted_vector = [oob] * left_order + vector[:-left_order]
@@ -224,8 +224,7 @@ def check_data(data, fields, id_field="id"):
         The name of the id_field (default: "id").
     """
 
-    # First check if all the fields (including the ID one) are found in all
-    # entries
+    # First check if all the fields (including ID) are found in all entries
     for row in data:
         row_cols = list(row.keys())
         missing_fields = [
@@ -234,9 +233,7 @@ def check_data(data, fields, id_field="id"):
             if col_name not in row_cols
         ]
         if missing_fields:
-            raise ValueError(
-                "One or more mandatory fields missing in `%s`" % str(row)
-            )
+            raise ValueError(f"One or more mandatory fields missing in {row}")
 
     # Collect all ids and make sure they are unique
     row_ids = {row[fields[id_field]] for row in data}
@@ -244,7 +241,6 @@ def check_data(data, fields, id_field="id"):
         raise ValueError("Data has non-unique IDs.")
 
 
-# TODO: should have defaults
 def check_synonyms(data, cogid_field, doculect_field):
     """
     Auxiliary function for detecting synonyms.

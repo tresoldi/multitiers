@@ -8,8 +8,8 @@ import hashlib
 import json
 
 # Import 3rd party libraries
-import pandas as pd
 import numpy as np
+import pandas as pd
 from tabulate import tabulate
 
 # Import utility functions
@@ -26,28 +26,31 @@ SOUND_CLASS_MODELS = ["cv", "dolgo", "asjp", "sca"]
 
 # TODO: extend class, use attributes
 # TODO: should store with pandas internally?
-# TODO: have a numpy/pandas export; besides one for a general textual file
+# TODO: make sure tiers starting with underscore are never used, as per docs
+# TODO: do we need a default left/right? shouldn't it be computed at each
+#       necessary call? same thing for `models`
+# TODO: explain, perhaps in docs, that tiers with doculect names
+#       are supposed to carry segments
 class MultiTiers:
     """
     Class for representing a single multitier object.
 
-    MultiTiers must be initialized with either `data`, a list of dictionaries
-    including the mandatory fields, or `filename`, with the unmodified
-    output of the `.save()` method. Loading from other data formats, such as
+    MultiTiers must be initialized with a mandatory `data` structure in the
+    expected format. Loading from other data formats, such as
     from LingPy's wordlists or from CLDF datasets, is performed by first
     building a Python list of dictionaries following the intended structure
     and then feeding a MultiTiers object with it.
 
     Internally, tiers are stored in the `.tiers` dictionary. Tier names are
     mostly free, but a number are reserved (particularly those for indexing),
-    as determined by the internal `._reserved` list. Tiers whose name (i.e.,
+    as determined by the internal `._reserved` list. Tiers whose names (i.e.,
     dictionary key) begin with an underscore carry complementary information
     which should not be used in computations (in particular, unique ids as
     provided in the raw data).
 
     Iteration over tier names should always follow the sorted list of keys
     returned by the `.tier_names()` method, which guarantees reproducibility
-    and readibility. Likewise, the doculects should always be iterated
+    and readability. Likewise, the doculects should always be iterated
     following the order in the `self.doculects` property.
     """
 
@@ -58,7 +61,7 @@ class MultiTiers:
     num_rows = 20
     num_cols = 10
 
-    def __init__(self, data=None, filename=None, **kwargs):
+    def __init__(self, data, **kwargs):
         """
         Initialize a MultiTiers object.
 
@@ -69,8 +72,6 @@ class MultiTiers:
         ----------
         data : list of dictionaries
             List of dictionaries with the data for initialization.
-        filename : str
-            Path to the output of a MultiTiers.save() call.
         col_id : str
             Column name (i.e. key) containing the unique row ids in `data`
             (default: `ID`). The value is disregarded if the object is
@@ -113,25 +114,9 @@ class MultiTiers:
         # TODO: implement a dummy model, as for the comment above
         self.clts = clts_object()
 
-        # Make sure either `data` or `filename` was provided
-        if data and filename:
-            raise ValueError(
-                "MultiTiers initialized with both `data` and `filename`."
-            )
-        if not data and not filename:
-            raise ValueError(
-                "MultiTiers initialized with neither `data` or `filename`."
-            )
-
-        # The default intended operation is to initialize new MultiTiers
-        # from data; as such, we check for the "exception" of an
-        # initialization from a save file, skipping over the rest of
-        # the tasks in this .__init__() method.
-        if filename:
-            self._init_from_file(filename)
-
         # Store fields names and corresponding columns in data, either
         # user provided or defaults
+        # NOTE: data loaded with `._init_from_file()` will override this
         self.field = {
             "id": kwargs.get("col_id", "ID"),
             "doculect": kwargs.get("col_doculect", "DOCULECT"),
@@ -148,9 +133,7 @@ class MultiTiers:
         sc_models = set(kwargs.get("models", []))
         for model in sc_models:
             if model not in SOUND_CLASS_MODELS:
-                raise ValueError(
-                    f"Invalid sound class model `{model}` requested."
-                )
+                raise ValueError(f"Invalid sound class model `{model}`.")
             self.sc_translators[model] = self.clts.soundclass(model)
 
         # Collect all doculects as an ordered set, checking that no
@@ -168,11 +151,8 @@ class MultiTiers:
         # raising an error if any pair is found
         check_synonyms(data, self.field["cogid"], self.field["doculect"])
 
-        # Actually add data
+        # Actually add data / tiers
         self._add_data(data)
-
-    def _init_from_file(self, filename):
-        raise ValueError("File initialization not implemented yet.")
 
     def _add_data(self, data):
         """
@@ -270,47 +250,9 @@ class MultiTiers:
             for shifted_name, shifted_vector in shifted_vectors.items():
                 self.tiers[shifted_name] += shifted_vector
 
-    # TODO: expansive way of computing filtered matrix; move to
-    # numpy in the future or something else, perhaps also integrating
-    # an sql-like language
-    # TODO: rename to make clear it is for counting tuples
-    # TODO: can we use a common filtering with X/y?
-    # TODO: add tiers which are needed and missing
-    def filter(self, study):
-        # collect name of tiers that are part of the study
-        study_tiers = [select["tier_name"] for select in study]
-
-        # TODO: write a better implementaiton, which might involve
-        # changing the base data-structure
-        rows = [
-            {tier: self.tiers[tier][idx] for tier in study_tiers}
-            for idx in range(len(self.tiers["index"]))
-        ]
-
-        # Run all filters
-        for select in study:
-            # filter inclusion
-            if select["includes"]:
-                rows = [
-                    row
-                    for row in rows
-                    if row[select["tier_name"]] in select["includes"]
-                ]
-
-            # filter exclusion
-            if select["excludes"]:
-                rows = [
-                    row
-                    for row in rows
-                    if row[select["tier_name"]] not in select["excludes"]
-                ]
-
-        return rows
-
     # TODO: decide what to do with None, currently just skipping
     #       (could use OneHotEncoder handle_unknown
-    # TODO: y_tier, singular?
-    # TODO: add tiers which are needed and missing
+    # TODO: explain multiple y, collected as a tuple
     def filter_Xy(self, X_tiers, y_tiers, use_dummies=True):
         X = []
         y = []
@@ -326,11 +268,11 @@ class MultiTiers:
                     break
 
                 if "includes" in tier_info:
-                    if self.tiers[tier][idx] not in tier_info['includes']:
+                    if self.tiers[tier][idx] not in tier_info["includes"]:
                         filtered = False
                         break
                 if "excludes" in tier_info:
-                    if self.tiers[tier][idx] in tier_info['excludes']:
+                    if self.tiers[tier][idx] in tier_info["excludes"]:
                         filtered = False
                         break
 
@@ -338,8 +280,18 @@ class MultiTiers:
                 X.append([self.tiers[tier][idx] for tier in X_tiers.keys()])
                 y.append([self.tiers[tier][idx] for tier in y_tiers.keys()])
 
+        # make pandas dfs
         X = pd.DataFrame(X, columns=X_tiers)
         y = pd.DataFrame(y, columns=y_tiers)
+
+        # if we have more than one y_tier, join as a single, tuple one
+        # TODO: how to do it better in pandas?
+        # TODO: do our own mapping for > 1 tiers
+#        if len(y_tiers) > 1:
+#            y["_".join(y_tiers)] = list(zip(*[y[column] for column in y_tiers]))
+#            y = y.drop(columns=y_tiers)
+#        y['German_English'] = pd.Series(y['German_English'], dtype=tuple)
+#        print(">>>>>>", y['German_English'].dtype)
 
         # TODO: check `drop_first` for colinearity
         # TODO: deal with numeric/boolean columns, can be complex
@@ -350,21 +302,36 @@ class MultiTiers:
 
         return X, y
 
-    def study(self, selects):
-        data = self.filter(selects)
+    def correspondence_study(self, study_known, study_unknown):
+        # collect filtered data
+        # TODO: to it in a better, less expansive way
+        data = [
+            {
+                tier: self.tiers[tier][idx]
+                for tier in list(study_known) + list(study_unknown)
+            }
+            for idx in range(len(self.tiers["index"]))
+        ]
 
-        # collect tuples of known/unknown
-        # TODO: any exclude nones?
-        known_tiers = [
-            select["tier_name"] for select in selects if not select["unknown"]
-        ]
-        unknown_tiers = [
-            select["tier_name"] for select in selects if select["unknown"]
-        ]
+        for group in [study_known, study_unknown]:
+            for tier, value in group.items():
+                # filter inclusion
+                if "include" in value:
+                    data = [
+                        row for row in data if row[tier] in value["include"]
+                    ]
+
+                # filter exclusion
+                if "exclude" in value:
+                    rows = [
+                        row for row in data if row[tier] not in value["exclude"]
+                    ]
+
+        # collect tuples
         entries = []
         for entry in data:
-            known = tuple([entry[tier] for tier in known_tiers])
-            unknown = tuple([entry[tier] for tier in unknown_tiers])
+            known = tuple([entry[tier] for tier in study_known])
+            unknown = tuple([entry[tier] for tier in study_unknown])
             entries.append((known, unknown))
         c = Counter(entries)
 
@@ -373,8 +340,9 @@ class MultiTiers:
         for (known, unknown), count in c.items():
             results[known][unknown] = count
 
-        return results
+        return dict(results)
 
+    # TODO: compute at each change and cache
     def tier_names(self):
         """
         Return a properly sorted list of the tiers in the current object.
@@ -401,30 +369,6 @@ class MultiTiers:
         ]
 
         return list_repr
-
-    def save(self, filename):
-        """
-        Save a textual representation of the object to disk.
-
-        Parameters
-        ----------
-        filename : str
-            Path to the output file.
-        """
-
-        # Build output data
-        output = {
-            "fields": self.field,
-            "doculects": self.doculects,
-            "data": self.tiers,
-            "left": self.left,
-            "right": self.right,
-            "models": list(self.sc_translators),
-        }
-
-        # Write as JSON
-        with open(filename, "w") as handler:
-            json.dump(output, handler, indent=2)
 
     def __repr__(self):
         return str(self.as_list())

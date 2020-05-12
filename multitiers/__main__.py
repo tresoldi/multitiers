@@ -91,22 +91,22 @@ def main():
     study_result = mt.study(study)
 
     from pprint import pprint
+
     pprint(study_result)
 
     # extract X/y
     X_tiers = {
-        "index":{"includes" : [1]},
-        "Proto-Germanic":{"includes":["s"]},
-        "Proto-Germanic_cv_L1":{},
-        "Proto-Germanic_cv_R1":{},
+        "index": {"includes": [1]},
+        "Proto-Germanic": {"includes": ["s"]},
+        "Proto-Germanic_cv_L1": {},
+        "Proto-Germanic_cv_R1": {},
     }
-    y_tiers = {
-        "German":{"excludes":["r"]},
-    }
+    y_tiers = {"German": {"excludes": ["r"]}}
 
     X, y = mt.filter_Xy(X_tiers, y_tiers)
     print(X)
     print(y)
+
 
 if __name__ == "__main__":
     main()
