@@ -28,7 +28,7 @@ setup(
     packages=["multitiers", "clts-master"],
     keywords=["tiers", "multitiers", "phonology", "historical linguistics"],
     include_package_data=True,
-    install_requires=["pyclts", "tabulate"],
+    install_requires=["pyclts", "tabulate", "numpy", "pandas"],
     entry_points={"console_scripts": ["multitiers=multitiers.__main__:main"]},
     test_suite="tests",
     tests_require=[],
