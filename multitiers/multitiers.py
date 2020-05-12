@@ -22,7 +22,9 @@ from .utils import shift_tier
 # List of sound class models allowed
 SOUND_CLASS_MODELS = ["cv", "dolgo", "asjp", "sca"]
 
-
+# TODO: extend class, use attributes
+# TODO: should store with pandas internally?
+# TODO: have a numpy/pandas export; besides one for a general textual file
 class MultiTiers:
     """
     Class for representing a single multitier object.
@@ -35,7 +37,7 @@ class MultiTiers:
     and then feeding a MultiTiers object with it.
 
     Internally, tiers are stored in the `.tiers` dictionary. Tier names are
-    mostly free, but a number are reserved (particulatly those for indexing),
+    mostly free, but a number are reserved (particularly those for indexing),
     as determined by the internal `._reserved` list. Tiers whose name (i.e.,
     dictionary key) begin with an underscore carry complementary information
     which should not be used in computations (in particular, unique ids as
@@ -106,6 +108,7 @@ class MultiTiers:
         # Store the default CLTS mapper. In the future we might allow
         # different mappers, for example following Chomsky & Halle
         # classes, or any other user-provided feature system.
+        # TODO: implement a dummy model, as for the comment above
         self.clts = clts_object()
 
         # Make sure either `data` or `filename` was provided
@@ -144,7 +147,7 @@ class MultiTiers:
         for model in sc_models:
             if model not in SOUND_CLASS_MODELS:
                 raise ValueError(
-                    "Invalid sound class model `%s` requested." % model
+                    f"Invalid sound class model `{model}` requested."
                 )
             self.sc_translators[model] = self.clts.soundclass(model)
 
@@ -156,8 +159,7 @@ class MultiTiers:
         if any([tier_name in self.doculects for tier_name in self._reserved]):
             raise ValueError("Reserved tier name used as a doculect id.")
 
-        # Check if all entries have (at least) the mandatory fields and
-        # unique ids
+        # Check if entries have the mandatory fields and ids are unique
         check_data(data, self.field)
 
         # Check for synonyms by counting pairs of (cogid, doculects),
@@ -180,7 +182,7 @@ class MultiTiers:
         # entire data once, also performing the normalization of alignments
         # (with potential of being computationally expansive) in the same
         # loop.
-        # Note that, while it is also a bit more expansive, we copy the
+        # NOTE: while it is also a bit more expansive, we copy the
         # provided data, guaranteeing that the structure provided by the
         # user is not modified.
         cogid_data = defaultdict(list)
@@ -205,7 +207,7 @@ class MultiTiers:
             alm_lens = {len(row["alignment"]) for row in rows.values()}
             if len(alm_lens) > 1:
                 raise ValueError(
-                    "Cogid `%s` has alignments of different sizes." % cogid
+                    f"Cogid `{cogid}` has alignments of different sizes."
                 )
             alm_len = list(alm_lens)[0]
 
@@ -225,12 +227,12 @@ class MultiTiers:
                 # Extend the doculect tier (and the shifted ones, if any)
                 # and the id ones
                 self._extend_vector(alm_vector, doculect)
-                self._extend_vector(id_vector, "_%s_id" % doculect, shift=False)
+                self._extend_vector(id_vector, f"_{doculect}_id", shift=False)
 
                 # Extend sound class mappings (and shifted), if any
                 for model, translator in self.sc_translators.items():
                     sc_vector = sc_mapper(alm_vector, translator)
-                    self._extend_vector(sc_vector, "%s_%s" % (doculect, model))
+                    self._extend_vector(sc_vector, f"{doculect}_{model}")
 
     def _extend_vector(self, vector, tier_name, shift=True):
         """
@@ -240,7 +242,7 @@ class MultiTiers:
         # Extend the provived vector
         self.tiers[tier_name] += vector
 
-        # Extend the shifted vectors, if any and requested
+        # Extend the shifted vectors, if any and if requested
         if shift:
             # Obtain the shifted tiers
             shifted_vectors = shift_tier(
@@ -323,8 +325,6 @@ class MultiTiers:
         for (known, unknown), count in c.items():
             results[known][unknown] = count
 
-        print(known_freq)
-
         return results
 
     def tier_names(self):
@@ -404,6 +404,7 @@ class MultiTiers:
 
         return str_tiers
 
+    # TODO: make tuples and just hash tuples
     def __hash__(self):
         value = self.__repr__().encode("utf-8")
 

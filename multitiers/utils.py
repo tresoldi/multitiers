@@ -10,15 +10,25 @@ from pathlib import Path
 # Import MPI-SHH libraries
 from pyclts import CLTS
 
-
+# TODO: should we already be mapped to a numpy array? or done later in
+#       object?
 def parse_alignment(alignment):
     """
     Parses an alignment string.
+
+    Alignment strings are composed of space separated graphemes, with
+    optional parentheses for suppressed or non-mandatory material. The
+    material between parentheses is kept.
 
     Parameters
     ----------
     alignment : str
         The alignment string to be parsed.
+
+    Returns
+    -------
+    seq : list
+        A list of tokens.
     """
 
     return [
@@ -32,6 +42,7 @@ def shift_tier(vector, tier_name, left_orders, right_orders, oob="∅"):
 
     Parameters
     ----------
+
     vector : list
         Vector to be shifted.
     tier_name : str
@@ -45,25 +56,25 @@ def shift_tier(vector, tier_name, left_orders, right_orders, oob="∅"):
     """
 
     # Compute the requested left and right shifts, if any. Lengths
-    # of zero are not allowed as, given Python's slicing, they
+    # of zero are not allowed because, given Python's slicing, they
     # would return totally unexpected vectors. The [:len(x)] and
     # [-len(x):] slices are added so that we have exactly the
-    # number of tokens in the shifted tier even in cases where
+    # number of tokens in the shifted tier, even in cases where
     # the left or right order are larger than the length of the
     # alignment (e.g., an alignment with 3 tokens and left order
-    # of 5 would yield '0 0 0 0 0' and not '0 0 0')
-    # for both left and right shifting, to make it easier we first strip
+    # of 5 would yield '0 0 0 0 0' and not '0 0 0').
+    # For both left and right shifting, to make it easier we first strip
     # the eventual morpheme marks, adding the back later.
     new_tiers = {}
     for left_order in left_orders:
         shifted_vector = [oob] * left_order + vector[:-left_order]
-        shifted_name = "%s_L%i" % (tier_name, left_order)
+        shifted_name = f"{tier_name}_L{left_order}"
 
         new_tiers[shifted_name] = shifted_vector
 
     for right_order in right_orders:
         shifted_vector = vector[right_order:] + [oob] * right_order
-        shifted_name = "%s_R%i" % (tier_name, right_order)
+        shifted_name = f"{tier_name}_R{right_order}"
 
         new_tiers[shifted_name] = shifted_vector
 
@@ -72,9 +83,28 @@ def shift_tier(vector, tier_name, left_orders, right_orders, oob="∅"):
 
 # TODO: check status of https://github.com/cldf-clts/pyclts/issues/7
 # TODO: decide on gap token (should we keep `-`?)
+# TODO: perform with numpy?
+# TODO: have an unified mapper signature? not bound to pyclts?
+# TODO: rename `alignment` to `vector` whereever appropriate
 def sc_mapper(alignment, mapper, oob="∅", gap="-"):
     """
     Maps an alignment vector to sound classes.
+
+    Parameters
+    ----------
+    alignment : list
+        The grapheme alignment to map.
+    mapper : xxx
+    oob : str
+        Out-of-bounds grapheme (default `∅`).
+    gap : str
+        Gap grapheme (default `-`).
+
+    Returns
+    -------
+    sc_alignment : list
+        A vector with the sound classes corresponding to the provided
+        alignment.
     """
 
     # Prepare the vector in the format expected by CLTS mapper
@@ -100,6 +130,11 @@ def clts_object(repos=None):
     repos : str
         Path to the root of the CLTS data repository (defaults to the
         copy distributed with the library).
+
+    Returns
+    -------
+    clts : obj
+        An initialized CLTS object.
     """
 
     if not repos:
@@ -164,8 +199,7 @@ def read_wordlist_data(filepath, comma=False):
 
     # Collect information in a single data structure, for later processing
     with open(filepath) as handler:
-        reader = csv.DictReader(handler, delimiter=delimiter)
-        rows = [row for row in reader]
+        rows = [row for row in csv.DictReader(handler, delimiter=delimiter)]
 
     return rows
 
@@ -207,9 +241,10 @@ def check_data(data, fields, id_field="id"):
     # Collect all ids and make sure they are unique
     row_ids = {row[fields[id_field]] for row in data}
     if len(row_ids) != len(data):
-        raise ValueError("Data as non-unique IDs.")
+        raise ValueError("Data has non-unique IDs.")
 
 
+# TODO: should have defaults
 def check_synonyms(data, cogid_field, doculect_field):
     """
     Auxiliary function for detecting synonyms.

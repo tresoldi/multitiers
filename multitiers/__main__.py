@@ -46,6 +46,7 @@ def main():
 
     print(str(mt))
 
+    # TODO: have a small language for includes/excludes
     study = [
         # initial position
         {
@@ -85,11 +86,11 @@ def main():
     ]
 
     data = mt.filter(study)
+    print(data)
 
     study_result = mt.study(study)
 
     from pprint import pprint
-
     pprint(study_result)
 
 
