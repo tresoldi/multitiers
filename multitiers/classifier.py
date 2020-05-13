@@ -91,6 +91,39 @@ class Classifier:
             "label=<\g<label> is \g<value>",
             dot_data,
         )
+
+        # replace value array with readable one
+        def _array2str(matchobj):
+            # grab array, remove any internal "<br/>", split into ints
+            val = matchobj.group('array').replace("<br/>", "")
+            val = [int(v.strip()) for v in val.split(",")]
+
+            # zip into class/count tuples, remove zero counts, sort, map
+            # to strings, insert a "<br/>" at every interval (so node is not
+            # too large)
+            val = list(zip(val, self.y_encoder.classes_))
+            val = [item for item in val if item[0]>0]
+            val = sorted(val, key=lambda i:i[0], reverse=True)
+            val = [f"{y}={c}," for c, y in val]
+            interval = 5
+            if len(val) > interval:
+                val = [x for l in
+            [val[i:i+interval] + ["<br/>"] for i in range(len(val)//interval)]
+            for x in l]
+                if val[-1] == "<br/>":
+                    val = val[:-1]
+
+            # return (with [:-1] for the final comma)
+            val = " ".join(val)
+            return f">values = {val[:-1]}<br/>"
+
+        dot_data = re.sub(
+            r">value = \[(?P<array>.+)\]<br\/>",
+            _array2str,
+            dot_data
+        )
+
+        # class labels and arrow labels
         class_label = "/".join(self.y_tiers)
         dot_data = dot_data.replace("<br/>class =", f"<br/>{class_label} =")
         dot_data = dot_data.replace('headlabel="True"', "$$$HOLDER$$$")
