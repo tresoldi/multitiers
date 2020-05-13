@@ -209,6 +209,31 @@ class MultiTiers:
                     f"_{doculect}_id", id_vector, left=0, right=0
                 )
 
+    def _add_missing_tiers(self, tier_list):
+        # add tiers which are needed
+        # TODO: better way of finding names, share with other functions
+        # TODO: correct for languages with underscore
+        # TODO: currently computing for all doculects
+        new_tier_l = defaultdict(list)
+        new_tier_r = defaultdict(list)
+        for tier_name in tier_list:
+            if tier_name not in self.tiers:
+                doculect, model, context = tier_name.split("_")
+                context_dir, context_idx = context[0], context[1]
+
+                # store model name and requested contexts, so later in
+                # a single call we get the highest value
+                if context_dir == "L":
+                    new_tier_l[model].append(int(context_idx))
+                elif context_dir == "R":
+                    new_tier_r[model].append(int(context_idx))
+
+        # Add tiers
+        for model in set(list(new_tier_l) + list(new_tier_r)):
+            self._add_tiers(
+                model, max(new_tier_l[model]), max(new_tier_r[model])
+            )
+
     # TODO: requires doculects and index tiers already inserted, test
     # TODO: allow to exclude some doculects? or whitelist?
     # TODO: don't add tiers already there
@@ -268,6 +293,9 @@ class MultiTiers:
     #       (could use OneHotEncoder handle_unknown
     # TODO: explain multiple y, collected as a tuple
     def filter_Xy(self, X_tiers, y_tiers, use_dummies=True):
+        # add tiers which are needed
+        self._add_missing_tiers(list(X_tiers) + list(y_tiers))
+
         X = []
         y = []
 
@@ -319,28 +347,7 @@ class MultiTiers:
 
     def correspondence_study(self, study_known, study_unknown):
         # add tiers which are needed
-        # TODO: better way of finding names, share with other functions
-        # TODO: correct for languages with underscore
-        # TODO: currently computing for all doculects
-        new_tier_l = defaultdict(list)
-        new_tier_r = defaultdict(list)
-        for tier_name in list(study_known) + list(study_unknown):
-            if tier_name not in self.tiers:
-                doculect, model, context = tier_name.split("_")
-                context_dir, context_idx = context[0], context[1]
-
-                # store model name and requested contexts, so later in
-                # a single call we get the highest value
-                if context_dir == "L":
-                    new_tier_l[model].append(int(context_idx))
-                elif context_dir == "R":
-                    new_tier_r[model].append(int(context_idx))
-
-        # Add tiers
-        for model in set(list(new_tier_l) + list(new_tier_r)):
-            self._add_tiers(
-                model, max(new_tier_l[model]), max(new_tier_r[model])
-            )
+        self._add_missing_tiers(list(study_known) + list(study_unknown))
 
         # collect filtered data
         # TODO: to it in a better, less expansive way

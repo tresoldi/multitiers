@@ -12,10 +12,11 @@ import numpy as np
 
 import multitiers
 
+
 class Classifier:
-    def __init__(self, data, left=2, right=2, models=['cv', 'sca']):
+    def __init__(self, data, left=2, right=2):
         # build internal multitiers object
-        self.mt = multitiers.MultiTiers(data, left=left, right=right, models=models)
+        self.mt = multitiers.MultiTiers(data, left=left, right=right)
 
     def train(self, X_tiers, y_tiers, model="decision_tree"):
         # get X and y vectors
@@ -29,7 +30,7 @@ class Classifier:
             max_depth = 5
 
             self.clf = tree.DecisionTreeClassifier(max_depth=max_depth)
-            self.clf = self.clf.fit(self.X, y_le) # TODO: need attribution?
+            self.clf = self.clf.fit(self.X, y_le)  # TODO: need attribution?
 
         else:
             raise ValueError("not implemented")
@@ -78,9 +79,6 @@ class Classifier:
         dot_data = dot_data.replace("$$$HOLDER$$$", 'headlabel="False"')
 
         return dot_data
-
-
-
 
 
 # Read data
