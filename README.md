@@ -58,7 +58,8 @@ and the preceding one:
 mt = multitiers.MultiTiers(data, left=1, right=2)
 ```
 
-Other tiers, such as for sound classes and features, are computed on-the-fly
+Other tiers, such as for sound classes and features (including shifted ones),
+are computed on-the-fly
 whenever necessary and cached for future reuse within the object.
 
 ### Running studies
