@@ -244,9 +244,14 @@ The visualization shows that the most common Dutch vowel is /ə/, which
 will be correct almost all the time (Gini index of 0.015) if the
 corresponding German vowel is /ə/ is as well. If the German vowel is /a/,
 we expect /ɑ/ in Dutch (but note the high impurity), if it is /aː/ we
-can expect a corresponding /aː/, and so on. Note that the tree didn't pick
+can expect a corresponding /aː/, and so on. Note that, in this tree,
+the algorithm didn't pick
 any tier from English: at least with the restrictions we set, the German
-vowel is always more informative.
+vowel is always more informative. However, if we build a tree without
+restrictions, it will end up using English for cases when our data has no
+German/Dutch cognates: it is behavior is not unlike a linguist
+having to use a more distant language for reconstruction when the closest
+is missing the cognate which is needed.
 
 At last, the classifier, even if currently limited to decision trees, can
 be used to predict features or bundle of features. It can also report the
