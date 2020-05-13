@@ -125,7 +125,7 @@ X_tiers = {
 y_tiers = {"German": {"exclude": ["r"]}}  # and G doesn't have /r/
 
 clf.train(X_tiers, y_tiers)
-clf.to_graphviz("germanic")
+clf.to_graphviz("docs/germanic")
 
 #############
 
