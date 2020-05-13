@@ -66,8 +66,9 @@ class Classifier:
             predicts = list(zip(pred, self.y_encoder.classes_))
             predicts = [p for p in predicts if p[0] > 0.0]
             predicts = sorted(predicts, key=lambda p: p[0], reverse=True)[:3]
+            predicts = ",".join(["%s|%.3f" % (y, p) for p, y in predicts])
 
-            print(f"#{idx}: {orig}/{predicts}")
+            print(f"#{idx}: {orig}/({predicts})")
             if max_lines and max_lines == idx:
                 break
 
