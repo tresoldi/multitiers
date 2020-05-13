@@ -95,7 +95,7 @@ class Classifier:
         # replace value array with readable one
         def _array2str(matchobj):
             # grab array, remove any internal "<br/>", split into ints
-            val = matchobj.group('array').replace("<br/>", "")
+            val = matchobj.group('array').replace("<br/>", ",")
             val = [int(v.strip()) for v in val.split(",")]
 
             # zip into class/count tuples, remove zero counts, sort, map
@@ -115,7 +115,7 @@ class Classifier:
 
             # return (with [:-1] for the final comma)
             val = " ".join(val)
-            return f">values = {val[:-1]}<br/>"
+            return f">values = [{val[:-1]}]<br/>"
 
         dot_data = re.sub(
             r">value = \[(?P<array>.+)\]<br\/>",
