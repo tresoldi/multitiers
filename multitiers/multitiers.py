@@ -89,16 +89,18 @@ class MultiTiers:
             Column name (i.e. key) containing the row alignments in `data`
             (default: `ALIGNMENT`). The value is disregarded if the object is
             initialized with a `filename`.
-        left :  int or str
+        alm_left :  int or str
             An integer or a string (either "bigram", "trigram", or "fourgram")
-            indicating the highest context to the left to be consider
-            (default : 0). The value is disregarded if the object is
-            initialized with a `filename`.
-        right :  int or str
+            indicating the highest context to the left to be consider for
+            alignment (default : 0). Note that this does *not* affect
+            context computation for extended tiers (such as those for sound
+            classes).
+        alm_right :  int or str
             An integer or a string (either "bigram", "trigram", or "fourgram")
-            indicating the highest context to the right to be consider
-            (default : 0). The value is disregarded if the object is
-            initialized with a `filename`.
+            indicating the highest context to the right to be consider for
+            alignment (default : 0). Note that this does *not* affect
+            context computation for extended tiers (such as those for sound
+            classes).
         models : list
             A list of one or more sound class models to compute in terms
             of alignments, from the available models "cv", "dolgo",
@@ -125,17 +127,8 @@ class MultiTiers:
             "alignment": kwargs.get("col_alignment", "ALIGNMENT"),
         }
 
-        # Store default left and right orders
-        self.left = get_orders(kwargs.get("left", 0))
-        self.right = get_orders(kwargs.get("right", 0))
-
         # Store sound class translators
         self.sc_translators = {}
-        sc_models = set(kwargs.get("models", []))
-        for model in sc_models:
-            if model not in SOUND_CLASS_MODELS:
-                raise ValueError(f"Invalid sound class model `{model}`.")
-            self.sc_translators[model] = self.clts.soundclass(model)
 
         # Collect all doculects as an ordered set, checking that no
         # reserved name is used
@@ -153,9 +146,9 @@ class MultiTiers:
         check_synonyms(data, self.field["cogid"], self.field["doculect"])
 
         # Actually add data / tiers
-        self._add_data(data)
+        self._add_data(data, kwargs.get("alm_left", 0), kwargs.get("alm_right", 0))
 
-    def _add_data(self, data):
+    def _add_data(self, data, left, right):
         """
         Internal function for adding data during initialization.
         """
@@ -209,15 +202,27 @@ class MultiTiers:
 
                 # Extend the doculect tier (and the shifted ones, if any)
                 # and the id ones
-                self._extend_vector(alm_vector, doculect)
-                self._extend_vector(id_vector, f"_{doculect}_id", shift=False)
+                self._extend_vector(doculect, alm_vector, left, right)
+                self._extend_vector(f"_{doculect}_id", id_vector, left=0, right=0)
 
-                # Extend sound class mappings (and shifted), if any
-                for model, translator in self.sc_translators.items():
-                    sc_vector = sc_mapper(alm_vector, translator)
-                    self._extend_vector(sc_vector, f"{doculect}_{model}")
+    # TODO: requires doculects and index tiers already inserted, test
+    # TODO: allow to exclude some doculects? or whitelist?
+    def _add_tiers(self, model, left=0, right=0):
+        # Load and cache sc_translator, if not available
+        if model not in self.sc_translators:
+            if model not in SOUND_CLASS_MODELS:
+                raise ValueError(f"Invalid sound class model `{model}`.")
+            self.sc_translators[model] = self.clts.soundclass(model)
 
-    def _extend_vector(self, vector, tier_name, shift=True):
+        # Obtain doculect alignment tier, compute sound class tier,
+        # and add it (extending if necessary)
+        for doculect in self.doculects:
+            sc_vector = sc_mapper(self.tiers[doculect], self.sc_translators[model])
+            self._extend_vector(f"{doculect}_{model}", sc_vector, left=left, right=right)
+
+
+    # TODO: left and right mandatory?
+    def _extend_vector(self, tier_name, vector, left=0, right=0):
         """
         Internal function for extending a vector with optional shifting.
         """
@@ -226,13 +231,13 @@ class MultiTiers:
         self.tiers[tier_name] += vector
 
         # Extend the shifted vectors, if any and if requested
-        if shift:
+        if any([left, right]):
             # Obtain the shifted tiers
             shifted_vectors = shift_tier(
                 vector,
                 tier_name,
-                left_orders=self.left,
-                right_orders=self.right,
+                left_orders=get_orders(left),
+                right_orders=get_orders(right),
             )
 
             # If we had a `vector` of Nones (such as for missing data),
