@@ -162,7 +162,7 @@ development of initial Proto-Germanic \*s in German:
 clf.to_graphviz("docs/germanic.png")
 ```
 
-[add image]
+![germanic](http://www.tiagotresoldi.com/images/tiers/germanic.png)
 
 The visualization of the decision tree confirms what we observed in the
 other experiment. At the first, top node, we are informed that the most
@@ -200,7 +200,7 @@ clf2.train(X_tiers2, y_tiers2, max_depth=3)
 clf2.to_graphviz("docs/germanic2")
 ```
 
-[add image]
+![germanic2](http://www.tiagotresoldi.com/images/tiers/germanic2.png)
 
 From the graph, we are informed that the most common correspondence set
 between the `German` and `English` tiers (again, with the study restrictions,
@@ -237,7 +237,7 @@ clf3.train(X_tiers3, y_tiers3, min_impurity_decrease=0.0333)
 clf3.to_graphviz("docs/dutch_pred")
 ```
 
-[add image]
+![dutch_pred](http://www.tiagotresoldi.com/images/tiers/dutch_pred.png)
 
 The visualization shows that the most common Dutch vowel is /ə/, which
 will be correct almost all the time (Gini index of 0.015) if the
