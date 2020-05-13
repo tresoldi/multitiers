@@ -6,12 +6,56 @@ Utility functions for the `multitiers` library.
 from collections import Counter
 import csv
 from pathlib import Path
+import re
 
 # Import MPI-SHH libraries
 from pyclts import CLTS
 
-# TODO: should we already be mapped to a numpy array? or done later in
-#       object?
+# TODO: this is a simple&stupid function written quickly to provide a
+# small language for demonstration, write a proper parser
+def parse_correspondence_study(text):
+    # initial dictionaries
+    known = {}
+    unknown = {}
+
+    # Split in lines and replace multiple sapces
+    lines = [re.sub("\s+", " ", line).strip() for line in text.split("\n")]
+    lines = [line for line in lines if line]
+
+    # Parse each line
+    for line in lines:
+        # include and exclude for this rule
+        restrict = {"include": [], "exclude": []}
+
+        # split constituents
+        fields = line.split()
+        if len(fields) == 4:
+            if fields[2] == "INCLUDE":
+                restrict["include"] = fields[3].split(",")
+            elif fields[2] == "EXCLUDE":
+                restrict["exclude"] = fields[3].split(",")
+
+        # For indexes, convert to integers
+        if "index" in fields[1]:
+            restrict["include"] = [int(v) for v in restrict["include"]]
+            restrict["exclude"] = [int(v) for v in restrict["exclude"]]
+
+        # Remove items if empty
+        if not restrict["include"]:
+            restrict.pop("include")
+        if not restrict["exclude"]:
+            restrict.pop("exclude")
+
+        # add to the right dictionary
+        if fields[0] == "KNOWN":
+            known[fields[1]] = restrict
+        elif fields[0] == "UNKNOWN":
+            unknown[fields[1]] = restrict
+
+    return known, unknown
+
+
+# TODO: allow to strip
 def parse_alignment(alignment):
     """
     Parses an alignment string.
@@ -36,9 +80,11 @@ def parse_alignment(alignment):
     ]
 
 
+# TODO: allow to pass strings/lists/integers for orders
+# TODO: rename tier_name to base_name
 def shift_tier(vector, tier_name, left_orders, right_orders, oob="∅"):
     """
-    Returns shifted versions of vectors.
+    Compute shifted versions of vectors.
 
     Parameters
     ----------

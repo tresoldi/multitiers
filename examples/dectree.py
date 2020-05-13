@@ -83,7 +83,7 @@ class Classifier:
 
 # Read data
 source = Path(__file__).parent.parent / "resources" / "germanic.tsv"
-data = multitiers.read_wordlist_data(source.as_posix(), comma=0)
+data = multitiers.read_wordlist_data(source.as_posix(), comma=False)
 
 # Build classifier
 clf = Classifier(data)

@@ -231,7 +231,9 @@ class MultiTiers:
         # Add tiers
         for model in set(list(new_tier_l) + list(new_tier_r)):
             self._add_tiers(
-                model, max(new_tier_l[model]), max(new_tier_r[model])
+                model,
+                max(new_tier_l.get(model, [0])),
+                max(new_tier_r.get(model, [0])),
             )
 
     # TODO: requires doculects and index tiers already inserted, test
