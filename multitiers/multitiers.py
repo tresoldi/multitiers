@@ -146,7 +146,9 @@ class MultiTiers:
         check_synonyms(data, self.field["cogid"], self.field["doculect"])
 
         # Actually add data / tiers
-        self._add_data(data, kwargs.get("alm_left", 0), kwargs.get("alm_right", 0))
+        self._add_data(
+            data, kwargs.get("alm_left", 0), kwargs.get("alm_right", 0)
+        )
 
     def _add_data(self, data, left, right):
         """
@@ -203,10 +205,13 @@ class MultiTiers:
                 # Extend the doculect tier (and the shifted ones, if any)
                 # and the id ones
                 self._extend_vector(doculect, alm_vector, left, right)
-                self._extend_vector(f"_{doculect}_id", id_vector, left=0, right=0)
+                self._extend_vector(
+                    f"_{doculect}_id", id_vector, left=0, right=0
+                )
 
     # TODO: requires doculects and index tiers already inserted, test
     # TODO: allow to exclude some doculects? or whitelist?
+    # TODO: don't add tiers already there
     def _add_tiers(self, model, left=0, right=0):
         # Load and cache sc_translator, if not available
         if model not in self.sc_translators:
@@ -217,9 +222,12 @@ class MultiTiers:
         # Obtain doculect alignment tier, compute sound class tier,
         # and add it (extending if necessary)
         for doculect in self.doculects:
-            sc_vector = sc_mapper(self.tiers[doculect], self.sc_translators[model])
-            self._extend_vector(f"{doculect}_{model}", sc_vector, left=left, right=right)
-
+            sc_vector = sc_mapper(
+                self.tiers[doculect], self.sc_translators[model]
+            )
+            self._extend_vector(
+                f"{doculect}_{model}", sc_vector, left=left, right=right
+            )
 
     # TODO: left and right mandatory?
     def _extend_vector(self, tier_name, vector, left=0, right=0):
@@ -310,6 +318,30 @@ class MultiTiers:
         return X, y
 
     def correspondence_study(self, study_known, study_unknown):
+        # add tiers which are needed
+        # TODO: better way of finding names, share with other functions
+        # TODO: correct for languages with underscore
+        # TODO: currently computing for all doculects
+        new_tier_l = defaultdict(list)
+        new_tier_r = defaultdict(list)
+        for tier_name in list(study_known) + list(study_unknown):
+            if tier_name not in self.tiers:
+                doculect, model, context = tier_name.split("_")
+                context_dir, context_idx = context[0], context[1]
+
+                # store model name and requested contexts, so later in
+                # a single call we get the highest value
+                if context_dir == "L":
+                    new_tier_l[model].append(int(context_idx))
+                elif context_dir == "R":
+                    new_tier_r[model].append(int(context_idx))
+
+        # Add tiers
+        for model in set(list(new_tier_l) + list(new_tier_r)):
+            self._add_tiers(
+                model, max(new_tier_l[model]), max(new_tier_r[model])
+            )
+
         # collect filtered data
         # TODO: to it in a better, less expansive way
         data = [
