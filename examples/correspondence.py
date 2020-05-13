@@ -22,7 +22,7 @@ KNOWN Proto-Germanic INCLUDE s
 KNOWN German EXCLUDE r
 UNKNOWN Proto-Germanic_cv_R1
 """
-known2, unknown2 = multitiers.utils.parse_correspondence_study(demo_study)
+known2, unknown2 = multitiers.utils.parse_study(demo_study)
 study_result2 = mt.correspondence_study(known2, unknown2)
 
 # print results

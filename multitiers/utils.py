@@ -13,7 +13,7 @@ from pyclts import CLTS
 
 # TODO: this is a simple&stupid function written quickly to provide a
 # small language for demonstration, write a proper parser
-def parse_correspondence_study(text):
+def parse_study(text):
     # initial dictionaries
     known = {}
     unknown = {}
@@ -47,9 +47,9 @@ def parse_correspondence_study(text):
             restrict.pop("exclude")
 
         # add to the right dictionary
-        if fields[0] == "KNOWN":
+        if fields[0] in ["KNOWN", "X_tier"]:
             known[fields[1]] = restrict
-        elif fields[0] == "UNKNOWN":
+        elif fields[0] in ["UNKNOWN", "y_tier"]:
             unknown[fields[1]] = restrict
 
     return known, unknown

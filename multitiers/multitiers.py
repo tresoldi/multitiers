@@ -218,15 +218,21 @@ class MultiTiers:
         new_tier_r = defaultdict(list)
         for tier_name in tier_list:
             if tier_name not in self.tiers:
-                doculect, model, context = tier_name.split("_")
-                context_dir, context_idx = context[0], context[1]
+                # is there a context?
+                if Counter(tier_name)["_"] == 2:
+                    doculect, model, context = tier_name.split("_")
+                    context_dir, context_idx = context[0], context[1]
 
-                # store model name and requested contexts, so later in
-                # a single call we get the highest value
-                if context_dir == "L":
-                    new_tier_l[model].append(int(context_idx))
-                elif context_dir == "R":
-                    new_tier_r[model].append(int(context_idx))
+                    # store model name and requested contexts, so later in
+                    # a single call we get the highest value
+                    if context_dir == "L":
+                        new_tier_l[model].append(int(context_idx))
+                    elif context_dir == "R":
+                        new_tier_r[model].append(int(context_idx))
+                else:
+                    doculect, model = tier_name.split("_")
+                    new_tier_l[model].append(0)
+                    new_tier_r[model].append(0)
 
         # Add tiers
         for model in set(list(new_tier_l) + list(new_tier_r)):
@@ -311,12 +317,12 @@ class MultiTiers:
                     filtered = False
                     break
 
-                if "includes" in tier_info:
-                    if self.tiers[tier][idx] not in tier_info["includes"]:
+                if "include" in tier_info:
+                    if self.tiers[tier][idx] not in tier_info["include"]:
                         filtered = False
                         break
-                if "excludes" in tier_info:
-                    if self.tiers[tier][idx] in tier_info["excludes"]:
+                if "exclude" in tier_info:
+                    if self.tiers[tier][idx] in tier_info["exclude"]:
                         filtered = False
                         break
 
