@@ -106,6 +106,18 @@ the relation of German/Dutch against English.
  (1, 's', 'ʃ'): {('C',): 78}}
 ```
 
+As said, these results are mostly intended for computer-consumption: their
+immediate usage is for proposing sound changes (or, in a more appropriate way,
+correspondence laws, as they would allow to involve multiple languages and
+tiers in the output). Restricting to traditional `a > b / c _ d`
+notation, the output above could be mapped to a pair of changes
+`s > z / _ V` and `s > ʃ / _ C`, but our focus is in correspondence
+descriptors and not properly in sound changes (also considering how the
+traditional notation would not be adequate for a multitiered system
+with potentially multiple correspondences). Note that a system for
+searching for correspondence laws will require different pruning strategies
+not yet implemented.
+
 Passing study specifications as a dictionary allows more flexibility, but the
 library also provides an auxiliary function for parsing specifications
 according to a simple language. The specification can use tabs and
