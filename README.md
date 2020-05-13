@@ -4,6 +4,12 @@ A library for multi-tiered sequence representation of linguistic data.
 
 ## How to use
 
+The library is loaded as expected
+
+```
+import multitiers
+```
+
 ### Loading data
 
 Data must be a list of dictionaries including, at least, a `DOCULECT`,
@@ -126,7 +132,7 @@ Classifiers are used through a `Classifier` object that will build a
 multitier collection internally, and accept the same kind of data.
 
 ```python
-clf = Classifier(data)
+clf = multitiers.Classifier(data)
 ```
 
 Classifiers need to be trained with a tier specification like the one
@@ -178,7 +184,7 @@ class of the Proto-Germanic sounds according to the more complex SCA
 model. For exploration, we limit the tree depth to three nodes.
 
 ```python
-clf2 = Classifier(data)
+clf2 = multitiers.Classifier(data)
 
 study = """
 X_tier index INCLUDE 1
@@ -217,7 +223,7 @@ involved. To limit the tree for easiness in exploration, we only
 perform a split if it will decrease the impurity by at least 0.03333.
 
 ```python
-clf3 = Classifier(data)
+clf3 = multitiers.Classifier(data)
 
 study3 = """
 X_tier German
@@ -248,7 +254,7 @@ example, we train on a more complex model for predicting all Dutch consonants,
 we can verify how well it matches the actual data.
 
 ```python
-clf4 = Classifier(data)
+clf4 = multitiers.Classifier(data)
 
 study4 = """
 X_tier German
