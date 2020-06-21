@@ -29,3 +29,24 @@ study_result2 = mt.correspondence_study(known2, unknown2)
 print(mt)
 pprint(study_result1)
 pprint(study_result2)
+
+######################
+
+# Read data
+source = Path(__file__).parent.parent / "resources" / "latin2spanish.tsv"
+data = multitiers.read_wordlist_data(source.as_posix(), comma=False)
+mt = multitiers.MultiTiers(data)
+
+study = """
+KNOWN Latin INCLUDE t
+KNOWN Spanish INCLUDE tʃ
+UNKNOWN Latin_cv_L1
+UNKNOWN Latin_cv_R1
+"""
+
+known, unknown = multitiers.utils.parse_study(study)
+study_result = mt.correspondence_study(known, unknown)
+
+# print results
+print(mt)
+pprint(study_result)

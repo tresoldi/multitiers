@@ -75,3 +75,23 @@ X_tiers4, y_tiers4 = multitiers.utils.parse_study(study4)
 clf4.train(X_tiers4, y_tiers4, max_depth=15)
 clf4.show_pred(max_lines=10)
 clf4.show_pred_prob(max_lines=10)
+
+##############################
+
+# Read data
+source = Path(__file__).parent.parent / "resources" / "latin2spanish.tsv"
+data = multitiers.read_wordlist_data(source.as_posix(), comma=False)
+
+# Build classifier
+clf = multitiers.Classifier(data)
+
+study = """
+X_tier Latin INCLUDE t
+X_tier Latin_sca_L1
+X_tier Latin_sca_R1
+y_tier Spanish
+"""
+
+X_tiers, y_tiers = multitiers.utils.parse_study(study)
+clf.train(X_tiers, y_tiers)
+clf.to_graphviz("docs/latin_t")

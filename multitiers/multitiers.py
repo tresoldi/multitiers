@@ -32,6 +32,7 @@ SOUND_CLASS_MODELS = ["cv", "dolgo", "asjp", "sca"]
 # TODO: explain, perhaps in docs, that tiers with doculect names
 #       are supposed to carry segments
 # TODO: make sure known/unknown and similar don't share tiers
+# TODO: validate tier name, and remove `reserved`
 class MultiTiers:
     """
     Class for representing a single multitier object.
