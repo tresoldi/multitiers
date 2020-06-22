@@ -16,6 +16,7 @@ known1 = {
 unknown1 = {"Proto-Germanic_cv_R1": {}}
 study_result1 = mt.correspondence_study(known1, unknown1)
 
+# TODO: rename KNOWN->INCLUDE/EXCLUDE UNKNWON->FREE
 demo_study = """
 KNOWN index INCLUDE 1
 KNOWN Proto-Germanic INCLUDE s

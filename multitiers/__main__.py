@@ -50,12 +50,7 @@ def main():
     # TODO: have a small language for includes/excludes
     study = [
         # initial position
-        {
-            "tier_name": "index",
-            "includes": [1],
-            "excludes": None,
-            "unknown": False,
-        },
+        {"tier_name": "index", "includes": [1], "excludes": None, "unknown": False},
         # All Proto-Germanic /s/
         {
             "tier_name": "Proto-Germanic",
@@ -64,12 +59,7 @@ def main():
             "unknown": False,
         },
         # No German r /s/
-        {
-            "tier_name": "German",
-            "includes": None,
-            "excludes": ["r"],
-            "unknown": False,
-        },
+        {"tier_name": "German", "includes": None, "excludes": ["r"], "unknown": False},
         # Proto-Germanic CV to the left
         {
             "tier_name": "Proto-Germanic_cv_L1",

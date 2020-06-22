@@ -133,9 +133,7 @@ class MultiTiers:
 
         # Collect all doculects as an ordered set, checking that no
         # reserved name is used
-        self.doculects = sorted(
-            {entry[self.field["doculect"]] for entry in data}
-        )
+        self.doculects = sorted({entry[self.field["doculect"]] for entry in data})
         if any([tier_name in self.doculects for tier_name in self._reserved]):
             raise ValueError("Reserved tier name used as a doculect id.")
 
@@ -147,9 +145,7 @@ class MultiTiers:
         check_synonyms(data, self.field["cogid"], self.field["doculect"])
 
         # Actually add data / tiers
-        self._add_data(
-            data, kwargs.get("alm_left", 0), kwargs.get("alm_right", 0)
-        )
+        self._add_data(data, kwargs.get("alm_left", 0), kwargs.get("alm_right", 0))
 
     def _add_data(self, data, left, right):
         """
@@ -161,7 +157,7 @@ class MultiTiers:
         # entire data once, also performing the normalization of alignments
         # (with potential of being computationally expansive) in the same
         # loop.
-        # NOTE: while it is also a bit more expansive, we copy the
+        # Note that, while it is also a bit more expansive, we copy the
         # provided data, guaranteeing that the structure provided by the
         # user is not modified.
         cogid_data = defaultdict(list)
@@ -185,9 +181,7 @@ class MultiTiers:
             # Get alignment lengths and check consistency
             alm_lens = {len(row["alignment"]) for row in rows.values()}
             if len(alm_lens) > 1:
-                raise ValueError(
-                    f"Cogid '{cogid}' has alignments of different sizes."
-                )
+                raise ValueError(f"Cogid '{cogid}' has alignments of different sizes.")
             alm_len = list(alm_lens)[0]
 
             # Extend the positional tiers
@@ -206,9 +200,7 @@ class MultiTiers:
                 # Extend the doculect tier (and the shifted ones, if any)
                 # and the id ones
                 self._extend_vector(doculect, alm_vector, left, right)
-                self._extend_vector(
-                    f"_{doculect}_id", id_vector, left=0, right=0
-                )
+                self._extend_vector(f"_{doculect}_id", id_vector, left=0, right=0)
 
     def _add_missing_tiers(self, tier_list):
         # add tiers which are needed
@@ -238,9 +230,7 @@ class MultiTiers:
         # Add tiers
         for model in set(list(new_tier_l) + list(new_tier_r)):
             self._add_tiers(
-                model,
-                max(new_tier_l.get(model, [0])),
-                max(new_tier_r.get(model, [0])),
+                model, max(new_tier_l.get(model, [0])), max(new_tier_r.get(model, [0]))
             )
 
     # TODO: requires doculects and index tiers already inserted, test
@@ -256,9 +246,7 @@ class MultiTiers:
         # Obtain doculect alignment tier, compute sound class tier,
         # and add it (extending if necessary)
         for doculect in self.doculects:
-            sc_vector = sc_mapper(
-                self.tiers[doculect], self.sc_translators[model]
-            )
+            sc_vector = sc_mapper(self.tiers[doculect], self.sc_translators[model])
             self._extend_vector(
                 f"{doculect}_{model}", sc_vector, left=left, right=right
             )
@@ -290,9 +278,7 @@ class MultiTiers:
             # shifted tier names in `shifted_vectors`, we can just
             # reuse it.
             if all(value is None for value in vector):
-                shifted_vectors = {
-                    tier_name: vector for tier_name in shifted_vectors
-                }
+                shifted_vectors = {tier_name: vector for tier_name in shifted_vectors}
 
             # Extend the shifted vectors
             for shifted_name, shifted_vector in shifted_vectors.items():
@@ -340,8 +326,7 @@ class MultiTiers:
         # TODO: do our own mapping for > 1 tiers
         if len(y_tiers) > 1:
             y["/".join(y_tiers)] = [
-                "/".join(row)
-                for row in zip(*[list(y[column]) for column in y_tiers])
+                "/".join(row) for row in zip(*[list(y[column]) for column in y_tiers])
             ]
             y = y.drop(columns=y_tiers)
 
@@ -372,15 +357,11 @@ class MultiTiers:
             for tier, value in group.items():
                 # filter inclusion
                 if "include" in value:
-                    data = [
-                        row for row in data if row[tier] in value["include"]
-                    ]
+                    data = [row for row in data if row[tier] in value["include"]]
 
                 # filter exclusion
                 if "exclude" in value:
-                    rows = [
-                        row for row in data if row[tier] not in value["exclude"]
-                    ]
+                    rows = [row for row in data if row[tier] not in value["exclude"]]
 
         # collect tuples
         entries = []
@@ -419,11 +400,13 @@ class MultiTiers:
         """
 
         list_repr = [
-            [tier_name] + self.tiers[tier_name]
-            for tier_name in self.tier_names()
+            [tier_name] + self.tiers[tier_name] for tier_name in self.tier_names()
         ]
 
         return list_repr
+
+    def as_dataframe(self):
+        return pd.DataFrame.from_dict(self.tiers)
 
     def __repr__(self):
         return str(self.as_list())
@@ -432,19 +415,14 @@ class MultiTiers:
         # Obtain the list representation (as in __repr__), select only the
         # first NUM_ROWS and NUM_COLS, and build a tabulate representation
         # (which needs to tranpose the data).
-        data = [
-            tier[: self.num_rows] for tier in self.as_list()[: self.num_cols]
-        ]
+        data = [tier[: self.num_rows] for tier in self.as_list()[: self.num_cols]]
         data = list(zip(*data))  # transposition
 
         # Collect basic statistics
-        str_tiers = (
-            "MultiTiers object (%i tiers, %i doculects, %i rows)\n\n"
-            % (
-                len(self.tier_names()),
-                len(self.doculects),
-                len(self.tiers["index"]),
-            )
+        str_tiers = "MultiTiers object (%i tiers, %i doculects, %i rows)\n\n" % (
+            len(self.tier_names()),
+            len(self.doculects),
+            len(self.tiers["index"]),
         )
 
         str_tiers += tabulate(data, tablefmt="simple")

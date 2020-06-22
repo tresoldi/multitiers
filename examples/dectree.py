@@ -95,3 +95,6 @@ y_tier Spanish
 X_tiers, y_tiers = multitiers.utils.parse_study(study)
 clf.train(X_tiers, y_tiers)
 clf.to_graphviz("docs/latin_t")
+
+print( clf.feature_extraction("tree", num_feats=5) )
+print( clf.feature_extraction("lsvc") )

@@ -4,6 +4,10 @@ from sklearn import tree
 from sklearn.preprocessing import LabelEncoder
 import graphviz
 
+from sklearn.svm import LinearSVC
+from sklearn.ensemble import ExtraTreesClassifier
+from sklearn.feature_selection import SelectFromModel
+
 import multitiers
 
 # TODO: make sure it is resuable
@@ -27,14 +31,14 @@ class Classifier:
         self.X, self.y = self.mt.filter_Xy(self.X_tiers, self.y_tiers)
         self.y_encoder = LabelEncoder()
         self.y_encoder.fit(self.y)
-        y_le = self.y_encoder.transform(self.y)
+        self.y_le = self.y_encoder.transform(self.y)
 
         # train classifier
         if model == "decision_tree":
             self.clf = tree.DecisionTreeClassifier(
                 max_depth=max_depth, min_impurity_decrease=min_impurity_decrease
             )
-            self.clf = self.clf.fit(self.X, y_le)  # TODO: need attribution?
+            self.clf = self.clf.fit(self.X, self.y_le)  # TODO: need attribution?
 
         else:
             raise ValueError("not implemented")
@@ -72,6 +76,29 @@ class Classifier:
             if max_lines and max_lines == idx:
                 break
 
+    # TODO: Rename to feature importance?
+    def feature_extraction(self, model, **kwargs):
+        if model == "tree":
+            num_feats = kwargs.get("num_feats")
+
+            etclf = ExtraTreesClassifier(n_estimators=50)
+            etclf = etclf.fit(self.X, self.y_le)
+
+            features = list(zip(self.X, etclf.feature_importances_))
+            features = sorted(features, key=lambda f: f[1], reverse=True)
+            return features[:num_feats]
+        elif model == "lsvc":
+            C = kwargs.get("C", 0.01)
+
+            lsvc = LinearSVC(C=C, penalty="l1", dual=False).fit(self.X, self.y_le)
+            model = SelectFromModel(lsvc, prefit=True)
+
+            features = list(zip(self.X, model.get_support()))
+            features = [feature for feature in features if feature[1]]
+            return features
+        else:
+            raise ValueError("Model not implemented")
+
     def to_dot(self, proportion=False):
         # Build dot source
         dot_data = tree.export_graphviz(
@@ -95,21 +122,26 @@ class Classifier:
         # replace value array with readable one
         def _array2str(matchobj):
             # grab array, remove any internal "<br/>", split into ints
-            val = matchobj.group('array').replace("<br/>", ",")
+            val = matchobj.group("array").replace("<br/>", ",")
             val = [int(v.strip()) for v in val.split(",")]
 
             # zip into class/count tuples, remove zero counts, sort, map
             # to strings, insert a "<br/>" at every interval (so node is not
             # too large)
             val = list(zip(val, self.y_encoder.classes_))
-            val = [item for item in val if item[0]>0]
-            val = sorted(val, key=lambda i:i[0], reverse=True)
+            val = [item for item in val if item[0] > 0]
+            val = sorted(val, key=lambda i: i[0], reverse=True)
             val = [f"{y}={c}," for c, y in val]
             interval = 5
             if len(val) > interval:
-                val = [x for l in
-            [val[i:i+interval] + ["<br/>"] for i in range(len(val)//interval)]
-            for x in l]
+                val = [
+                    x
+                    for l in [
+                        val[i : i + interval] + ["<br/>"]
+                        for i in range(len(val) // interval)
+                    ]
+                    for x in l
+                ]
                 if val[-1] == "<br/>":
                     val = val[:-1]
 
@@ -117,11 +149,7 @@ class Classifier:
             val = " ".join(val)
             return f">values = [{val[:-1]}]<br/>"
 
-        dot_data = re.sub(
-            r">value = \[(?P<array>.+)\]<br\/>",
-            _array2str,
-            dot_data
-        )
+        dot_data = re.sub(r">value = \[(?P<array>.+)\]<br\/>", _array2str, dot_data)
 
         # class labels and arrow labels
         class_label = "/".join(self.y_tiers)

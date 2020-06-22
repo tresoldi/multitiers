@@ -75,9 +75,7 @@ def parse_alignment(alignment):
         A list of tokens.
     """
 
-    return [
-        token for token in alignment.strip().split() if token not in ["(", ")"]
-    ]
+    return [token for token in alignment.strip().split() if token not in ["(", ")"]]
 
 
 # TODO: allow to pass strings/lists/integers for orders
@@ -157,10 +155,7 @@ def sc_mapper(alignment, mapper, oob="∅", gap="-"):
     # NOTE: tokens are mapped to "-" if they are None (`if token`)
     #       or if they are out-of-bonds/gaps (`in [oob, gap]`)
     sc_vector_str = " ".join(
-        [
-            token if token and token not in [oob, gap] else "-"
-            for token in alignment
-        ]
+        [token if token and token not in [oob, gap] else "-" for token in alignment]
     )
     sc_vector = mapper(sc_vector_str)
 
@@ -274,9 +269,7 @@ def check_data(data, fields, id_field="id"):
     for row in data:
         row_cols = list(row.keys())
         missing_fields = [
-            field
-            for field, col_name in fields.items()
-            if col_name not in row_cols
+            field for field, col_name in fields.items() if col_name not in row_cols
         ]
         if missing_fields:
             raise ValueError(f"One or more mandatory fields missing in {row}")
@@ -306,11 +299,7 @@ def check_synonyms(data, cogid_field, doculect_field):
         The key for doculects in `data`.
     """
 
-    cogid_doculect = Counter(
-        [(row[cogid_field], row[doculect_field]) for row in data]
-    )
-    synonyms = sorted(
-        [pair for pair, count in cogid_doculect.items() if count > 1]
-    )
+    cogid_doculect = Counter([(row[cogid_field], row[doculect_field]) for row in data])
+    synonyms = sorted([pair for pair, count in cogid_doculect.items() if count > 1])
     if synonyms:
         raise ValueError("Synonym pairs were found: %s." % str(synonyms))
