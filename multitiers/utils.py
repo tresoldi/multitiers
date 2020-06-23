@@ -8,6 +8,8 @@ import csv
 from pathlib import Path
 import re
 
+import numpy as np
+
 # Import MPI-SHH libraries
 from pyclts import CLTS
 
@@ -80,7 +82,7 @@ def parse_alignment(alignment):
 
 # TODO: allow to pass strings/lists/integers for orders
 # TODO: rename tier_name to base_name
-def shift_tier(vector, tier_name, left_orders, right_orders, oob="∅"):
+def shift_tier(vector, tier_name, left_orders, right_orders, oob=np.nan):
     """
     Compute shifted versions of vectors.
 
@@ -130,7 +132,7 @@ def shift_tier(vector, tier_name, left_orders, right_orders, oob="∅"):
 # TODO: perform with numpy?
 # TODO: have an unified mapper signature? not bound to pyclts?
 # TODO: rename `alignment` to `vector` whereever appropriate
-def sc_mapper(alignment, mapper, oob="∅", gap="-"):
+def sc_mapper(alignment, mapper, oob=np.nan, gap="-"):
     """
     Maps an alignment vector to sound classes.
 
@@ -245,7 +247,7 @@ def read_wordlist_data(filepath, comma=False):
     return rows
 
 
-def check_data(data, fields, id_field="id"):
+def check_data(data, fields):
     """
     Auxiliary function for data validation.
 
@@ -275,7 +277,7 @@ def check_data(data, fields, id_field="id"):
             raise ValueError(f"One or more mandatory fields missing in {row}")
 
     # Collect all ids and make sure they are unique
-    row_ids = {row[fields[id_field]] for row in data}
+    row_ids = {row[fields["id"]] for row in data}
     if len(row_ids) != len(data):
         raise ValueError("Data has non-unique IDs.")
 

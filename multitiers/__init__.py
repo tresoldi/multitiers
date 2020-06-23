@@ -10,6 +10,7 @@ __author__ = "Tiago Tresoldi"
 __email__ = "tresoldi@shh.mpg.de"
 
 # Build the namespace
+from multitiers.multitiers import OLDMultiTiers
 from multitiers.multitiers import MultiTiers
 from multitiers.classifier import Classifier
 from multitiers.utils import clts_object, read_wordlist_data
