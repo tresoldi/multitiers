@@ -4,14 +4,132 @@ Utility functions for the `multitiers` library.
 
 # Import Python standard libraries
 from collections import Counter
-import csv
 from pathlib import Path
+import csv
 import re
 
+# Import 3rd-party libraries
+from pyclts import CLTS
 import numpy as np
 
-# Import MPI-SHH libraries
-from pyclts import CLTS
+
+def clts_object(repos=None):
+    """
+    Initialize and return a CLTS object.
+
+    Parameters
+    ----------
+    repos : str
+        Path to the root of the CLTS data repository (defaults to the
+        copy distributed with the library).
+
+    Returns
+    -------
+    clts : obj
+        An initialized CLTS object.
+    """
+
+    if not repos:
+        repos = Path(__file__).parent.parent / "clts-master"
+        repos = repos.as_posix()
+
+    clts = CLTS(repos)
+
+    return clts
+
+
+def read_wordlist_data(filepath, comma=False):
+    """
+    Reads a wordlist in lingpy format and returns an object.
+
+    Parameters
+    ----------
+    filepath : string
+        Path to the wordlist.
+    comma : bool
+        Whether to use commas instead of tabulations as field separator
+        (default: False).
+
+    Returns
+    -------
+    data : list of dicts
+        A list of dictionaries, where each element is a row in the
+        original wordlist file.
+    """
+
+    # Get the right field delimiter
+    delimiter = "\t,"[comma]
+
+    # Collect information in a single data structure, for later processing
+    with open(filepath) as handler:
+        data = list(csv.DictReader(handler, delimiter=delimiter))
+
+    return data
+
+
+def parse_alignment(alignment):
+    """
+    Parses an alignment string.
+
+    Alignment strings are composed of space separated graphemes, with
+    optional parentheses for suppressed or non-mandatory material. The
+    material between parentheses is kept.
+
+    Parameters
+    ----------
+    alignment : str
+        The alignment string to be parsed.
+
+    Returns
+    -------
+    seq : list
+        A list of tokens.
+    """
+
+    return [token for token in alignment.strip().split() if token not in ["(", ")"]]
+
+
+def shift_tier(vector, base_name, left_orders, right_orders, oob="∅"):
+    """
+    Compute shifted versions of a vector.
+
+    Parameters
+    ----------
+    vector : list
+        Vector to be shifted.
+    base_name : str
+        Base name of the tier.
+    left_orders: list of int
+        List of left contexts to include in the shifts.
+    right_orders: list of int
+        List of right contexts to include in the shifts.
+    oob : str
+        Value to use for out-of-bounds tokens (default: "∅").
+    """
+
+    # Compute the requested left and right shifts, if any. Lengths
+    # of zero are not allowed because, given Python's slicing, they
+    # would return totally unexpected vectors. The [:len(x)] and
+    # [-len(x):] slices are added so that we have exactly the
+    # number of tokens in the shifted tier, even in cases where
+    # the left or right orders are larger than the length of the
+    # alignment (e.g., an alignment with 3 tokens and left order
+    # of 5 would yield '0 0 0 0 0' and not '0 0 0').
+    new_tiers = {}
+    for left_order in left_orders:
+        shifted_vector = [oob] * left_order + vector[:-left_order]
+        shifted_name = f"{base_name}_L{left_order}"
+
+        new_tiers[shifted_name] = shifted_vector
+
+    for right_order in right_orders:
+        shifted_vector = vector[right_order:] + [oob] * right_order
+        shifted_name = f"{base_name}_R{right_order}"
+
+        new_tiers[shifted_name] = shifted_vector
+
+    return new_tiers
+
 
 # TODO: this is a simple&stupid function written quickly to provide a
 # small language for demonstration, write a proper parser
@@ -57,76 +175,6 @@ def parse_study(text):
     return known, unknown
 
 
-# TODO: allow to strip
-def parse_alignment(alignment):
-    """
-    Parses an alignment string.
-
-    Alignment strings are composed of space separated graphemes, with
-    optional parentheses for suppressed or non-mandatory material. The
-    material between parentheses is kept.
-
-    Parameters
-    ----------
-    alignment : str
-        The alignment string to be parsed.
-
-    Returns
-    -------
-    seq : list
-        A list of tokens.
-    """
-
-    return [token for token in alignment.strip().split() if token not in ["(", ")"]]
-
-
-# TODO: allow to pass strings/lists/integers for orders
-# TODO: rename tier_name to base_name
-def shift_tier(vector, tier_name, left_orders, right_orders, oob=np.nan):
-    """
-    Compute shifted versions of vectors.
-
-    Parameters
-    ----------
-
-    vector : list
-        Vector to be shifted.
-    tier_name : str
-        Base name of the tier.
-    left_orders: list of int
-        List of left contexts to include in the shifts.
-    right_orders: list of int
-        List of right contexts to include in the shifts.
-    oob : str
-        Value to use for out-of-bounds tokens (default: "∅").
-    """
-
-    # Compute the requested left and right shifts, if any. Lengths
-    # of zero are not allowed because, given Python's slicing, they
-    # would return totally unexpected vectors. The [:len(x)] and
-    # [-len(x):] slices are added so that we have exactly the
-    # number of tokens in the shifted tier, even in cases where
-    # the left or right order are larger than the length of the
-    # alignment (e.g., an alignment with 3 tokens and left order
-    # of 5 would yield '0 0 0 0 0' and not '0 0 0').
-    # For both left and right shifting, to make it easier we first strip
-    # the eventual morpheme marks, adding them back later.
-    new_tiers = {}
-    for left_order in left_orders:
-        shifted_vector = [oob] * left_order + vector[:-left_order]
-        shifted_name = f"{tier_name}_L{left_order}"
-
-        new_tiers[shifted_name] = shifted_vector
-
-    for right_order in right_orders:
-        shifted_vector = vector[right_order:] + [oob] * right_order
-        shifted_name = f"{tier_name}_R{right_order}"
-
-        new_tiers[shifted_name] = shifted_vector
-
-    return new_tiers
-
-
 # TODO: check status of https://github.com/cldf-clts/pyclts/issues/7
 # TODO: decide on gap token (should we keep `-`?)
 # TODO: perform with numpy?
@@ -136,11 +184,21 @@ def sc_mapper(alignment, mapper, oob=np.nan, gap="-"):
     """
     Maps an alignment vector to sound classes.
 
+    While the function can be applied to shifted tiers as well, it is
+    recommended to first generate a sound class tier and later to
+    shift it individually.
+
+    Tokens are mapped to "-" if they are None (`if token`) or if they are
+    out-of-bonds/gaps (`in [oob, gap]`).
+
     Parameters
     ----------
     alignment : list
         The grapheme alignment to map.
-    mapper : xxx
+    mapper : dict or function
+        Either a dictionary, which is queried directly defaulting to
+        `0`, or a function accepting a string of space separated
+        tokens, as provided by `pyclts`.
     oob : str
         Out-of-bounds grapheme (default `∅`).
     gap : str
@@ -153,40 +211,19 @@ def sc_mapper(alignment, mapper, oob=np.nan, gap="-"):
         alignment.
     """
 
-    # Prepare the vector in the format expected by CLTS mapper
-    # NOTE: tokens are mapped to "-" if they are None (`if token`)
-    #       or if they are out-of-bonds/gaps (`in [oob, gap]`)
-    sc_vector_str = " ".join(
-        [token if token and token not in [oob, gap] else "-" for token in alignment]
-    )
-    sc_vector = mapper(sc_vector_str)
+    if isinstance(mapper, dict):
+        sc_vector = [
+            mapper.get(token, "0") if token and token not in [oob, gap] else "-"
+            for token in alignment
+        ]
+    else:
+        # Prepare the vector in the format expected by CLTS mapper
+        sc_vector_str = " ".join(
+            [token if token and token not in [oob, gap] else "-" for token in alignment]
+        )
+        sc_vector = mapper(sc_vector_str)
 
     return sc_vector
-
-
-def clts_object(repos=None):
-    """
-    Initialize and return a CLTS object.
-
-    Parameters
-    ----------
-    repos : str
-        Path to the root of the CLTS data repository (defaults to the
-        copy distributed with the library).
-
-    Returns
-    -------
-    clts : obj
-        An initialized CLTS object.
-    """
-
-    if not repos:
-        repos = Path(__file__).parent.parent / "clts-master"
-        repos = repos.as_posix()
-
-    clts = CLTS(repos)
-
-    return clts
 
 
 def get_orders(value):
@@ -222,29 +259,6 @@ def get_orders(value):
         orders = []
 
     return orders
-
-
-def read_wordlist_data(filepath, comma=False):
-    """
-    Reads a wordlist in lingpy format and returns an equivalent MT object.
-
-    Parameters
-    ----------
-    filepath : string
-        Path to the wordlist.
-    comma : bool
-        Whether to use commas instead of tabulations as field separator
-        (default: False)
-    """
-
-    # Get the right field delimiter
-    delimiter = "\t,"[comma]
-
-    # Collect information in a single data structure, for later processing
-    with open(filepath) as handler:
-        rows = [row for row in csv.DictReader(handler, delimiter=delimiter)]
-
-    return rows
 
 
 def check_data(data, fields):

@@ -10,6 +10,7 @@ from sklearn.feature_selection import SelectFromModel
 import multitiers
 
 # TODO: make sure it is resuable
+# TODO: accept an mt object instead of data
 class Classifier:
     def __init__(self, data, models=None, left=2, right=2):
         # build internal multitiers object
