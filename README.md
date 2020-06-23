@@ -1,6 +1,43 @@
-# multitiers
+# MultiTiers
 
-A library for multi-tiered sequence representation of linguistic data.
+Multitiered alignment is a formalism for the representation of diachronically
+related lexical data. It builds upon the concept of "alignment", usually
+segments or sound classes, allowing a wide range of information to be
+considered, mostly of phonological or phonetic nature. Facilitating the
+manipulation and exploration of such data, multitiers are organized as
+common dataframes, that is, sets of parallel data series that follow the
+relational model of data.
+
+This library is an experimentation of such formalism, building upon
+frequently used Python libraries such as `pandas`, `sklearn`, and
+`numpy`, aligning the manipulation of linguistic data with the same tools
+and discussions used for machine learning in general, where linguistic data
+has mostly been confined to Natural Language Processing.
+
+The starting point of tiers are collection of entries that include, at
+least, a unique form ID (usually but not necessarily numeric), a
+doculect identifier (usually a language name, but "doculect" is used to
+guarantee reproducibility in terms of sources), a cognate identifier
+(again, usually but not necessarily numeric), and an alignment, built as
+a sequence of segments (usually IPA graphemes), potentially with gaps and
+morpheme marks. The number of elements in alignments must be the same for
+all cognate IDs; the `multitier` library does not perform alignment, for
+which different tools such as `lingpy` can be used. Note that it is not
+necessary for each cognate_id to be expressed in all doculects.
+
+  | ID  | DOCULECT       | COGNATE_ID | ALIGNMENT    |
+  |-----|----------------|------------|--------------|
+  | 1   | Proto-Germanic | 538        | w iː b a n   |
+  | 2   | German         | 538        | v ai b - -   |
+  | 3   | English        | 538        | ʋ aɪ f - -   |
+  | 4   | Dutch          | 538        | ʋ ɛɪ f - -   |
+  | 5   | Proto-Germanic | 533        | k u r n a n  |
+  | 6   | German         | 533        | k ɔ r n - -  |
+  | 7   | English        | 533        | k ɔː - n - - |
+  | 8   | Dutch          | 533        | k oː r - ə - |
+  | ... | ...            | ...        | ...          |
+
+[explain internally how it works]
 
 ## How to use
 
@@ -343,4 +380,7 @@ understand how it can be described, and not for actual predictions.
 
 ## TODO
 
-- Allow shifted alignment tiers at any moment (not only upon loading)
+- Allow to strip material between parentheses and/or morphology markers
+  in `utils.parse_alignment()`
+- Allow to pass also string or integers (i.e., using `get_orders()`) to
+  `utils.shift_tier()`
