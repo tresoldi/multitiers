@@ -235,6 +235,49 @@ class MultiTiers:
 
         return X, y
 
+    def correspondence_study(self, study_known, study_unknown):
+        # TODO: combine this repeated code from filter_Xy
+        # Make a single description of all tiers in the study
+        all_tiers = study_known.copy()
+        all_tiers.update(study_unknown)
+
+        # First, apply filters in a copy of data, and drop NAs
+        filtered = self.df.loc[:, list(all_tiers)]
+        for tier, tier_info in all_tiers.items():
+            if "include" in tier_info:  # TODO: remove this
+                filtered = filtered.loc[filtered[tier].isin(tier_info["include"])]
+            if "exclude" in tier_info:  # TODO: remove this
+                filtered = filtered.loc[~filtered[tier].isin(tier_info["exclude"])]
+        filtered = filtered.dropna()
+
+        # collect tuples of occurrence
+        # qumin approch thanks to Sacha
+        # TODO: make faster, with a pure groupby?
+        known = filtered[study_known].apply(tuple, axis=1)
+        unknown = filtered[study_unknown].apply(tuple, axis=1)
+        counter = dict(unknown.groupby(known).value_counts())
+
+        # tabulate in the expected way, as a dictionary of known/unknown
+        # TODO: return as a normal counter
+        results = defaultdict(dict)
+        for (known, unknown), count in counter.items():
+            results[known][unknown] = count
+
+        return dict(results)
+
+    # TODO: write using idiomatic pandas code
+    def get_correlation(self):
+        import catcoocc
+
+        # combinations/permutatios
+        for tier_pair in itertools.combinations(self.df.columns, 2):
+            _tmp = self.df.loc[:, tier_pair]
+            _tmp = _tmp.dropna()
+
+            # print (self.tiers[tier_pair[0]], self.tiers[tier_pair[0]])
+            cv = catcoocc.correlation.cramers_v(_tmp[tier_pair[0]], _tmp[tier_pair[1]])
+            print(tier_pair, cv)
+
     def __hash__(self):
         return hash(tuple(hash_pandas_object(self.df)))
 
