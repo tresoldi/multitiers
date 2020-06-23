@@ -51,3 +51,5 @@ study_result = mt.correspondence_study(known, unknown)
 # print results
 print(mt)
 pprint(study_result)
+
+mt.get_correlation()

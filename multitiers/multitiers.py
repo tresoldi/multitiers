@@ -4,6 +4,7 @@ Module with the implementation of the MultiTiers object.
 
 # Import Python standard libraries
 from collections import defaultdict, Counter
+import itertools
 import hashlib
 import json
 
@@ -393,6 +394,15 @@ class MultiTiers:
             tiers.remove(doculect)
 
         return ["index", "rindex"] + self.doculects + sorted(tiers)
+
+    def get_correlation(self):
+        import catcoocc
+
+        # combinations/permutatios
+        for tier_pair in itertools.combinations(self.tier_names(), 2):
+            #print (self.tiers[tier_pair[0]], self.tiers[tier_pair[0]])
+            cv = catcoocc.correlation.cramers_v(self.tiers[tier_pair[0]], self.tiers[tier_pair[1]])
+            print(tier_pair, cv)
 
     def as_list(self):
         """
