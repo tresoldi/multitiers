@@ -21,7 +21,7 @@ def parse_study(text):
     unknown = {}
 
     # Split in lines and replace multiple sapces
-    lines = [re.sub("\s+", " ", line).strip() for line in text.split("\n")]
+    lines = [re.sub(r"\s+", " ", line).strip() for line in text.split("\n")]
     lines = [line for line in lines if line]
 
     # Parse each line

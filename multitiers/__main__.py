@@ -8,8 +8,7 @@ __main__.py
 import argparse
 
 # Import our library
-from multitiers import MultiTiers
-from multitiers import clts_object, read_wordlist_data
+import multitiers
 
 
 def parse_arguments():

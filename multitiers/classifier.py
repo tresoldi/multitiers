@@ -1,9 +1,8 @@
 import re
 
+import graphviz
 from sklearn import tree
 from sklearn.preprocessing import LabelEncoder
-import graphviz
-
 from sklearn.svm import LinearSVC
 from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.feature_selection import SelectFromModel
