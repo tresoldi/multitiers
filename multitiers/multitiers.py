@@ -11,6 +11,7 @@ import json
 # Import 3rd party libraries
 import numpy as np
 import pandas as pd
+from pandas.util import hash_pandas_object
 from tabulate import tabulate
 
 # Import utility functions
@@ -103,7 +104,10 @@ class MultiTiers:
             "alignment": kwargs.get("col_alignment", "ALIGNMENT"),
         }
 
-        # Get left and right order
+        # Get models, left and right order
+        models = kwargs.get("models", [])
+        if models is None:
+            models = []
         left_orders = get_orders(kwargs.get("left", 0))
         right_orders = get_orders(kwargs.get("right", 0))
 
@@ -176,7 +180,7 @@ class MultiTiers:
                 for shift_name, shift_vector in shifted.items():
                     vector[shift_name] += shift_vector
 
-                for model in kwargs.get("models", []):
+                for model in models:
                     vector[f"{model}_{doculect}"] += sc_mapper(
                         alm_vector, self.clts.soundclass(model)
                     )
@@ -191,6 +195,48 @@ class MultiTiers:
 
         # Build the data frame
         self.df = pd.DataFrame(vector)
+
+    # TODO: decide what to do with None, currently just skipping
+    #       (could use OneHotEncoder handle_unknown
+    # TODO: explain multiple y, collected as a tuple
+    def filter_Xy(self, X_tiers, y_tiers, use_dummies=True):
+        # Make a single description of all tiers in the study
+        all_tiers = X_tiers.copy()
+        all_tiers.update(y_tiers)
+
+        # First, apply filters in a copy of data, and drop NAs
+        filtered = self.df.loc[:, list(all_tiers)]
+        for tier, tier_info in all_tiers.items():
+            if "include" in tier_info:  # TODO: remove this
+                filtered = filtered.loc[filtered[tier].isin(tier_info["include"])]
+            if "exclude" in tier_info:  # TODO: remove this
+                filtered = filtered.loc[~filtered[tier].isin(tier_info["exclude"])]
+        filtered = filtered.dropna()
+
+        # Split in X and y
+        X = filtered.loc[:, list(X_tiers)]
+        y = filtered.loc[:, list(y_tiers)]
+
+        # if we have more than one y_tier, join as a single, tuple one
+        # TODO: do our own mapping for > 1 tiers
+        if len(y_tiers) > 1:
+            y["/".join(y_tiers)] = [
+                "/".join(row) for row in zip(*[list(y[column]) for column in y_tiers])
+            ]
+            y = y.drop(columns=y_tiers)
+
+        # TODO: check `drop_first` for colinearity
+        # TODO: deal with numeric/boolean columns, can be complex
+        if use_dummies:
+            X = pd.get_dummies(X, prefix_sep="_", drop_first=True)
+
+        # Make sure `y` is a series
+        y = y[y.columns[0]]
+
+        return X, y
+
+    def __hash__(self):
+        return hash(tuple(hash_pandas_object(self.df)))
 
 
 # TODO: extend class, use attributes

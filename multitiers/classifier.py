@@ -12,9 +12,9 @@ import multitiers
 
 # TODO: make sure it is resuable
 class Classifier:
-    def __init__(self, data, left=2, right=2):
+    def __init__(self, data, models=None, left=2, right=2):
         # build internal multitiers object
-        self.mt = multitiers.MultiTiers(data, left=left, right=right)
+        self.mt = multitiers.MultiTiers(data, models=models, left=left, right=right)
 
     def train(
         self,
