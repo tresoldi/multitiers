@@ -11,7 +11,7 @@ import re
 # Import 3rd-party libraries
 from pyclts import CLTS
 import numpy as np
-
+import tabulate
 
 def clts_object(repos=None):
     """
@@ -319,3 +319,24 @@ def check_synonyms(data, cogid_field, doculect_field):
     synonyms = sorted([pair for pair, count in cogid_doculect.items() if count > 1])
     if synonyms:
         raise ValueError("Synonym pairs were found: %s." % str(synonyms))
+
+# TODO: extend docs
+# TODO: option for percentage, option for solved
+# TODO: sort
+def print_study(study, known, unknown):
+    """
+    Tabulates the results of a correspondence study.
+    """
+
+    headers = list(known) + list(unknown) + ['Count', '%', 'Solved']
+
+    data = []
+    for tiers_known, entry_unknown in study.items():
+        total = sum(entry_unknown.values())
+
+        for tiers_unknown, count in entry_unknown.items():
+            solved = '*' if count == total else ''
+            entry = list(tiers_known) + list(tiers_unknown) + [count, '%.2f' % (count/total), solved]
+            data.append(entry)
+
+    print(tabulate.tabulate(data, headers=headers))
