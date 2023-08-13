@@ -62,31 +62,40 @@ def build_multitiers(
         alm_length = max(len(align) for align in alignments)
 
         # Initialize DataFrame for this parameter
-        df_parameter = pd.DataFrame(columns=["index", "rindex"] + doculects)
+        df_parameter = pd.DataFrame(
+            columns=["index", "rindex"]
+            + [f"{doc}.{tier}" for doc in doculects for tier in ["phoneme"]]
+        )
 
         # Iterate through alignment positions and fill DataFrame
         for i in range(alm_length):
             row_data = [i + 1, alm_length - i] + [
                 align[i] if i < len(align) else np.nan for align in alignments
             ]
-            row_df = pd.DataFrame([row_data], columns=["index", "rindex"] + doculects)
+            row_df = pd.DataFrame(
+                [row_data],
+                columns=["index", "rindex"]
+                + [f"{doc}.{tier}" for doc in doculects for tier in ["phoneme"]],
+            )
             df_parameter = pd.concat([df_parameter, row_df], ignore_index=True)
 
         # Apply functions to phoneme columns to create additional tiers
         for doculect in doculects:
             for tier, func in function_dict.items():
-                df_parameter[f"{doculect}_{tier}"] = df_parameter[doculect].apply(func)
+                df_parameter[f"{doculect}.{tier}"] = df_parameter[
+                    f"{doculect}.phoneme"
+                ].apply(func)
 
         # Add left and right contexts for specified tiers
-        for tier in doculects + [
-            f"{doculect}_{t}" for doculect in doculects for t in context_tiers
+        for tier in [
+            f"{doc}.{t}" for doc in doculects for t in ["phoneme"] + context_tiers
         ]:
             for l in range(1, left + 1):
-                df_parameter[tier + f"_left_{l}"] = ["∅"] * l + df_parameter[
+                df_parameter[f"{tier}_left_{l}"] = ["∅"] * l + df_parameter[
                     tier
                 ].tolist()[:-l]
             for r in range(1, right + 1):
-                df_parameter[tier + f"_right_{r}"] = (
+                df_parameter[f"{tier}_right_{r}"] = (
                     df_parameter[tier].tolist()[r:] + ["∅"] * r
                 )
 
@@ -227,11 +236,13 @@ def evaluate_classifiers(
         os.makedirs(output_dir)
 
     # Extract true values
-    y_true = df[target_doculect]
+    y_true = df[f"{target_doculect}.phoneme"]
 
     # Extract predicted values
     classifier_columns = [
-        col for col in df.columns if col.startswith(f"{target_doculect}.")
+        col
+        for col in df.columns
+        if col.startswith(f"{target_doculect}.") and col != f"{target_doculect}.phoneme"
     ]
 
     for col in classifier_columns:
@@ -242,10 +253,20 @@ def evaluate_classifiers(
         y_true_filtered = y_true[mask]
         y_pred_filtered = y_pred[mask]
 
-        # Confusion Matrix
+        # Convert y_true_filtered and y_pred_filtered to string type
+        y_true_filtered = y_true_filtered.astype(str)
+        y_pred_filtered = y_pred_filtered.astype(str)
+
+        # Convert labels to string type
         labels = sorted(
-            list(set(y_true_filtered.unique()) | set(y_pred_filtered.unique()))
+            [
+                str(label)
+                for label in list(
+                    set(y_true_filtered.unique()) | set(y_pred_filtered.unique())
+                )
+            ]
         )
+
         abbreviated_labels = [label[:2] for label in labels]
         cm = confusion_matrix(y_true_filtered, y_pred_filtered, labels=labels)
         cm_percentage = cm / cm.sum(axis=1, keepdims=True)
@@ -330,8 +351,8 @@ def process_and_train(data, dataset_name):
     )
 
     # Drop English related tiers for training
-    X = df.drop(columns=[col for col in df.columns if "English" in col])
-    y = df["English"]
+    X = df.drop(columns=[col for col in df.columns if "English." in col])
+    y = df["English.phoneme"]
 
     # Train classifiers
     train_classifiers(X, y, dataset_name)
