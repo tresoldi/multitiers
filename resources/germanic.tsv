@@ -505,10 +505,10 @@ ID	DOCULECT	PARAMETER	VALUE	IPA	TOKENS	ALIGNMENT	COGID	NOTE
 504	German	*brekanan	brechen	brɛxən	b r ɛ x ə n	b r ɛ x ə n ( - - )	137	
 505	English	*brekanan	break	breɪk	b r eɪ k	b r eɪ k - - ( - - )	137	
 506	Dutch	*brekanan	breken	breːkə	b r eː k ə	b r eː k ə - ( - - )	137	
-507	Proto-Germanic	*brekanan	*brekanan	brekanan	b r o k a n	b r o k ( a n )	415	
-508	German	*brekanan	Bruch	brʊx	b r ʊ x	b r ʊ x ( - - )	415	
-509	English	*brekanan	breeches	brʊk	b r ʊ k	b r ʊ k ( - - )	415	
-510	Dutch	*brekanan	broek	bruːk	b r uː k	b r uː k ( - - )	415	
+507	Proto-Germanic	*brokan	*brekanan	brekanan	b r o k a n	b r o k ( a n )	415
+508	German	*brokan	Bruch	brʊx	b r ʊ x	b r ʊ x ( - - )	415
+509	English	*brokan	breeches	brʊk	b r ʊ k	b r ʊ k ( - - )	415
+510	Dutch	*brokan	broek	bruːk	b r uː k	b r uː k ( - - )	415
 511	Proto-Germanic	*wokraz	*wokraz	wokraz	w o k r a z	w o k - r ( a z )	138	
 512	German	*wokraz	Wucher	vuːxər	v uː x ə r	v uː x ə r ( - - )	138	
 513	Dutch	*wokraz	woeker	ʋuːkər	ʋ uː k ə r	ʋ uː k ə r ( - - )	138	
@@ -728,9 +728,8 @@ ID	DOCULECT	PARAMETER	VALUE	IPA	TOKENS	ALIGNMENT	COGID	NOTE
 727	German	*skūflō	Schaufel	ʃaufəl	ʃ au f ə l	ʃ - au f ə l ( - )	198	
 728	English	*skūflō	shovel	ʃʌvḷ	ʃ ʌ v ə l	ʃ - ʌ v ə l ( - )	198	
 729	Dutch	*skūflō	schoffel	sxɔfəl	s x ɔ f ə l	s x ɔ f ə l ( - )	198	
-730	Proto-Germanic	*segez	*segez	segez	s e g e z	s e g e ( z )	199	
-731	German	*segez	Sieg	ziːk	z iː k	z iː g ( - - )	369	
-732	Dutch	*segez	zege	zeːɣə	z eː ɣ ə	z eː ɣ ə ( - )	199	
+731	German	*segez	Sieg	ziːk	z iː k	z iː g ( - - )	369
+732	Dutch	*segez	zege	zeːɣə	z eː ɣ ə	z eː ɣ ( ə - )	199
 733	Proto-Germanic	*segez	*segez	segez	s e g e z	s e g ( e z )	369	
 734	Proto-Germanic	*randiz	*randiz	randiz	r a n d i z	r a n d ( i z )	200	
 735	German	*randiz	Rand	rant	r a n t	r a n d ( - - )	200	

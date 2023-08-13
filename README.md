@@ -384,3 +384,19 @@ understand how it can be described, and not for actual predictions.
   in `utils.parse_alignment()`
 - Allow to pass also string or integers (i.e., using `get_orders()`) to
   `utils.shift_tier()`
+
+# Draft
+
+The multitiered representation of alignments is constructed through a systematic process that facilitates the analysis of cross-linguistic phonological data. Given the alignments in the form of a dictionary with tuples of (parameter, doculect) as keys and lists of phonemes as values, the process initializes by identifying the unique parameters and doculects.
+
+For each parameter, a sub-dataframe is created with the phonemes from the corresponding doculects as columns, where each alignment site becomes a row. If an alignment for a given doculect is missing, the values are filled with NaN. This ensures that a uniform structure is maintained across different alignments.
+
+Additional columns, referred to as tiers, are then added using a set of specified functions (contained in the function_dict). These functions allow the mapping of phonemes to other values, such as sound classes or numerical features. The application of these functions creates a parallel tier for each phoneme column, enabling a multifaceted view of the data.
+
+The next step involves the addition of left and right contexts to the alignments, as specified by the left and right parameters. The process constructs these contexts on a per-alignment basis, ensuring that the context does not extend beyond the boundaries of the specific alignment. Context elements extending outside the alignment are represented by a placeholder symbol '∅'. Contextual extensions can also be applied to the additional tiers specified in the context_tiers argument, allowing the user to analyze not only phonemes but also other aspects like sound classes within a broader contextual framework.
+
+Once the individual sub-dataframes for each parameter are constructed with the phonemes, additional tiers, and contextual extensions, they are concatenated into a final DataFrame. An ID column is added to uniquely identify each alignment site across different parameters, providing a coherent and unified representation suitable for various types of linguistic analyses.
+
+In summary, this method provides a versatile and robust way to represent cross-linguistic phonological alignments in a structured and extensible form. By encapsulating phonemes, additional tiers, and contextual information within a unified framework, it lays the groundwork for in-depth explorations and comparisons across different languages and linguistic features.
+
+AND indexes
