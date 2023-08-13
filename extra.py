@@ -39,8 +39,8 @@ def create_sound_functions() -> (
 
     # Create dictionaries for prosody, sca, and dolgopolsky values
     prosody_dict = {
-        row["GRAPHEME"]: float(row["PROSODY"]) if row["PROSODY"] != "?" else np.nan for index, row in
-        sounds_df.iterrows()
+        row["GRAPHEME"]: float(row["PROSODY"]) if row["PROSODY"] != "?" else np.nan
+        for index, row in sounds_df.iterrows()
     }
     sca_dict = {row["GRAPHEME"]: row["SCA"] for index, row in sounds_df.iterrows()}
     dolgopolsky_dict = {
@@ -49,7 +49,8 @@ def create_sound_functions() -> (
 
     # Define the function to get prosody
     def get_prosody(phoneme: str) -> Union[float, type(np.nan)]:
-        return prosody_dict.get(phoneme, np.nan)
+        # TODO: temporarily, if we don't have a value it is a diphthong
+        return prosody_dict.get(phoneme, 7.0)
 
     # Define the function to get sca
     def get_sca(phoneme: str) -> Union[str, float]:
@@ -97,7 +98,7 @@ def read_data(
     # Detect the separator
     with open(file_path, "r", encoding="utf-8") as file:
         first_line = file.readline()
-        separator = ',' if ',' in first_line else (';' if ';' in first_line else '\t')
+        separator = "," if "," in first_line else (";" if ";" in first_line else "\t")
 
     # Read data
     df = pd.read_csv(file_path, sep=separator)
@@ -116,9 +117,9 @@ def read_data(
 
         # Handle parentheses
         if drop_parentheses:
-            alignment_str = re.sub(r'\(.*?\)', '', alignment_str)
+            alignment_str = re.sub(r"\(.*?\)", "", alignment_str)
         else:
-            alignment_str = alignment_str.replace('(', '').replace(')', '')
+            alignment_str = alignment_str.replace("(", "").replace(")", "")
 
         alignment = alignment_str.strip().split(" ")
         alignment = [normalize_grapheme(phoneme) for phoneme in alignment]
