@@ -225,9 +225,6 @@ def distance_based_alignment_score(L1, L2, distance_dict=None, penalty=1.5):
     return penalized_score
 
 
-import pandas as pd
-
-
 def load_sound_class_dictionary(
     filename="sounds.csv", grapheme_col="GRAPHEME", sound_class_col="SCA"
 ):
