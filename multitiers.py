@@ -1,20 +1,18 @@
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import confusion_matrix, roc_curve, auc, classification_report
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.tree import DecisionTreeClassifier
 from typing import Dict, List, Optional, Callable, Tuple
 import joblib
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import os
-import seaborn as sns
 
 
 import extra
+import evaluate
 
 
 def build_multitiers(
@@ -207,133 +205,10 @@ def apply_classifiers(
         predictions_df = decode_features(predictions_df, encoders)
 
         # Add predictions to the result dataframe using the ID field
-        prediction_column_name = f"{target_doculect}.{pipeline_name}"
+        prediction_column_name = f"{target_doculect}.prediction.{pipeline_name}"
         df[prediction_column_name] = predictions_df["prediction"]
 
     return df
-
-
-def format_percentage_label(val):
-    """
-    Format the percentage label for the heatmap.
-    """
-    if val == 1:
-        return "00"
-    elif val == 0:
-        return "0"
-    else:
-        return str(int(val * 100))
-
-
-def evaluate_classifiers(
-    df, target_doculect, dataset_name, output_dir="evaluation_results"
-):
-    """
-    Evaluate the performance of the classifiers.
-    """
-    # Ensure the output directory exists
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-
-    # Extract true values
-    y_true = df[f"{target_doculect}.phoneme"]
-
-    # Extract predicted values
-    classifier_columns = [
-        col
-        for col in df.columns
-        if col.startswith(f"{target_doculect}.") and col != f"{target_doculect}.phoneme"
-    ]
-
-    for col in classifier_columns:
-        y_pred = df[col]
-
-        # Filter out rows where y_true has NaNs
-        mask = ~y_true.isna()
-        y_true_filtered = y_true[mask]
-        y_pred_filtered = y_pred[mask]
-
-        # Convert y_true_filtered and y_pred_filtered to string type
-        y_true_filtered = y_true_filtered.astype(str)
-        y_pred_filtered = y_pred_filtered.astype(str)
-
-        # Convert labels to string type
-        labels = sorted(
-            [
-                str(label)
-                for label in list(
-                    set(y_true_filtered.unique()) | set(y_pred_filtered.unique())
-                )
-            ]
-        )
-
-        abbreviated_labels = [label[:2] for label in labels]
-        cm = confusion_matrix(y_true_filtered, y_pred_filtered, labels=labels)
-        cm_percentage = cm / cm.sum(axis=1, keepdims=True)
-
-        # Plot absolute confusion matrix
-        plt.figure(figsize=(12, 10))
-        sns.heatmap(
-            cm,
-            annot=True,
-            fmt="g",
-            cmap="Blues",
-            xticklabels=abbreviated_labels,
-            yticklabels=abbreviated_labels,
-            annot_kws={"size": 10},
-        )
-        plt.xlabel("Predicted")
-        plt.ylabel("True")
-        plt.title(f"Absolute Confusion Matrix for {col}")
-        plt.savefig(f"{output_dir}/{dataset_name}_{col}_absolute_confusion_matrix.png")
-        plt.close()
-
-        # Plot percentage confusion matrix
-        plt.figure(figsize=(12, 10))
-        ax = sns.heatmap(
-            cm_percentage,
-            annot=True,
-            fmt="",
-            cmap="Blues",
-            xticklabels=abbreviated_labels,
-            yticklabels=abbreviated_labels,
-            annot_kws={"size": 10},
-            cbar=False,
-        )
-        for t in ax.texts:
-            t.set_text(format_percentage_label(float(t.get_text())))
-        plt.xlabel("Predicted")
-        plt.ylabel("True")
-        plt.title(f"Percentage Confusion Matrix for {col}")
-        plt.savefig(
-            f"{output_dir}/{dataset_name}_{col}_percentage_confusion_matrix.png"
-        )
-        plt.close()
-
-        # Classification Report
-        report = classification_report(
-            y_true_filtered, y_pred_filtered, labels=labels, output_dict=True
-        )
-        top_choices = pd.Series(y_pred_filtered).value_counts().head(3)
-        top_frequencies = (
-            pd.Series(y_pred_filtered).value_counts(normalize=True).head(3)
-        )
-
-        with open(
-            f"{output_dir}/{dataset_name}_{col}_classification_report.txt",
-            "w",
-            encoding="utf-8",
-        ) as f:
-            f.write(f"Classification Report for {col}:\n")
-            f.write("\n")
-            for phoneme, metrics in report.items():
-                if phoneme in labels:
-                    f.write(f"Phoneme: {phoneme}\n")
-                    for metric, value in metrics.items():
-                        f.write(f"   {metric.capitalize()}: {value:.2f}\n")
-            f.write("\nTop 3 Predicted Phonemes:\n")
-            for i, (choice, freq) in enumerate(zip(top_choices.index, top_frequencies)):
-                f.write(f"   Choice {i+1}: {choice} with frequency {freq:.2f}\n")
 
 
 def process_and_train(data, dataset_name):
@@ -361,7 +236,7 @@ def process_and_train(data, dataset_name):
     df_predictions = apply_classifiers(df, X, "English", dataset_name)
 
     # Evaluate classifiers
-    evaluate_classifiers(df_predictions, "English", dataset_name)
+    evaluate.evaluate_classifiers(df_predictions, "English", dataset_name)
 
     # Write the result to a tabular file
     df_predictions.to_csv(f"{dataset_name}_results.tsv", sep="\t", index=False)
@@ -381,7 +256,7 @@ def test_toy_dataset():
     }
 
     # Process and train classifiers
-    process_and_train(data, "toy_dataset")
+    process_and_train(data, "toy")
 
 
 def test_germanic_dataset():
@@ -394,7 +269,7 @@ def test_germanic_dataset():
     )
 
     # Process and train classifiers
-    process_and_train(data, "germanic_dataset")
+    process_and_train(data, "germanic")
 
 
 if __name__ == "__main__":
