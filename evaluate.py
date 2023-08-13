@@ -121,6 +121,94 @@ def generate_classification_report(
         f.write(table)
 
 
+def evaluate_word_alignments(
+    df,
+    target_doculect,
+    col,
+    dataset_name,
+    output_dir="evaluation_results",
+    sound_class_dict=None,
+    distance_dict=None,
+):
+    """
+    Evaluate the alignment scores of real and predicted words.
+
+    Parameters:
+    - df: DataFrame containing the data.
+    - target_doculect: Target doculect for which predictions are made.
+    - col: Classifier column to evaluate.
+    - sound_class_dict: Dictionary mapping phonemes to sound classes.
+    - distance_dict: Dictionary containing distances between phonemes.
+
+    Returns:
+    - results: DataFrame containing alignment scores for each word.
+    """
+    # Extract real words
+    real_words = (
+        df.groupby(df["ID"].str.extract(r"(.+)_(\d+)")[0])[f"{target_doculect}.phoneme"]
+        .apply(list)
+        .to_dict()
+    )
+
+    # Extract predicted words for the given classifier
+    predicted_words = (
+        df.groupby(df["ID"].str.extract(r"(.+)_(\d+)")[0])[col].apply(list).to_dict()
+    )
+
+    results = []
+    for word_id, real_word in real_words.items():
+        predicted_word = predicted_words[word_id]
+
+        # Convert lists to strings; if all entries in `real_word` are NaN, then `real_word_string`
+        # will be set to "[nan]" and all the scores will be NaN
+        predicted_word_string = " ".join(predicted_word)
+        if all(pd.isna(real_word)):
+            real_word_string = "[nan]"
+            simple_score = float("nan")
+            sound_class_score = float("nan")
+            distance_score = float("nan")
+        else:
+            real_word_string = " ".join(real_word)
+            simple_score = simple_alignment_score(real_word, predicted_word)
+            sound_class_score = sound_class_alignment_score(
+                real_word, predicted_word, sound_class_dict
+            )
+            distance_score = distance_based_alignment_score(
+                real_word, predicted_word, distance_dict
+            )
+
+        results.append(
+            {
+                "Word_ID": word_id,
+                "Classifier": col,
+                "Real Word": real_word_string,
+                "Predicted Word": predicted_word_string,
+                "Simple_Score": simple_score,
+                "Sound_Class_Score": sound_class_score,
+                "Distance_Score": distance_score,
+            }
+        )
+
+    # Convert results to DataFrame
+    results_df = pd.DataFrame(results)
+
+    # Sort by Word_ID
+    results_df = results_df.sort_values(by="Word_ID")
+
+    # Format scores with four digits after the separator
+    for score_col in ["Simple_Score", "Sound_Class_Score", "Distance_Score"]:
+        results_df[score_col] = results_df[score_col].apply(
+            lambda x: "{:.4f}".format(x) if not pd.isna(x) else x
+        )
+
+    # Save to disk
+    results_df.to_csv(
+        f"{output_dir}/{dataset_name}.{target_doculect}.{col}.word_alignment_results.csv",
+        index=False,
+        encoding="utf-8",
+    )
+
+
 def evaluate_classifiers(
     df, target_doculect, dataset_name, output_dir="evaluation_results"
 ):
@@ -142,6 +230,10 @@ def evaluate_classifiers(
             f"{target_doculect}.prediction."
         )  # Only include classifiers for phonemes
     ]
+
+    # Load dictionaries for word alignments
+    sound_class_dict = load_sound_class_dictionary()
+    distance_dict = load_distance_dictionary()
 
     for col in classifier_columns:
         y_pred = df[col]
@@ -165,12 +257,22 @@ def evaluate_classifiers(
             ]
         )
 
-        # Call the functions to plot confusion matrices and generate classification report
+        # Call the functions to plot confusion matrices, generate classification report,
+        # and evaluate word alignments
         plot_confusion_matrices(
             y_true_filtered, y_pred_filtered, labels, col, dataset_name, output_dir
         )
         generate_classification_report(
             y_true_filtered, y_pred_filtered, labels, col, dataset_name, output_dir
+        )
+        evaluate_word_alignments(
+            df,
+            target_doculect,
+            col,
+            dataset_name,
+            output_dir,
+            sound_class_dict,
+            distance_dict,
         )
 
 
@@ -195,9 +297,9 @@ def sound_class_alignment_score(L1, L2, sound_class_dict):
     return matches / len(L1)
 
 
-def distance_based_alignment_score(L1, L2, distance_dict=None, penalty=1.5):
+def distance_based_alignment_score(alm1, alm2, distance_dict=None, penalty=1.5):
     """Return the alignment score based on a distance dictionary."""
-    if len(L1) != len(L2):
+    if len(alm1) != len(alm2):
         raise ValueError("Both lists must have the same length.")
 
     # Default distance function
@@ -216,8 +318,8 @@ def distance_based_alignment_score(L1, L2, distance_dict=None, penalty=1.5):
         def distance(a, b):
             return distance_dict.get((a, b), 1)
 
-    total_distance = sum(distance(a, b) for a, b in zip(L1, L2))
-    raw_score = 1 - (total_distance / len(L1))
+    total_distance = sum(distance(a, b) for a, b in zip(alm1, alm2))
+    raw_score = 1 - (total_distance / len(alm1))
 
     # Apply penalty
     penalized_score = raw_score**penalty
@@ -241,16 +343,40 @@ def load_sound_class_dictionary(
     """
     df = pd.read_csv(filename, encoding="utf-8")
     sound_class_dict = dict(zip(df[grapheme_col], df[sound_class_col]))
+
+    # Add the sound class for the gap ("-") as the gap itself ("-")
+    sound_class_dict["-"] = "-"
+
     return sound_class_dict
 
 
 def load_distance_dictionary(filename="distance_dictionary.txt"):
     """Load the distance dictionary from a file."""
     distance_dict = {}
+    max_distance_per_grapheme = {}
+
     with open(filename, "r", encoding="utf-8") as f:
         for line in f:
             g1, g2, dist = line.strip().split(",")
-            distance_dict[(g1, g2)] = float(dist)
+            dist_float = float(dist)
+            distance_dict[(g1, g2)] = dist_float
+
+            # Update the maximum distance observed for each grapheme
+            max_distance_per_grapheme[g1] = max(
+                max_distance_per_grapheme.get(g1, 0), dist_float
+            )
+            max_distance_per_grapheme[g2] = max(
+                max_distance_per_grapheme.get(g2, 0), dist_float
+            )
+
+    # Add distance of 0.0 between a gap ("-") and itself
+    distance_dict[("-", "-")] = 0.0
+
+    # Add the distance between a gap and any grapheme
+    for grapheme, max_dist in max_distance_per_grapheme.items():
+        distance_dict[(grapheme, "-")] = max_dist
+        distance_dict[("-", grapheme)] = max_dist
+
     return distance_dict
 
 
