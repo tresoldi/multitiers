@@ -1,26 +1,32 @@
+# Import Python modules
+from typing import Dict, List, Optional, Callable, Tuple
+import os
+
+# Import third-party modules
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.tree import DecisionTreeClassifier
-from typing import Dict, List, Optional, Callable, Tuple
 import joblib
 import numpy as np
 import pandas as pd
-import os
+from pandas import DataFrame
 
-
+# Import local modules
 import extra
 import evaluate
 
+# Constants
+EMPTY_SYMBOL = "∅"
 
 def build_multitiers(
     data: Dict[Tuple[str, str], List[str]],
     left: int = 0,
     right: int = 0,
-    function_dict: Optional[Dict[str, Callable]] = None,
-    context_tiers: Optional[List[str]] = None,
+    function_dict: Dict[str, Callable] = {},
+    context_tiers: List[str] = [],
 ) -> pd.DataFrame:
     """
     Build a multitiered representation of extended alignments.
@@ -36,13 +42,6 @@ def build_multitiers(
     @param context_tiers: Optional list of tiers to be extended with left and right context.
     @return: DataFrame with alignments, additional columns mapped by functions, and left and right context.
     """
-
-    # Set default values if None
-    if context_tiers is None:
-        context_tiers = []
-
-    if function_dict is None:
-        function_dict = {}
 
     # Extract unique parameters and doculects
     parameters: List[str] = sorted(set(parameter for parameter, _ in data.keys()))
@@ -65,7 +64,7 @@ def build_multitiers(
             + [f"{doc}.{tier}" for doc in doculects for tier in ["phoneme"]]
         )
 
-        # Iterate through alignment positions and fill DataFrame
+        # Iterate through alignment positions and fill the DataFrame
         for i in range(alm_length):
             row_data = [i + 1, alm_length - i] + [
                 align[i] if i < len(align) else np.nan for align in alignments
@@ -89,12 +88,12 @@ def build_multitiers(
             f"{doc}.{t}" for doc in doculects for t in ["phoneme"] + context_tiers
         ]:
             for l in range(1, left + 1):
-                df_parameter[f"{tier}_left_{l}"] = ["∅"] * l + df_parameter[
+                df_parameter[f"{tier}_left_{l}"] = [EMPTY_SYMBOL] * l + df_parameter[
                     tier
                 ].tolist()[:-l]
             for r in range(1, right + 1):
                 df_parameter[f"{tier}_right_{r}"] = (
-                    df_parameter[tier].tolist()[r:] + ["∅"] * r
+                    df_parameter[tier].tolist()[r:] + [EMPTY_SYMBOL] * r
                 )
 
         # Add ID column
@@ -109,7 +108,13 @@ def build_multitiers(
     return df
 
 
-def encode_features(X):
+def encode_features(X: DataFrame) -> Tuple[DataFrame, Dict[str, LabelEncoder]]:
+    """
+    Encode categorical features in the DataFrame using LabelEncoder.
+
+    @param X: DataFrame with features to be encoded.
+    @return: Tuple containing the encoded DataFrame and a dictionary of encoders.
+    """
     encoders = {}
     for col in X.columns:
         if X[col].dtype == "object":
@@ -119,16 +124,28 @@ def encode_features(X):
     return X, encoders
 
 
-def decode_features(X, encoders):
+def decode_features(X: DataFrame, encoders: Dict[str, LabelEncoder]) -> DataFrame:
+    """
+    Decode previously encoded features in the DataFrame using provided encoders.
+
+    @param X: DataFrame with features to be decoded.
+    @param encoders: Dictionary of encoders used for encoding.
+    @return: DataFrame with decoded features.
+    """
     for col, le in encoders.items():
         if col in X.columns:
             X[col] = le.inverse_transform(X[col])
     return X
 
 
-def train_classifiers(X, y, dataset_name, output_dir="trained_classifiers"):
+def train_classifiers(X: DataFrame, y: DataFrame, dataset_name: str, output_dir: str = "trained_classifiers") -> None:
     """
     Train different classifier pipelines and save them to disk.
+
+    @param X: DataFrame containing the feature data.
+    @param y: DataFrame containing the target variable.
+    @param dataset_name: Name of the dataset, used for naming saved classifiers.
+    @param output_dir: Directory where trained classifiers will be saved.
     """
     # Define classifiers and their names
     classifiers = {
@@ -172,7 +189,6 @@ def train_classifiers(X, y, dataset_name, output_dir="trained_classifiers"):
         clf.fit(X_encoded, y_filtered)
         filename = f"{dataset_name}.{name}.pkl"
         joblib.dump((clf, encoders), os.path.join(output_dir, filename))
-
 
 def apply_classifiers(
     df, X, target_doculect, dataset_name, input_dir="trained_classifiers"
@@ -268,8 +284,11 @@ def test_germanic_dataset():
         alignment_col="ALIGNMENT",
     )
 
+    # Filter data to only include rows where the doculect is "English", "German", or "Dutch"
+    filtered_data = {key: value for key, value in data.items() if key[1] in ["English", "German", "Dutch"]}
+
     # Process and train classifiers
-    process_and_train(data, "germanic")
+    process_and_train(filtered_data, "germanic")
 
 
 if __name__ == "__main__":
