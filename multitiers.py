@@ -262,7 +262,7 @@ def test_toy_dataset():
 def test_germanic_dataset():
     # Read data from germanic.tsv
     data = extra.read_data(
-        "resources/germanic.tsv",
+        "resources/aligned_germanic.tsv",
         concept_col="PARAMETER",
         doculect_col="DOCULECT",
         alignment_col="ALIGNMENT",

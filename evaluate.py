@@ -208,6 +208,20 @@ def evaluate_word_alignments(
         encoding="utf-8",
     )
 
+    # Convert scores back to numeric for aggregation
+    for score_col in ["Simple_Score", "Sound_Class_Score", "Distance_Score"]:
+        results_df[score_col] = pd.to_numeric(results_df[score_col], errors="coerce")
+
+    # Aggregate scores by prediction method
+    aggregated_scores = {}
+    for score_col in ["Simple_Score", "Sound_Class_Score", "Distance_Score"]:
+        aggregated_scores[f"{score_col}_mean"] = results_df[score_col].mean()
+        aggregated_scores[f"{score_col}_min"] = results_df[score_col].min()
+        aggregated_scores[f"{score_col}_max"] = results_df[score_col].max()
+        aggregated_scores[f"{score_col}_std"] = results_df[score_col].std()
+
+    return aggregated_scores
+
 
 def evaluate_classifiers(
     df, target_doculect, dataset_name, output_dir="evaluation_results"
@@ -215,6 +229,7 @@ def evaluate_classifiers(
     """
     Evaluate the performance of the classifiers.
     """
+
     # Ensure the output directory exists
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
@@ -234,6 +249,8 @@ def evaluate_classifiers(
     # Load dictionaries for word alignments
     sound_class_dict = load_sound_class_dictionary()
     distance_dict = load_distance_dictionary()
+
+    aggregated_results = []
 
     for col in classifier_columns:
         y_pred = df[col]
@@ -265,7 +282,7 @@ def evaluate_classifiers(
         generate_classification_report(
             y_true_filtered, y_pred_filtered, labels, col, dataset_name, output_dir
         )
-        evaluate_word_alignments(
+        aggregated_scores = evaluate_word_alignments(
             df,
             target_doculect,
             col,
@@ -274,6 +291,27 @@ def evaluate_classifiers(
             sound_class_dict,
             distance_dict,
         )
+        aggregated_scores["Method"] = col
+        aggregated_results.append(aggregated_scores)
+
+    # Convert aggregated results to DataFrame
+    aggregated_df = pd.DataFrame(aggregated_results)
+
+    # Reorder columns to have "Method" as the first column
+    cols = ["Method"] + [col for col in aggregated_df if col != "Method"]
+    aggregated_df = aggregated_df[cols]
+
+    # Format numbers to have four digits after the separator
+    for col in aggregated_df.columns:
+        if col != "Method":
+            aggregated_df[col] = aggregated_df[col].apply(lambda x: "{:.4f}".format(x))
+
+    # Save to disk
+    aggregated_df.to_csv(
+        f"{output_dir}/{dataset_name}.{target_doculect}.aggregated_alignment_scores.csv",
+        index=False,
+        encoding="utf-8",
+    )
 
 
 def simple_alignment_score(L1, L2):
@@ -285,46 +323,49 @@ def simple_alignment_score(L1, L2):
     return matches / len(L1)
 
 
-def sound_class_alignment_score(L1, L2, sound_class_dict):
+def sound_class_alignment_score(alm1, alm2, sound_class_dict):
     """Map phonemes to sound classes and return the ratio of matching sound classes."""
-    if len(L1) != len(L2):
-        raise ValueError("Both lists must have the same length.")
-
-    L1_classes = [sound_class_dict.get(phoneme, phoneme) for phoneme in L1]
-    L2_classes = [sound_class_dict.get(phoneme, phoneme) for phoneme in L2]
-
-    matches = sum(1 for a, b in zip(L1_classes, L2_classes) if a == b)
-    return matches / len(L1)
-
-
-def distance_based_alignment_score(alm1, alm2, distance_dict=None, penalty=1.5):
-    """Return the alignment score based on a distance dictionary."""
     if len(alm1) != len(alm2):
         raise ValueError("Both lists must have the same length.")
 
-    # Default distance function
-    if distance_dict is None:
+    L1_classes = [sound_class_dict.get(phoneme, phoneme) for phoneme in alm1]
+    L2_classes = [sound_class_dict.get(phoneme, phoneme) for phoneme in alm2]
 
-        def distance(a, b):
-            if a == b:
-                return 0
-            elif set(a).issubset(set(b)) or set(b).issubset(set(a)):
-                return 0.5
-            else:
-                return 1
+    matches = sum(1 for a, b in zip(L1_classes, L2_classes) if a == b)
+    return matches / len(alm1)
 
-    else:
 
-        def distance(a, b):
-            return distance_dict.get((a, b), 1)
+def distance_based_alignment_score(alm1, alm2, distance_dict):
+    """
+    Return the alignment score based on a distance dictionary.
 
-    total_distance = sum(distance(a, b) for a, b in zip(alm1, alm2))
-    raw_score = 1 - (total_distance / len(alm1))
+    Parameters:
+    - alm1: First alignment.
+    - alm2: Second alignment.
+    - distance_dict: Dictionary containing distances between phonemes.
 
-    # Apply penalty
-    penalized_score = raw_score**penalty
+    Returns:
+    - score: Alignment score in the range [0.0, 1.0].
+    """
+    if len(alm1) != len(alm2):
+        raise ValueError("Both lists must have the same length.")
 
-    return penalized_score
+    # Compute the total distance using the distance_dict
+    total_distance = sum(distance_dict.get((a, b), 1.0) for a, b in zip(alm1, alm2))
+
+    # Compute the average distance
+    avg_distance = total_distance / len(alm1)
+
+    # Compute the score. Since the distance_dict has values in [0.0, 1.0] where 0.0 is a perfect match,
+    # we'll subtract the average distance from 1 to get the score in the desired range.
+    score = 1.0 - avg_distance
+
+    # Apply penalty based on the frequency of mismatches
+    mismatch_count = sum(1 for a, b in zip(alm1, alm2) if a != b)
+    penalty_factor = mismatch_count / len(alm1)
+    score = score * (1 - penalty_factor)
+
+    return score
 
 
 def load_sound_class_dictionary(
