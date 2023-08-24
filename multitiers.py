@@ -21,6 +21,7 @@ import evaluate
 # Constants
 EMPTY_SYMBOL = "∅"
 
+
 def build_multitiers(
     data: Dict[Tuple[str, str], List[str]],
     left: int = 0,
@@ -138,13 +139,20 @@ def decode_features(X: DataFrame, encoders: Dict[str, LabelEncoder]) -> DataFram
     return X
 
 
-def train_classifiers(X: DataFrame, y: DataFrame, dataset_name: str, output_dir: str = "trained_classifiers") -> None:
+def train_classifiers(
+    X: DataFrame,
+    y: DataFrame,
+    dataset_name: str,
+    doculect: str,
+    output_dir: str = "trained_classifiers",
+) -> None:
     """
     Train different classifier pipelines and save them to disk.
 
     @param X: DataFrame containing the feature data.
     @param y: DataFrame containing the target variable.
     @param dataset_name: Name of the dataset, used for naming saved classifiers.
+    @param doculect: Name of the doculect, used for naming saved classifiers.
     @param output_dir: Directory where trained classifiers will be saved.
     """
     # Define classifiers and their names
@@ -187,8 +195,9 @@ def train_classifiers(X: DataFrame, y: DataFrame, dataset_name: str, output_dir:
     # Train classifiers and save them to disk
     for name, clf in classifiers.items():
         clf.fit(X_encoded, y_filtered)
-        filename = f"{dataset_name}.{name}.pkl"
+        filename = f"{dataset_name}.{doculect}.{name}.pkl"
         joblib.dump((clf, encoders), os.path.join(output_dir, filename))
+
 
 def apply_classifiers(
     df, X, target_doculect, dataset_name, input_dir="trained_classifiers"
@@ -200,7 +209,8 @@ def apply_classifiers(
     classifier_names = [
         name
         for name in os.listdir(input_dir)
-        if name.startswith(dataset_name) and name.endswith(".pkl")
+        if name.startswith(f"{dataset_name}.{target_doculect}")
+        and name.endswith(".pkl")
     ]
 
     # Drop the "ID" column from X
@@ -208,7 +218,9 @@ def apply_classifiers(
 
     # Apply each classifier to the data
     for name in classifier_names:
-        pipeline_name = name.split(".")[1].rsplit(".pkl", 1)[0]
+        # Extract the classifier name from the filename
+        pipeline_name = name.split(".")[2]  # Adjusted this line
+
         clf, encoders = joblib.load(os.path.join(input_dir, name))
 
         # Encode features
@@ -241,18 +253,24 @@ def process_and_train(data, dataset_name):
         data, left=2, right=2, function_dict=function_dict, context_tiers=tiers
     )
 
-    # Drop English related tiers for training
-    X = df.drop(columns=[col for col in df.columns if "English." in col])
-    y = df["English.phoneme"]
+    # Extract unique doculects from the dataframe
+    doculects = sorted(
+        set(doculect.split(".")[0] for doculect in df.columns if "." in doculect)
+    )
 
-    # Train classifiers
-    train_classifiers(X, y, dataset_name)
+    for doculect in doculects:
+        # Drop the current doculect related tiers for training
+        X = df.drop(columns=[col for col in df.columns if f"{doculect}." in col])
+        y = df[f"{doculect}.phoneme"]
 
-    # Apply classifiers
-    df_predictions = apply_classifiers(df, X, "English", dataset_name)
+        # Train classifiers
+        train_classifiers(X, y, dataset_name, doculect)
 
-    # Evaluate classifiers
-    evaluate.evaluate_classifiers(df_predictions, "English", dataset_name)
+        # Apply classifiers
+        df_predictions = apply_classifiers(df, X, doculect, dataset_name)
+
+        # Evaluate classifiers
+        evaluate.evaluate_classifiers(df_predictions, doculect, dataset_name)
 
     # Write the result to a tabular file
     df_predictions.to_csv(f"{dataset_name}_results.tsv", sep="\t", index=False)
@@ -264,11 +282,11 @@ def test_toy_dataset():
         ("ASH", "German"): ["a", "ʃ", "ɛ"],
         ("ASH", "English"): ["æ", "ʃ", "-"],
         ("ASH", "Dutch"): ["ɑ", "s", "-"],
-        ("BITE", "German"): ["b", "ai", "s", "ə", "n"],
-        ("BITE", "English"): ["b", "ai", "t", "-", "-"],
-        ("BITE", "Dutch"): ["b", "ɛi", "t", "ə", "-"],
-        ("BELLY", "German"): ["b", "au", "x"],
-        ("BELLY", "Dutch"): ["b", "œi", "k"],
+        ("BITE", "German"): ["b", "a", "i", "s", "ə", "n"],
+        ("BITE", "English"): ["b", "a", "i", "t", "-", "-"],
+        ("BITE", "Dutch"): ["b", "ɛ", "i", "t", "ə", "-"],
+        ("BELLY", "German"): ["b", "a", "u", "x"],
+        ("BELLY", "Dutch"): ["b", "œ", "i", "k"],
     }
 
     # Process and train classifiers
@@ -285,7 +303,11 @@ def test_germanic_dataset():
     )
 
     # Filter data to only include rows where the doculect is "English", "German", or "Dutch"
-    filtered_data = {key: value for key, value in data.items() if key[1] in ["English", "German", "Dutch"]}
+    filtered_data = {
+        key: value
+        for key, value in data.items()
+        if key[1] in ["English", "German", "Dutch"]
+    }
 
     # Process and train classifiers
     process_and_train(filtered_data, "germanic")

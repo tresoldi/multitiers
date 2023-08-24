@@ -1,9 +1,12 @@
-import seaborn as sns
-import matplotlib.pyplot as plt
-from tabulate import tabulate
+# Import Python standard libraries
 import os
-import pandas as pd
+
+# Import third-party libraries
 from sklearn.metrics import confusion_matrix, classification_report
+from tabulate import tabulate
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
 
 
 def format_percentage_label(val):
@@ -19,7 +22,13 @@ def format_percentage_label(val):
 
 
 def plot_confusion_matrices(
-    y_true_filtered, y_pred_filtered, labels, col, dataset_name, output_dir
+    y_true_filtered,
+    y_pred_filtered,
+    labels,
+    target_doculect,
+    col,
+    dataset_name,
+    output_dir,
 ):
     abbreviated_labels = [label[:2] for label in labels]
     cm = confusion_matrix(y_true_filtered, y_pred_filtered, labels=labels)
@@ -38,8 +47,10 @@ def plot_confusion_matrices(
     )
     plt.xlabel("Predicted")
     plt.ylabel("True")
-    plt.title(f"Absolute Confusion Matrix for {col}")
-    plt.savefig(f"{output_dir}/{dataset_name}.{col}.confusion_matrix_absolute.png")
+    plt.title(f"Absolute Confusion Matrix for {target_doculect}.{col}")
+    plt.savefig(
+        f"{output_dir}/{dataset_name}.{target_doculect}.{col}.cmatrix_absolute.png"
+    )
     plt.close()
 
     # Plot percentage confusion matrix
@@ -58,13 +69,21 @@ def plot_confusion_matrices(
         t.set_text(format_percentage_label(float(t.get_text())))
     plt.xlabel("Predicted")
     plt.ylabel("True")
-    plt.title(f"Percentage Confusion Matrix for {col}")
-    plt.savefig(f"{output_dir}/{dataset_name}.{col}.confusion_matrix_percentage.png")
+    plt.title(f"Percentage Confusion Matrix for {target_doculect}.{col}")
+    plt.savefig(
+        f"{output_dir}/{dataset_name}.{target_doculect}.{col}.cmatrix_percentage.png"
+    )
     plt.close()
 
 
 def generate_classification_report(
-    y_true_filtered, y_pred_filtered, labels, col, dataset_name, output_dir
+    y_true_filtered,
+    y_pred_filtered,
+    labels,
+    target_doculect,
+    col,
+    dataset_name,
+    output_dir,
 ):
     report = classification_report(
         y_true_filtered,
@@ -112,11 +131,11 @@ def generate_classification_report(
     table = tabulate(table_data, headers=headers, tablefmt="grid")
 
     with open(
-        f"{output_dir}/{dataset_name}.{col}.classification_report.txt",
+        f"{output_dir}/{dataset_name}.{target_doculect}.{col}.classification_report.txt",
         "w",
         encoding="utf-8",
     ) as f:
-        f.write(f"Classification Report for {col}:\n")
+        f.write(f"Classification Report for {target_doculect}.{col}:\n")
         f.write("\n")
         f.write(table)
 
@@ -124,7 +143,7 @@ def generate_classification_report(
 def evaluate_word_alignments(
     df,
     target_doculect,
-    col,
+    classifier_name,
     dataset_name,
     output_dir="evaluation_results",
     sound_class_dict=None,
@@ -136,13 +155,16 @@ def evaluate_word_alignments(
     Parameters:
     - df: DataFrame containing the data.
     - target_doculect: Target doculect for which predictions are made.
-    - col: Classifier column to evaluate.
+    - classifier_name: Name of the classifier to evaluate.
     - sound_class_dict: Dictionary mapping phonemes to sound classes.
     - distance_dict: Dictionary containing distances between phonemes.
 
     Returns:
     - results: DataFrame containing alignment scores for each word.
     """
+    # Construct the column name for the classifier's predictions
+    col = f"{target_doculect}.prediction.{classifier_name}"
+
     # Extract real words
     real_words = (
         df.groupby(df["ID"].str.extract(r"(.+)_(\d+)")[0])[f"{target_doculect}.phoneme"]
@@ -202,8 +224,9 @@ def evaluate_word_alignments(
         )
 
     # Save to disk
+    _, _, pipeline_name = col.split(".")
     results_df.to_csv(
-        f"{output_dir}/{dataset_name}.{target_doculect}.{col}.word_alignment_results.csv",
+        f"{output_dir}/{dataset_name}.{target_doculect}.{pipeline_name}.word_alignments.csv",
         index=False,
         encoding="utf-8",
     )
@@ -229,10 +252,6 @@ def evaluate_classifiers(
     """
     Evaluate the performance of the classifiers.
     """
-
-    # Ensure the output directory exists
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
 
     # Extract true values
     y_true = df[f"{target_doculect}.phoneme"]
@@ -274,24 +293,39 @@ def evaluate_classifiers(
             ]
         )
 
+        # Extract the classifier's name from the column name
+        classifier_name = col.split(".")[2]
+
         # Call the functions to plot confusion matrices, generate classification report,
         # and evaluate word alignments
         plot_confusion_matrices(
-            y_true_filtered, y_pred_filtered, labels, col, dataset_name, output_dir
+            y_true_filtered,
+            y_pred_filtered,
+            labels,
+            target_doculect,
+            classifier_name,
+            dataset_name,
+            output_dir,
         )
         generate_classification_report(
-            y_true_filtered, y_pred_filtered, labels, col, dataset_name, output_dir
+            y_true_filtered,
+            y_pred_filtered,
+            labels,
+            target_doculect,
+            classifier_name,
+            dataset_name,
+            output_dir,
         )
         aggregated_scores = evaluate_word_alignments(
             df,
             target_doculect,
-            col,
+            classifier_name,
             dataset_name,
             output_dir,
             sound_class_dict,
             distance_dict,
         )
-        aggregated_scores["Method"] = col
+        aggregated_scores["Method"] = classifier_name
         aggregated_results.append(aggregated_scores)
 
     # Convert aggregated results to DataFrame
@@ -308,7 +342,7 @@ def evaluate_classifiers(
 
     # Save to disk
     aggregated_df.to_csv(
-        f"{output_dir}/{dataset_name}.{target_doculect}.aggregated_alignment_scores.csv",
+        f"{output_dir}/{dataset_name}.{target_doculect}.aggregated_alms.csv",
         index=False,
         encoding="utf-8",
     )
