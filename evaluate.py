@@ -1,6 +1,3 @@
-# Import Python standard libraries
-import os
-
 # Import third-party libraries
 from sklearn.metrics import confusion_matrix, classification_report
 from tabulate import tabulate
@@ -138,6 +135,40 @@ def generate_classification_report(
         f.write(f"Classification Report for {target_doculect}.{col}:\n")
         f.write("\n")
         f.write(table)
+
+
+def calculate_word_scores_single_word(
+    df, target_doculect, classifier_name, sound_class_dict=None, distance_dict=None
+):
+    """
+    Calculate alignment scores for a single real and predicted word.
+
+    Parameters:
+    - df: DataFrame containing the data for a single word.
+    - target_doculect: Target doculect for which predictions are made.
+    - classifier_name: Name of the classifier to evaluate.
+    - sound_class_dict: Dictionary mapping phonemes to sound classes.
+    - distance_dict: Dictionary containing distances between phonemes.
+
+    Returns:
+    - simple_score, sound_class_score, distance_score: Alignment scores for the word.
+    """
+    # Construct the column name for the classifier's predictions
+    col = f"{target_doculect}.prediction.{classifier_name}"
+
+    # Extract real and predicted phonemes for the word
+    real_phonemes = df[f"{target_doculect}.phoneme"].tolist()
+    predicted_phonemes = df[col].tolist()
+
+    simple_score = simple_alignment_score(real_phonemes, predicted_phonemes)
+    sound_class_score = sound_class_alignment_score(
+        real_phonemes, predicted_phonemes, sound_class_dict
+    )
+    distance_score = distance_based_alignment_score(
+        real_phonemes, predicted_phonemes, distance_dict
+    )
+
+    return simple_score, sound_class_score, distance_score
 
 
 def evaluate_word_alignments(
